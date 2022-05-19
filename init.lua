@@ -25,4 +25,5 @@ require("user.indentline")
 require("user.alpha")
 require("user.whichkey")
 require("user.filetype")
+require("user.autosave")
 -- require "user.autocommands"
