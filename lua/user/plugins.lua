@@ -60,6 +60,12 @@ return packer.startup(function(use)
   use("folke/which-key.nvim")
   use("Pocco81/AutoSave.nvim")
 
+  -- Pretty(er) code folding
+  use({
+    "anuvyklack/pretty-fold.nvim",
+    requires = "anuvyklack/nvim-keymap-amend", -- only for preview
+  })
+
   -- Debugger
   use("mfussenegger/nvim-dap")
   use("theHamsta/nvim-dap-virtual-text")

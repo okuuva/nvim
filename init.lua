@@ -29,4 +29,5 @@ require("user.autosave")
 require("user.dapconfig")
 require("user.dap-vt")
 require("user.dap-ui")
+require("user.pretty-fold")
 -- require "user.autocommands"
