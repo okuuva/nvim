@@ -59,6 +59,16 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
   use("Pocco81/AutoSave.nvim")
+
+  -- Debugger
+  use("mfussenegger/nvim-dap")
+  use("theHamsta/nvim-dap-virtual-text")
+  use("rcarriga/nvim-dap-ui")
+  -- use("dap-buddy") -- DAP debugger installer, broken ATM
+
+  -- Debugger language specific plugins
+  use("mfussenegger/nvim-dap-python")
+
   -- Colorschemes
   use("marko-cerovac/material.nvim")
 
