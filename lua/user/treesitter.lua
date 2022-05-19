@@ -3,22 +3,22 @@ if not status_ok then
   return
 end
 
-configs.setup {
+configs.setup({
   ensure_installed = {
-      "bash",
-      "comment",
-      "dockerfile",
-      "fish",
-      "go",
-      "html",
-      "http",
-      "json",
-      "json5",
-      "lua",
-      "markdown",
-      "python",
-      "regex",
-      "yaml"
+    "bash",
+    "comment",
+    "dockerfile",
+    "fish",
+    "go",
+    "html",
+    "http",
+    "json",
+    "json5",
+    "lua",
+    "markdown",
+    "python",
+    "regex",
+    "yaml",
   }, -- "all", or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -35,4 +35,4 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
-}
+})
