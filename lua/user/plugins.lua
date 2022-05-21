@@ -61,6 +61,10 @@ return packer.startup(function(use)
   use("Pocco81/AutoSave.nvim")
   use("petertriho/nvim-scrollbar")
 
+  -- Session management
+  use("rmagatti/auto-session")
+  use("rmagatti/session-lens")
+
   -- Pretty(er) code folding
   use({
     "anuvyklack/pretty-fold.nvim",
