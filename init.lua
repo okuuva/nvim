@@ -34,4 +34,5 @@ require("user.dapconfig")
 require("user.dap-vt")
 require("user.dap-ui")
 require("user.pretty-fold")
+require("user.scrollbar")
 -- require "user.autocommands"
