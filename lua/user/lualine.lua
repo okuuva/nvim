@@ -53,13 +53,26 @@ _G.Statusline_timer:start(
   end)
 )
 
+-- Custom toggleterm extension
+local toggleterm = {
+  filetypes = { "toggleterm" },
+  sections = {
+    lualine_a = { mode },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = { clock },
+  },
+}
+
 lualine.setup({
   options = {
     icons_enabled = true,
     theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
-    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+    disabled_filetypes = { "alpha", "dashboard", "Outline", "gitcommit" },
     always_divide_middle = true,
     globalstatus = false,
   },
@@ -80,5 +93,5 @@ lualine.setup({
     lualine_z = { clock },
   },
   tabline = {},
-  extensions = {},
+  extensions = { "nvim-tree", toggleterm },
 })
