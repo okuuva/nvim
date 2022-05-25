@@ -16,10 +16,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", ":wincmd h<cr>", opts)
+keymap("n", "<C-j>", ":wincmd j<cr>", opts)
+keymap("n", "<C-k>", ":wincmd k<cr>", opts)
+keymap("n", "<C-l>", ":wincmd l<cr>", opts)
 
 -- Unset the 'last search pattern' register by hitting return
 keymap("", "<CR>", ":noh<CR>", opts)
