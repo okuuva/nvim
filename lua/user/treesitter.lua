@@ -13,6 +13,7 @@ configs.setup({
     "html",
     "http",
     "json",
+    "jsonc",
     "json5",
     "lua",
     "markdown",
