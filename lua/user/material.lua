@@ -13,12 +13,12 @@ material.setup({
     line_numbers = false, -- Enable contrast background for line numbers
     sign_column = false, -- Enable contrast background for the sign column
     cursor_line = true, -- Enable darker background for the cursor line
-    non_current_windows = false, -- Enable darker background for non-current windows
+    non_current_windows = true, -- Enable darker background for non-current windows
     popup_menu = false, -- Enable lighter background for the popup menu
   },
 
   italics = {
-    comments = false, -- Enable italic comments
+    comments = true, -- Enable italic comments
     keywords = false, -- Enable italic keywords
     functions = false, -- Enable italic functions
     strings = false, -- Enable italic strings
