@@ -14,12 +14,17 @@ null_ls.setup({
   sources = {
     -- Code actions
     code_actions.gitsigns,
+    code_actions.shellcheck,
 
     -- Diagnostics
+    diagnostics.fish,
     diagnostics.flake8,
+    diagnostics.mypy,
+    diagnostics.shellcheck,
 
     -- Formatting
     formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.jq,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.stylua,
   },
