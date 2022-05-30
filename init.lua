@@ -36,4 +36,5 @@ require("user.dap-ui")
 require("user.pretty-fold")
 require("user.scrollbar")
 require("user.auto-session")
+require("user.trouble")
 -- require "user.autocommands"

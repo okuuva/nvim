@@ -180,14 +180,19 @@ local mappings = {
   },
 
   t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    name = "Trouble",
+    d = { "<cmd>Trouble lsp_definitions<CR>", "Definitions" },
+    D = {
+      name = "Diagnostics",
+      d = { "<cmd>Trouble document_diagnostics<CR>", "Document diagnostics" },
+      w = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
+    },
+    l = { "<cmd>Trouble loclist<CR>", "Location list" },
+    q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
+    r = { "<cmd>Trouble lsp_references<CR>", "References" },
+    t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions" },
+    T = { "<cmd>TroubleToggle<CR>", "Toggle window" },
+  },
 
   T = {
     name = "Treesitter",

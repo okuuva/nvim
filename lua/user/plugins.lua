@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
   use("Pocco81/AutoSave.nvim")
+  use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
 
   -- Session management
