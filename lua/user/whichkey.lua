@@ -79,22 +79,22 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>qa!<CR>", "Quit" },
+  ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
-    "Find files",
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
+  ["q"] = { "<cmd>qa!<CR>", "Quit" },
+  ["w"] = { "<cmd>w!<CR>", "Save" },
+  b = {
+    name = "Buffers",
+    j = { "<cmd>BufferLinePick<cr>", "Jump" },
+    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+    e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
+    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+    l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
+    D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
+    L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
     name = "Packer",
@@ -109,10 +109,10 @@ local mappings = {
     name = "Diagnostics",
     d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
     D = { "<cmd>Telescope diagnostics<cr>", "All Diagnostics" },
-    j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
-    k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-    l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+    j = { vim.diagnostic.goto_next, "Next Diagnostic" },
+    k = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
+    l = { vim.diagnostic.open_float, "Line diagnostics" },
+    q = { vim.diagnostic.setloclist, "Quickfix" },
   },
 
   g = {
@@ -129,12 +129,14 @@ local mappings = {
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
   },
 
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     g = {
       name = "Go to",
@@ -143,30 +145,38 @@ local mappings = {
       i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
       r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
       s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
+      t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type definition" },
     },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+    i = { "<cmd>LspInfo<cr>", "Info" },
+    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    n = {
-      name = "Info",
-      i = { "<cmd>LspInfo<cr>", "Info" },
-      I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    q = { vim.diagnostic.setloclist, "Quickfix" },
+    r = { vim.lsp.buf.rename, "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
   },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    h = { "<cmd>Telescope help_tags theme=ivy<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    P = { "<cmd>Telescope projects<cr>", "Projects" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    c = {
+      "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
+      "Colorscheme",
+    },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
+    f = {
+      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
+      "Files",
+    },
+    h = { "<cmd>Telescope help_tags theme=ivy<cr>", "Help" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
+    r = { "<cmd>Telescope registers<cr>", "Registers" },
+    R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     s = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
+    t = { "<cmd>Telescope live_grep<cr>", "Text" },
   },
 
   t = {
@@ -178,6 +188,10 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+
+  T = {
+    name = "Treesitter",
+    i = { ":TSConfigInfo<cr>", "Info" },
   },
 }
 
