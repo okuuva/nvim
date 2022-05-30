@@ -12,11 +12,15 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup({
   debug = false,
   sources = {
+    -- Code actions
     code_actions.gitsigns,
-    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-    formatting.black.with({ extra_args = { "--fast" } }),
-    formatting.stylua,
+
+    -- Diagnostics
     diagnostics.flake8,
-    diagnostics.pylint,
+
+    -- Formatting
+    formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+    formatting.stylua,
   },
 })
