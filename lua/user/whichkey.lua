@@ -176,7 +176,7 @@ local mappings = {
     r = { "<cmd>Telescope registers<cr>", "Registers" },
     R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     s = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
+    t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
   },
 
   t = {
