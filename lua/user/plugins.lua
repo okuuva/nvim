@@ -95,6 +95,7 @@ return packer.startup(function(use)
 
   -- snippets
   use("L3MON4D3/LuaSnip") --snippet engine
+  use("benfowler/telescope-luasnip.nvim") -- telescope plugin for luasnip
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
   -- LSP
