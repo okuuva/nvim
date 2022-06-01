@@ -40,6 +40,9 @@ gitsigns.setup({
     col = 1,
   },
   show_deleted = true,
+  diff_opts = {
+    algorithm = "histogram",
+  },
   yadm = {
     enable = false,
   },
