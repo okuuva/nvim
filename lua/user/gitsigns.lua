@@ -39,6 +39,7 @@ gitsigns.setup({
     row = 0,
     col = 1,
   },
+  show_deleted = true,
   yadm = {
     enable = false,
   },
