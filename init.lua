@@ -1,8 +1,12 @@
-vim.g.python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3"
-vim.g.node_host_prog = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin/neovim-node-host"
-
 -- Use bash since fish causes slowdowns
 vim.opt.shell = "/usr/bin/env bash"
+
+-- Set Python3 and Node paths, don't wanna use whatever is found from $PATH
+-- Had to add Node path to PATH, setting the node_host_prog alone wasn't enough for whatever reason
+local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
+vim.env.PATH = node_path .. ":" .. vim.env.PATH
+vim.g.node_host_prog = node_path .. "/neovim-node-host"
+vim.g.python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3"
 
 -- Use filetype plugin written in LUA
 vim.g.do_filetype_lua = 1
