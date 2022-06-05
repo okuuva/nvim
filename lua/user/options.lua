@@ -2,7 +2,7 @@
 local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
 
-local g_options = {
+local settings = {
   do_filetype_lua = 1, -- use filetype plugin written in LUA
   loaded_perl_provider = 0, -- do not load perl provider
   loaded_ruby_provider = 0, -- do not load ruby provider
@@ -12,7 +12,7 @@ local g_options = {
   vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
 }
 
-for k, v in pairs(g_options) do
+for k, v in pairs(settings) do
   vim.g[k] = v
 end
 
