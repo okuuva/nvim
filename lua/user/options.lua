@@ -1,3 +1,19 @@
+-- add Node path to PATH, setting the node_host_prog alone isn't enough for whatever reason
+local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
+vim.env.PATH = node_path .. ":" .. vim.env.PATH
+
+local g_options = {
+  node_host_prog = node_path .. "/neovim-node-host",
+  python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
+  loaded_ruby_provider = 0, -- do not load ruby provider
+  loaded_perl_provider = 0, -- do not load perl provider
+  do_filetype_lua = 1, -- use filetype plugin written in LUA
+}
+
+for k, v in pairs(g_options) do
+  vim.g[k] = v
+end
+
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -20,6 +36,7 @@ local options = {
   pumheight = 10, -- pop up menu height
   relativenumber = true, -- set relative numbered lines
   scrolloff = 8, -- is one of my fav
+  shell = "/usr/bin/env bash", -- Use bash since fish causes slowdowns
   shiftwidth = 4, -- the number of spaces inserted for each indentation
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
   showtabline = 2, -- always show tabs
