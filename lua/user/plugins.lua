@@ -62,6 +62,9 @@ return packer.startup(function(use)
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
 
+  -- Legacy plugins (replace with equivalent Lua plugins whenever available)
+  use("raimon49/requirements.txt.vim")
+
   -- Session management
   use("rmagatti/auto-session")
   use("rmagatti/session-lens")
