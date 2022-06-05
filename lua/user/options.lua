@@ -3,11 +3,13 @@ local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
 
 local g_options = {
+  do_filetype_lua = 1, -- use filetype plugin written in LUA
+  loaded_perl_provider = 0, -- do not load perl provider
+  loaded_ruby_provider = 0, -- do not load ruby provider
   node_host_prog = node_path .. "/neovim-node-host",
   python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
-  loaded_ruby_provider = 0, -- do not load ruby provider
-  loaded_perl_provider = 0, -- do not load perl provider
-  do_filetype_lua = 1, -- use filetype plugin written in LUA
+  vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
+  vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
 }
 
 for k, v in pairs(g_options) do
@@ -30,6 +32,7 @@ local options = {
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   hlsearch = true, -- highlight all matches on previous search pattern
   ignorecase = true, -- ignore case in search patterns
+  lazyredraw = true, -- speed up scrolling a bit
   mouse = "a", -- allow the mouse to be used in neovim
   number = true, -- set numbered lines
   numberwidth = 4, -- set number column width to 2 {default 4}
@@ -47,6 +50,7 @@ local options = {
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
   swapfile = false, -- creates a swapfile
+  synmaxcol = 300, -- speed up scrolling a bit by disabling syntax highlighting on very long lines
   tabstop = 4, -- insert 4 spaces for a tab
   termguicolors = true, -- set term gui colors (most terminals support this)
   timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
