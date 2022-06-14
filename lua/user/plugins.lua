@@ -64,6 +64,7 @@ return packer.startup(function(use)
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("raimon49/requirements.txt.vim")
+  use("towolf/vim-helm")
 
   -- Session management
   use("rmagatti/auto-session")
