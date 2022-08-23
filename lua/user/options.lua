@@ -1,3 +1,8 @@
+-- set nvr as git editor
+if vim.fn.executable("nvr") == 1 then
+  vim.env.GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'"
+end
+
 -- add Node path to PATH, setting the node_host_prog alone isn't enough for whatever reason
 local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
