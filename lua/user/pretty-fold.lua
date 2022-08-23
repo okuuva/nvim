@@ -51,15 +51,3 @@ pretty_fold.setup({
   ft_ignore = { "neorg" },
 })
 
-local status_ok, pretty_fold_preview = pcall(require, "pretty-fold.preview")
-if not status_ok then
-  return
-end
-
-pretty_fold_preview.setup({
-  default_keybindings = true, -- Set to false to disable default keybindings
-
-  -- 'none', "single", "double", "rounded", "solid", 'shadow' or table
-  -- For explanation see: :help nvim_open_win()
-  border = { " ", "", " ", " ", " ", " ", " ", " " },
-})

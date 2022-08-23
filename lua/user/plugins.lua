@@ -71,9 +71,10 @@ return packer.startup(function(use)
   use("rmagatti/session-lens")
 
   -- Pretty(er) code folding
+  use("anuvyklack/pretty-fold.nvim")
   use({
-    "anuvyklack/pretty-fold.nvim",
-    requires = "anuvyklack/nvim-keymap-amend", -- only for preview
+    "anuvyklack/fold-preview.nvim",
+    requires = "anuvyklack/keymap-amend.nvim" -- only for preview
   })
 
   -- Debugger
