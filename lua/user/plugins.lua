@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use("goolord/alpha-nvim")
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
-  use("Pocco81/AutoSave.nvim")
+  use("Pocco81/auto-save.nvim")
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
   use("kdheepak/lazygit.nvim")
@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use("anuvyklack/pretty-fold.nvim")
   use({
     "anuvyklack/fold-preview.nvim",
-    requires = "anuvyklack/keymap-amend.nvim" -- only for preview
+    requires = "anuvyklack/keymap-amend.nvim", -- only for preview
   })
 
   -- Debugger
@@ -113,7 +113,7 @@ return packer.startup(function(use)
   use("benfowler/telescope-luasnip.nvim") -- telescope plugin for luasnip
   use({
     "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make"
+    run = "make",
   })
 
   -- Treesitter
