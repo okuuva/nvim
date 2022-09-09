@@ -24,14 +24,14 @@ project.setup({
 
   -- Don't calculate root dir on specific directories
   -- Ex: { "~/.cargo/*", ... }
-  exclude_dirs = {},
+  exclude_dirs = {"*webpack*"},
 
   -- Show hidden files in telescope
   show_hidden = true,
 
   -- When set to false, you will get a message when project.nvim changes your
   -- directory.
-  silent_chdir = true,
+  silent_chdir = false,
 
   -- Path where project.nvim will store the project history for use in
   -- telescope

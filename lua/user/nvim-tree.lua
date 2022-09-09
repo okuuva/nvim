@@ -22,7 +22,7 @@ nvim_tree.setup({
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = true,
+  update_cwd = false,
   reload_on_bufenter = false,
   view = {
     width = 40,
@@ -62,7 +62,7 @@ nvim_tree.setup({
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},
@@ -93,7 +93,7 @@ nvim_tree.setup({
   actions = {
     use_system_clipboard = true,
     change_dir = {
-      enable = true,
+      enable = false,
       global = false,
       restrict_above_cwd = false,
     },
