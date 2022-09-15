@@ -7,17 +7,20 @@ local execution_message = function() -- message to print on save
   return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
 end
 
+local excluded_filetypes = {}
+local excluded_filenames = {
+  "plugins.lua",
+  "autosave.lua",
+}
+
 local save_condition = function(buf)
   local fn = vim.fn
   local utils = require("auto-save.utils.data")
 
   if
     fn.getbufvar(buf, "&modifiable") == 1
-    and utils.not_in(fn.getbufvar(buf, "&filetype"), {})
-    and utils.not_in(fn.expand("%:t"), {
-      "plugins.lua",
-      "autosave.lua",
-    })
+    and utils.not_in(fn.getbufvar(buf, "&filetype"), excluded_filetypes)
+    and utils.not_in(fn.expand("%:t"), excluded_filenames)
   then
     return true -- met condition(s), can save
   end
