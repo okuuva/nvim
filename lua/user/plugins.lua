@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
   use("kdheepak/lazygit.nvim")
+  use("tversteeg/registers.nvim")
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("raimon49/requirements.txt.vim")
