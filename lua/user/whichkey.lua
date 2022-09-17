@@ -96,15 +96,6 @@ local mappings = {
     L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
   },
 
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
-
   d = {
     name = "Diagnostics",
     d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
@@ -166,7 +157,6 @@ local mappings = {
       h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
       i = { "<cmd>LspInfo<cr>", "Info" },
-      I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
       t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
     },
     q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
@@ -175,6 +165,17 @@ local mappings = {
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
     w = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
+  },
+
+  ["m"] = { "<cmd>Mason<cr>", "Mason" },
+
+  p = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    S = { "<cmd>PackerStatus<cr>", "Status" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
   s = {
