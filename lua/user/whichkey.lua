@@ -81,14 +81,15 @@ local opts = {
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["C"] = { "<cmd>q!<CR>", "Close split" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
+  ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
     f = { "<cmd>Telescope buffers<cr>", "Find" },
-    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
     e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
     l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
@@ -110,15 +111,12 @@ local mappings = {
     name = "Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
+    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit (for current file)" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
     g = { "<cmd>LazyGit<CR>", "Lazygit" },
     f = { "<cmd>LazyGitFilterCurrentFile<CR>", "Show file commits" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line({full = true, ignore_whitespace = true})<cr>", "Blame" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     P = { "<cmd>LazyGitFilter<CR>", "Show project commits" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -131,13 +129,13 @@ local mappings = {
       n = { "<cmd>lua require 'gitsigns'.toggle_numhl()<cr>", "Number highlight" },
       s = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Sign column" },
     },
-    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
   },
 
   l = {
     name = "LSP",
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
     D = { "<cmd>Trouble document_diagnostics<CR>", "Document diagnostics" },
+    i = { "<cmd>LspInfo<cr>", "Info" },
     l = { "<cmd>Trouble loclist<CR>", "Location list" },
     t = { "<cmd>TroubleToggle<CR>", "Toggle window" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
@@ -156,7 +154,6 @@ local mappings = {
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
       h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-      i = { "<cmd>LspInfo<cr>", "Info" },
       t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
     },
     q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
@@ -166,8 +163,6 @@ local mappings = {
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
     w = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
   },
-
-  ["m"] = { "<cmd>Mason<cr>", "Mason" },
 
   p = {
     name = "Packer",
@@ -181,11 +176,7 @@ local mappings = {
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = {
-      "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
-      "Colorscheme",
-    },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    c = { "<cmd>Telescope commands<cr>", "Commands" },
     f = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
       "Files",
