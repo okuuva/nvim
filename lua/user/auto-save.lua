@@ -1,4 +1,4 @@
-local status_ok, autosave = pcall(require, "autosave")
+local status_ok, autosave = pcall(require, "auto-save")
 if not status_ok then
   return
 end
@@ -10,7 +10,7 @@ end
 local excluded_filetypes = {}
 local excluded_filenames = {
   "plugins.lua",
-  "autosave.lua",
+  "auto-save.lua",
 }
 
 local save_condition = function(buf)
@@ -32,7 +32,7 @@ autosave.setup({
   execution_message = {
     message = execution_message,
     dim = 0.18, -- dim the color of `message`
-    cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
+    cleaning_interval = 5000, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
   },
   trigger_events = { "InsertLeave", "TextChanged" }, -- vim events that trigger auto-save. See :h events
   -- function that determines whether to save the current buffer or not
