@@ -60,7 +60,6 @@ return packer.startup(function(use)
   use("Pocco81/auto-save.nvim")
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
-  use("kdheepak/lazygit.nvim")
   use("tversteeg/registers.nvim")
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
@@ -72,11 +71,11 @@ return packer.startup(function(use)
   use("rmagatti/session-lens")
 
   -- Pretty(er) code folding
-  use("anuvyklack/pretty-fold.nvim")
   use({
     "anuvyklack/fold-preview.nvim",
     requires = "anuvyklack/keymap-amend.nvim", -- only for preview
   })
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
   -- Debugger
   use("mfussenegger/nvim-dap")
@@ -127,6 +126,7 @@ return packer.startup(function(use)
 
   -- Git
   use("lewis6991/gitsigns.nvim")
+  use("kdheepak/lazygit.nvim")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
