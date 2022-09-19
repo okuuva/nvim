@@ -30,4 +30,4 @@ require("user.nvim-ufo")
 require("user.auto-session")
 require("user.trouble")
 require("user.lazygit")
--- require "user.autocommands"
+require("user.autocommands")
