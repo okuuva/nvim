@@ -85,6 +85,7 @@ return packer.startup(function(use)
 
   -- Debugger language specific plugins
   use("mfussenegger/nvim-dap-python")
+  use("jbyuki/one-small-step-for-vimkind") -- lua
 
   -- Colorschemes
   use("marko-cerovac/material.nvim")
