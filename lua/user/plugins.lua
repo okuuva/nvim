@@ -61,6 +61,12 @@ return packer.startup(function(use)
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
   use("tversteeg/registers.nvim")
+  use({
+    "sitiom/nvim-numbertoggle",
+    config = function()
+      require("numbertoggle").setup()
+    end,
+  })
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("raimon49/requirements.txt.vim")
