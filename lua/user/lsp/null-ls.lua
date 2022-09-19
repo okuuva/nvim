@@ -27,5 +27,6 @@ null_ls.setup({
     formatting.jq,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.stylua,
+    formatting.shfmt,
   },
 })
