@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use("mfussenegger/nvim-dap")
   use("theHamsta/nvim-dap-virtual-text")
   use("rcarriga/nvim-dap-ui")
+  use("Weissle/persistent-breakpoints.nvim")
 
   -- Debugger language specific plugins
   use("mfussenegger/nvim-dap-python")
