@@ -18,8 +18,6 @@ null_ls.setup({
 
     -- Diagnostics
     diagnostics.fish,
-    diagnostics.flake8,
-    diagnostics.mypy,
     diagnostics.shellcheck,
 
     -- Formatting
