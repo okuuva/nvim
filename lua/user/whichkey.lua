@@ -193,10 +193,6 @@ local mappings = {
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
   },
 
-  t = {
-    name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
-  },
 }
 
 which_key.register(mappings, opts)
