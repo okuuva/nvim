@@ -54,7 +54,6 @@ bufferline.setup({
     separator_style = "thin", -- "slant" | "padded_slant" | "thick" | "thin" | { "any", "any" },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
-    offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
     sort_by = "id", -- | "extension" | "relative_directory" | "directory" | "tabs" | function(buffer_a, buffer_b)
   },
 })
