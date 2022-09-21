@@ -117,6 +117,7 @@ return packer.startup(function(use)
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- cool virtual line diagnostics
   use("folke/lua-dev.nvim") -- easier config / plugin development
+  use("b0o/schemastore.nvim") -- json schemas for jsonls
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
