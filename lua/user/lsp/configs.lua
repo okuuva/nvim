@@ -4,7 +4,7 @@ local servers = {
   "gopls",
   "yamlls",
   "html",
-  "jedi_language_server",
+  "pylsp",
   "jsonls",
   "sumneko_lua",
   "volar",
