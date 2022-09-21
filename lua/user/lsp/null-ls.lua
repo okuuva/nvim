@@ -13,7 +13,6 @@ null_ls.setup({
   debug = false,
   sources = {
     -- Code actions
-    code_actions.gitsigns,
     code_actions.shellcheck,
 
     -- Diagnostics
