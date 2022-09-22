@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup({
     additional_vim_regex_highlighting = true,
   },
   indent = { enable = true },
+  matchup = { enable = true },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
