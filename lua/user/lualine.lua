@@ -12,7 +12,7 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn", "hint" },
   symbols = { error = " ", warn = " ", hint = " " },
-  update_in_insert = true,
+  update_in_insert = false,
   always_visible = false,
 }
 

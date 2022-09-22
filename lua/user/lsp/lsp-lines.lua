@@ -5,7 +5,9 @@ end
 
 lsp_lines.setup()
 
+-- This is just an override, check handlers.lua for original settings
 vim.diagnostic.config({
-  virtual_text = false, -- Disable virtual_text since it's redundant due to lsp_lines.
-  virtual_lines = true, -- Enable lsp_lines
+  virtual_lines = {
+    only_current_line = true,
+  }
 })

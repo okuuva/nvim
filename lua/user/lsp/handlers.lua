@@ -14,13 +14,9 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
     virtual_text = false,
-    -- show signs
-    signs = {
-      active = signs,
-    },
-    update_in_insert = true,
+    signs = true,
+    update_in_insert = false,
     underline = true,
     severity_sort = true,
     float = {
@@ -82,8 +78,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- nvim-ufo folding settings
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
