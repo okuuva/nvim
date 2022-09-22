@@ -65,10 +65,10 @@ capabilities.textDocument.foldingRange = {
 }
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
+if status_ok then
+  M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+else
+  M.capabilities = capabilities
 end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
