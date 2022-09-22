@@ -85,6 +85,7 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
+  ["t"] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   b = {
     name = "Buffers",
@@ -192,7 +193,6 @@ local mappings = {
     S = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
   },
-
 }
 
 which_key.register(mappings, opts)
