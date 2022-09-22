@@ -85,7 +85,6 @@ return packer.startup(function(use)
 
   -- Debugger
   use("mfussenegger/nvim-dap")
-  use("theHamsta/nvim-dap-virtual-text")
   use("rcarriga/nvim-dap-ui")
   use("Weissle/persistent-breakpoints.nvim")
 
@@ -136,6 +135,7 @@ return packer.startup(function(use)
   use("folke/twilight.nvim")
   use("windwp/nvim-ts-autotag")
   use("nvim-treesitter/nvim-treesitter-context")
+  use("theHamsta/nvim-dap-virtual-text")
 
   -- Git
   use("lewis6991/gitsigns.nvim")
