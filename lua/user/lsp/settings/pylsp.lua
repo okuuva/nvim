@@ -3,7 +3,7 @@ return {
   settings = {
     pylsp = {
       configurationSources = {
-        "pycodestyle",
+        "flake8",
       },
       plugins = {
         autopep8 = {
@@ -11,13 +11,14 @@ return {
         },
         flake8 = {
           config = nil,
-          enabled = false,
+          enabled = true,
           exclude = {},
           executable = "flake8",
           filename = nil,
           hangClosing = nil,
           ignore = {},
           indentSize = nil,
+          maxLineLength = 110,
           perFileIgnores = {},
           select = nil,
         },
@@ -55,7 +56,7 @@ return {
           include_import_symbols = true,
         },
         mccabe = {
-          enabled = true,
+          enabled = false,
           threshold = 15,
         },
         preload = {
@@ -63,11 +64,11 @@ return {
           modules = {},
         },
         pycodestyle = {
-          exabled = true,
+          enabled = false,
           exclude = {},
           filename = {},
           select = {},
-          ignore = { "E501" },
+          ignore = {},
           hangClosing = nil,
           maxLineLength = nil,
           indentSize = nil,
@@ -82,7 +83,7 @@ return {
           match = "(?!test_).*\\.py",
           mathDir = "[^\\.].*",
         },
-        pyflakes = { enabled = true },
+        pyflakes = { enabled = false },
         pylint = {
           enabled = false,
           args = {},
