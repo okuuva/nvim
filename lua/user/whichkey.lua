@@ -85,6 +85,7 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
+  ["r"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   b = {
     name = "Buffers",
@@ -159,7 +160,6 @@ local mappings = {
     },
     q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
     r = { "<cmd>Trouble lsp_references<CR>", "References" },
-    R = { vim.lsp.buf.rename, "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
     w = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
