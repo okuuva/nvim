@@ -44,6 +44,7 @@ local options = {
   pumheight = 10, -- pop up menu height
   relativenumber = true, -- set relative numbered lines
   scrolloff = 8, -- is one of my fav
+  sessionoptions = "buffers,curdir,folds,help,resize,winsize",
   shell = "/usr/bin/env bash", -- Use bash since fish causes slowdowns
   shiftwidth = 4, -- the number of spaces inserted for each indentation
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
