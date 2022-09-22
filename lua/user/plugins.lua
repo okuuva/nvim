@@ -137,6 +137,7 @@ return packer.startup(function(use)
   use("nvim-treesitter/nvim-treesitter-context")
   use("theHamsta/nvim-dap-virtual-text")
   use("andymass/vim-matchup")
+  use("nvim-treesitter/playground")
 
   -- Git
   use("lewis6991/gitsigns.nvim")

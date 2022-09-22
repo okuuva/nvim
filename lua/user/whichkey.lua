@@ -85,7 +85,6 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
-  ["t"] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   b = {
     name = "Buffers",
@@ -134,6 +133,7 @@ local mappings = {
 
   l = {
     name = "LSP",
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
     D = { "<cmd>Trouble document_diagnostics<CR>", "Document diagnostics" },
     i = { "<cmd>LspInfo<cr>", "Info" },
@@ -151,7 +151,6 @@ local mappings = {
     },
     m = {
       name = "More",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
       d = { "<cmd>Trouble lsp_definitions<CR>", "Definitions list" },
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
       h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
@@ -192,6 +191,13 @@ local mappings = {
     s = { "<cmd>Telescope luasnip<cr>", "Snippets" },
     S = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
+  },
+
+  t = {
+    name = "TreeSitter",
+    c = { "<cmd>TSContextToggle<cr>", "Toggle context" },
+    p = { "<cmd>TSPlaygroundToggle<cr>", "Toggle Playground" },
+    t = { "<cmd>Twilight<CR>", "Toggle Twilight" },
   },
 }
 
