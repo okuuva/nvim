@@ -7,7 +7,7 @@ local execution_message = function() -- message to print on save
   return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
 end
 
-local excluded_filetypes = {}
+local excluded_filetypes = { "gitcommit" }
 local excluded_filenames = {
   "plugins.lua",
   "auto-save.lua",
