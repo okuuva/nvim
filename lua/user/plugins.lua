@@ -117,7 +117,7 @@ return packer.startup(function(use)
   use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- cool virtual line diagnostics
   use("folke/lua-dev.nvim") -- easier config / plugin development
   use("b0o/schemastore.nvim") -- json schemas for jsonls
-  use({
+  use({ -- fancy renamer
     "filipdutescu/renamer.nvim",
     branch = "master",
   })
@@ -142,6 +142,7 @@ return packer.startup(function(use)
   use("theHamsta/nvim-dap-virtual-text")
   use("andymass/vim-matchup")
   use("nvim-treesitter/playground")
+  use("nvim-treesitter/nvim-treesitter-refactor")
 
   -- Git
   use("lewis6991/gitsigns.nvim")
