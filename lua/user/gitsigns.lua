@@ -39,7 +39,7 @@ gitsigns.setup({
     row = 0,
     col = 1,
   },
-  show_deleted = true,
+  show_deleted = false,
   diff_opts = {
     algorithm = "histogram",
   },
