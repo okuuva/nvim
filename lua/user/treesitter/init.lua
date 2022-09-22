@@ -6,3 +6,4 @@ end
 require("user.treesitter.configs")
 require("user.treesitter.autopairs")
 require("user.treesitter.twilight")
+require("user.treesitter.context")
