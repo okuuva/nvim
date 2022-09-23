@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use("tversteeg/registers.nvim")
   use("ggandor/leap.nvim")
   use("ethanholz/nvim-lastplace")
+  use("folke/todo-comments.nvim")
   use({
     "windwp/nvim-spectre",
     config = function()

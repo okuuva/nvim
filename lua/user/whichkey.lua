@@ -113,7 +113,8 @@ local mappings = {
     k = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
     l = { vim.diagnostic.open_float, "Line diagnostics" },
     q = { vim.diagnostic.setloclist, "Quickfix" },
-    t = { "<cmd>TroubleToggle<CR>", "Toggle window" },
+    t = { "<cmd>TodoTrouble<cr>", "TODO-list" },
+    T = { "<cmd>TroubleToggle<CR>", "Toggle window" },
     v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle virtual line diagnostics" },
   },
 
