@@ -88,7 +88,7 @@ end
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["C"] = { "<cmd>bdelete!<CR>", "Close split" },
+  ["C"] = { "<cmd>close<CR>", "Close split" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File explorer" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
