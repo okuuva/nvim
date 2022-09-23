@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use("ggandor/leap.nvim")
   use("ethanholz/nvim-lastplace")
   use("folke/todo-comments.nvim")
+  use("karb94/neoscroll.nvim")
   use({
     "windwp/nvim-spectre",
     config = function()
