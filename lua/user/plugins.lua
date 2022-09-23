@@ -63,6 +63,12 @@ return packer.startup(function(use)
   use("tversteeg/registers.nvim")
   use("ggandor/leap.nvim")
   use({
+    "windwp/nvim-spectre",
+    config = function()
+      require("spectre").setup()
+    end,
+  })
+  use({
     "sitiom/nvim-numbertoggle",
     config = function()
       require("numbertoggle").setup()

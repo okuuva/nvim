@@ -159,11 +159,11 @@ local mappings = {
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
-
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
+    C = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search Current Word" },
     f = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
       "Files",
@@ -172,8 +172,8 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
-    r = { "<cmd>Telescope registers<cr>", "Registers" },
-    R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+    R = { "<cmd>lua require('spectre').open()<CR>", "Search and Replace" },
     s = { "<cmd>Telescope luasnip<cr>", "Snippets" },
     S = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
