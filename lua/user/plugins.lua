@@ -74,6 +74,10 @@ return packer.startup(function(use)
       require("numbertoggle").setup()
     end,
   })
+  use({
+    "s1n7ax/nvim-window-picker",
+    tag = "v1.*",
+  })
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("raimon49/requirements.txt.vim")

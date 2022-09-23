@@ -78,6 +78,13 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+local picker_enabled, picker = pcall(require, "window-picker")
+
+local pick_window = function()
+  local picked_window_id = picker_enabled and picker.pick_window() or vim.api.nvim_get_current_win()
+  vim.api.nvim_set_current_win(picked_window_id)
+end
+
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -86,7 +93,7 @@ local mappings = {
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["r"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["w"] = { pick_window, "Pick a window" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
