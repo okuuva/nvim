@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
   use("tversteeg/registers.nvim")
+  use("ggandor/leap.nvim")
   use({
     "sitiom/nvim-numbertoggle",
     config = function()
