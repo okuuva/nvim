@@ -128,6 +128,7 @@ return packer.startup(function(use)
   use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- cool virtual line diagnostics
   use("folke/lua-dev.nvim") -- easier config / plugin development
   use("b0o/schemastore.nvim") -- json schemas for jsonls
+  use("ray-x/lsp_signature.nvim") -- function signatures as I type
   use({ -- fancy renamer
     "filipdutescu/renamer.nvim",
     branch = "master",
