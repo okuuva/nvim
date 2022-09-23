@@ -49,6 +49,8 @@ cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.filetype_extend("python", {"django"})
+      luasnip.filetype_extend("vue", {"vue"})
     end,
   },
   mapping = {
