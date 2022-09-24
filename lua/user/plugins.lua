@@ -82,6 +82,12 @@ return packer.startup(function(use)
     "s1n7ax/nvim-window-picker",
     tag = "v1.*",
   })
+  use({
+    "mcauley-penney/tidy.nvim",
+    config = function()
+      require("tidy").setup()
+    end,
+  })
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("raimon49/requirements.txt.vim")
