@@ -208,7 +208,7 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     R = { "<cmd>lua require('spectre').open()<CR>", "Search and Replace" },
     s = { "<cmd>Telescope luasnip<cr>", "Snippets" },
-    S = { "<cmd>Telescope session-lens search_session<cr>", "Sessions" },
+    S = { "<cmd>Telescope persisted theme=dropdown<cr>", "Sessions" },
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
   },
 

@@ -89,8 +89,7 @@ return packer.startup(function(use)
   use("felipec/vim-sanegx")
 
   -- Session management
-  use("rmagatti/auto-session")
-  use("rmagatti/session-lens")
+  use("olimorris/persisted.nvim")
 
   -- Pretty(er) code folding
   use({
