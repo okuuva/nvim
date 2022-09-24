@@ -85,6 +85,29 @@ local pick_window = function()
   vim.api.nvim_set_current_win(picked_window_id)
 end
 
+-- FIXME: does not work in visual mode (because none of the bindings work...)
+local line_history = function()
+  local mode = vim.api.nvim_get_mode().mode
+  local current_line = vim.api.nvim_win_get_cursor(0)[1]
+  local range = nil
+
+  if mode == "n" then
+    range = current_line
+  elseif mode == "v" then
+    local v_line = unpack(vim.fn.getpos("v"), 2)
+    if v_line < current_line then
+      range = v_line .. "," .. current_line
+    end
+  else
+    return
+  end
+  vim.cmd(range .. "DiffviewFileHistory<cr>")
+end
+
+local line_history = function()
+  vim.cmd(vim.api.nvim_win_get_cursor(0)[1] .. "DiffviewFileHistory<cr>")
+end
+
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -123,10 +146,11 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit (for current file)" },
-    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+    d = { "<cmd>DiffviewFileHistory %<cr>", "Diff" },
     g = { "<cmd>LazyGit<CR>", "Lazygit" },
     f = { "<cmd>LazyGitFilterCurrentFile<CR>", "Show file commits" },
     l = { "<cmd>lua require 'gitsigns'.blame_line({full = true, ignore_whitespace = true})<cr>", "Blame" },
+    L = { line_history, "Line history" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     P = { "<cmd>LazyGitFilter<CR>", "Show project commits" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
@@ -167,6 +191,7 @@ local mappings = {
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
