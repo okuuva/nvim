@@ -14,6 +14,7 @@ local excluded_filetypes = {
   "alpha",
   "dashboard",
   "gitcommit",
+  "lazygit",
   "prompt",
   "toggleterm",
 }
