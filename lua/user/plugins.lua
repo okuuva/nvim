@@ -58,12 +58,10 @@ return packer.startup(function(use)
   use("goolord/alpha-nvim")
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight in Neovim < 0.8
   use("folke/which-key.nvim")
-  use("nvim-zh/auto-save.nvim")
   use("folke/trouble.nvim")
   use("petertriho/nvim-scrollbar")
   use("tversteeg/registers.nvim")
   use("ggandor/leap.nvim")
-  use("ethanholz/nvim-lastplace")
   use("folke/todo-comments.nvim")
   use("karb94/neoscroll.nvim")
   use({
@@ -96,6 +94,9 @@ return packer.startup(function(use)
 
   -- Session management
   use("olimorris/persisted.nvim")
+  -- plugins below aren't strictly session management but related anyway
+  use("nvim-zh/auto-save.nvim")
+  use("ethanholz/nvim-lastplace")
 
   -- Pretty(er) code folding
   use({
