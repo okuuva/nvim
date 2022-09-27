@@ -17,7 +17,6 @@ null_ls.setup({
 
     -- Diagnostics
     diagnostics.fish,
-    diagnostics.shellcheck,
 
     -- Formatting
     formatting.black.with({ extra_args = { "--fast" } }),
