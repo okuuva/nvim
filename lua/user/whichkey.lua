@@ -212,6 +212,12 @@ local mappings = {
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
   },
 
+  S = {
+    name = "Split",
+    h = { "<cmd>split<cr>", "Horizontal split"},
+    S = { "<cmd>vsplit<cr>", "Vertical split"},
+  },
+
   t = {
     name = "TreeSitter",
     c = { "<cmd>TSContextToggle<cr>", "Toggle context" },
