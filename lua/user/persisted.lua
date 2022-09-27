@@ -12,7 +12,9 @@ require("persisted").setup({
   autosave = true, -- automatically save session files when exiting Neovim
   autoload = true, -- automatically load the session for the cwd on Neovim startup
   on_autoload_no_session = on_autoload_no_session, -- function to run when `autoload = true` but there is no session to load
-  allowed_dirs = nil, -- table of dirs that the plugin will auto-save and auto-load from
+  allowed_dirs = {
+    "~/gits",
+  }, -- table of dirs that the plugin will auto-save and auto-load from
   ignored_dirs = nil, -- table of dirs that are ignored when auto-saving and auto-loading
   before_save = nil, -- function to run before the session is saved to disk
   after_save = nil, -- function to run after the session is saved to disk
