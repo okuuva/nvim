@@ -39,5 +39,12 @@ require("nvim-treesitter.configs").setup({
       -- Set to false if you have an `updatetime` of ~100.
       clear_on_cursor_move = true,
     },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        -- smart_rename = "<leader>r",
+        smart_rename = "gr",
+      },
+    },
   },
 })

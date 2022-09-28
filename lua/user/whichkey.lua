@@ -116,8 +116,7 @@ local mappings = {
   ["i"] = { pick_window, "Pick a window" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
-  ["r"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
-  ["w"] = { '<cmd>w<cr>', "Write" },
+  ["w"] = { "<cmd>w<cr>", "Write" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
@@ -179,6 +178,7 @@ local mappings = {
     L = { "<cmd>Trouble loclist<CR>", "Location list" },
     q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
     r = { "<cmd>Trouble lsp_references<CR>", "References" },
+    R = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
     t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
@@ -215,8 +215,8 @@ local mappings = {
 
   S = {
     name = "Split",
-    h = { "<cmd>split<cr>", "Horizontal split"},
-    S = { "<cmd>vsplit<cr>", "Vertical split"},
+    h = { "<cmd>split<cr>", "Horizontal split" },
+    S = { "<cmd>vsplit<cr>", "Vertical split" },
   },
 
   t = {
