@@ -11,11 +11,10 @@ local settings = {
   registers_window_min_height = 3,
   registers_window_max_width = 100,
   registers_show = '*+"-/_=#%.0123456789abcdefghijklmnopqrstuvwxyz:',
-  registers_paste_in_normal_mode = 1,
+  registers_paste_in_normal_mode = 2,
   system_clip = 0,
 }
 
 for k, v in pairs(settings) do
   vim.g[k] = v
 end
-
