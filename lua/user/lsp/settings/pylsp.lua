@@ -1,3 +1,10 @@
+local pylint_path = function ()
+  local path = vim.env.VIRTUAL_ENV .. "/bin/pylint"
+  if vim.fn.executable(path) then
+    return path
+  end
+end
+
 -- Check https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md for instructions
 return {
   settings = {
@@ -16,9 +23,9 @@ return {
           executable = "flake8",
           filename = nil,
           hangClosing = nil,
-          ignore = {},
+          ignore = { "E501", "W503" },
           indentSize = nil,
-          maxLineLength = 110,
+          maxLineLength = nil,
           perFileIgnores = {},
           select = nil,
         },
@@ -85,9 +92,9 @@ return {
         },
         pyflakes = { enabled = false },
         pylint = {
-          enabled = false,
-          args = {},
-          executable = nil,
+          enabled = true,
+          args = {"--disable=line-too-long,unused-import"},
+          executable = pylint_path(),
         },
         rope_completion = {
           enabled = false,
