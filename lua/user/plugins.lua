@@ -58,7 +58,7 @@ return packer.startup(function(use)
   use("goolord/alpha-nvim")
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight in Neovim < 0.8
   use("folke/which-key.nvim")
-  use("folke/trouble.nvim")
+  use("okuuva/trouble.nvim")
   use("tversteeg/registers.nvim")
   use("ggandor/leap.nvim")
   use("folke/todo-comments.nvim")
