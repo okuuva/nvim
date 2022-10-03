@@ -33,7 +33,7 @@ material.setup({
 
   disable = {
     colored_cursor = false, -- Disable the colored cursor
-    borders = false, -- Disable borders between verticaly split windows
+    borders = true, -- Disable borders between verticaly split windows
     background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
     term_colors = false, -- Prevent the theme from setting terminal colors
     eob_lines = false, -- Hide the end-of-buffer lines
@@ -45,6 +45,7 @@ material.setup({
 
   -- Overwrite highlights with your own
   custom_highlights = {
+    VertSplit = { link = "NormalNC" },
     NvimTreeSignColumn = { link = "SignColumn" },
     NvimTreeRootFolder = { fg = colors.accent },
     TroubleText = { fg = colors.text, bg = colors.none },

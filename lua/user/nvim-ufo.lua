@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 vim.o.foldcolumn = '5'
-vim.o.fillchars = [[fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.fillchars = [[vert: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
