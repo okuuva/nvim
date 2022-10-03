@@ -176,8 +176,7 @@ local mappings = {
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    -- TODO: send inspect text to buffer instead
-    I = { "<cmd>lua print(vim.inspect(vim.lsp.get_active_clients()))<cr>", "Inspect" },
+    I = { "<cmd>lua Msg(vim.lsp.get_active_clients())<cr>", "Inspect" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     L = { "<cmd>Trouble loclist<CR>", "Location list" },
     o = { "<cmd>LspLog<cr>", "Log" },
