@@ -29,7 +29,13 @@ local options = {
   conceallevel = 0, -- so that `` is visible in markdown files
   cursorline = true, -- highlight the current line
   expandtab = true, -- convert tabs to spaces
-  fillchars = [[vert: ,fold: ,foldopen:,foldsep: ,foldclose:]],
+  fillchars = {
+    vert = " ",
+    fold = " ",
+    foldopen = "",
+    foldsep = " ",
+    foldclose = "",
+  },
   fileencoding = "utf-8", -- the encoding written to a file
   foldcolumn = "5", -- fold column width
   foldenable = true, -- no fold to be applied when open a file
