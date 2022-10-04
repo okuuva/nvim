@@ -46,6 +46,7 @@ material.setup({
   -- Overwrite highlights with your own
   custom_highlights = {
     VertSplit = { link = "NormalNC" },
+    TSField = { fg = colors.fg },  -- this was set to { fg = colors.text } in upstream which makes sense but I didn't like the look of it
     NvimTreeSignColumn = { link = "SignColumn" },
     NvimTreeRootFolder = { fg = colors.accent },
     TroubleText = { fg = colors.text, bg = colors.none },
