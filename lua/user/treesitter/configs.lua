@@ -9,7 +9,7 @@ require("nvim-treesitter.configs").setup({
     disable = { "help" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true },
+  indent = { enable = true, disable = { "python" } },
   matchup = { enable = true },
   context_commentstring = {
     enable = true,
