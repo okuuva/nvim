@@ -9,6 +9,8 @@ local after_source = function(session)
     message = "Loaded session " .. session.name
   end
 
+  -- open nvim-tree as unfocused
+  require("nvim-tree").toggle(false, true)
   vim.defer_fn(function()
     vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
   end, 0)
