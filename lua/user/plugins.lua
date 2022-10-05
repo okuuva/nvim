@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use("stevearc/dressing.nvim")
   use("rcarriga/nvim-notify")
   use("AckslD/messages.nvim")
+  use("rktjmp/paperplanes.nvim")
   use({
     "windwp/nvim-spectre",
     config = function()
