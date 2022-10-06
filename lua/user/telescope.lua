@@ -99,3 +99,4 @@ telescope.setup({
 pcall(telescope.load_extension("fzf"))
 pcall(telescope.load_extension("luasnip"))
 pcall(telescope.load_extension("persisted"))
+pcall(telescope.load_extension("notify"))
