@@ -119,6 +119,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use("marko-cerovac/material.nvim")
+  use("brenoprata10/nvim-highlight-colors") -- highlight hex colors
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion plugin
