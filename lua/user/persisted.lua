@@ -16,6 +16,14 @@ local after_source = function(session)
   end, 0)
 end
 
+local autosave_condition = function()
+  -- do not autosave if the alpha dashboard is the current filetype
+  if vim.bo.filetype == "alpha" then
+    return false
+  end
+  return true
+end
+
 require("persisted").setup({
   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
   command = "VimLeavePre", -- the autocommand for which the session is saved
@@ -32,6 +40,7 @@ require("persisted").setup({
   before_save = nil, -- function to run before the session is saved to disk
   after_save = nil, -- function to run after the session is saved to disk
   after_source = after_source, -- function to run after the session is sourced
+  should_autosave = autosave_condition,
   telescope = { -- options for the telescope extension
     before_source = nil, -- function to run before the session is sourced via telescope
     after_source = after_source, -- function to run after the session is sourced via telescope
