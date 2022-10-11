@@ -6,7 +6,6 @@ end
 require("user.lsp.mason")
 require("user.lsp.lua-dev")
 require("user.lsp.configs")
-require("user.lsp.nlsp-settings")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
 require("user.lsp.lsp-lines")
