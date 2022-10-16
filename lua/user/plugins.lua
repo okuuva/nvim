@@ -92,8 +92,6 @@ return packer.startup(function(use)
   })
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
-  use("raimon49/requirements.txt.vim")
-  use("towolf/vim-helm")
   use("felipec/vim-sanegx")
 
   -- Session management
@@ -148,6 +146,11 @@ return packer.startup(function(use)
     "filipdutescu/renamer.nvim",
     branch = "master",
   })
+
+  -- Non-LSP syntaxt plugins
+  use("raimon49/requirements.txt.vim")
+  use("towolf/vim-helm")
+  use("fladson/vim-kitty")
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
