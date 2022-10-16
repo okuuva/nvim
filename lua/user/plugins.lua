@@ -145,10 +145,7 @@ return packer.startup(function(use)
   use("folke/neodev.nvim") -- easier config / plugin development
   use("b0o/schemastore.nvim") -- json schemas for jsonls
   use("ray-x/lsp_signature.nvim") -- function signatures as I type
-  use({ -- fancy renamer
-    "filipdutescu/renamer.nvim",
-    branch = "master",
-  })
+  use("smjonas/inc-rename.nvim") -- really fancy renamer
 
   -- Non-LSP syntaxt plugins
   use("raimon49/requirements.txt.vim")
