@@ -141,7 +141,7 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig") -- enable LSP
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- cool virtual line diagnostics
-  use("folke/lua-dev.nvim") -- easier config / plugin development
+  use("folke/neodev.nvim") -- easier config / plugin development
   use("b0o/schemastore.nvim") -- json schemas for jsonls
   use("ray-x/lsp_signature.nvim") -- function signatures as I type
   use({ -- fancy renamer
