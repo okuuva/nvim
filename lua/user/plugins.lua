@@ -146,6 +146,7 @@ return packer.startup(function(use)
   use("b0o/schemastore.nvim") -- json schemas for jsonls
   use("ray-x/lsp_signature.nvim") -- function signatures as I type
   use("smjonas/inc-rename.nvim") -- really fancy renamer
+  use("WhoIsSethDaniel/lualine-lsp-progress")
 
   -- Non-LSP syntaxt plugins
   use("raimon49/requirements.txt.vim")
