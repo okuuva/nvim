@@ -92,7 +92,7 @@ return {
         },
         pyflakes = { enabled = false },
         pylint = {
-          enabled = true,
+          enabled = false,
           args = {"--disable=line-too-long,unused-import"},
           executable = pylint_path(),
         },
