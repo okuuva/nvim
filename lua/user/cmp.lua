@@ -8,6 +8,13 @@ if not snip_status_ok then
   return
 end
 
+local cmp_plugins_status_ok, cmp_plugins = pcall(require, "cmp-plugins")
+if cmp_plugins_status_ok then
+  cmp_plugins.setup({
+    files = { "plugins.lua" },
+  })
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -49,8 +56,8 @@ cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
-      luasnip.filetype_extend("python", {"django"})
-      luasnip.filetype_extend("vue", {"vue"})
+      luasnip.filetype_extend("python", { "django" })
+      luasnip.filetype_extend("vue", { "vue" })
     end,
   },
   mapping = {
@@ -105,6 +112,9 @@ cmp.setup({
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM LUA]",
         luasnip = "[Snippet]",
+        fish = "[fish]",
+        env = "[ENV]",
+        plugins = "[Plugins]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -115,6 +125,9 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
+    { name = "fish" },
+    { name = "env" },
+    { name = "plugins" },
     { name = "buffer" },
     { name = "path" },
   },
