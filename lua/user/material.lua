@@ -89,3 +89,5 @@ material.setup({
     ["@identifier"] = { link = "Identifier" },
   },
 })
+
+vim.cmd("colorscheme material")

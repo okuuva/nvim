@@ -5,7 +5,6 @@ pcall(require, "user.impatient")
 pcall(require, "user.alpha")
 pcall(require, "user.persisted")
 pcall(require, "user.material")
-pcall(require, "user.colorscheme")
 -- init order above this line matters
 pcall(require, "user.git")
 pcall(require, "user.cmp")
