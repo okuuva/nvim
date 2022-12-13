@@ -11,9 +11,8 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 -- Default opts with my modifications
-nvim_tree.setup({
+nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
-  create_in_closed_folder = false,
   disable_netrw = true,
   hijack_cursor = true,
   hijack_netrw = true,
@@ -21,9 +20,6 @@ nvim_tree.setup({
   ignore_buffer_on_setup = false,
   open_on_setup = true,
   open_on_setup_file = false,
-  open_on_tab = false,
-  focus_empty_on_setup = false,
-  ignore_buf_on_tab_change = {},
   sort_by = "name",
   root_dirs = {},
   prefer_startup_root = false,
@@ -53,6 +49,7 @@ nvim_tree.setup({
     },
     float = {
       enable = false,
+      quit_on_focus_loss = true,
       open_win_config = {
         relative = "editor",
         border = "rounded",
@@ -68,8 +65,8 @@ nvim_tree.setup({
     group_empty = false,
     highlight_git = false,
     full_name = false,
-    highlight_opened_files = "icon",
-    root_folder_modifier = ":~",
+    highlight_opened_files = "none",
+    root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
       enable = true,
@@ -139,6 +136,10 @@ nvim_tree.setup({
     enable = true,
     show_on_dirs = true,
     debounce_delay = 50,
+    severity = {
+      min = vim.diagnostic.severity.HINT,
+      max = vim.diagnostic.severity.ERROR,
+    },
     icons = {
       hint = "",
       info = "",
@@ -148,17 +149,21 @@ nvim_tree.setup({
   },
   filters = {
     dotfiles = false,
+    git_clean = false,
+    no_buffer = false,
     custom = {},
     exclude = {},
   },
   filesystem_watchers = {
     enable = true,
     debounce_delay = 50,
+    ignore_dirs = {},
   },
   git = {
     enable = true,
     ignore = false,
     show_on_dirs = true,
+    show_on_open_dirs = true,
     timeout = 400,
   },
   actions = {
@@ -205,6 +210,16 @@ nvim_tree.setup({
     prefix = "[FILTER]: ",
     always_show_folders = false,
   },
+  tab = {
+    sync = {
+      open = false,
+      close = false,
+      ignore = {},
+    },
+  },
+  notify = {
+    threshold = vim.log.levels.INFO,
+  },
   log = {
     enable = false,
     truncate = false,
@@ -219,4 +234,4 @@ nvim_tree.setup({
       watcher = false,
     },
   },
-})
+}) -- END_DEFAULT_OPTS

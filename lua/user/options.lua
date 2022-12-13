@@ -15,6 +15,9 @@ local settings = {
   python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
   vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
+  loaded_netrw = 1, -- disable netrw
+  loaded_netrwPlugin = 1, -- I mean it
+
 }
 
 for k, v in pairs(settings) do
