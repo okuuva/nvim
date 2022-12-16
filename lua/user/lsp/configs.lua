@@ -2,12 +2,15 @@ local servers = {
   "bashls",
   "dockerls",
   "gopls",
-  "yamlls",
   "html",
-  "pylsp",
   "jsonls",
+  "marksman",
+  "pylsp",
   "sumneko_lua",
+  "tsserver",
+  "vimls",
   "volar",
+  "yamlls",
 }
 
 local mason_lspconfig = require("mason-lspconfig")
