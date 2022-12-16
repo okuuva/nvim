@@ -47,7 +47,6 @@ local options = {
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   hlsearch = true, -- highlight all matches on previous search pattern
   ignorecase = true, -- ignore case in search patterns
-  lazyredraw = true, -- speed up scrolling a bit
   mouse = "a", -- allow the mouse to be used in neovim
   number = true, -- set numbered lines
   numberwidth = 4, -- set number column width to 2 {default 4}
