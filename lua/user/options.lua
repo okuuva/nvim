@@ -40,7 +40,7 @@ local options = {
     foldclose = "",
   },
   fileencoding = "utf-8", -- the encoding written to a file
-  foldcolumn = "5", -- fold column width
+  foldcolumn = "1", -- fold column width
   foldenable = true, -- no fold to be applied when open a file
   foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
   foldmethod = "expr", -- folding, set to "expr" for treesitter based folding
