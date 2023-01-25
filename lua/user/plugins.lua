@@ -67,17 +67,12 @@ return packer.startup(function(use)
   use("rcarriga/nvim-notify")
   use("AckslD/messages.nvim")
   use("rktjmp/paperplanes.nvim")
+  use("sitiom/nvim-numbertoggle")
   use("levouh/tint.nvim")
   use({
     "windwp/nvim-spectre",
     config = function()
       require("spectre").setup()
-    end,
-  })
-  use({
-    "sitiom/nvim-numbertoggle",
-    config = function()
-      require("numbertoggle").setup()
     end,
   })
   use({
