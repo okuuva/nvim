@@ -9,8 +9,6 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.foldmethod = "manual" -- set back to manual so that ufo works
 vim.o.foldexpr = "0" -- this shouldn't matter since foldmethod is now manual instead of expr but doesn't hurt either
-vim.o.statuscolumn =
-  '%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
 
 local fold_peek = function()
   local winid = ufo.peekFoldedLinesUnderCursor()
