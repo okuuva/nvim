@@ -12,7 +12,7 @@ local cfg = {
   -- called by ScFc(), should return a string
   -- Builtin 'statuscolumn' options
   setopt = true, -- whether to set the 'statuscolumn', providing builtin click actions
-  order = "FSNs", -- order of the fold, sign, line number and separator segments
+  order = "NSFs", -- order of the fold, sign, line number and separator segments
   ft_ignore = nil, -- lua table with filetypes for which 'statuscolumn' will be unset
   -- Click actions
   Lnum = builtin.lnum_click,
