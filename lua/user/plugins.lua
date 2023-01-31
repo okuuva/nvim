@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use("rktjmp/paperplanes.nvim")
   use("sitiom/nvim-numbertoggle")
   use("levouh/tint.nvim")
+  use("luukvbaal/statuscol.nvim") -- nvim >= 0.9
   use({
     "windwp/nvim-spectre",
     config = function()

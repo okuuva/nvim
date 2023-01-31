@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-vim.o.foldcolumn = "0" -- '0' is best when using statuscolumn
+vim.o.foldcolumn = "1" -- '1' is best when using statuscol.nvim
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
