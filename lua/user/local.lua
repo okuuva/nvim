@@ -1,0 +1,3 @@
+-- init stuff that's only needed in the local machine (i.e not included in repo) here
+-- e.g:
+-- pcall(require, "user.git-ignored-module")
