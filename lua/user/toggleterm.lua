@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 toggleterm.setup({
-  env = {GIT_EDITOR = "nvr --remote-tab-wait"},
+  env = { GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'" },
   size = 20,
   open_mapping = [[<c-t>]],
   hide_numbers = true,

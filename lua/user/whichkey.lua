@@ -148,7 +148,7 @@ local mappings = {
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit (for current file)" },
     d = { "<cmd>DiffviewFileHistory %<cr>", "Diff" },
-    g = { "<cmd>LazyGit<CR>", "Lazygit" },
+    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     f = { "<cmd>LazyGitFilterCurrentFile<CR>", "Show file commits" },
     l = { "<cmd>lua require 'gitsigns'.blame_line({full = true, ignore_whitespace = true})<cr>", "Blame" },
     L = { line_history, "Line history" },
