@@ -58,11 +58,12 @@ return packer.startup(function(use)
   use("lewis6991/impatient.nvim")
   use("lukas-reineke/indent-blankline.nvim")
   use("goolord/alpha-nvim")
-  use("folke/which-key.nvim")
+  use("folke/noice.nvim")
+  use("folke/todo-comments.nvim")
   use("folke/trouble.nvim")
+  use("folke/which-key.nvim")
   use("tversteeg/registers.nvim")
   use("ggandor/leap.nvim")
-  use("folke/todo-comments.nvim")
   use("karb94/neoscroll.nvim")
   use("rcarriga/nvim-notify")
   use("AckslD/messages.nvim")
@@ -143,7 +144,6 @@ return packer.startup(function(use)
   use("b0o/schemastore.nvim") -- json schemas for jsonls
   use("ray-x/lsp_signature.nvim") -- function signatures as I type
   use("smjonas/inc-rename.nvim") -- really fancy renamer
-  use("WhoIsSethDaniel/lualine-lsp-progress")
 
   -- Non-LSP syntaxt plugins
   use("raimon49/requirements.txt.vim")
