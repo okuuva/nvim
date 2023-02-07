@@ -173,6 +173,8 @@ local mappings = {
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
     D = { "<cmd>Trouble lsp_definitions<CR>", "Definitions list" },
     f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+    d = { "<cmd>Trouble lsp_definitions<CR>", "Definition" },
+    f = { "<cmd>lua _LSP_FORMAT()<cr>", "Format" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>lua Msg(vim.lsp.get_active_clients())<cr>", "Inspect" },

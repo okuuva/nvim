@@ -34,15 +34,32 @@ M.setup = function()
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
   })
-
 end
 
+_LSP_FORMAT = function(bufnr)
+  vim.lsp.buf.format({
+    async = true,
+    filter = function(client)
+      -- apply whatever logic you want (in this example, we'll only use null-ls)
+      return client.name == "null-ls"
+    end,
+    bufnr = bufnr,
+  })
+end
+
+-- if you want to set up formatting on save, you can use this as a callback
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
-  end
-  if client.name == "sumneko_lua" then
-    client.server_capabilities.document_formatting = false
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        _LSP_FORMAT(bufnr)
+      end,
+    })
   end
 
   if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
