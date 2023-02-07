@@ -3,7 +3,7 @@ local methods = require("null-ls.methods")
 
 local FORMATTING = methods.internal.FORMATTING
 
-return {
+return h.make_builtin({
   name = "darker",
   meta = {
     url = "https://github.com/akaihola/darker",
@@ -11,11 +11,13 @@ return {
   },
   method = FORMATTING,
   filetypes = { "python" },
-  generator = h.formatter_factory({
+  generator_opts = {
     args = {
       "--stdout",
-      "$FILENAME"
+      "--quiet",
+      "$FILENAME",
     },
     command = "darker",
-  }),
-}
+  },
+  factory = h.formatter_factory,
+})

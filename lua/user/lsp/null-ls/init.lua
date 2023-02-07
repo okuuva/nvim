@@ -22,26 +22,29 @@ null_ls.setup({
     diagnostics.fish,
 
     -- Formatting
-    -- TODO: figure out a proper way to select between darker and these two
-    -- formatting.black.with({
-    --   cwd = function(params)
-    --     return vim.fn.fnamemodify(params.bufname, ":h")
-    --   end,
-    --   condition = function(utils)
-    --     return not utils.root_has_file(".darker")
-    --   end,
-    --   extra_args = { "--fast" },
-    -- }),
-    -- formatting.isort.with({
-    --   condition = function(utils)
-    --     return not utils.root_has_file(".darker")
-    --   end,
-    -- }),
+    formatting.black.with({
+      cwd = function(params)
+        return vim.fn.fnamemodify(params.bufname, ":h")
+      end,
+      condition = function(utils)
+        return not utils.root_has_file(".darker")
+      end,
+      extra_args = { "--fast" },
+    }),
+    formatting.isort.with({
+      condition = function(utils)
+        return not utils.root_has_file(".darker")
+      end,
+    }),
     formatting.jq,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.stylua,
     formatting.shfmt,
 
-    darker,
+    darker.with({
+      condition = function(utils)
+        return utils.root_has_file(".darker")
+      end,
+    }),
   },
 })
