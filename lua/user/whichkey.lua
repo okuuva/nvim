@@ -121,7 +121,6 @@ local mappings = {
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    f = { "<cmd>Telescope buffers<cr>", "Find" },
     e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
     l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
@@ -170,9 +169,6 @@ local mappings = {
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-    D = { "<cmd>Trouble lsp_definitions<CR>", "Definitions list" },
-    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     d = { "<cmd>Trouble lsp_definitions<CR>", "Definition" },
     f = { "<cmd>lua _LSP_FORMAT()<cr>", "Format" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
@@ -200,8 +196,9 @@ local mappings = {
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    B = { "<cmd>Telescope buffers<cr>", "Open Buffers" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
-    C = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search Current Word" },
+    C = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Current Word" },
     f = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
       "Files",
@@ -209,6 +206,7 @@ local mappings = {
     h = { "<cmd>Telescope help_tags theme=ivy<cr>", "Help" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    n = { "<cmd>Telescope notify<cr>", "Notifications" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     R = { "<cmd>lua require('spectre').open()<CR>", "Search and Replace" },
@@ -228,6 +226,7 @@ local mappings = {
     c = { "<cmd>TSContextToggle<cr>", "Toggle context" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Toggle Playground" },
     t = { "<cmd>Twilight<CR>", "Toggle Twilight" },
+    h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Show highlight capture groups under cursor" },
   },
 }
 
