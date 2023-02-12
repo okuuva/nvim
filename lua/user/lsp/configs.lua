@@ -4,9 +4,9 @@ local servers = {
   "gopls",
   "html",
   "jsonls",
+  "lua_ls",
   "marksman",
   "pylsp",
-  "sumneko_lua",
   "tsserver",
   "vimls",
   "volar",
@@ -16,7 +16,7 @@ local servers = {
 local mason_lspconfig = require("mason-lspconfig")
 
 mason_lspconfig.setup({
-  -- A list of servers to automatically install if they're not already installed. Example: { "rust-analyzer@nightly", "sumneko_lua" }
+  -- A list of servers to automatically install if they're not already installed. Example: { "rust-analyzer@nightly", "lua_ls" }
   -- This setting has no relation with the `automatic_installation` setting.
   ensure_installed = servers,
 
