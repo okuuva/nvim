@@ -37,9 +37,11 @@ null_ls.setup({
       end,
     }),
     formatting.jq,
+    formatting.markdownlint,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-    formatting.stylua,
     formatting.shfmt,
+    formatting.stylua,
+    formatting.yamlfmt,
 
     darker.with({
       condition = function(utils)
