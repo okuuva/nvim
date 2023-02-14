@@ -13,7 +13,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 -- Default opts with my modifications
 nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
-  disable_netrw = true,
+  disable_netrw = false,
   hijack_cursor = true,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
@@ -27,9 +27,14 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
   remove_keymaps = false,
   select_prompts = false,
   view = {
-    adaptive_size = true,
     centralize_selection = false,
-    width = 50,
+    cursorline = true,
+    debounce_delay = 15,
+    width = {
+      min = 30,
+      max = -1,
+      padding = 1,
+    },
     hide_root_folder = true,
     side = "left",
     preserve_window_proportions = false,
@@ -63,6 +68,7 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
     highlight_git = false,
     full_name = false,
     highlight_opened_files = "none",
+    highlight_modified = "none",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
@@ -79,6 +85,7 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
     icons = {
       webdev_colors = true,
       git_placement = "before",
+      modified_placement = "after",
       padding = " ",
       symlink_arrow = " ➛ ",
       show = {
@@ -86,11 +93,13 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
         folder = true,
         folder_arrow = true,
         git = true,
+        modified = true,
       },
       glyphs = {
         default = "",
         symlink = "",
         bookmark = "",
+        modified = "●",
         folder = {
           arrow_closed = "",
           arrow_open = "",
@@ -162,6 +171,11 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
     show_on_open_dirs = true,
     timeout = 400,
   },
+  modified = {
+    enable = false,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
+  },
   actions = {
     use_system_clipboard = true,
     change_dir = {
@@ -187,6 +201,7 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
       resize_window = true,
       window_picker = {
         enable = true,
+        picker = "default",
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
           filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
@@ -200,7 +215,6 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
   },
   trash = {
     cmd = "gio trash",
-    require_confirm = true,
   },
   live_filter = {
     prefix = "[FILTER]: ",
@@ -215,6 +229,12 @@ nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
   },
   notify = {
     threshold = vim.log.levels.INFO,
+  },
+  ui = {
+    confirm = {
+      remove = true,
+      trash = true,
+    },
   },
   log = {
     enable = false,
