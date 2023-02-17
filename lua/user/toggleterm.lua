@@ -7,7 +7,7 @@ toggleterm.setup({
   env = { GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'" },
   size = 20,
   open_mapping = [[<c-t>]],
-  hide_numbers = true,
+  hide_numbers = false,
   shade_filetypes = {},
   shade_terminals = true,
   shading_factor = 2,
