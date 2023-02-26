@@ -27,9 +27,20 @@ api.nvim_create_autocmd("User", {
     end
 
     -- open nvim-tree as unfocused
-    require("nvim-tree").toggle(false, true)
+    local nvim_tree_available, nvim_tree = pcall(require, "nvim-tree.api")
+    if nvim_tree_available then
+      nvim_tree.tree.toggle({ focus = false })
+    end
     vim.defer_fn(function()
       vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
     end, 0)
+  end,
+})
+
+api.nvim_create_autocmd({ "User" }, {
+  pattern = "PersistedSavePre",
+  group = persisted_hooks,
+  callback = function()
+    pcall(vim.cmd, "NvimTreeClose")
   end,
 })
