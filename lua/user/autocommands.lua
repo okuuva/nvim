@@ -31,6 +31,12 @@ api.nvim_create_autocmd("User", {
     if nvim_tree_available then
       nvim_tree.tree.toggle({ focus = false })
     end
+    local tint_available, tint = pcall(require, "tint")
+    if tint_available then
+      tint.refresh()
+      tint.disable()
+      tint.enable()
+    end
     vim.defer_fn(function()
       vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
     end, 0)
