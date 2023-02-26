@@ -3,20 +3,7 @@ local on_autoload_no_session = function()
   require("alpha").start(true)
 end
 
-local after_source = function(session)
-  local message = "Autoloaded session"
-  if session then
-    message = "Loaded session " .. session.name
-  end
-
-  -- open nvim-tree as unfocused
-  require("nvim-tree").toggle(false, true)
-  vim.defer_fn(function()
-    vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
-  end, 0)
-end
-
-local autosave_condition = function()
+local should_autosave = function()
   -- do not autosave if the alpha dashboard is the current filetype
   if vim.bo.filetype == "alpha" then
     return false
@@ -26,23 +13,18 @@ end
 
 require("persisted").setup({
   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
-  command = "VimLeavePre", -- the autocommand for which the session is saved
   silent = false, -- silent nvim message when sourcing session file
   use_git_branch = false, -- create session files based on the branch of the git enabled repository
-  branch_separator = "_", -- string used to separate session directory name from branch name
   autosave = true, -- automatically save session files when exiting Neovim
+  should_autosave = should_autosave, -- function to determine if a session should be autosaved
   autoload = true, -- automatically load the session for the cwd on Neovim startup
   on_autoload_no_session = on_autoload_no_session, -- function to run when `autoload = true` but there is no session to load
+  follow_cwd = true, -- change session file name to match current working directory if it changes
   allowed_dirs = {
     "~/gits",
   }, -- table of dirs that the plugin will auto-save and auto-load from
   ignored_dirs = nil, -- table of dirs that are ignored when auto-saving and auto-loading
-  before_save = nil, -- function to run before the session is saved to disk
-  after_save = nil, -- function to run after the session is saved to disk
-  after_source = after_source, -- function to run after the session is sourced
-  should_autosave = autosave_condition,
   telescope = { -- options for the telescope extension
-    before_source = nil, -- function to run before the session is sourced via telescope
-    after_source = after_source, -- function to run after the session is sourced via telescope
+    reset_prompt_after_deletion = true, -- whether to reset prompt after session deleted
   },
 })

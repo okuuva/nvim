@@ -14,3 +14,22 @@ api.nvim_create_autocmd("FileType", {
   pattern = "man",
   command = [[nnoremap <buffer><silent> q :bdelete<CR>]],
 })
+
+local persisted_hooks = api.nvim_create_augroup("PersistedHooks", {})
+
+api.nvim_create_autocmd("User", {
+  group = persisted_hooks,
+  pattern = { "PersistedLoadPost", "PersistedTelescopeLoadPost" },
+  callback = function(session)
+    local message = "Autoloaded session"
+    if session.data["name"] ~= nil then
+      message = "Loaded session " .. session.data.name
+    end
+
+    -- open nvim-tree as unfocused
+    require("nvim-tree").toggle(false, true)
+    vim.defer_fn(function()
+      vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
+    end, 0)
+  end,
+})
