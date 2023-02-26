@@ -36,12 +36,9 @@ null_ls.setup({
         return not utils.root_has_file(".darker")
       end,
     }),
-    formatting.jq,
-    formatting.markdownlint,
-    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+    formatting.prettier,
     formatting.shfmt,
     formatting.stylua,
-    formatting.yamlfmt,
 
     darker.with({
       condition = function(utils)
