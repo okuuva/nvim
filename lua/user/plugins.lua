@@ -70,6 +70,7 @@ return packer.startup(function(use)
   use("levouh/tint.nvim")
   use("akinsho/toggleterm.nvim")
   use("luukvbaal/statuscol.nvim") -- nvim >= 0.9
+  use("m4xshen/smartcolumn.nvim")
   use({
     "windwp/nvim-spectre",
     config = function()
