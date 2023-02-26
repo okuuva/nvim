@@ -4,7 +4,7 @@ if vim.fn.executable("nvr") == 1 then
 end
 
 -- add Node path to PATH, setting the node_host_prog alone isn't enough for whatever reason
-local node_path = vim.env.HOME .. "/.local/share/nvm/v16.15.0/bin"
+local node_path = vim.env.HOME .. "/.local/share/nvm/v18.14.2/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
 
 local settings = {
