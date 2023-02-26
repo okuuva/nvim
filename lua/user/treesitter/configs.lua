@@ -1,5 +1,29 @@
 require("nvim-treesitter.configs").setup({
-  ensure_installed = "all", -- "all", or a list of languages
+  ensure_installed = {
+    -- usual suspects
+    "diff",
+    "dockerfile",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "go",
+    "fish",
+    "jq",
+    "json",
+    "python",
+    "rst",
+    "sql",
+    "toml",
+    "yaml",
+    -- noice dependencies
+    "vim",
+    "regex",
+    "lua",
+    "bash",
+    "markdown",
+    "markdown_inline",
+  }, -- "all", or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = { enable = true },
