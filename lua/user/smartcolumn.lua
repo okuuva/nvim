@@ -1,6 +1,12 @@
 require("smartcolumn").setup({
   colorcolumn = 80,
-  disabled_filetypes = { "help", "text", "markdown", "checkhealth" },
+  disabled_filetypes = {
+    "alpha",
+    "checkhealth",
+    "help",
+    "markdown",
+    "text",
+  },
   custom_colorcolumn = {
     python = 110,
     lua = 120,
