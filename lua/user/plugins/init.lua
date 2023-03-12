@@ -42,7 +42,7 @@ return {
   },
   {
     "s1n7ax/nvim-window-picker",
-    version = "v1.*",
+    tag = "v1.*",
   },
   {
     "mcauley-penney/tidy.nvim",
@@ -114,7 +114,11 @@ return {
   "fladson/vim-kitty",
 
   -- Telescope
-  "nvim-telescope/telescope.nvim",
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "v0.1.*",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
   {
     "nvim-telescope/telescope-fzf-native.nvim",
