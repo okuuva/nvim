@@ -1,9 +1,6 @@
-pcall(require, "user.options")
-pcall(require, "user.keymaps")
-pcall(require, "user.plugins")
-pcall(require, "user.impatient")
+require("user.config")
+require("lazy").setup("user.plugins")
 pcall(require, "user.alpha")
-pcall(require, "user.autocommands")
 pcall(require, "user.persisted")
 pcall(require, "user.material")
 -- init order above this line matters
