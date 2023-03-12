@@ -97,7 +97,7 @@ return packer.startup(function(use)
   -- Session management
   use("olimorris/persisted.nvim")
   -- plugins below aren't strictly session management but related anyway
-  use("nvim-zh/auto-save.nvim")
+  use("okuuva/auto-save.nvim")
   use("ethanholz/nvim-lastplace")
 
   -- Pretty(er) code folding
