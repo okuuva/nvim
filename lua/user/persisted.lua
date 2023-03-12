@@ -11,6 +11,10 @@ local should_autosave = function()
   return true
 end
 
+-- use same sessionoptions as the plugin author
+-- https://github.com/olimorris/persisted.nvim#what-is-saved-in-the-session
+vim.o.sessionoptions = "buffers,curdir,folds,globals,tabpages,winpos,winsize"
+
 require("persisted").setup({
   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
   silent = false, -- silent nvim message when sourcing session file
