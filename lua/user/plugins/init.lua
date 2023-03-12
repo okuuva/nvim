@@ -6,15 +6,12 @@ return {
   "stevearc/dressing.nvim", -- UI library used by some plugins
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   "numToStr/Comment.nvim", -- Easily comment stuff
-  "kyazdani42/nvim-web-devicons",
-  "kyazdani42/nvim-tree.lua",
   "nvim-neo-tree/neo-tree.nvim",
   "akinsho/bufferline.nvim",
   "famiu/bufdelete.nvim",
   "nvim-lualine/lualine.nvim",
   "ahmedkhalf/project.nvim",
   "lukas-reineke/indent-blankline.nvim",
-  "goolord/alpha-nvim",
   "folke/noice.nvim",
   "folke/todo-comments.nvim",
   "folke/trouble.nvim",
