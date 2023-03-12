@@ -1,6 +1,3 @@
--- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
 local config = {
   -- If a user has a sources list it will replace this one.
   -- Only sources listed here will be loaded.
@@ -507,4 +504,11 @@ local config = {
   },
 }
 
-require("neo-tree").setup(config)
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  init = function()
+    -- remove the deprecated commands from v1.x
+    vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+  end,
+  opts = config,
+}

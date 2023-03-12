@@ -10,7 +10,6 @@ return {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
   },
-  "nvim-neo-tree/neo-tree.nvim",
   "akinsho/bufferline.nvim",
   "famiu/bufdelete.nvim",
   "nvim-lualine/lualine.nvim",
