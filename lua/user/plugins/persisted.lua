@@ -14,9 +14,9 @@ end
 return {
   "olimorris/persisted.nvim",
   init = function()
-    -- use same sessionoptions as the plugin author
+    -- use almost the same sessionoptions as the plugin author
     -- https://github.com/olimorris/persisted.nvim#what-is-saved-in-the-session
-    vim.o.sessionoptions = "buffers,curdir,folds,globals,tabpages,winpos,winsize"
+    vim.o.sessionoptions = "buffers,curdir,folds,globals,winpos,winsize"
   end,
   opts = {
     save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
