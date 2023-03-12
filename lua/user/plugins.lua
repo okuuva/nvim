@@ -92,6 +92,7 @@ return packer.startup(function(use)
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   use("felipec/vim-sanegx")
   use("mechatroner/rainbow_csv")
+  use("dstein64/vim-startuptime")
 
   -- Session management
   use("olimorris/persisted.nvim")
