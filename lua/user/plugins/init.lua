@@ -3,12 +3,10 @@ return {
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   "MunifTanjim/nui.nvim", -- UI library used by some plugins
-  "stevearc/dressing.nvim", -- UI library used by some plugins
-  "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-  "numToStr/Comment.nvim", -- Easily comment stuff
-  "nvim-neo-tree/neo-tree.nvim",
-  "akinsho/bufferline.nvim",
-  "famiu/bufdelete.nvim",
+  {
+    "famiu/bufdelete.nvim",
+    cmd = { "Bdelete", "Bwipeout" },
+  },
   "nvim-lualine/lualine.nvim",
   "ahmedkhalf/project.nvim",
   "lukas-reineke/indent-blankline.nvim",
@@ -77,7 +75,6 @@ return {
   "jbyuki/one-small-step-for-vimkind", -- lua
 
   -- Colorschemes
-  "marko-cerovac/material.nvim",
   -- { "okuuva/material.nvim", branch = "hide-vert-split" },
   "brenoprata10/nvim-highlight-colors", -- highlight hex colors
 
