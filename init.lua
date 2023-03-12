@@ -1,6 +1,5 @@
 require("user.config")
 require("lazy").setup("user.plugins")
-pcall(require, "user.persisted")
 -- init order above this line matters
 pcall(require, "user.git")
 pcall(require, "user.cmp")
