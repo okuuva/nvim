@@ -39,7 +39,7 @@ material.setup({
     -- "neogit",
     "nvim-cmp",
     -- "nvim-navic",
-    "nvim-tree",
+    -- "nvim-tree",
     -- "sneak",
     "telescope",
     "trouble",

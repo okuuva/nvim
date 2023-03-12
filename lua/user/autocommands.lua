@@ -26,11 +26,8 @@ api.nvim_create_autocmd("User", {
       message = "Loaded session " .. session.data.name
     end
 
-    -- open nvim-tree as unfocused
-    local nvim_tree_available, nvim_tree = pcall(require, "nvim-tree.api")
-    if nvim_tree_available then
-      nvim_tree.tree.toggle({ focus = false })
-    end
+    -- open neo-tree as unfocused
+    pcall(vim.cmd, "Neotree reveal show")
     local tint_available, tint = pcall(require, "tint")
     if tint_available then
       tint.refresh()
@@ -47,6 +44,6 @@ api.nvim_create_autocmd({ "User" }, {
   pattern = "PersistedSavePre",
   group = persisted_hooks,
   callback = function()
-    pcall(vim.cmd, "NvimTreeClose")
+    pcall(vim.cmd, "Neotree close")
   end,
 })

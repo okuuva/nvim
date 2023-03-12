@@ -9,6 +9,7 @@ end
 
 local excluded_filetypes = {
   "NvimTree",
+  "neo-tree",
   "Outline",
   "TelescopePrompt",
   "alpha",
