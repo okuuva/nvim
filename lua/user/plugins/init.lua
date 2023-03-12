@@ -1,12 +1,18 @@
 return {
   "folke/lazy.nvim",
+  -- TODO: drop these four
+  -- they should be defined as dependencies
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   "MunifTanjim/nui.nvim", -- UI library used by some plugins
+  "stevearc/dressing.nvim", -- UI library used by some plugins
   {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
   },
+  "nvim-neo-tree/neo-tree.nvim",
+  "akinsho/bufferline.nvim",
+  "famiu/bufdelete.nvim",
   "nvim-lualine/lualine.nvim",
   "ahmedkhalf/project.nvim",
   "lukas-reineke/indent-blankline.nvim",
@@ -32,9 +38,7 @@ return {
   },
   {
     "windwp/nvim-spectre",
-    config = function()
-      require("spectre").setup()
-    end,
+    config = true,
   },
   {
     "s1n7ax/nvim-window-picker",
@@ -130,6 +134,8 @@ return {
   "andymass/vim-matchup",
   "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-refactor",
+  "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
+  "numToStr/Comment.nvim", -- Easily comment stuff
   "nvim-treesitter/nvim-tree-docs",
 
   -- Git
