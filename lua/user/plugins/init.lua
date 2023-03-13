@@ -12,7 +12,6 @@ return {
   },
   "ahmedkhalf/project.nvim",
   "folke/noice.nvim",
-  "folke/todo-comments.nvim",
   "karb94/neoscroll.nvim",
   "rcarriga/nvim-notify",
   "AckslD/messages.nvim",
