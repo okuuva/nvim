@@ -56,7 +56,6 @@ return {
 
   -- Session management
   -- plugins below aren't strictly session management but related anyway
-  "okuuva/auto-save.nvim",
   "ethanholz/nvim-lastplace",
 
   -- Pretty(er) code folding
