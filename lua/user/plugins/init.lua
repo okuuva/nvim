@@ -5,7 +5,6 @@ return {
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   "MunifTanjim/nui.nvim", -- UI library used by some plugins
-  "stevearc/dressing.nvim", -- UI library used by some plugins
   {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
