@@ -29,15 +29,7 @@ return {
     cmd = "StartupTime",
   },
 
-  -- Debugger
-  "mfussenegger/nvim-dap",
-  "rcarriga/nvim-dap-ui",
-  "Weissle/persistent-breakpoints.nvim",
-
-  -- Debugger language specific plugins
-  "mfussenegger/nvim-dap-python",
-  "jbyuki/one-small-step-for-vimkind", -- lua
-
+  { import = "user.plugins.debuggers" },
   { import = "user.plugins.autocomplete" },
 
   -- LSP

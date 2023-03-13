@@ -3,8 +3,5 @@ require("lazy").setup("user.plugins")
 -- init order above this line matters
 pcall(require, "user.lsp")
 pcall(require, "user.treesitter")
-pcall(require, "user.dapconfig")
-pcall(require, "user.dap-ui")
-pcall(require, "user.persistent-breakpoints")
 pcall(require, "user.iron")
 pcall(require, "user.local")
