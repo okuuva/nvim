@@ -1,9 +1,4 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-  return
-end
-
-which_key.setup({
+local setup_opts = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -67,9 +62,9 @@ which_key.setup({
     i = { "j", "k" },
     v = { "j", "k" },
   },
-})
+}
 
-local opts = {
+local register_opts = {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -78,10 +73,8 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local picker_enabled, picker = pcall(require, "window-picker")
-
 local pick_window = function()
-  local picked_window_id = picker_enabled and picker.pick_window() or vim.api.nvim_get_current_win()
+  local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
   vim.api.nvim_set_current_win(picked_window_id)
 end
 
@@ -231,4 +224,13 @@ local mappings = {
   },
 }
 
-which_key.register(mappings, opts)
+return {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup(setup_opts)
+    require("which-key").register(mappings, register_opts)
+  end,
+  dependencies = { "s1n7ax/nvim-window-picker" },
+}
