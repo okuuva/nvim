@@ -49,7 +49,10 @@ return {
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   "felipec/vim-sanegx",
   "mechatroner/rainbow_csv",
-  "dstein64/vim-startuptime",
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+  },
 
   -- Session management
   -- plugins below aren't strictly session management but related anyway
