@@ -10,12 +10,7 @@ return {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
   },
-  {
-    "famiu/bufdelete.nvim",
-    cmd = { "Bdelete", "Bwipeout" },
-  },
   "ahmedkhalf/project.nvim",
-  "lukas-reineke/indent-blankline.nvim",
   "folke/noice.nvim",
   "folke/todo-comments.nvim",
   "folke/trouble.nvim",
