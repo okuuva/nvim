@@ -69,6 +69,4 @@ return {
   { import = "user.plugins.session-management" },
   -- "pwntester/octo.nvim",
 
-  -- IDE-like stuff
-  "hkupty/iron.nvim",
 }

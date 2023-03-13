@@ -3,5 +3,4 @@ require("lazy").setup("user.plugins")
 -- init order above this line matters
 pcall(require, "user.lsp")
 pcall(require, "user.treesitter")
-pcall(require, "user.iron")
 pcall(require, "user.local")
