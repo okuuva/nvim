@@ -107,6 +107,7 @@ local mappings = {
   ["C"] = { "<cmd>close<CR>", "Close split" },
   ["e"] = { "<cmd>Neotree toggle<cr>", "File explorer" },
   ["i"] = { pick_window, "Pick a window" },
+  ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["r"] = { ":IncRename ", "Rename" },
@@ -175,15 +176,6 @@ local mappings = {
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
     t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
-  },
-
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
   s = {
