@@ -13,7 +13,6 @@ return {
   "ahmedkhalf/project.nvim",
   "folke/noice.nvim",
   "folke/todo-comments.nvim",
-  "ggandor/leap.nvim",
   "karb94/neoscroll.nvim",
   "rcarriga/nvim-notify",
   "AckslD/messages.nvim",
