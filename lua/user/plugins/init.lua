@@ -12,10 +12,6 @@ return {
     build = ":Neorg sync-parsers",
   },
   {
-    "windwp/nvim-spectre",
-    config = true,
-  },
-  {
     "mcauley-penney/tidy.nvim",
     config = true,
     event = "BufWritePre",
@@ -49,7 +45,7 @@ return {
   "fladson/vim-kitty",
 
   -- Telescope
-  { import = "user.plugins.telescope" },
+  { import = "user.plugins.searching" },
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
 
   -- Treesitter
