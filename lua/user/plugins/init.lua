@@ -50,9 +50,6 @@ return {
   -- plugins below aren't strictly session management but related anyway
   "ethanholz/nvim-lastplace",
 
-  -- Pretty(er) code folding
-  { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
-
   -- Debugger
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
