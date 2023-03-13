@@ -12,7 +12,6 @@ return {
   },
   "ahmedkhalf/project.nvim",
   "folke/noice.nvim",
-  "rcarriga/nvim-notify",
   "AckslD/messages.nvim",
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
