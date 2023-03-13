@@ -14,7 +14,6 @@ return {
   "folke/noice.nvim",
   "folke/todo-comments.nvim",
   "folke/trouble.nvim",
-  "tversteeg/registers.nvim",
   "ggandor/leap.nvim",
   "karb94/neoscroll.nvim",
   "rcarriga/nvim-notify",
