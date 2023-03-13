@@ -102,7 +102,7 @@ return {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
-    tag = "v0.1.*",
+    version = "v0.1.*",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip

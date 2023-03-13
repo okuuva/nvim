@@ -1,6 +1,6 @@
 return {
   "s1n7ax/nvim-window-picker",
-  tag = "v1.*",
+  version = "v1.*",
   opts = {
     -- when there is only one window available to pick from, use that window
     -- without prompting the user to select
