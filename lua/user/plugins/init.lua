@@ -5,7 +5,6 @@ return {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
   },
-  "ahmedkhalf/project.nvim",
   "sitiom/nvim-numbertoggle",
   "nvim-orgmode/orgmode",
   {

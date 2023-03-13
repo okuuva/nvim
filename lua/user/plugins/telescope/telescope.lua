@@ -108,5 +108,6 @@ return {
     pcall(telescope.load_extension("persisted"))
     pcall(telescope.load_extension("notify"))
     pcall(telescope.load_extension("noice"))
+    pcall(telescope.load_extension("projects"))
   end,
 }
