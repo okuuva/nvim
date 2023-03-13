@@ -14,7 +14,6 @@ return {
   "folke/noice.nvim",
   "rcarriga/nvim-notify",
   "AckslD/messages.nvim",
-  "rktjmp/paperplanes.nvim",
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
   "akinsho/toggleterm.nvim",
