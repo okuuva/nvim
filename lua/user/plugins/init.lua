@@ -1,4 +1,5 @@
 return {
+  { import = "user.plugins.colorschemes" },
   "folke/lazy.nvim",
   -- TODO: drop these four
   -- they should be defined as dependencies
@@ -108,6 +109,7 @@ return {
   "numToStr/Comment.nvim", -- Easily comment stuff
   "nvim-treesitter/nvim-tree-docs",
 
+  { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },
   -- "pwntester/octo.nvim",
