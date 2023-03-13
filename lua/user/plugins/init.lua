@@ -12,7 +12,6 @@ return {
   },
   "ahmedkhalf/project.nvim",
   "sitiom/nvim-numbertoggle",
-  "levouh/tint.nvim",
   "nvim-orgmode/orgmode",
   {
     "nvim-neorg/neorg",
