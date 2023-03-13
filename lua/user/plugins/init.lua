@@ -15,7 +15,6 @@ return {
   "AckslD/messages.nvim",
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
-  "akinsho/toggleterm.nvim",
   "m4xshen/smartcolumn.nvim",
   "nvim-orgmode/orgmode",
   {
