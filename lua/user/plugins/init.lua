@@ -77,16 +77,8 @@ return {
   "fladson/vim-kitty",
 
   -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    version = "v0.1.*",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
+  { import = "user.plugins.telescope" },
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-  },
 
   -- Treesitter
   {

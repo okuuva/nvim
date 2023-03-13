@@ -3,7 +3,6 @@ require("lazy").setup("user.plugins")
 -- init order above this line matters
 pcall(require, "user.cmp")
 pcall(require, "user.lsp")
-pcall(require, "user.telescope")
 pcall(require, "user.treesitter")
 pcall(require, "user.project")
 pcall(require, "user.dapconfig")
