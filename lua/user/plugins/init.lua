@@ -18,7 +18,7 @@ return {
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   "felipec/vim-sanegx",
-  "mechatroner/rainbow_csv",
+  {"mechatroner/rainbow_csv", ft = "csv"},
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
