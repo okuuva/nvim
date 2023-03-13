@@ -47,23 +47,7 @@ return {
   { import = "user.plugins.searching" },
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
 
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  "folke/twilight.nvim",
-  "windwp/nvim-ts-autotag",
-  "nvim-treesitter/nvim-treesitter-context",
-  "theHamsta/nvim-dap-virtual-text",
-  "andymass/vim-matchup",
-  "nvim-treesitter/playground",
-  "nvim-treesitter/nvim-treesitter-refactor",
-  "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-  "numToStr/Comment.nvim", -- Easily comment stuff
-  "nvim-treesitter/nvim-tree-docs",
-
+  { import = "user.plugins.treesitter" },
   { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },

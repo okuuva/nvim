@@ -1,7 +1,7 @@
 return {
   "rcarriga/nvim-dap-ui",
   version = "v3.*",
-  dependencies = { "dap" },
+  name = "dap-ui",
   opts = {
     icons = { expanded = "▾", collapsed = "▸" },
     mappings = {
