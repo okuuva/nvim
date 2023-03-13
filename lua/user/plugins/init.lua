@@ -38,10 +38,6 @@ return {
     cmd = "StartupTime",
   },
 
-  -- Session management
-  -- plugins below aren't strictly session management but related anyway
-  "ethanholz/nvim-lastplace",
-
   -- Debugger
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
