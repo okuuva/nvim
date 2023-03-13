@@ -109,6 +109,7 @@ return {
   "nvim-treesitter/nvim-tree-docs",
 
   { import = "user.plugins.git" },
+  { import = "user.plugins.session-management" },
   -- "pwntester/octo.nvim",
 
   -- IDE-like stuff
