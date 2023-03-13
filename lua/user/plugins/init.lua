@@ -52,10 +52,6 @@ return {
   "ethanholz/nvim-lastplace",
 
   -- Pretty(er) code folding
-  {
-    "anuvyklack/fold-preview.nvim",
-    dependencies = "anuvyklack/keymap-amend.nvim", -- only for preview
-  },
   { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 
   -- Debugger
