@@ -108,12 +108,8 @@ return {
   "numToStr/Comment.nvim", -- Easily comment stuff
   "nvim-treesitter/nvim-tree-docs",
 
-  -- Git
-  "lewis6991/gitsigns.nvim",
-  "kdheepak/lazygit.nvim",
-  "sindrets/diffview.nvim",
-  "ruifm/gitlinker.nvim",
-  "pwntester/octo.nvim",
+  { import = "user.plugins.git" },
+  -- "pwntester/octo.nvim",
 
   -- IDE-like stuff
   "hkupty/iron.nvim",
