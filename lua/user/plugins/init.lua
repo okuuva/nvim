@@ -11,7 +11,6 @@ return {
     cmd = { "Bdelete", "Bwipeout" },
   },
   "ahmedkhalf/project.nvim",
-  "folke/noice.nvim",
   "AckslD/messages.nvim",
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
