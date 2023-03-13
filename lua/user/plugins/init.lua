@@ -22,7 +22,6 @@ return {
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
   "akinsho/toggleterm.nvim",
-  "luukvbaal/statuscol.nvim", -- nvim >= 0.9
   "m4xshen/smartcolumn.nvim",
   "nvim-orgmode/orgmode",
   {
