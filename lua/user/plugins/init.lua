@@ -36,9 +36,8 @@ return {
   },
   {
     "mcauley-penney/tidy.nvim",
-    config = function()
-      require("tidy").setup()
-    end,
+    config = true,
+    event = "BufWritePre",
   },
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
