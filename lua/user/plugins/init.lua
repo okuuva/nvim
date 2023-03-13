@@ -11,7 +11,6 @@ return {
     cmd = { "Bdelete", "Bwipeout" },
   },
   "ahmedkhalf/project.nvim",
-  "AckslD/messages.nvim",
   "sitiom/nvim-numbertoggle",
   "levouh/tint.nvim",
   "nvim-orgmode/orgmode",
