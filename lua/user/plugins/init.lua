@@ -36,10 +36,6 @@ return {
     config = true,
   },
   {
-    "s1n7ax/nvim-window-picker",
-    tag = "v1.*",
-  },
-  {
     "mcauley-penney/tidy.nvim",
     config = function()
       require("tidy").setup()
