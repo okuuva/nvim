@@ -54,10 +54,6 @@ return {
   "mfussenegger/nvim-dap-python",
   "jbyuki/one-small-step-for-vimkind", -- lua
 
-  -- Colorschemes
-  -- { "okuuva/material.nvim", branch = "hide-vert-split" },
-  "brenoprata10/nvim-highlight-colors", -- highlight hex colors
-
   -- cmp plugins
   "hrsh7th/nvim-cmp", -- The completion plugin
   "KadoBOT/cmp-plugins", -- plugin to autocomplete plugins. compleception?
