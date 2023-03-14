@@ -21,8 +21,8 @@ return {
     },
     { "hrsh7th/cmp-nvim-lua", ft = "lua" },
     { "mtoohey31/cmp-fish", ft = "fish" },
-    "luasnip",
-    "autopairs",
+    "LuaSnip",
+    "nvim-autopairs",
   },
   config = function()
     local cmp = require("cmp")

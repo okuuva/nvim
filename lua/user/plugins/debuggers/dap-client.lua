@@ -1,9 +1,8 @@
 return {
   "mfussenegger/nvim-dap",
-  name = "dap",
   dependencies = {
-    "dap-ui",
-    "dap-virtual-text",
-    "persistent-breakpoints",
+    "nvim-dap-ui",
+    "nvim-dap-virtual-text",
+    "persistent-breakpoints.nvim",
   }
 }

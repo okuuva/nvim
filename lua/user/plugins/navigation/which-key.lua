@@ -224,5 +224,5 @@ return {
     require("which-key").setup(setup_opts)
     require("which-key").register(mappings, register_opts)
   end,
-  dependencies = { "s1n7ax/nvim-window-picker" },
+  dependencies = { "nvim-window-picker" },
 }

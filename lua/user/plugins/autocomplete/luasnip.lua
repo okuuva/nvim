@@ -1,6 +1,5 @@
 return {
   "L3MON4D3/LuaSnip",
-  name = "luasnip",
   -- follow latest release.
   version = "1.*",
   -- install jsregexp (optional!).
