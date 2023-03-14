@@ -34,7 +34,7 @@ local config = {
   log_level = "info", -- "trace", "debug", "info", "warn", "error", "fatal"
   log_to_file = false, -- true, false, "/path/to/file.log", use :NeoTreeLogs to show the file
   open_files_in_last_window = true, -- false = open files in top left window
-  open_files_do_not_replace_filetypes = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes
+  open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes
   popup_border_style = "NC", -- "double", "none", "rounded", "shadow", "single" or "solid"
   resize_timer_interval = 500, -- in ms, needed for containers to redraw right aligned and faded content
   -- set to -1 to disable the resize timer entirely
@@ -449,7 +449,7 @@ local config = {
     --end,
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     search_limit = 50, -- max number of search results when using filters
-    follow_current_file = false, -- This will find and focus the file in the active buffer every time
+    follow_current_file = true, -- This will find and focus the file in the active buffer every time
     -- the current file is changed while the tree is open.
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
     -- in whatever position is specified in window.position
