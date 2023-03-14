@@ -1,23 +1,11 @@
 return {
   { import = "user.plugins.colorschemes" },
   "folke/lazy.nvim",
-  {
-    "famiu/bufdelete.nvim",
-    cmd = { "Bdelete", "Bwipeout" },
-  },
   "nvim-orgmode/orgmode",
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
   },
-  {
-    "mcauley-penney/tidy.nvim",
-    config = true,
-    event = "BufWritePre",
-  },
-
-  -- Legacy plugins (replace with equivalent Lua plugins whenever available)
-  "felipec/vim-sanegx",
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
