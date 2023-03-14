@@ -1,16 +1,8 @@
 return {
-  { import = "user.plugins.colorschemes" },
   "folke/lazy.nvim",
-  "nvim-orgmode/orgmode",
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-  },
-  {
-    "dstein64/vim-startuptime",
-    cmd = "StartupTime",
-  },
-
+  { import = "user.plugins.colorschemes" },
+  { import = "user.plugins.ide" },
+  { import = "user.plugins.productivity" },
   { import = "user.plugins.debuggers" },
   { import = "user.plugins.autocomplete" },
   { import = "user.plugins.searching" },
@@ -19,6 +11,7 @@ return {
   { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },
+  { import = "user.plugins.helpers" },
 
   -- LSP
   "williamboman/mason.nvim",
@@ -32,6 +25,4 @@ return {
   "smjonas/inc-rename.nvim", -- really fancy renamer
 
   { import = "user.plugins.syntax-highlighting" },
-  -- "pwntester/octo.nvim",
-
 }
