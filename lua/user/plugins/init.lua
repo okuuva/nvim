@@ -26,6 +26,12 @@ return {
 
   { import = "user.plugins.debuggers" },
   { import = "user.plugins.autocomplete" },
+  { import = "user.plugins.searching" },
+  { import = "user.plugins.treesitter" },
+  { import = "user.plugins.navigation" },
+  { import = "user.plugins.ui" },
+  { import = "user.plugins.git" },
+  { import = "user.plugins.session-management" },
 
   -- LSP
   "williamboman/mason.nvim",
@@ -43,15 +49,6 @@ return {
   "towolf/vim-helm",
   "fladson/vim-kitty",
 
-  -- Telescope
-  { import = "user.plugins.searching" },
-  "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
-
-  { import = "user.plugins.treesitter" },
-  { import = "user.plugins.navigation" },
-  { import = "user.plugins.ui" },
-  { import = "user.plugins.git" },
-  { import = "user.plugins.session-management" },
   -- "pwntester/octo.nvim",
 
 }

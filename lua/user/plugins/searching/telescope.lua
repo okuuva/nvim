@@ -8,6 +8,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
+    "benfowler/telescope-luasnip.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -103,11 +104,11 @@ return {
       },
     })
 
-    pcall(telescope.load_extension("fzf"))
-    pcall(telescope.load_extension("luasnip"))
-    pcall(telescope.load_extension("persisted"))
-    pcall(telescope.load_extension("notify"))
-    pcall(telescope.load_extension("noice"))
-    pcall(telescope.load_extension("projects"))
+    telescope.load_extension("fzf")
+    telescope.load_extension("luasnip")
+    telescope.load_extension("persisted")
+    telescope.load_extension("notify")
+    telescope.load_extension("noice")
+    telescope.load_extension("projects")
   end,
 }

@@ -7,6 +7,7 @@ return {
   -- build = "make install_jsregexp"
   dependencies = {
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+    "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
   },
   config = function()
     require("luasnip.loaders.from_vscode").lazy_load()
