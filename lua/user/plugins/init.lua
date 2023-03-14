@@ -11,7 +11,7 @@ return {
   { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },
-  { import = "user.plugins.helpers" },
+  { import = "user.plugins.utils" },
 
   -- LSP
   "williamboman/mason.nvim",
@@ -20,7 +20,6 @@ return {
   "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim", -- cool virtual line diagnostics
   "folke/neodev.nvim", -- easier config / plugin development
-  "b0o/schemastore.nvim", -- json schemas for jsonls
   "ray-x/lsp_signature.nvim", -- function signatures as I type
   "smjonas/inc-rename.nvim", -- really fancy renamer
 
