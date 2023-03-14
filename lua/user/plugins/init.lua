@@ -48,6 +48,7 @@ return {
   "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
 
   { import = "user.plugins.treesitter" },
+  { import = "user.plugins.navigation" },
   { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },
