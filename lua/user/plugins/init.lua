@@ -18,7 +18,6 @@ return {
 
   -- Legacy plugins (replace with equivalent Lua plugins whenever available)
   "felipec/vim-sanegx",
-  {"mechatroner/rainbow_csv", ft = "csv"},
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
@@ -44,11 +43,7 @@ return {
   "ray-x/lsp_signature.nvim", -- function signatures as I type
   "smjonas/inc-rename.nvim", -- really fancy renamer
 
-  -- Non-LSP syntaxt plugins
-  "raimon49/requirements.txt.vim",
-  "towolf/vim-helm",
-  "fladson/vim-kitty",
-
+  { import = "user.plugins.syntax-highlighting" },
   -- "pwntester/octo.nvim",
 
 }
