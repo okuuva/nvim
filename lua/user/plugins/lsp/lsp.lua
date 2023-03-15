@@ -7,7 +7,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "b0o/schemastore.nvim", -- json schemas for jsonls
-      -- { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+      "neoconf.nvim",
       "neodev.nvim",
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",

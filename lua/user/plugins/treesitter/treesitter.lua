@@ -18,12 +18,12 @@ function M.config()
       -- usual suspects
       "diff",
       "dockerfile",
+      "fish",
       "git_rebase",
       "gitattributes",
       "gitcommit",
       "gitignore",
       "go",
-      "fish",
       "jq",
       "json",
       "python",
@@ -32,12 +32,14 @@ function M.config()
       "toml",
       "yaml",
       -- noice dependencies
-      "vim",
-      "regex",
-      "lua",
       "bash",
+      "lua",
       "markdown",
       "markdown_inline",
+      "regex",
+      "vim",
+      -- neoconf dependency
+      "jsonc",
     }, -- "all", or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
