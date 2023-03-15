@@ -1,9 +1,8 @@
-local pylint_path = function ()
-  local path = vim.env.VIRTUAL_ENV .. "/bin/pylint"
-  if vim.fn.executable(path) then
-    return path
-  end
-end
+-- local pylint_path = function ()
+--   local path = vim.env.VIRTUAL_ENV .. "/bin/pylint"
+--   if vim.fn.executable(path) then
+--     return path
+--   end
 
 -- Check https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md for instructions
 return {
@@ -94,7 +93,7 @@ return {
         pylint = {
           enabled = false,
           args = {"--disable=line-too-long,unused-import"},
-          executable = pylint_path(),
+          -- executable = pylint_path(),
         },
         rope_completion = {
           enabled = false,
