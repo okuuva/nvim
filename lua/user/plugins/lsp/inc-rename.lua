@@ -1,7 +1,6 @@
 return {
   "smjonas/inc-rename.nvim",
   cmd = "IncRename",
-  dependencies = { "dressing.nvim" },
   opts = {
     cmd_name = "IncRename", -- the name of the command
     hl_group = "Substitute", -- the highlight group used for highlighting the identifier's new name

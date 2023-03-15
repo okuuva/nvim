@@ -1,5 +1,8 @@
 return {
-  "b0o/schemastore.nvim", -- json schemas for jsonls
+  {
+    "b0o/schemastore.nvim", -- json schemas for jsonls
+    lazy = true,
+  },
   {
     "famiu/bufdelete.nvim",
     cmd = { "Bdelete", "Bwipeout" },
@@ -9,5 +12,20 @@ return {
     config = true,
     event = "BufWritePre",
   },
-  "felipec/vim-sanegx",
+  {
+    "felipec/vim-sanegx",
+    event = "VeryLazy",
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = true,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
+  {
+    "MunifTanjim/nui.nvim",
+    lazy = true,
+  }
 }

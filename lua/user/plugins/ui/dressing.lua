@@ -1,6 +1,6 @@
 return {
   "stevearc/dressing.nvim", -- UI library used by some plugins
-  event = "VeryLazy",
+  lazy = true,
   options = {
     input = {
       -- Set to false to disable the vim.ui.input implementation
