@@ -18,6 +18,7 @@ return {
         end,
       },
       { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true }, -- virtual line diagnostics
+      { import = "user.plugins.lsp.null-ls" },
     },
     ---@class PluginLspOpts
     opts = {
