@@ -5,10 +5,16 @@ return {
   -- install jsregexp (optional!).
   -- build = "make install_jsregexp"
   dependencies = {
-    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+    {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
     "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
   },
-  config = function()
-    require("luasnip.loaders.from_vscode").lazy_load()
-  end,
+  opts = {
+    history = true,
+    delete_check_events = "TextChanged",
+  },
 }
