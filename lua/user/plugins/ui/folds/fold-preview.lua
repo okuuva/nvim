@@ -1,5 +1,6 @@
 return {
   "anuvyklack/fold-preview.nvim",
+  event = "VeryLazy",
   dependencies = { "anuvyklack/keymap-amend.nvim" },
   opts = {
     auto = false, -- Automatically open preview if cursor enters and stays in folded line for specified number of milliseconds (400 is decent value).
