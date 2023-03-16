@@ -12,11 +12,15 @@ return {
       -- Default segments (fold -> sign -> line number + separator)
       segments = {
         {
+          sign = { name = { "Diagnostic" }, maxwidth = 1, auto = true },
+        },
+        {
           text = { builtin.lnumfunc },
           condition = { true, builtin.not_empty },
-          click = "v:lua.ScLa",
         },
-        { text = { "%s" }, click = "v:lua.ScSa" },
+        {
+          sign = { name = { ".*" }, maxwidth = 1, colwidth = 1, auto = true },
+        },
         { text = { builtin.foldfunc, " " } },
       },
       clickhandlers = {
