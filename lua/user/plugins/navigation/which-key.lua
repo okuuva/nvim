@@ -78,34 +78,10 @@ local pick_window = function()
   vim.api.nvim_set_current_win(picked_window_id)
 end
 
--- FIXME: does not work in visual mode (because none of the bindings work...)
-local line_history = function()
-  local mode = vim.api.nvim_get_mode().mode
-  local current_line = vim.api.nvim_win_get_cursor(0)[1]
-  local range = nil
-
-  if mode == "n" then
-    range = current_line
-  elseif mode == "v" then
-    local v_line = unpack(vim.fn.getpos("v"), 2)
-    if v_line < current_line then
-      range = v_line .. "," .. current_line
-    end
-  else
-    return
-  end
-  vim.cmd(range .. "DiffviewFileHistory<cr>")
-end
-
-local line_history = function()
-  vim.cmd(vim.api.nvim_win_get_cursor(0)[1] .. "DiffviewFileHistory<cr>")
-end
-
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["C"] = { "<cmd>close<CR>", "Close split" },
-  ["e"] = { "<cmd>Neotree toggle<cr>", "File explorer" },
   ["i"] = { pick_window, "Pick a window" },
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
@@ -140,11 +116,9 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit (for current file)" },
-    d = { "<cmd>DiffviewFileHistory %<cr>", "Diff" },
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     f = { "<cmd>LazyGitFilterCurrentFile<CR>", "Show file commits" },
     l = { "<cmd>lua require 'gitsigns'.blame_line({full = true, ignore_whitespace = true})<cr>", "Blame" },
-    L = { line_history, "Line history" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     P = { "<cmd>LazyGitFilter<CR>", "Show project commits" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
@@ -182,8 +156,7 @@ local mappings = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     B = { "<cmd>Telescope buffers<cr>", "Open Buffers" },
-    c = { "<cmd>Telescope commands<cr>", "Commands" },
-    C = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Current Word" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
     f = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
       "Files",
@@ -193,8 +166,7 @@ local mappings = {
     m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     n = { "<cmd>Telescope notify<cr>", "Notifications" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-    R = { "<cmd>lua require('spectre').open()<CR>", "Search and Replace" },
+    R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     s = { "<cmd>Telescope luasnip<cr>", "Snippets" },
     S = { "<cmd>Telescope persisted theme=dropdown<cr>", "Sessions" },
     t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
@@ -211,7 +183,6 @@ local mappings = {
     c = { "<cmd>TSContextToggle<cr>", "Toggle context" },
     l = { "<cmd>TSInstallInfo<cr>", "List installed parsers" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Toggle Playground" },
-    t = { "<cmd>Twilight<CR>", "Toggle Twilight" },
     h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Show highlight capture groups under cursor" },
   },
 }

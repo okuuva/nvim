@@ -1,5 +1,6 @@
 return {
   "rktjmp/paperplanes.nvim",
+  cmd = "PP",
   opts = {
     register = "+",
     provider = "0x0.st",

@@ -1,5 +1,6 @@
 return {
   "m4xshen/smartcolumn.nvim",
+  event = "BufEnter",
   opts = {
     colorcolumn = "110",
     disabled_filetypes = {

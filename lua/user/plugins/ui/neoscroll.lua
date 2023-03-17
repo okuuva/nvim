@@ -1,5 +1,9 @@
 return {
   "karb94/neoscroll.nvim",
+  keys = {
+    -- stylua: ignore
+    "zt", "zz", "zb", "<PageUp>", "<PageDown>",
+  },
   config = function()
     require("neoscroll").setup({
       -- All these keys will be mapped to their corresponding default scrolling animation

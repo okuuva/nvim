@@ -1,6 +1,8 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+  cmd = "ToggleTerm",
+  event = "VeryLazy",
   init = function()
     function _G.set_terminal_keymaps()
       local opts = { noremap = true }

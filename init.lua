@@ -1,2 +1,2 @@
 require("user.config")
-require("lazy").setup("user.plugins")
+require("lazy").setup("user.plugins", { defaults = { lazy = true } })

@@ -1,3 +1,4 @@
+ -- stylua: ignore
 local config = {
   -- If a user has a sources list it will replace this one.
   -- Only sources listed here will be loaded.
@@ -506,12 +507,15 @@ local config = {
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  cmd = "Neotree",
+  keys = {
+    --stylua: ignore
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File explorer" },
+  },
   init = function()
     -- remove the deprecated commands from v1.x
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
   end,
   branch = "v2.x",
-  dependencies = {
-  },
   opts = config,
 }

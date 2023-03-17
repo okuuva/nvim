@@ -1,5 +1,10 @@
 return {
   "ggandor/leap.nvim",
+    keys = {
+      { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
+      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+      { "s", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+    },
   dependencies = { "tpope/vim-repeat" },
   config = function()
     require("leap").setup({
@@ -15,7 +20,6 @@ return {
       -- commented these out because I don't understand how this is supposed to work
       -- safe_labels = { 's', 'f', 'n', 'u', 't', . . . },
       -- labels = { 's', 'f', 'n', 'j', 'k', . . . },
-      substitute_chars = {},
       special_keys = {
         repeat_search = "<enter>",
         next_phase_one_target = "<enter>",
@@ -26,8 +30,6 @@ return {
         multi_accept = "<enter>",
         multi_revert = "<backspace>",
       },
-      max_aot_targets = nil,
-      highlight_unlabeled = false,
     })
 
     require("leap").set_default_keymaps()

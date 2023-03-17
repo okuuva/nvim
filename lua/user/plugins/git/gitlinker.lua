@@ -1,5 +1,9 @@
 return {
   "ruifm/gitlinker.nvim",
+  keys = {
+    -- stylua: ignore
+    { "<leader>gy", mode = { "n", "v" }, desc = "Copy permalink to git web frontend" },
+  },
   config = function()
     require("gitlinker").setup({
       opts = {

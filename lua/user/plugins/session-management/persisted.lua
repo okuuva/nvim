@@ -13,6 +13,7 @@ end
 
 return {
   "olimorris/persisted.nvim",
+  lazy = false,
   init = function()
     -- use almost the same sessionoptions as the plugin author
     -- https://github.com/olimorris/persisted.nvim#what-is-saved-in-the-session
