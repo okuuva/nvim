@@ -1,5 +1,9 @@
 return {
   {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+  },
+  {
     "b0o/schemastore.nvim", -- json schemas for jsonls
     lazy = true,
   },

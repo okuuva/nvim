@@ -1,6 +1,16 @@
 return {
   "rcarriga/nvim-dap-ui",
   version = "v3.*",
+  dependencies = {
+    "mfussenegger/nvim-dap",
+    "nvim-dap-virtual-text",
+    "persistent-breakpoints.nvim",
+    { import = "user.plugins.debuggers.adapters" },
+  },
+  keys = {
+    --stylua: ignore
+    { "<leader>db", function() require("dapui").toggle() end, desc = "Debugger" },
+  },
   opts = {
     icons = { expanded = "▾", collapsed = "▸" },
     mappings = {
@@ -52,4 +62,18 @@ return {
       max_type_length = nil, -- Can be integer or nil.
     },
   },
+  config = function (_, opts)
+    local dap, dapui = require("dap"), require("dapui")
+    dapui.setup(opts)
+
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close()
+    end
+  end
 }
