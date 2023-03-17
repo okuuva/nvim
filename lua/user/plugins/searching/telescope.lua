@@ -1,6 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   version = "v0.1.*",
+  cmd = "Telescope",
   dependencies = {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
