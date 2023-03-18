@@ -40,7 +40,14 @@ return {
     })
 
     local Terminal = require("toggleterm.terminal").Terminal
-    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "tab" })
+    local lazygit = Terminal:new({
+      cmd = "lazygit",
+      hidden = true,
+      direction = "tab",
+      on_close = function ()
+        require("neo-tree.events").fire_event("git_event")
+      end,
+    })
 
     function _LAZYGIT_TOGGLE()
       lazygit:toggle()
