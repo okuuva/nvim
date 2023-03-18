@@ -156,13 +156,7 @@ local mappings = {
     S = { "<cmd>vsplit<cr>", "Vertical split" },
   },
 
-  t = {
-    name = "TreeSitter",
-    c = { "<cmd>TSContextToggle<cr>", "Toggle context" },
-    l = { "<cmd>TSInstallInfo<cr>", "List installed parsers" },
-    p = { "<cmd>TSPlaygroundToggle<cr>", "Toggle Playground" },
-    h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Show highlight capture groups under cursor" },
-  },
+  t = { name = "TreeSitter" },
 }
 
 return {
