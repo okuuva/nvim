@@ -22,6 +22,7 @@ return {
     },
     { "hrsh7th/cmp-nvim-lua", ft = "lua" },
     { "mtoohey31/cmp-fish", ft = "fish" },
+    "chrisgrieser/cmp-nerdfont",
     "onsails/lspkind.nvim", -- fancy icons
     "nvim-autopairs",
   },
@@ -88,6 +89,7 @@ return {
         { name = "plugins" },
         { name = "buffer" },
         { name = "path" },
+        { name = "nerdfont" },
       },
       experimental = {
         ghost_text = {

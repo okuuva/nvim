@@ -10,6 +10,7 @@
   "cmp-env": { "branch": "main", "commit": "d27a9579e7846b0d30f247a3d6bc730819e702bb" },
   "cmp-fish": { "branch": "main", "commit": "8ae7bfb1b3251d433c4adf4e64396ef929fbd91f" },
   "cmp-luasnip-choice": { "branch": "master", "commit": "97a367851bc17984b56164b5427a53919aed873a" },
+  "cmp-nerdfont": { "branch": "main", "commit": "989baa81b3cb82890f232ae0b58dbea13ebf8f23" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f3491638d123cfd2c8048aefaf66d246ff250ca6" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
