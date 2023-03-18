@@ -1,6 +1,14 @@
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
+  keys = {
+    { "<leader>bj", "<cmd>BufferLinePick<cr>", desc = "Jump" },
+    { "<leader>be", "<cmd>BufferLinePickClose<cr>", desc = "Pick which buffer to close" },
+    { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", desc = "Close all to the left" },
+    { "<leader>bl", "<cmd>BufferLineCloseRight<cr>", desc = "Close all to the right" },
+    { "<leader>bD", "<cmd>BufferLineSortByDirectory<cr>", desc = "Sort by directory" },
+    { "<leader>bL", "<cmd>BufferLineSortByExtension<cr>", desc = "Sort by language" },
+  },
   opts = {
     options = {
       mode = "buffers", -- set to "tabs" to only show tabpages instead

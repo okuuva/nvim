@@ -87,15 +87,8 @@ local mappings = {
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["w"] = { "<cmd>w<cr>", "Write" },
-  b = {
-    name = "Buffers",
-    j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
-    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-    l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
-    D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
-    L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
-  },
+
+  b = { name = "Buffers" },
 
   d = {
     name = "Diagnostics",
