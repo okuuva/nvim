@@ -1,6 +1,20 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  -- stylua: ignore
+  keys = {
+    -- regulars
+    { "<leader>gl", function() require("gitsigns").blame_line({ full = true, ignore_whitespace = true }) end, desc = "Blame" },
+    { "<leader>gr", function() require("gitsigns").reset_hunk() end, desc = "Reset Hunk" },
+    { "<leader>gR", function() require("gitsigns").reset_buffer() end, desc = "Reset Buffer" },
+    -- toggles
+    { "<leader>gtb", function() require("gitsigns").toggle_current_line_blame() end, desc = "Current line blame" },
+    { "<leader>gtd", function() require("gitsigns").toggle_deleted() end, desc = "Deleted lines" },
+    { "<leader>gtw", function() require("gitsigns").toggle_word_diff() end, desc = "Word diff" },
+    { "<leader>gtl", function() require("gitsigns").toggle_linehl() end, desc = "Line highlight" },
+    { "<leader>gtn", function() require("gitsigns").toggle_numhl() end, desc = "Number highlight" },
+    { "<leader>gts", function() require("gitsigns").toggle_signs() end, desc = "Sign column" },
+  },
   opts = {
     signs = {
       add = { text = "▎" },

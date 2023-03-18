@@ -86,28 +86,7 @@ local mappings = {
 
   d = { name = "Diagnostics" },
 
-  g = {
-    name = "Git",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit (for current file)" },
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    f = { "<cmd>LazyGitFilterCurrentFile<CR>", "Show file commits" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line({full = true, ignore_whitespace = true})<cr>", "Blame" },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    P = { "<cmd>LazyGitFilter<CR>", "Show project commits" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    t = {
-      name = "Toggle",
-      b = { "<cmd>lua require 'gitsigns'.toggle_current_line_blame()<cr>", "Current line blame" },
-      d = { "<cmd>lua require 'gitsigns'.toggle_deleted()<cr>", "Deleted lines" },
-      w = { "<cmd>lua require 'gitsigns'.toggle_word_diff()<cr>", "Word diff" },
-      l = { "<cmd>lua require 'gitsigns'.toggle_linehl()<cr>", "Line highlight" },
-      n = { "<cmd>lua require 'gitsigns'.toggle_numhl()<cr>", "Number highlight" },
-      s = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Sign column" },
-    },
-  },
+  g = { name = "Git", t = { name = "Toggle" } },
 
   l = {
     name = "LSP",

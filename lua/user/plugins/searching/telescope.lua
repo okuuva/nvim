@@ -10,6 +10,7 @@ return {
     "benfowler/telescope-luasnip.nvim",
   },
   keys = {
+    -- search
     { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
     { "<leader>sB", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
@@ -23,6 +24,11 @@ return {
     { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
     { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
+    -- git
+    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
+    { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit (for current file)" },
+    { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
   },
   config = function()
     local telescope = require("telescope")
