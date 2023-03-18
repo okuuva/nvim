@@ -151,25 +151,7 @@ local mappings = {
     t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
   },
 
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    B = { "<cmd>Telescope buffers<cr>", "Open Buffers" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
-    f = {
-      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden = true, no_ignore = true})<cr>",
-      "Files",
-    },
-    h = { "<cmd>Telescope help_tags theme=ivy<cr>", "Help" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    n = { "<cmd>Telescope notify<cr>", "Notifications" },
-    p = { "<cmd>Telescope projects<cr>", "Projects" },
-    R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-    s = { "<cmd>Telescope luasnip<cr>", "Snippets" },
-    S = { "<cmd>Telescope persisted theme=dropdown<cr>", "Sessions" },
-    t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Text" },
-  },
+  s = { name = "Search" },
 
   S = {
     name = "Split",

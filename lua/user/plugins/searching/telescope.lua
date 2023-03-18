@@ -9,6 +9,29 @@ return {
     },
     "benfowler/telescope-luasnip.nvim",
   },
+  keys = {
+    { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+    { "<leader>sB", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
+    { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
+    {
+      "<leader>sf",
+      function()
+        require("telescope.builtin").find_files(
+          require("telescope.themes").get_dropdown({ hidden = true, no_ignore = true })
+        )
+      end,
+      desc = "Files",
+    },
+    { "<leader>sh", "<cmd>Telescope help_tags theme=ivy<cr>", desc = "Help" },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+    { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+    { "<leader>sn", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+    { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
+    { "<leader>sR", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+    { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
+    { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
+    { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
+  },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
