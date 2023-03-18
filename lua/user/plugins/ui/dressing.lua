@@ -32,11 +32,12 @@ return {
       max_width = { 140, 0.9 },
       min_width = { 20, 0.2 },
 
+      buf_options = {},
       win_options = {
         -- Window transparency (0-100)
         winblend = 0,
-        -- Change default highlight groups (see :help winhl)
-        winhighlight = "",
+        -- Disable line wrapping
+        wrap = false,
       },
 
       -- Set to `false` to disable
@@ -109,7 +110,7 @@ return {
           filetype = "DressingSelect",
         },
         win_options = {
-          winblend = 10,
+          winblend = 0,
         },
         max_width = 80,
         max_height = 40,
@@ -125,11 +126,10 @@ return {
         -- 'editor' and 'win' will default to being centered
         relative = "editor",
 
+        buf_options = {},
         win_options = {
           -- Window transparency (0-100)
-          winblend = 10,
-          -- Change default highlight groups (see :help winhl)
-          winhighlight = "",
+          winblend = 0,
         },
 
         -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
