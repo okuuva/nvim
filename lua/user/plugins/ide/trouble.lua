@@ -1,6 +1,15 @@
 return {
   "folke/trouble.nvim",
   cmd = { "TroubleToggle", "Trouble" },
+  keys = {
+    { "<leader>dd", "<cmd>Trouble document_diagnostics<CR>", desc = "Document diagnostics" },
+    { "<leader>dD", "<cmd>Trouble workspace_diagnostics<CR>", desc = "Workspace diagnostics" },
+    { "<leader>dj", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
+    { "<leader>dk", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
+    { "<leader>dl", vim.diagnostic.open_float, desc = "Line diagnostics" },
+    { "<leader>dq", vim.diagnostic.setloclist, desc = "Quickfix" },
+    { "<leader>dT", "<cmd>TroubleToggle<CR>", desc = "Toggle window" },
+  },
   opts = {
     position = "bottom", -- position of the list can be: bottom, top, left, right
     height = 10, -- height of the trouble list when position is top or bottom

@@ -17,7 +17,14 @@ return {
           return require("user.util").has("nvim-cmp")
         end,
       },
-      { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true }, -- virtual line diagnostics
+      {
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        -- stylua: ignore
+        keys = {
+          { "<leader>dv", function() require("lsp_lines").toggle() end, desc = "Toggle virtual line diagnostics", },
+        },
+        config = true,
+      }, -- virtual line diagnostics
       { import = "user.plugins.lsp.null-ls" },
     },
     ---@class PluginLspOpts

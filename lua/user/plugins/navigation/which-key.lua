@@ -84,18 +84,7 @@ local mappings = {
 
   b = { name = "Buffers" },
 
-  d = {
-    name = "Diagnostics",
-    d = { "<cmd>Trouble document_diagnostics<CR>", "Document diagnostics" },
-    D = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
-    j = { vim.diagnostic.goto_next, "Next Diagnostic" },
-    k = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
-    l = { vim.diagnostic.open_float, "Line diagnostics" },
-    q = { vim.diagnostic.setloclist, "Quickfix" },
-    t = { "<cmd>TodoTrouble<cr>", "TODO-list" },
-    T = { "<cmd>TroubleToggle<CR>", "Toggle window" },
-    v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle virtual line diagnostics" },
-  },
+  d = { name = "Diagnostics" },
 
   g = {
     name = "Git",

@@ -2,6 +2,10 @@ return {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoTelescope" },
   event = { "BufReadPost", "BufNewFile" },
+  keys = {
+    { "<leader>dt", "<cmd>TodoTrouble<cr>", desc = "TODO-list" },
+  },
+  dependencies = { "trouble.nvim", },
   opts = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
