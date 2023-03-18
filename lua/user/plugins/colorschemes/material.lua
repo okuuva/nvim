@@ -4,6 +4,9 @@ return {
   priority = 1000,
   config = function()
     vim.g.material_style = "darker"
+    vim.cmd("hi def link IlluminatedWordText Visual")
+    vim.cmd("hi def link IlluminatedWordRead Visual")
+    vim.cmd("hi def link IlluminatedWordWrite Visual")
     local colors = require("material.colors")
     require("material").setup({
       contrast = {

@@ -1,11 +1,6 @@
 return {
   "RRethy/vim-illuminate",
   event = { "BufReadPost", "BufNewFile" },
-  init = function()
-    vim.cmd("hi def link IlluminatedWordText Visual")
-    vim.cmd("hi def link IlluminatedWordRead Visual")
-    vim.cmd("hi def link IlluminatedWordWrite Visual")
-  end,
   opts = {
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
