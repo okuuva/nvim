@@ -86,7 +86,6 @@ local mappings = {
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
-  ["r"] = { ":IncRename ", "Rename" },
   ["w"] = { "<cmd>w<cr>", "Write" },
   b = {
     name = "Buffers",
