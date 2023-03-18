@@ -151,6 +151,10 @@ local mappings = {
     t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
   },
 
+  n = { name = "Neoconf" },
+
+  p = { name = "Pastebin" },
+
   s = { name = "Search" },
 
   S = {
