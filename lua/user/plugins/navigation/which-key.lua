@@ -73,16 +73,10 @@ local register_opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local pick_window = function()
-  local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(picked_window_id)
-end
-
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["C"] = { "<cmd>close<CR>", "Close split" },
-  ["i"] = { pick_window, "Pick a window" },
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
@@ -168,5 +162,4 @@ return {
     require("which-key").setup(setup_opts)
     require("which-key").register(mappings, register_opts)
   end,
-  dependencies = { "nvim-window-picker" },
 }
