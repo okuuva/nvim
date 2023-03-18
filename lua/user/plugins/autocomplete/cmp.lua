@@ -6,9 +6,9 @@ return {
   -- these dependencies will only be loaded when cmp loads
   -- dependencies are always lazy-loaded unless specified otherwise
   dependencies = {
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
-    "hrsh7th/cmp-cmdline", -- cmdline completions
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lsp",
     "doxnit/cmp-luasnip-choice", -- snippet completions
     "bydlw98/cmp-env",
@@ -27,10 +27,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local check_backspace = function()
-      local col = vim.fn.col(".") - 1
-      return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-    end
 
     --   פּ ﯟ   some other good icons
     local kind_icons = {
@@ -79,11 +75,8 @@ return {
         ["<C-e>"] = cmp.mapping.abort(),
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<S-CR>"] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true, }),
       },
       formatting = {
         fields = { "kind", "abbr", "menu" },
