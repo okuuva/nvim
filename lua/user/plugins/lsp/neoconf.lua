@@ -1,6 +1,14 @@
 return {
   "folke/neoconf.nvim",
   cmd = "Neoconf",
+  keys = {
+    { "<leader>nn", "<cmd>Neoconf<cr>", desc = "Edit local or global config" },
+    { "<leader>no", "<cmd>Neoconf local<cr>", desc = "Edit local config" },
+    { "<leader>ng", "<cmd>Neoconf global<cr>", desc = "Edit global config" },
+    { "<leader>ns", "<cmd>Neoconf show<cr>", desc = "Show merged config" },
+    { "<leader>nl", "<cmd>Neoconf lsp<cr>", desc = "Show merged LSP config" },
+    { "<leader>nc", "<cmd>Neoconf checkhealth<cr>", desc = "Check health" },
+  },
   opts = {
     -- name of the local settings files
     local_settings = ".neoconf.json",
