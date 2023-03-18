@@ -74,11 +74,7 @@ local register_opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Dashboard" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["C"] = { "<cmd>close<CR>", "Close split" },
-  ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
-  ["m"] = { "<cmd>Mason<cr>", "Mason" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["w"] = { "<cmd>w<cr>", "Write" },
 
