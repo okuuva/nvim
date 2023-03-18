@@ -91,7 +91,6 @@ function M.config()
       smart_rename = {
         enable = true,
         keymaps = {
-          -- smart_rename = "<leader>r",
           smart_rename = "gr",
         },
       },
