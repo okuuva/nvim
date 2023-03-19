@@ -1,4 +1,4 @@
-local mappings = {
+local n_mappings = {
   ["C"] = { "<cmd>close<CR>", "Close split" },
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
@@ -25,6 +25,12 @@ local mappings = {
   },
 
   t = { name = "TreeSitter" },
+}
+
+local x_mappings = {
+  g = { name = "Git" },
+
+  p = { name = "Pastebin" },
 }
 
 return {
@@ -120,14 +126,19 @@ return {
   config = function(_, opts)
     vim.o.timeout = true
     vim.o.timeoutlen = 300
-    require("which-key").setup(opts)
-    require("which-key").register(mappings, {
+    local wk = require("which-key")
+    wk.setup(opts)
+    wk.register(n_mappings, {
       mode = "n", -- NORMAL mode
       prefix = "<leader>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
       silent = true, -- use `silent` when creating keymaps
       noremap = true, -- use `noremap` when creating keymaps
       nowait = true, -- use `nowait` when creating keymaps
+    })
+    wk.register(x_mappings, {
+      mode = "x",
+      prefix = "<leader>",
     })
   end,
 }
