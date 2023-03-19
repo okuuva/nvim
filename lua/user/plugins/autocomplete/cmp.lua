@@ -20,7 +20,6 @@ return {
         },
       },
     },
-    { "hrsh7th/cmp-nvim-lua", ft = "lua" },
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
     "onsails/lspkind.nvim", -- fancy icons
@@ -66,7 +65,6 @@ return {
           symbol_map = { Codeium = "" },
           menu = {
             nvim_lsp = "[LSP]",
-            nvim_lua = "[NVIM LUA]",
             luasnip = "[Snippet]",
             codeium = "[Codeium]",
             fish = "[fish]",
