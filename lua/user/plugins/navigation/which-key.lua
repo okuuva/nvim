@@ -75,6 +75,7 @@ local register_opts = {
 
 local mappings = {
   ["C"] = { "<cmd>close<CR>", "Close split" },
+  ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
   ["w"] = { "<cmd>w<cr>", "Write" },
 

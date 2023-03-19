@@ -1,10 +1,5 @@
 return {
-  {
-    "folke/lazy.nvim",
-    keys = {
-      { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy" },
-    },
-  },
+  "folke/lazy.nvim",
   { import = "user.plugins.colorschemes" },
   { import = "user.plugins.ide" },
   { import = "user.plugins.productivity" },
