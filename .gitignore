@@ -39,7 +39,4 @@ luac.out
 *.x86_64
 *.hex
 
-
-plugin/packer_compiled.lua
-lua/user/local.lua
 lua/user/config/local
