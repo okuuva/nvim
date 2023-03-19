@@ -1,12 +1,3 @@
-local register_opts = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
   ["C"] = { "<cmd>close<CR>", "Close split" },
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
@@ -108,6 +99,13 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
     require("which-key").setup(opts)
-    require("which-key").register(mappings, register_opts)
+    require("which-key").register(mappings, {
+      mode = "n", -- NORMAL mode
+      prefix = "<leader>",
+      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      silent = true, -- use `silent` when creating keymaps
+      noremap = true, -- use `noremap` when creating keymaps
+      nowait = true, -- use `nowait` when creating keymaps
+    })
   end,
 }
