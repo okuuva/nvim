@@ -84,23 +84,7 @@ local mappings = {
 
   g = { name = "Git", t = { name = "Toggle" } },
 
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>Trouble lsp_definitions<CR>", "Definition" },
-    f = { "<cmd>lua _LSP_FORMAT()<cr>", "Format" },
-    h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>lua Msg(vim.lsp.get_active_clients())<cr>", "Inspect" },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    L = { "<cmd>Trouble loclist<CR>", "Location list" },
-    o = { "<cmd>LspLog<cr>", "Log" },
-    q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
-    r = { "<cmd>Trouble lsp_references<CR>", "References" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Search Workspace Symbols" },
-    t = { "<cmd>Trouble lsp_type_definitions<CR>", "Type definitions list" },
-  },
+  l = { name = "LSP" },
 
   n = { name = "Neoconf" },
 

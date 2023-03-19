@@ -29,6 +29,9 @@ return {
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
     { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit (for current file)" },
     { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
+    -- lsp
+    { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
+    { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
   },
   config = function()
     local telescope = require("telescope")

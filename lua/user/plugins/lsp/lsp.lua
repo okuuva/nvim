@@ -5,6 +5,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Code Action" },
+      { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
+      { "<leader>lh", function() vim.lsp.buf.hover() end, desc = "Hover" },
+      { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
+      { "<leader>ll", function() vim.lsp.codelens.run() end, desc = "CodeLens Action" },
+      { "<leader>lo", "<cmd>LspLog<cr>", desc = "Log" },
+    },
     dependencies = {
       "b0o/schemastore.nvim", -- json schemas for jsonls
       "neoconf.nvim",

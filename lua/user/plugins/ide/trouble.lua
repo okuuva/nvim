@@ -9,6 +9,12 @@ return {
     { "<leader>dl", vim.diagnostic.open_float, desc = "Line diagnostics" },
     { "<leader>dq", vim.diagnostic.setloclist, desc = "Quickfix" },
     { "<leader>dT", "<cmd>TroubleToggle<CR>", desc = "Toggle window" },
+    -- lsp
+    { "<leader>ld", "<cmd>Trouble lsp_definitions<CR>", desc = "Definition" },
+    { "<leader>lL", "<cmd>Trouble loclist<CR>", desc = "Location list" },
+    { "<leader>lq", "<cmd>Trouble quickfix<CR>", desc = "Quickfix" },
+    { "<leader>lr", "<cmd>Trouble lsp_references<CR>", desc = "References" },
+    { "<leader>lt", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type definitions list" },
   },
   opts = {
     position = "bottom", -- position of the list can be: bottom, top, left, right
