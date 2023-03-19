@@ -24,6 +24,7 @@ return {
     { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
     { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
+    { "<leader>sy", "<cmd>Telescope yank_history<cr>", desc = "Yank history" },
     -- git
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
@@ -133,5 +134,6 @@ return {
     telescope.load_extension("notify")
     telescope.load_extension("noice")
     telescope.load_extension("projects")
+    telescope.load_extension("yank_history")
   end,
 }
