@@ -16,6 +16,8 @@ local n_mappings = {
 
   p = { name = "Pastebin" },
 
+  R = { name = "IronRepl" },
+
   s = { name = "Search" },
 
   S = {
