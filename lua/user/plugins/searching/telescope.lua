@@ -37,6 +37,17 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local telescopeConfig = require("telescope.config")
+    -- Clone the default Telescope configuration
+    local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+    -- I want to search in hidden/dot files.
+    table.insert(vimgrep_arguments, "--hidden")
+    -- I don't want to search in the `.git` directory.
+    table.insert(vimgrep_arguments, "--glob")
+    table.insert(vimgrep_arguments, "!**/.git/*")
+    -- trim indentation from the preview
+    table.insert(vimgrep_arguments, "--trim")
     local _, trouble = pcall(require, "trouble.providers.telescope")
 
     telescope.setup({
@@ -45,6 +56,7 @@ return {
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "smart" },
+        vimgrep_arguments = vimgrep_arguments,
 
         mappings = {
           i = {
@@ -113,10 +125,6 @@ return {
         },
       },
       pickers = {
-        live_grep = {
-          additional_args = function(opts)
-            return { "--hidden", "--glob", "!.git" }
-          end,
         },
       },
       extensions = {
