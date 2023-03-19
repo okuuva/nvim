@@ -28,6 +28,8 @@ local n_mappings = {
 }
 
 local x_mappings = {
+  ["s"] = { "<cmd>'<,'>sort<cr>", "Sort" },
+
   g = { name = "Git" },
 
   p = { name = "Pastebin" },
