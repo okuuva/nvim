@@ -9,7 +9,6 @@ return {
     { "<leader>th", "<cmd>TSHighlightCapturesUnderCursor<cr>", desc = "Show highlight capture groups under cursor" },
   },
   dependencies = {
-    "nvim-treesitter-context",
     "nvim-treesitter/playground",
     "nvim-treesitter/nvim-treesitter-refactor",
     "nvim-treesitter/nvim-treesitter-textobjects",

@@ -2,6 +2,7 @@ return {
   "numToStr/Comment.nvim",
   event = "VeryLazy",
   dependencies = {
+    "nvim-treesitter",
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
   opts = function()
