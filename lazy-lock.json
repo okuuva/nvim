@@ -16,6 +16,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-plugins": { "branch": "main", "commit": "e321688e92e557851cfeee8ca552659a095b908c" },
   "cmp-under-comparator": { "branch": "master", "commit": "6857f10272c3cfe930cece2afa2406e1385bfef8" },
+  "codeium.nvim": { "branch": "main", "commit": "2734703be6467949e9d35f24fe73ba8828658967" },
   "diffview.nvim": { "branch": "main", "commit": "58035354fc79c6ec42fa7b218dab90bd3968615f" },
   "dressing.nvim": { "branch": "master", "commit": "5f44f829481640be0f96759c965ae22a3bcaf7ce" },
   "flit.nvim": { "branch": "main", "commit": "4c1739137acd3e7f03e2065a7be8a4dc41c7e461" },

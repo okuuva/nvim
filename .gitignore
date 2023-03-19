@@ -42,3 +42,4 @@ luac.out
 
 plugin/packer_compiled.lua
 lua/user/local.lua
+lua/user/config/local
