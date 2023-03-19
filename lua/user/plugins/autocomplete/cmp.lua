@@ -24,6 +24,7 @@ return {
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
     "onsails/lspkind.nvim", -- fancy icons
+    "lukas-reineke/cmp-under-comparator",
     "nvim-autopairs",
   },
   config = function()
@@ -50,7 +51,7 @@ return {
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true, }),
+        ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
       },
       formatting = {
         -- fields = { "kind", "abbr", "menu" },
@@ -79,6 +80,18 @@ return {
           --   return vim_item
           -- end,
         }),
+      },
+      sorting = {
+        comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          require("cmp-under-comparator").under,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        },
       },
       sources = {
         { name = "nvim_lsp" },
