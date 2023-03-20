@@ -1,6 +1,7 @@
 return {
   "lukas-reineke/headlines.nvim",
   dependencies = "nvim-treesitter",
+  version = "^3.3.1",
   config = function()
     require("headlines").setup({
       markdown = {

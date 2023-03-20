@@ -1,6 +1,6 @@
 return {
   "rcarriga/nvim-dap-ui",
-  version = "v3.*",
+  version = "^3.8.0",
   dependencies = {
     "mfussenegger/nvim-dap",
     "nvim-dap-virtual-text",

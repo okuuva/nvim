@@ -1,6 +1,6 @@
 return {
   "s1n7ax/nvim-window-picker",
-  version = "v1.*",
+  version = "^1.5.0",
   keys = {
     {
       "<leader>i",

@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  version = "v0.1.*",
+  version = "^0.1.1",
   cmd = "Telescope",
   dependencies = {
     {
@@ -126,7 +126,7 @@ return {
       },
       pickers = {
         find_files = {
-          find_command = { "fd", "--type", "f", "--color", "--never", "--strip-cwd-prefix" },
+          find_command = { "fd", "--type", "f", "--color", "never", "--strip-cwd-prefix" },
         },
       },
       extensions = {
