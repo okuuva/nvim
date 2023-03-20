@@ -10,7 +10,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lsp",
-    "doxnit/cmp-luasnip-choice", -- snippet completions
+    "saadparwaiz1/cmp_luasnip", -- snippet completions
     "bydlw98/cmp-env",
     { -- plugin to autocomplete plugins. compleception?
       "KadoBOT/cmp-plugins",
@@ -25,11 +25,13 @@ return {
     "onsails/lspkind.nvim", -- fancy icons
     "lukas-reineke/cmp-under-comparator",
     "nvim-autopairs",
+    "LuaSnip",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     --   פּ ﯟ   some other good icons
     cmp.setup({
