@@ -49,10 +49,34 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+
+        -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#intellij-like-mapping
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+          if cmp.visible() then
+            local entry = cmp.get_selected_entry()
+            if not entry then
+              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+              cmp.confirm()
+            end
+          else
+            fallback()
+          end
+        end, { "i", "s", "c" }),
+
+        -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#safely-select-entries-with-cr
+        ["<CR>"] = cmp.mapping({
+          i = function(fallback)
+            if cmp.visible() and cmp.get_selected_entry() then
+              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            else
+              fallback()
+            end
+          end,
+          s = cmp.mapping.confirm({ select = true }),
+          c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
       },
       formatting = {
         -- fields = { "kind", "abbr", "menu" },
