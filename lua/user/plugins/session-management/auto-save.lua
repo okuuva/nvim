@@ -33,11 +33,12 @@ local save_condition = function(buf)
   return false -- can't save
 end
 
-local trigger_events = { "InsertLeave", "TextChanged" } -- vim events that trigger auto-save. See :h events
+local immediate_triggers = { "BufLeave", "FocusLost" } -- vim events that trigger auto-save. See :h events
+local deferred_triggers = { "InsertLeave", "TextChanged" }
 
 return {
   "okuuva/auto-save.nvim",
-  event = trigger_events,
+  event = vim.tbl_deep_extend("force", immediate_triggers, deferred_triggers),
   opts = {
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     execution_message = {
@@ -45,13 +46,17 @@ return {
       dim = 0.18, -- dim the color of `message`
       cleaning_interval = 5000, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
     },
-    trigger_events = trigger_events, -- vim events that trigger auto-save. See :h events
+    trigger_events = { -- See :h events
+      immediate_save = immediate_triggers, -- vim events that trigger an immediate save
+      defer_save = deferred_triggers, -- vim events that trigger a deferred save (saves after `debounce_delay`)
+      cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+    },
     -- function that determines whether to save the current buffer or not
     -- return true: if buffer is ok to be saved
     -- return false: if it's not ok to be saved
     condition = save_condition,
     write_all_buffers = false, -- write all buffers when the current one meets `condition`
-    debounce_delay = 135, -- saves the file at most every `debounce_delay` milliseconds
+    debounce_delay = 1000, -- saves the file at most every `debounce_delay` milliseconds
     callbacks = { -- functions to be executed at different intervals
       enabling = nil, -- ran when enabling auto-save
       disabling = nil, -- ran when disabling auto-save
