@@ -11,6 +11,7 @@ return {
       "markdown",
       "mason",
       "neo-tree",
+      "noice",
       "text",
     },
     custom_colorcolumn = {
