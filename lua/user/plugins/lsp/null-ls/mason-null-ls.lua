@@ -22,6 +22,7 @@ local DEFAULT_SETTINGS = {
 return {
   "jay-babu/mason-null-ls.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  cond = not vim.g.alpine_linux,
   dependencies = {
     "mason.nvim",
     "null-ls.nvim",

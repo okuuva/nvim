@@ -7,17 +7,26 @@ end
 local node_path = vim.env.HOME .. "/.local/share/nvm/v18.14.2/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
 
+
+local check_alpine = function()
+  local os = vim.loop.os_uname().version
+  if os:find("Alpine") or os:find("alpine") then
+    return true
+  end
+  return false
+end
+
 local settings = {
+  alpine_linux = check_alpine, -- check if we're running on Alpine Linux (meaning musl)
   do_filetype_lua = 1, -- use filetype plugin written in LUA
+  loaded_netrw = 1, -- disable netrw
+  loaded_netrwPlugin = 1, -- I mean it
   loaded_perl_provider = 0, -- do not load perl provider
   loaded_ruby_provider = 0, -- do not load ruby provider
   node_host_prog = node_path .. "/neovim-node-host",
   python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
   vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
-  loaded_netrw = 1, -- disable netrw
-  loaded_netrwPlugin = 1, -- I mean it
-
 }
 
 for k, v in pairs(settings) do
