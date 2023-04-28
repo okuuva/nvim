@@ -26,6 +26,12 @@ return {
     "lukas-reineke/cmp-under-comparator",
     "nvim-autopairs",
     "LuaSnip",
+    {
+      "zbirenbaum/copilot-cmp",
+      dependencies = { "copilot.lua" },
+      config = true,
+      cond = AI_Check_disabled_patters(),
+    },
   },
   config = function()
     local cmp = require("cmp")
@@ -88,8 +94,12 @@ return {
           mode = "symbol_text",
           maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-          symbol_map = { Codeium = "" },
+          symbol_map = {
+            Copilot = "",
+            Codeium = "",
+          },
           menu = {
+            copilot = "[Copilot]",
             nvim_lsp = "[LSP]",
             luasnip = "[Snippet]",
             codeium = "[Codeium]",
@@ -120,6 +130,7 @@ return {
         },
       },
       sources = {
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "codeium" },

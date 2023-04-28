@@ -4,6 +4,7 @@ return {
   { import = "user.plugins.ide" },
   { import = "user.plugins.productivity" },
   { import = "user.plugins.debuggers" },
+  { import = "user.plugins.ai" },
   { import = "user.plugins.autocomplete" },
   { import = "user.plugins.searching" },
   { import = "user.plugins.treesitter" },
