@@ -14,7 +14,7 @@ return {
     { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
     { "<leader>sB", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    { "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
+    { "<leader>sf", "<cmd>Telescope find_files hidden=true<cr>", desc = "Files" },
     { "<leader>sh", "<cmd>Telescope help_tags theme=ivy<cr>", desc = "Help" },
     { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
     { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
