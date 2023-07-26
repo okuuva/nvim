@@ -1,5 +1,14 @@
 return {
   "nvim-treesitter/nvim-treesitter-context",
+  event = "VeryLazy",
+  cmd = {
+    "TSContextEnable",
+    "TSContextDisable",
+    "TSContextToggle",
+  },
+  keys = {
+    { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle context" },
+  },
   dependencies = "nvim-treesitter",
   opts = {
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)

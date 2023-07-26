@@ -3,7 +3,6 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   keys = {
-    { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle context" },
     { "<leader>Tl", "<cmd>TSInstallInfo<cr>", desc = "List installed parsers" },
     { "<leader>Tp", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle Playground" },
     { "<leader>Th", "<cmd>TSHighlightCapturesUnderCursor<cr>", desc = "Show highlight capture groups under cursor" },
