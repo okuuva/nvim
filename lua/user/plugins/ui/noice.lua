@@ -16,6 +16,14 @@ return {
         ["cmp.entry.get_documentation"] = true,
       },
     },
+    popupmenu = {
+      enabled = true, -- enables the Noice popupmenu UI
+      ---@type 'nui'|'cmp'
+      backend = "cmp", -- backend to use to show regular cmdline completions
+      ---@type NoicePopupmenuItemKind|false
+      -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
+      kind_icons = {}, -- set to `false` to disable icons
+    },
     -- you can enable a preset for easier configuration
     presets = {
       bottom_search = true, -- use a classic bottom cmdline for search
