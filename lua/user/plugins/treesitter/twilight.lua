@@ -6,7 +6,7 @@ return {
     "TwilightDisable",
   },
   keys = {
-    { "<leader>tt", "<cmd>Twilight<CR>", desc = "Toggle Twilight" },
+    { "<leader>Tt", "<cmd>Twilight<CR>", desc = "Toggle Twilight" },
   },
   dependencies = { "nvim-treesitter" },
   opts = {

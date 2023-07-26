@@ -26,7 +26,7 @@ local n_mappings = {
     S = { "<cmd>vsplit<cr>", "Vertical split" },
   },
 
-  t = { name = "TreeSitter" },
+  T = { name = "TreeSitter" },
 }
 
 local x_mappings = {

@@ -3,10 +3,10 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   keys = {
-    { "<leader>tc", "<cmd>TSContextToggle<cr>", desc = "Toggle context" },
-    { "<leader>tl", "<cmd>TSInstallInfo<cr>", desc = "List installed parsers" },
-    { "<leader>tp", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle Playground" },
-    { "<leader>th", "<cmd>TSHighlightCapturesUnderCursor<cr>", desc = "Show highlight capture groups under cursor" },
+    { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle context" },
+    { "<leader>Tl", "<cmd>TSInstallInfo<cr>", desc = "List installed parsers" },
+    { "<leader>Tp", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle Playground" },
+    { "<leader>Th", "<cmd>TSHighlightCapturesUnderCursor<cr>", desc = "Show highlight capture groups under cursor" },
   },
   dependencies = {
     "nvim-treesitter/playground",
