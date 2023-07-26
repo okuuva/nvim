@@ -50,16 +50,16 @@ local config = {
     statusline = false, -- toggle to show selector on statusline
     show_scrolled_off_parent_node = false, -- this will replace the tabs with the parent path
     -- of the top visible node when scrolled down.
-    tab_labels = { -- falls back to source_name if nil
-      filesystem = "  Files ",
-      buffers =    "  Buffers ",
-      git_status = "  Git ",
-      diagnostics = " 裂Diagnostics ",
+    sources = { -- falls back to source_name if nil
+      filesystem = " 󰉓 Files ",
+      buffers =    " 󰈙 Buffers ",
+      git_status = " 󰊢 Git ",
+      diagnostics = " 󰒡Diagnostics ",
     },
     content_layout = "start", -- only with `tabs_layout` = "equal", "focus"
-    --                start  : |/ 裡 bufname     \/...
-    --                end    : |/     裡 bufname \/...
-    --                center : |/   裡 bufname   \/...
+    --                start  : |/ 󰓩 bufname     \/...
+    --                end    : |/     󰓩 bufname \/...
+    --                center : |/   󰓩 bufname   \/...
     tabs_layout = "equal", -- start, end, center, equal, focus
     --             start  : |/  a  \/  b  \/  c  \            |
     --             end    : |            /  a  \/  b  \/  c  \|
@@ -198,8 +198,8 @@ local config = {
     icon = {
       folder_closed = "",
       folder_open = "",
-      folder_empty = "ﰊ",
-      folder_empty_open = "ﰊ",
+      folder_empty = "󰜌",
+      folder_empty_open = "󰜌",
       -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
       -- then these will never be used.
       default = "*",
@@ -220,11 +220,11 @@ local config = {
         added     = "✚", -- NOTE: you can set any of these to an empty string to not show them
         deleted   = "✖",
         modified  = "",
-        renamed   = "",
+        renamed   = "󰁕",
         -- Status type
         untracked = "",
         ignored   = "",
-        unstaged  = "",
+        unstaged  = "󰄱",
         staged    = "",
         conflict  = "",
       },

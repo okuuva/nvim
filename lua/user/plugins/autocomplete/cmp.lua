@@ -39,7 +39,7 @@ return {
     local lspkind = require("lspkind")
     require("luasnip.loaders.from_vscode").lazy_load()
 
-    --   פּ ﯟ   some other good icons
+    -- 󰃐 󰆩 󰙅 󰛡  󰅲 some other good icons
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -85,9 +85,7 @@ return {
         }),
       },
       formatting = {
-        -- fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
-
           -- defines how annotations are shown
           -- default: symbol
           -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
