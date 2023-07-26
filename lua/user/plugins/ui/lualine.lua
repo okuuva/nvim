@@ -17,13 +17,6 @@ local diff = {
   cond = hide_in_width,
 }
 
-local mode = {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-}
-
 local branch = {
   "branch",
   icons_enabled = true,
@@ -63,7 +56,7 @@ return {
       globalstatus = false,
     },
     sections = {
-      lualine_a = { mode },
+      lualine_a = { "mode" },
       lualine_b = { branch, diff, diagnostics },
       lualine_c = { filename },
       lualine_x = {},
