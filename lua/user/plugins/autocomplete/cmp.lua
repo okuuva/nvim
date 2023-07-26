@@ -81,7 +81,13 @@ return {
             end
           end,
           s = cmp.mapping.confirm({ select = true }),
-          c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+          c = function(fallback)
+            if cmp.visible() and cmp.get_selected_entry() then
+              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+            else
+              fallback()
+            end
+          end,
         }),
       },
       formatting = {
