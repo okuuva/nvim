@@ -55,6 +55,7 @@ return {
     -- return false: if it's not ok to be saved
     condition = save_condition,
     write_all_buffers = false, -- write all buffers when the current one meets `condition`
+    noautocmd = true, -- do not execute autocmds when saving
     debounce_delay = 1000, -- saves the file at most every `debounce_delay` milliseconds
     callbacks = { -- functions to be executed at different intervals
       before_saving = nil, -- ran before doing the actual save
