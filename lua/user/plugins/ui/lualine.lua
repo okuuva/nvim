@@ -71,6 +71,12 @@ return {
       lualine_y = {},
       lualine_z = {},
     },
-    tabline = {},
+    extensions = {
+      "fzf",
+      "lazy",
+      "man",
+      "neo-tree",
+      "trouble",
+    },
   },
 }
