@@ -1,3 +1,35 @@
+local changed_on_branch = function()
+  local previewers = require("telescope.previewers")
+  local pickers = require("telescope.pickers")
+  local sorters = require("telescope.sorters")
+  local finders = require("telescope.finders")
+  pickers
+    .new({}, {
+      results_title = "Modified in current branch",
+      finder = finders.new_oneshot_job({
+        "git",
+        "diff",
+        "--name-only",
+        "--diff-filter=ACMR",
+        "origin...",
+      }, {}),
+      sorter = sorters.get_fuzzy_file(),
+      previewer = previewers.new_termopen_previewer({
+        get_command = function(entry)
+          return {
+            "git",
+            "diff",
+            "--diff-filter=ACMR",
+            "origin...",
+            "--",
+            entry.value,
+          }
+        end,
+      }),
+    })
+    :find()
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   version = "^0.1.1",
@@ -28,7 +60,8 @@ return {
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Switch branch" },
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
     { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit (for current file)" },
-    { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
+    -- stylua: ignore
+    { "<leader>gm", function() changed_on_branch() end, desc = "Modified files" },
     -- lsp
     { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
     { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
