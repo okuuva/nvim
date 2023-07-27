@@ -8,6 +8,9 @@ return {
       diagnostics = {
         globals = { "vim", "hs" },
       },
+      semantic = {
+        enable = false, -- let ts do the highlighting
+      },
       workspace = {
         checkThirdParty = false, -- No, I do not need to configure my work environment as luassert.
         library = {
