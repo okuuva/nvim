@@ -13,11 +13,11 @@ return {
       },
       plugins = {
         autopep8 = {
-          enabled = true,
+          enabled = false,
         },
         flake8 = {
           config = nil,
-          enabled = true,
+          enabled = false,
           exclude = {},
           executable = "flake8",
           filename = nil,
@@ -92,14 +92,15 @@ return {
         pyflakes = { enabled = false },
         pylint = {
           enabled = false,
-          args = {"--disable=line-too-long,unused-import"},
+          args = { "--disable=line-too-long,unused-import" },
           -- executable = pylint_path(),
         },
         rope_completion = {
           enabled = false,
           eager = false,
         },
-        yapf = { enabled = true },
+        ruff = { enabled = true },
+        yapf = { enabled = false },
       },
       rope = {
         extensionModules = nil,
