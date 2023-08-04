@@ -13,6 +13,7 @@ return {
       "neo-tree",
       "noice",
       "text",
+      "Trouble",
     },
     custom_colorcolumn = {
       python = "110",
