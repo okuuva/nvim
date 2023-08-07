@@ -19,7 +19,6 @@ return {
   end,
   config = function()
     require("toggleterm").setup({
-      env = { GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'" },
       size = 20,
       open_mapping = [[<c-t>]],
       hide_numbers = false,
@@ -47,7 +46,7 @@ return {
       cmd = "lazygit",
       hidden = true,
       direction = "tab",
-      on_close = function ()
+      on_close = function()
         require("neo-tree.events").fire_event("git_event")
       end,
     })
