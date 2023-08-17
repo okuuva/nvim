@@ -7,7 +7,6 @@ end
 local node_path = vim.env.HOME .. "/.local/share/nvm/v18.14.2/bin"
 vim.env.PATH = node_path .. ":" .. vim.env.PATH
 
-
 local check_alpine = function()
   local os = vim.loop.os_uname().version
   if os:find("Alpine") or os:find("alpine") then
@@ -78,7 +77,6 @@ local options = {
   termguicolors = true, -- set term gui colors (most terminals support this)
   timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
-  updatetime = 300, -- faster completion (4000ms default)
   wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }

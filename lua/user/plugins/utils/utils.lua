@@ -24,6 +24,16 @@ return {
     event = "VeryLazy",
   },
   {
+    -- this is ostensibly unnecessary but decoupling cursorhold events from updatetime
+    -- might still be a good idea.
+    -- see https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+    "antoinemadec/FixCursorHold.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.g.cursorhold_updatetime = 100
+    end,
+  },
+  {
     "nvim-tree/nvim-web-devicons",
     lazy = true,
   },
@@ -34,5 +44,5 @@ return {
   {
     "MunifTanjim/nui.nvim",
     lazy = true,
-  }
+  },
 }
