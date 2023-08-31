@@ -5,6 +5,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    -- stylua: ignore
     keys = {
       { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Code Action" },
       { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
@@ -19,12 +20,7 @@ return {
       "neodev.nvim",
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      {
-        "hrsh7th/cmp-nvim-lsp",
-        cond = function()
-          return require("user.util").has("nvim-cmp")
-        end,
-      },
+      "hrsh7th/cmp-nvim-lsp",
       {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         -- stylua: ignore
