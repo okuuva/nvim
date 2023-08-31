@@ -6,6 +6,7 @@ return {
     { "<leader>be", "<cmd>BufferLinePickClose<cr>", desc = "Pick which buffer to close" },
     { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", desc = "Close all to the left" },
     { "<leader>bl", "<cmd>BufferLineCloseRight<cr>", desc = "Close all to the right" },
+    { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close all other buffers" },
     { "<leader>bD", "<cmd>BufferLineSortByDirectory<cr>", desc = "Sort by directory" },
     { "<leader>bL", "<cmd>BufferLineSortByExtension<cr>", desc = "Sort by language" },
   },
@@ -78,7 +79,6 @@ return {
       color_icons = true, -- | false, -- whether or not to add the filetype icon highlights
       show_buffer_icons = true, -- | false, -- disable filetype icons for buffers
       show_buffer_close_icons = true, -- | false,
-      show_buffer_default_icon = true, -- | false, -- whether or not an unrecognised filetype should show a default icon
       show_close_icon = true, -- | false,
       show_tab_indicators = true, -- | false,
       show_duplicate_prefix = true, -- | false, -- whether to show duplicate buffer prefix
