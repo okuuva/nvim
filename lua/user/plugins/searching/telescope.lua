@@ -80,7 +80,6 @@ return {
     table.insert(vimgrep_arguments, "!**/.git/*")
     -- trim indentation from the preview
     table.insert(vimgrep_arguments, "--trim")
-    local _, trouble = pcall(require, "trouble.providers.telescope")
 
     telescope.setup({
       defaults = {
@@ -107,7 +106,6 @@ return {
             ["<CR>"] = actions.select_default,
             ["<C-x>"] = actions.select_horizontal,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-t>"] = trouble.open_with_trouble,
 
             ["<C-u>"] = actions.preview_scrolling_up,
             ["<C-d>"] = actions.preview_scrolling_down,
@@ -128,7 +126,6 @@ return {
             ["<CR>"] = actions.select_default,
             ["<C-x>"] = actions.select_horizontal,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-t>"] = trouble.open_with_trouble,
 
             ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
             ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
