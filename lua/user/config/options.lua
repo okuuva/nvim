@@ -21,7 +21,6 @@ local settings = {
   loaded_netrw = 1, -- disable netrw
   loaded_netrwPlugin = 1, -- I mean it
   loaded_perl_provider = 0, -- do not load perl provider
-  loaded_ruby_provider = 0, -- do not load ruby provider
   node_host_prog = node_path .. "/neovim-node-host",
   python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
