@@ -21,6 +21,7 @@ return {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "conform.nvim",
       {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         -- stylua: ignore
@@ -29,7 +30,6 @@ return {
         },
         config = true,
       }, -- virtual line diagnostics
-      { import = "user.plugins.lsp.null-ls" },
     },
     ---@class PluginLspOpts
     opts = {
@@ -53,7 +53,7 @@ return {
         },
       },
       -- do not automatically format on save
-      autoformat = true,
+      autoformat = false,
       -- options for vim.lsp.buf.format
       -- `bufnr` and `filter` is handled by the LazyVim formatter,
       -- but can be also overridden when specified
