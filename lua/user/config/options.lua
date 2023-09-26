@@ -3,10 +3,6 @@ if vim.fn.executable("nvr") == 1 then
   vim.env.GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'"
 end
 
--- add Node path to PATH, setting the node_host_prog alone isn't enough for whatever reason
-local node_path = vim.env.HOME .. "/.local/share/nvm/v18.14.2/bin"
-vim.env.PATH = node_path .. ":" .. vim.env.PATH
-
 local check_alpine = function()
   local os = vim.loop.os_uname().version
   if os:find("Alpine") or os:find("alpine") then
@@ -21,8 +17,7 @@ local settings = {
   loaded_netrw = 1, -- disable netrw
   loaded_netrwPlugin = 1, -- I mean it
   loaded_perl_provider = 0, -- do not load perl provider
-  node_host_prog = node_path .. "/neovim-node-host",
-  python3_host_prog = vim.env.HOME .. "/.pyenv/versions/pynvim/bin/python3",
+  python3_host_prog = vim.env.ASDF_DIR .. "/installs/python/pynvim/bin/python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
   vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
 }
