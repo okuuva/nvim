@@ -1,3 +1,16 @@
+local reload_buffers = function()
+  local buffers = vim.api.nvim_list_bufs()
+
+  for _, buf in ipairs(buffers) do
+    local bufname = vim.api.nvim_buf_get_name(buf)
+    if vim.fn.filereadable(bufname) == 1 then
+      vim.api.nvim_buf_call(buf, function()
+        vim.cmd("edit!")
+      end)
+    end
+  end
+end
+
 return {
   "akinsho/toggleterm.nvim",
   version = "^2.4.0",
@@ -48,6 +61,7 @@ return {
       direction = "tab",
       on_close = function()
         require("neo-tree.events").fire_event("git_event")
+        reload_buffers()
       end,
     })
 
