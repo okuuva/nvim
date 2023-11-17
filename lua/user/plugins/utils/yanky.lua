@@ -2,12 +2,12 @@ return {
   "gbprod/yanky.nvim",
   dependencies = { "kkharji/sqlite.lua" },
   keys = {
-    { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
-    { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
-    { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
-    { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
-    { "<c-n>", "<Plug>(YankyCycleForward)" },
-    { "<c-p>", "<Plug>(YankyCycleBackward)" },
+    { "p", "<Plug>(YankyPutAfter)", desc = "Put After", mode = { "n", "x" } },
+    { "P", "<Plug>(YankyPutBefore)", desc = "Put Before", mode = { "n", "x" } },
+    { "gp", "<Plug>(YankyGPutAfter)", desc = "Put After", mode = { "n", "x" } },
+    { "gP", "<Plug>(YankyGPutBefore)", desc = "Put Before", mode = { "n", "x" } },
+    { "<c-n>", "<Plug>(YankyCycleForward)", desc = "Cycle Yanky Ring Forward" },
+    { "<c-p>", "<Plug>(YankyCycleBackward)", desc = "Cycle Yanky Ring Backward" },
   },
   opts = {
     ring = {
