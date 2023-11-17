@@ -22,6 +22,8 @@ local n_mappings = {
 
   n = { name = "Neoconf" },
 
+  o = { name = "Obsidian" },
+
   p = { name = "Pastebin" },
 
   R = { name = "IronRepl" },
@@ -44,6 +46,8 @@ local x_mappings = {
     name = "Git",
     l = { name = "Gitlab" },
   },
+
+  o = { name = "Obsidian" },
 
   p = { name = "Pastebin" },
 }
