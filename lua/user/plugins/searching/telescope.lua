@@ -157,11 +157,6 @@ return {
         find_files = {
           find_command = { "fd", "--type", "f", "--color", "never", "--strip-cwd-prefix" },
         },
-        git_branches = {
-          mappings = {
-            i = { ["<cr>"] = actions.git_switch_branch },
-          },
-        },
       },
       extensions = {
         -- Your extension configuration goes here:
@@ -179,5 +174,6 @@ return {
     telescope.load_extension("noice")
     telescope.load_extension("projects")
     telescope.load_extension("yank_history")
+    telescope.load_extension("git_worktree")
   end,
 }
