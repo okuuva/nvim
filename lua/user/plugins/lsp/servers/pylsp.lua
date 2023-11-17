@@ -1,9 +1,3 @@
--- local pylint_path = function ()
---   local path = vim.env.VIRTUAL_ENV .. "/bin/pylint"
---   if vim.fn.executable(path) then
---     return path
---   end
-
 -- Check https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md for instructions
 return {
   settings = {
@@ -12,22 +6,7 @@ return {
         "flake8",
       },
       plugins = {
-        autopep8 = {
-          enabled = false,
-        },
-        flake8 = {
-          config = nil,
-          enabled = false,
-          exclude = {},
-          executable = "flake8",
-          filename = nil,
-          hangClosing = nil,
-          ignore = { "E501", "W503" },
-          indentSize = nil,
-          maxLineLength = nil,
-          perFileIgnores = {},
-          select = nil,
-        },
+        -- jedi, the least sucky lsp for python
         jedi = {
           extra_paths = {},
           env_vars = nil,
@@ -61,45 +40,26 @@ return {
           all_scopes = true,
           include_import_symbols = true,
         },
-        mccabe = {
-          enabled = false,
-          threshold = 15,
-        },
-        preload = {
-          enabled = true,
-          modules = {},
-        },
-        pycodestyle = {
-          enabled = false,
-          exclude = {},
-          filename = {},
-          select = {},
-          ignore = {},
-          hangClosing = nil,
-          maxLineLength = nil,
-          indentSize = nil,
-        },
-        pydocstyle = {
-          enabled = false,
-          convention = nil,
-          addIgnore = {},
-          addSelect = {},
-          ignore = {},
-          select = {},
-          match = "(?!test_).*\\.py",
-          mathDir = "[^\\.].*",
-        },
-        pyflakes = { enabled = false },
-        pylint = {
-          enabled = false,
-          args = { "--disable=line-too-long,unused-import" },
-          -- executable = pylint_path(),
-        },
+        -- rope, refactoring library
         rope_completion = {
           enabled = false,
           eager = false,
         },
+        -- preload, for caching modules ahead of time
+        preload = {
+          enabled = true,
+          modules = {},
+        },
+        -- ruff, one stop shop for your linting needs
         ruff = { enabled = true },
+        -- explicitly disable all the other linters
+        autopep8 = { enabled = false },
+        flake8 = { enabled = false },
+        mccabe = { enabled = false },
+        pycodestyle = { enabled = false },
+        pydocstyle = { enabled = false },
+        pyflakes = { enabled = false },
+        pylint = { enabled = false },
         yapf = { enabled = false },
       },
       rope = {
