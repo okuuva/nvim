@@ -2,7 +2,7 @@ return {
   "goolord/alpha-nvim",
   event = "VimEnter",
   keys = {
-  { "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" },
+    { "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" },
   },
   config = function()
     local dashboard = require("alpha.themes.dashboard")
@@ -18,7 +18,7 @@ return {
       dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
       dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-      dashboard.button("s", "󰚝  Find sesssion", ":Telescope persisted theme=dropdown<CR>"),
+      dashboard.button("s", "󰚝  Find session", ":Telescope persisted theme=dropdown<CR>"),
       dashboard.button("r", "󰄉  Recently used files", ":Telescope oldfiles <CR>"),
       dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("e", "  Edit configuration", ":e ~/.config/nvim/init.lua <CR>"),
