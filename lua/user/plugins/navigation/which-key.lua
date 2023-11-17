@@ -8,7 +8,15 @@ local n_mappings = {
 
   d = { name = "Diagnostics" },
 
-  g = { name = "Git", t = { name = "Toggle" } },
+  g = {
+    name = "Git",
+    l = {
+      name = "Gitlab",
+      a = { name = "Assignee" },
+      e = { name = "Reviewer" },
+    },
+    t = { name = "Toggle" },
+  },
 
   l = { name = "LSP" },
 
@@ -32,7 +40,10 @@ local n_mappings = {
 local x_mappings = {
   ["s"] = { "<cmd>'<,'>sort<cr>", "Sort" },
 
-  g = { name = "Git" },
+  g = {
+    name = "Git",
+    l = { name = "Gitlab" },
+  },
 
   p = { name = "Pastebin" },
 }

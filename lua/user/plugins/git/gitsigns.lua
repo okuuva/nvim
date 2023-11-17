@@ -4,7 +4,7 @@ return {
   -- stylua: ignore
   keys = {
     -- regulars
-    { "<leader>gl", function() require("gitsigns").blame_line({ full = true, ignore_whitespace = true }) end, desc = "Blame" },
+    { "<leader>gL", function() require("gitsigns").blame_line({ full = true, ignore_whitespace = true }) end, desc = "Blame" },
     { "<leader>gr", function() require("gitsigns").reset_hunk() end, desc = "Reset Hunk" },
     { "<leader>gR", function() require("gitsigns").reset_buffer() end, desc = "Reset Buffer" },
     -- toggles
