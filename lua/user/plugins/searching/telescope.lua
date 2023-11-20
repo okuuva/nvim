@@ -30,6 +30,29 @@ local changed_on_branch = function()
     :find()
 end
 
+-- see https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory
+-- We cache the results of "git rev-parse"
+-- Process creation is expensive in Windows, so this reduces latency
+local is_inside_work_tree = {}
+
+local project_files = function()
+  local builtin = require("telescope.builtin")
+  local opts = { hidden = true } -- define here if you want to define something
+
+  local cwd = vim.fn.getcwd()
+  if is_inside_work_tree[cwd] == nil then
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    ---@diagnostic disable-next-line: need-check-nil
+    is_inside_work_tree[cwd] = vim.v.shell_error == 0
+  end
+
+  if is_inside_work_tree[cwd] then
+    builtin.git_files(opts)
+  else
+    builtin.find_files(opts)
+  end
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   version = "^0.1.1",
@@ -45,7 +68,8 @@ return {
     -- search
     { "<leader>sb", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    { "<leader>sf", "<cmd>Telescope find_files hidden=true<cr>", desc = "Files" },
+    -- stylua: ignore
+    { "<leader>sf", function() project_files() end, desc = "Files" },
     { "<leader>sh", "<cmd>Telescope help_tags theme=ivy<cr>", desc = "Help" },
     { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
     { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
