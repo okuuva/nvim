@@ -22,6 +22,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "conform.nvim",
+      "nvim-lint",
       {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         -- stylua: ignore
