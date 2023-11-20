@@ -20,7 +20,7 @@ local n_mappings = {
 
   l = { name = "LSP" },
 
-  n = { name = "Neoconf" },
+  N = { name = "Neoconf" },
 
   o = { name = "Obsidian" },
 
