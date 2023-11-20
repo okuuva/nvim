@@ -17,11 +17,10 @@ return {
       render = "default",
       stages = "fade_in_slide_out",
       timeout = 5000,
-      top_down = true,
+      top_down = false,
     })
 
     -- set notify plugin as default notify function
     vim.notify = notify
   end,
-  lazy = true,
 }
