@@ -1,18 +1,17 @@
 return {
   "harrisoncramer/gitlab.nvim",
-  version = "^0.0.2",
+  version = "^1.0.0",
   event = "VeryLazy",
   dependencies = {
     "nui.nvim",
     "plenary.nvim",
+    "diffview.nvim",
     "dressing.nvim", -- Recommended but not required. Better UI for pickers.
   },
   build = function()
     require("gitlab.server").build(true)
   end, -- Builds the Go binary
-  opts = {
-    reviewer = "diffview", -- The reviewer type ("delta" or "diffview")
-  },
+  opts = {},
   -- stylua: ignore
   keys = {
     { "<leader>glr", function() require("gitlab").review() end, desc = "Review" },
