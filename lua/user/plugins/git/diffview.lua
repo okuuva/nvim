@@ -32,6 +32,7 @@ return {
       { "n", "<leader>b", false }, -- disable default toggle files
     }
     return {
+      enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
       keymaps = {
         view = common_keymaps,
         file_panel = common_keymaps,
