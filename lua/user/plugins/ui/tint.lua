@@ -15,11 +15,12 @@ return {
       highlight_ignore_patterns = {}, -- Highlight group patterns to ignore, see `string.find`
       window_ignore_function = function(winid)
         local bufid = vim.api.nvim_win_get_buf(winid)
-        local buftype = vim.api.nvim_buf_get_option(bufid, "buftype")
+        local buftype = vim.bo[bufid].buftype
+        local diff = vim.wo[winid].diff
         local floating = vim.api.nvim_win_get_config(winid).relative ~= ""
 
-        -- Do not tint ignored buffer types or floating windows, tint everything else
-        return ignored_buftypes[buftype] ~= nil or floating
+        -- Do not tint ignored buffer types, floating and diff windows, tint everything else
+        return ignored_buftypes[buftype] ~= nil or floating or diff
       end,
     }
     require("tint").setup(opts)
