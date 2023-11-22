@@ -21,6 +21,10 @@ return {
     },
     { "<leader>gi", "<cmd>'<,'>DiffviewFileHistory<cr>", mode = "v", desc = "Line history" },
   },
+  init = function()
+    -- set fillchar to "╱"
+    vim.opt.fillchars:append({ diff = "╱" })
+  end,
   opts = function()
     local actions = require("diffview.actions")
     local common_keymaps = {
