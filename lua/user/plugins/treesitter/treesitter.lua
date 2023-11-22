@@ -11,7 +11,6 @@ return {
     "nvim-treesitter/playground",
     "nvim-treesitter/nvim-treesitter-refactor",
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
     "andymass/vim-matchup",
   },
@@ -63,10 +62,6 @@ return {
         },
       },
       matchup = { enable = true },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
       playground = {
         enable = true,
         disable = {},
