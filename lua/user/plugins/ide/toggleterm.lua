@@ -2,11 +2,13 @@ local reload_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
 
   for _, buf in ipairs(buffers) do
-    local bufname = vim.api.nvim_buf_get_name(buf)
-    if vim.fn.filereadable(bufname) == 1 then
-      vim.api.nvim_buf_call(buf, function()
-        vim.cmd("edit!")
-      end)
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local bufname = vim.api.nvim_buf_get_name(buf)
+      if vim.fn.filereadable(bufname) == 1 then
+        vim.api.nvim_buf_call(buf, function()
+          vim.cmd("edit!")
+        end)
+      end
     end
   end
 end
