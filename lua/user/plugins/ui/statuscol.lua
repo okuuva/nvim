@@ -1,5 +1,6 @@
 return {
   "luukvbaal/statuscol.nvim", -- nvim >= 0.9
+  branch = "0.10", -- go back to main after this gets merged: https://github.com/luukvbaal/statuscol.nvim/tree/0.10
   event = "BufEnter",
   opts = function()
     local builtin = require("statuscol.builtin")
@@ -9,7 +10,7 @@ return {
         -- Diagnostics
         {
           sign = {
-            name = { "Diagnostic" },
+            namespace = { "Diagnostic.*" },
             auto = true,
           },
         },
@@ -18,11 +19,12 @@ return {
           text = { builtin.lnumfunc },
           condition = { true, builtin.not_empty },
         },
-        -- something to do with gitsigns numhl
+        -- gitsigns numhl
         {
           sign = {
-            name = { ".*" },
+            namespace = { "gitsigns" },
             colwidth = 1,
+            maxwidth = 0,  -- FIXME: this is needed in order to hide the signs but keep numhl
             auto = true,
           },
         },

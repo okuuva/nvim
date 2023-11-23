@@ -13,7 +13,7 @@ return {
     { "<leader>gtw", function() require("gitsigns").toggle_word_diff() end, desc = "Word diff" },
     { "<leader>gtl", function() require("gitsigns").toggle_linehl() end, desc = "Line highlight" },
     { "<leader>gtn", function() require("gitsigns").toggle_numhl() end, desc = "Number highlight" },
-    { "<leader>gts", function() require("gitsigns").toggle_signs() end, desc = "Sign column" },
+    -- { "<leader>gts", function() require("gitsigns").toggle_signs() end, desc = "Sign column" },
   },
   opts = {
     signs = {
@@ -23,6 +23,7 @@ return {
       topdelete = { text = "󰐊" },
       changedelete = { text = "▎" },
     },
+    -- FIXME: signcolumn can't be turned off without statuscol panicing
     signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
