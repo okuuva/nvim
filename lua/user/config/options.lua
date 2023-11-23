@@ -69,7 +69,6 @@ local options = {
   synmaxcol = 300, -- speed up scrolling a bit by disabling syntax highlighting on very long lines
   tabstop = 4, -- insert 4 spaces for a tab
   termguicolors = true, -- set term gui colors (most terminals support this)
-  timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
   wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
