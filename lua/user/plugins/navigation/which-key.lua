@@ -1,4 +1,4 @@
-local n_mappings = {
+local n_leader_mappings = {
   ["C"] = { "<cmd>close<CR>", "Close split" },
   ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
@@ -10,11 +10,6 @@ local n_mappings = {
 
   g = {
     name = "Git",
-    l = {
-      name = "Gitlab",
-      a = { name = "Assignee" },
-      e = { name = "Reviewer" },
-    },
     t = { name = "Toggle" },
   },
 
@@ -39,17 +34,24 @@ local n_mappings = {
   T = { name = "TreeSitter" },
 }
 
-local x_mappings = {
+local x_leader_mappings = {
   ["s"] = { "<cmd>'<,'>sort<cr>", "Sort" },
 
-  g = {
-    name = "Git",
-    l = { name = "Gitlab" },
-  },
+  g = { name = "Git" },
 
   o = { name = "Obsidian" },
 
   p = { name = "Pastebin" },
+}
+
+local n_mappings = {
+  g = {
+    l = {
+      name = "Gitlab",
+      a = { name = "Assignee" },
+      r = { name = "Reviewer" },
+    },
+  },
 }
 
 return {
@@ -149,7 +151,7 @@ return {
   config = function(_, opts)
     local wk = require("which-key")
     wk.setup(opts)
-    wk.register(n_mappings, {
+    wk.register(n_leader_mappings, {
       mode = "n", -- NORMAL mode
       prefix = "<leader>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -157,9 +159,12 @@ return {
       noremap = true, -- use `noremap` when creating keymaps
       nowait = true, -- use `nowait` when creating keymaps
     })
-    wk.register(x_mappings, {
+    wk.register(x_leader_mappings, {
       mode = "x",
       prefix = "<leader>",
+    })
+    wk.register(n_mappings, {
+      mode = "n",
     })
   end,
 }
