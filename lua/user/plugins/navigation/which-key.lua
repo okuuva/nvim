@@ -10,6 +10,7 @@ local n_leader_mappings = {
 
   g = {
     name = "Git",
+    l = { name = "GitLink" },
     t = { name = "Toggle" },
   },
 
@@ -37,7 +38,10 @@ local n_leader_mappings = {
 local x_leader_mappings = {
   ["s"] = { "<cmd>'<,'>sort<cr>", "Sort" },
 
-  g = { name = "Git" },
+  g = {
+    name = "Git",
+    l = { name = "GitLink" },
+  },
 
   o = { name = "Obsidian" },
 
