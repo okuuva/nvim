@@ -34,6 +34,7 @@ return {
   end,
   config = function()
     require("toggleterm").setup({
+      autochdir = true,
       size = 20,
       open_mapping = [[<c-t>]],
       hide_numbers = true,
@@ -68,6 +69,8 @@ return {
     })
 
     function _LAZYGIT_TOGGLE()
+      ---@diagnostic disable-next-line: assign-type-mismatch  (false positive)
+      lazygit.dir = vim.fn.getcwd()
       lazygit:toggle()
     end
 
