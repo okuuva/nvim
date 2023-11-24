@@ -36,7 +36,7 @@ local n_leader_mappings = {
 }
 
 local x_leader_mappings = {
-  ["s"] = { "<cmd>'<,'>sort<cr>", "Sort" },
+  ["s"] = { ":<C-u>'<,'>sort<cr>", "Sort" },
 
   g = {
     name = "Git",
