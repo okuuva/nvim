@@ -2,9 +2,11 @@ return {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     "kevinhwang91/promise-async",
-    "statuscol.nvim"
+    "nvim-origami",
+    "statuscol.nvim",
   },
   event = "BufEnter",
+  -- stylua: ignore
   keys = {
     { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
     { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
