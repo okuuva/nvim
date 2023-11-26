@@ -1,0 +1,9 @@
+{
+  "lspconfig": {
+    "pylsp": {
+      "pylsp.configurationSources": [
+        "flake8"
+      ]
+    }
+  }
+}

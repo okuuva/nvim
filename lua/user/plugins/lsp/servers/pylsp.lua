@@ -2,9 +2,6 @@
 return {
   settings = {
     pylsp = {
-      configurationSources = {
-        "flake8",
-      },
       plugins = {
         -- jedi, the least sucky lsp for python
         jedi = {
