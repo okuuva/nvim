@@ -51,6 +51,7 @@ local location = {
 
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = { "noice.nvim" },
   event = "VeryLazy",
   opts = {
     options = {
@@ -86,4 +87,12 @@ return {
       "trouble",
     },
   },
+  config = function(_, opts)
+    local showcmd = {
+      require("noice").api.status.command.get,
+      cond = require("noice").api.status.command.has,
+    }
+    opts.sections.lualine_x = { showcmd }
+    require("lualine").setup(opts)
+  end,
 }
