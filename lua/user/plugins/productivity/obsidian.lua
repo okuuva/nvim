@@ -10,6 +10,7 @@ return {
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Backlinks to this note" },
     { "<leader>od", "<cmd>ObsidianToday<cr>", desc = "Daily note" },
     { "<leader>oy", "<cmd>ObsidianYesterday<cr>", desc = "Yesterday's note" },
+    { "<leader>ot", "<cmd>ObsidianTomorrow<cr>", desc = "Tomorrow's note" },
     { "<leader>oT", "<cmd>ObsidianTemplate<cr>", desc = "Insert template" },
     { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Search notes" },
     { "<leader>ow", "<cmd>ObsidianWorkspace<cr>", desc = "Show workspace" },
