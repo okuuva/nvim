@@ -42,6 +42,13 @@ local filename = {
   },
 }
 
+local location = {
+  "location",
+  fmt = function(string, _)
+    return string .. " "
+  end,
+}
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -61,13 +68,13 @@ return {
       lualine_c = { filename },
       lualine_x = {},
       lualine_y = { "encoding", "fileformat", "filetype" },
-      lualine_z = { "location" },
+      lualine_z = { location },
     },
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
       lualine_c = { "filename" },
-      lualine_x = { "location" },
+      lualine_x = { location },
       lualine_y = {},
       lualine_z = {},
     },
