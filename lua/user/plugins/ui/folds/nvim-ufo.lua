@@ -1,3 +1,8 @@
+local provider_by_ft = {
+  gitcommit = "",
+  gitrebase = "",
+}
+
 return {
   "kevinhwang91/nvim-ufo",
   dependencies = {
@@ -50,7 +55,7 @@ return {
       return newVirtText
     end,
     provider_selector = function(bufnr, filetype, buftype)
-      return { "lsp", "indent" }
+      return provider_by_ft[filetype] or { "lsp", "indent" }
     end,
   },
 }
