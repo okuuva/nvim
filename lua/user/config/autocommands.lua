@@ -26,18 +26,8 @@ api.nvim_create_autocmd("User", {
       message = "Loaded session " .. session.data.name
     end
 
-    -- open neo-tree as unfocused
-    pcall(vim.cmd, "Neotree reveal show")
     vim.defer_fn(function()
       vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
     end, 0)
-  end,
-})
-
-api.nvim_create_autocmd({ "User" }, {
-  pattern = "PersistedSavePre",
-  group = persisted_hooks,
-  callback = function()
-    pcall(vim.cmd, "Neotree close")
   end,
 })

@@ -49,6 +49,15 @@ local location = {
   end,
 }
 
+local function tabs()
+  local tab_number = vim.api.nvim_tabpage_get_number(0)
+  local tab_count = #vim.api.nvim_list_tabpages()
+  if tab_count > 1 then
+    return "Tab " .. tab_number .. " / " .. tab_count
+  end
+  return ""
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "noice.nvim" },
@@ -66,7 +75,7 @@ return {
     sections = {
       lualine_a = { "mode" },
       lualine_b = { branch, diff, diagnostics },
-      lualine_c = { filename },
+      lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = { "encoding", "fileformat", "filetype" },
       lualine_z = { location },
@@ -74,7 +83,7 @@ return {
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = { filename },
+      lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = {},
       lualine_z = { location },
@@ -83,7 +92,6 @@ return {
       "fzf",
       "lazy",
       "man",
-      "neo-tree",
       "trouble",
     },
   },

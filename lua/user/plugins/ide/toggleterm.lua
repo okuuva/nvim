@@ -48,7 +48,6 @@ return {
       hidden = true,
       direction = "tab",
       on_close = function()
-        require("neo-tree.events").fire_event("git_event")
         require("user.util").reload_buffers()
       end,
     })
