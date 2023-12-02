@@ -16,19 +16,19 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", ":wincmd h<cr>", opts)
-keymap("n", "<C-j>", ":wincmd j<cr>", opts)
-keymap("n", "<C-k>", ":wincmd k<cr>", opts)
-keymap("n", "<C-l>", ":wincmd l<cr>", opts)
+keymap("n", "<A-h>", ":wincmd h<cr>", opts)
+keymap("n", "<A-j>", ":wincmd j<cr>", opts)
+keymap("n", "<A-k>", ":wincmd k<cr>", opts)
+keymap("n", "<A-l>", ":wincmd l<cr>", opts)
 
 -- Unset the 'last search pattern' register by hitting return
 keymap("", "<CR>", ":noh<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<A-Up>", ":resize +2<CR>", opts)
+keymap("n", "<A-Down>", ":resize -2<CR>", opts)
+keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode

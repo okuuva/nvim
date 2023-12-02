@@ -14,6 +14,8 @@ local n_leader_mappings = {
     t = { name = "Toggle" },
   },
 
+  h = { name = "Harpoon" },
+
   l = { name = "LSP" },
 
   N = { name = "Neoconf" },

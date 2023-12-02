@@ -5,15 +5,16 @@ return {
     colorcolumn = "110",
     disabled_filetypes = {
       "Lazy",
+      "Trouble",
       "alpha",
       "checkhealth",
+      "harpoon",
       "help",
       "markdown",
       "mason",
       "neo-tree",
       "noice",
       "text",
-      "Trouble",
     },
     custom_colorcolumn = {
       python = "110",
