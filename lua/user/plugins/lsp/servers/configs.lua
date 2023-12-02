@@ -4,7 +4,6 @@ local servers = {
   "jsonls",
   "lua_ls",
   "pylsp",
-  "yamlls",
 }
 
 for _, server_name in ipairs(servers) do

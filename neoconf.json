@@ -4,6 +4,14 @@
       "pylsp.configurationSources": [
         "flake8"
       ]
+    },
+    "yamlls": {
+      "yaml.customTags": [
+        "!reference sequence"
+      ],
+      "yaml.schemas": {
+        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab/ci-config/*.yml"
+      }
     }
   }
 }
