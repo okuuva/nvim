@@ -79,7 +79,7 @@ return {
     { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
     { "<leader>sn", "<cmd>Telescope notify<cr>", desc = "Notifications" },
     { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
-    { "<leader>sR", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+    { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
     { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
     { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
