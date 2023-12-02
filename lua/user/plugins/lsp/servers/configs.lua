@@ -3,7 +3,6 @@ local M = {}
 local servers = {
   "jsonls",
   "lua_ls",
-  "pylsp",
 }
 
 for _, server_name in ipairs(servers) do

@@ -1,9 +1,23 @@
 {
   "lspconfig": {
     "pylsp": {
-      "pylsp.configurationSources": [
-        "flake8"
-      ]
+      // jedi, the least sucky lsp for python
+      "pylsp.plugins.jedi_completion.enabled": true,
+      "pylsp.plugins.jedi_completion.include_class_objects": true,
+      "pylsp.plugins.jedi_completion.include_function_objects": true,
+      "pylsp.plugins.jedi_completion.fuzzy": true,
+      "pylsp.plugins.jedi_completion.eager": true,
+      // ruff, one stop shop for your linting needs
+      "pylsp.plugins.ruff.enabled": true,
+      // explicitly disable all other linters
+      "pylsp.plugins.autopep8.enabled": false,
+      "pylsp.plugins.flake8.enabled": false,
+      "pylsp.plugins.mccabe.enabled": false,
+      "pylsp.plugins.pycodestyle.enabled": false,
+      "pylsp.plugins.pydocstyle.enabled": false,
+      "pylsp.plugins.pyflakes.enabled": false,
+      "pylsp.plugins.pyline.enabled": false,
+      "plugins.yapf.enabled": false
     },
     "yamlls": {
       "yaml.customTags": [
