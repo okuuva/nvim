@@ -4,13 +4,14 @@ end
 
 local excluded_filetypes = {
   "NvimTree",
-  "neo-tree",
   "Outline",
   "TelescopePrompt",
   "alpha",
   "dashboard",
   "gitcommit",
   "lazygit",
+  "neo-tree",
+  "oil",
   "prompt",
   "toggleterm",
 }
