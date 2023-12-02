@@ -45,12 +45,9 @@ return {
     vim.opt.fillchars:append({ diff = "╱" })
   end,
   opts = function()
-    local actions = require("diffview.actions")
     local common_keymaps = {
       { "n", "<leader>t", ToggleWrapInAllDiffViews, { desc = "Toggle word wrap" } },
       { "n", "<leader>C", "<cmd>DiffviewClose<cr>", { desc = "Close diffview" } },
-      { "n", "<leader>e", actions.toggle_files, { desc = "Toggle the file panel" } },
-      { "n", "<leader>b", false }, -- disable default toggle files
     }
     return {
       enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
