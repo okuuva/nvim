@@ -76,6 +76,26 @@ return {
         -- end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
+        fuzzy_ruby_ls = function()
+          local lspconfig = require("lspconfig")
+          local configs = require("lspconfig.configs")
+          if not configs.fuzzy_ruby_ls then
+            configs.fuzzy_ruby_ls = {
+              default_config = {
+                cmd = { "fuzzy_ruby_ls" },
+                filetypes = { "ruby" },
+                root_dir = function(fname)
+                  return lspconfig.util.find_git_ancestor(fname)
+                end,
+                init_options = {
+                  allocationType = "ram",
+                  indexGems = true,
+                  reportDiagnostics = true,
+                },
+              },
+            }
+          end
+        end,
       },
     },
     ---@param opts PluginLspOpts

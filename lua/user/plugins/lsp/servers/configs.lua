@@ -1,6 +1,7 @@
 local M = {}
 
 local servers = {
+  "fuzzy_ruby_ls",
   "jsonls",
   "lua_ls",
 }
