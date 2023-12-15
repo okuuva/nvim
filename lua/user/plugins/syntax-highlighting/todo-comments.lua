@@ -3,7 +3,7 @@ return {
   cmd = { "TodoTrouble", "TodoTelescope" },
   event = { "BufReadPost", "BufNewFile" },
   keys = {
-    { "<leader>dt", "<cmd>TodoTrouble<cr>", desc = "TODO-list" },
+    { "<leader>dT", "<cmd>TodoTrouble<cr>", desc = "TODO-list" },
   },
   dependencies = { "trouble.nvim", },
   opts = {

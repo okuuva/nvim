@@ -4,15 +4,12 @@ return {
   keys = {
     { "<leader>dd", "<cmd>Trouble document_diagnostics<CR>", desc = "Document diagnostics" },
     { "<leader>dD", "<cmd>Trouble workspace_diagnostics<CR>", desc = "Workspace diagnostics" },
-    { "<leader>dj", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
-    { "<leader>dk", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-    { "<leader>dl", vim.diagnostic.open_float, desc = "Line diagnostics" },
-    { "<leader>dq", vim.diagnostic.setloclist, desc = "Quickfix" },
-    { "<leader>dT", "<cmd>TroubleToggle<CR>", desc = "Toggle window" },
+    { "<leader>dl", "<cmd>Trouble loclist<CR>", desc = "Location list" },
+    { "<leader>dq", "<cmd>Trouble quickfix<CR>", desc = "Quickfix" },
+    { "<leader>dt", "<cmd>TroubleToggle<CR>", desc = "Toggle window" },
+    -- dT opens the todo list, defined in todo-comments.lua
     -- lsp
     { "<leader>ld", "<cmd>Trouble lsp_definitions<CR>", desc = "Definition" },
-    { "<leader>lL", "<cmd>Trouble loclist<CR>", desc = "Location list" },
-    { "<leader>lq", "<cmd>Trouble quickfix<CR>", desc = "Quickfix" },
     { "<leader>lr", "<cmd>Trouble lsp_references<CR>", desc = "References" },
     { "<leader>lt", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type definitions list" },
   },
