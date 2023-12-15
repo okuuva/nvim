@@ -22,7 +22,7 @@ return {
 
     -- when you go to window selection mode, status bar will show one of
     -- following letters on them so you can use that letter to select the window
-    selection_chars = "FJDKSLA;CMRUEIWOQP",
+    selection_chars = "HTNSUEOA",
 
     -- whether you want to use winbar instead of the statusline
     -- "always" means to always use winbar,
@@ -54,7 +54,7 @@ return {
         filetype = { "NvimTree", "neo-tree", "notify" },
 
         -- if the buffer type is one of following, the window will be ignored
-        buftype = { "terminal" },
+        buftype = {},
       },
 
       -- filter using window options
