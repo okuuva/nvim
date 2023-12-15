@@ -14,6 +14,11 @@ local n_leader_mappings = {
     t = { name = "Toggle" },
   },
 
+  G = {
+    name = "Git",
+    R = { require("user.util.git").rebase, "Rebase branch/worktree" },
+  },
+
   h = { name = "Harpoon" },
 
   l = { name = "LSP" },

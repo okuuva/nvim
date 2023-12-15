@@ -1,5 +1,6 @@
 return {
   "folke/lazy.nvim",
+  { import = "user.plugins.utils" },
   { import = "user.plugins.colorschemes" },
   { import = "user.plugins.ide" },
   { import = "user.plugins.productivity" },
@@ -12,7 +13,6 @@ return {
   { import = "user.plugins.ui" },
   { import = "user.plugins.git" },
   { import = "user.plugins.session-management" },
-  { import = "user.plugins.utils" },
   { import = "user.plugins.lsp" },
   { import = "user.plugins.syntax-highlighting" },
 }

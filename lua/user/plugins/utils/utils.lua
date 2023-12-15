@@ -50,7 +50,7 @@ return {
   },
   {
     "nvim-lua/plenary.nvim",
-    lazy = true,
+    lazy = false,
   },
   {
     "MunifTanjim/nui.nvim",
