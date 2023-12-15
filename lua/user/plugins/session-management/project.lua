@@ -36,7 +36,5 @@ return {
     -- telescope
     datapath = vim.fn.stdpath("data"),
   },
-  config = function(_, opts)
-    require("project_nvim").setup(opts)
-  end,
+  main = "project_nvim",
 }
