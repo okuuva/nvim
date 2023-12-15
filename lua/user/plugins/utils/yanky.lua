@@ -6,8 +6,8 @@ return {
     { "P", "<Plug>(YankyPutBefore)", desc = "Put Before", mode = { "n", "x" } },
     { "gp", "<Plug>(YankyGPutAfter)", desc = "Put After", mode = { "n", "x" } },
     { "gP", "<Plug>(YankyGPutBefore)", desc = "Put Before", mode = { "n", "x" } },
-    { "<c-n>", "<Plug>(YankyCycleForward)", desc = "Cycle Yanky Ring Forward" },
-    { "<c-p>", "<Plug>(YankyCycleBackward)", desc = "Cycle Yanky Ring Backward" },
+    { "<c-k>", "<Plug>(YankyCycleForward)", desc = "Cycle Yanky Ring Forward" },
+    { "<c-j>", "<Plug>(YankyCycleBackward)", desc = "Cycle Yanky Ring Backward" },
   },
   opts = {
     ring = {
