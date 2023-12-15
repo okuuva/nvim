@@ -21,6 +21,7 @@ return {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "nvim-lightbulb",
       "conform.nvim",
       "nvim-lint",
       "actions-preview.nvim",
