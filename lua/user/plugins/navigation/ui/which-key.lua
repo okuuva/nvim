@@ -18,6 +18,8 @@ local n_leader_mappings = {
 
   l = { name = "LSP" },
 
+  n = { name = "Neotest", t = { name = "Toggle" } },
+
   N = { name = "Neoconf" },
 
   o = { name = "Obsidian" },
