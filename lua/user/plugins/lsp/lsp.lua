@@ -7,11 +7,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     -- stylua: ignore
     keys = {
-      { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Code Action" },
+      -- Code action gets triggered with <leader>la via actions-preview plugin
       { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
-      { "<leader>lh", function() vim.lsp.buf.hover() end, desc = "Hover" },
+      { "<leader>lh", vim.lsp.buf.hover, desc = "Hover" },
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
-      { "<leader>ll", function() vim.lsp.codelens.run() end, desc = "CodeLens Action" },
+      { "<leader>ll", vim.lsp.codelens.run, desc = "CodeLens Action" },
       { "<leader>lo", "<cmd>LspLog<cr>", desc = "Log" },
     },
     dependencies = {
@@ -23,6 +23,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "conform.nvim",
       "nvim-lint",
+      "actions-preview.nvim",
       {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         -- stylua: ignore
