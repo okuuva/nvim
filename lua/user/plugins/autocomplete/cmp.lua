@@ -40,6 +40,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     -- 󰃐 󰆩 󰙅 󰛡  󰅲 some other good icons
+    ---@diagnostic disable-next-line: missing-fields
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -75,15 +76,15 @@ return {
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
             if cmp.visible() and cmp.get_selected_entry() then
-              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+              cmp.confirm({ select = false })
             else
               fallback()
             end
           end,
-          s = cmp.mapping.confirm({ select = true }),
+          s = cmp.mapping.confirm(),
           c = function(fallback)
             if cmp.visible() and cmp.get_selected_entry() then
-              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+              cmp.confirm()
             else
               fallback()
             end
