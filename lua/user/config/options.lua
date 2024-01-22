@@ -11,6 +11,12 @@ local check_alpine = function()
   return false
 end
 
+XDG_DATA_HOME = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
+MISE_DATA_DIR = vim.env.MISE_DATA_DIR or (XDG_DATA_HOME .. "/mise")
+MISE_SHIM_DIR = MISE_DATA_DIR .. "/shims"
+
+vim.env.PATH = MISE_SHIM_DIR .. ":" .. vim.env.PATH
+
 local settings = {
   alpine_linux = check_alpine, -- check if we're running on Alpine Linux (meaning musl)
   do_filetype_lua = 1, -- use filetype plugin written in LUA
@@ -75,11 +81,11 @@ local options = {
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }
 
-vim.opt.shortmess:append("c")
-
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.opt.shortmess:append("c")
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
