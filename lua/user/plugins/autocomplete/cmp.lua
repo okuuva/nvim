@@ -12,19 +12,11 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip", -- snippet completions
     "bydlw98/cmp-env",
-    { -- plugin to autocomplete plugins. compleception?
-      "KadoBOT/cmp-plugins",
-      opts = {
-        files = {
-          "lua/user/plugins",
-        },
-      },
-    },
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
     "onsails/lspkind.nvim", -- fancy icons
     "lukas-reineke/cmp-under-comparator",
-    "nvim-autopairs",
+    -- "nvim-autopairs",
     "LuaSnip",
     {
       "zbirenbaum/copilot-cmp",
@@ -142,7 +134,6 @@ return {
         { name = "luasnip" },
         { name = "fish" },
         { name = "env" },
-        { name = "plugins" },
         { name = "buffer" },
         { name = "path" },
         { name = "nerdfont" },
