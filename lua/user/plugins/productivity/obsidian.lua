@@ -1,3 +1,5 @@
+local long_date = "%A %B %-d, %Y"
+
 return {
   "epwalsh/obsidian.nvim",
   lazy = true,
@@ -34,10 +36,6 @@ return {
       },
     },
 
-    -- Optional, set to true to use the current directory as a vault; otherwise,
-    -- the first workspace is opened by default
-    detect_cwd = false,
-
     -- Optional, if you keep notes in a specific subdirectory of your vault.
     notes_subdir = "notes",
 
@@ -51,30 +49,24 @@ return {
       -- Optional, if you want to change the date format for the ID of daily notes.
       date_format = "%Y-%m-%d",
       -- Optional, if you want to change the date format of the default alias of daily notes.
-      alias_format = "%B %-d, %Y",
+      alias_format = long_date,
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-      template = nil,
+      template = "Daily template.md",
     },
 
-    completion = {
-      -- If using nvim-cmp, otherwise set to false
-      nvim_cmp = true,
-      -- Trigger completion at 2 chars
-      min_chars = 2,
-      -- Where to put new notes created from completion. Valid options are
-      --  * "current_dir" - put new notes in same directory as the current buffer.
-      --  * "notes_subdir" - put new notes in the default notes subdirectory.
-      new_notes_location = "current_dir",
-
-      -- Whether to add the output of the node_id_func to new notes in autocompletion.
-      -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
-      prepend_note_id = true,
+    -- Optional, for templates (see below).
+    templates = {
+      subdir = "templates",
+      substitutions = {
+        long_date = function()
+          return os.date(long_date)
+        end,
+      },
     },
-    mappings = {},
-    -- mappings = {
-    --   -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-    --   ["gf"] = require("obsidian.mapping").gf_passthrough(),
-    -- },
+
+    new_notes_location = "notes_subdir",
+    preferred_link_style = "markdown",
+
     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
     -- URL it will be ignored but you can customize this behavior here.
     follow_url_func = function(url)
@@ -82,6 +74,5 @@ return {
       vim.fn.jobstart({ "open", url }) -- Mac OS
       -- vim.fn.jobstart({"xdg-open", url})  -- linux
     end,
-    finder = "telescope.nvim",
   },
 }
