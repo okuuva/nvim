@@ -19,6 +19,7 @@ return {
     { "<leader>ow", "<cmd>ObsidianWorkspace<cr>", desc = "Show workspace" },
     { "<leader>ol", "<cmd>ObsidianLink<cr>", desc = "Link to an existing note", mode = "x" },
     { "<leader>oL", "<cmd>ObsidianLinkNew<cr>", desc = "Link to a new note", mode = "x" },
+    { "<leader>so", "<cmd>ObsidianSearch<cr>", desc = "Obsidian notes" },
   },
   dependencies = {
     "plenary.nvim",
