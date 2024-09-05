@@ -21,10 +21,7 @@ api.nvim_create_autocmd("User", {
   group = persisted_hooks,
   pattern = { "PersistedLoadPost", "PersistedTelescopeLoadPost" },
   callback = function(session)
-    local message = "Autoloaded session"
-    if session.data["name"] ~= nil then
-      message = "Loaded session " .. session.data.name
-    end
+    message = "Loaded session " .. vim.g.persisted_loaded_session
 
     vim.defer_fn(function()
       vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
