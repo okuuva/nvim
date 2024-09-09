@@ -6,6 +6,7 @@ return {
   },
   opts = {
     ensure_installed = {
+      "basedpyright",
       "bash-language-server",
       "docker-compose-language-service",
       "dockerfile-language-server",
@@ -14,7 +15,6 @@ return {
       "json-lsp",
       "lua-language-server",
       "marksman",
-      "python-lsp-server",
       "vim-language-server",
       "vue-language-server",
       "yaml-language-server",

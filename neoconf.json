@@ -2,7 +2,7 @@
   "lspconfig": {
     "pylsp": {
       // jedi, the least sucky lsp for python
-      "pylsp.plugins.jedi_completion.enabled": true,
+      "pylsp.plugins.jedi_completion.enabled": false,
       "pylsp.plugins.jedi_completion.include_class_objects": true,
       "pylsp.plugins.jedi_completion.include_function_objects": true,
       "pylsp.plugins.jedi_completion.fuzzy": true,
@@ -26,6 +26,14 @@
       "yaml.schemas": {
         "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab/ci-config/*.yml"
       }
+    },
+    "basedpyright": {
+      "basedpyright.typeCheckingMode": "standard",
+      "basedpyright.disableOrganizeImports": true,
+      "python.pythonPath": "./.venv/bin/python",
+      "python.analysis.ignore": [
+        "*"
+      ]
     }
   }
 }
