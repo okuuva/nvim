@@ -15,6 +15,7 @@ return {
       "json-lsp",
       "lua-language-server",
       "marksman",
+      "ruff",
       "vim-language-server",
       "vue-language-server",
       "yaml-language-server",

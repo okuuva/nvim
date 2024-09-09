@@ -8,7 +8,8 @@
       "pylsp.plugins.jedi_completion.fuzzy": true,
       "pylsp.plugins.jedi_completion.eager": true,
       // ruff, one stop shop for your linting needs
-      "pylsp.plugins.ruff.enabled": true,
+      // should use the standalone ruff ls though
+      "pylsp.plugins.ruff.enabled": false,
       // explicitly disable all other linters
       "pylsp.plugins.autopep8.enabled": false,
       "pylsp.plugins.flake8.enabled": false,
