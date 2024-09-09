@@ -102,7 +102,6 @@ return {
             codeium = "[Codeium]",
             fish = "[fish]",
             env = "[ENV]",
-            plugins = "[Plugins]",
             buffer = "[Buffer]",
             path = "[Path]",
             nerdfont = "[NerdFont]",
