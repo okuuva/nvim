@@ -27,7 +27,9 @@ return {
   },
   {
     "mcauley-penney/tidy.nvim",
-    config = true,
+    opts = {
+      provide_undefined_editorconfig_behavior = true,
+    },
     event = "BufWritePre",
   },
   {
