@@ -13,7 +13,7 @@ local diagnostics = {
 
 local diff = {
   "diff",
-  symbols = { added = "✚", modified = " ", removed = "✖" }, -- changes diff symbols
+  symbols = { added = "✚ ", modified = " ", removed = "✖ " }, -- changes diff symbols
   cond = hide_in_width,
 }
 
