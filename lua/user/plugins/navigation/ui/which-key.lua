@@ -6,7 +6,7 @@ local mappings = {
   { "<leader>R", group = "IronRepl", nowait = true, remap = false },
   { "<leader>S", group = "Split", nowait = true, remap = false },
   { "<leader>SS", "<cmd>vsplit<cr>", desc = "Vertical split", nowait = true, remap = false },
-  { "<leader>Sh", "<cmd>split<cr>", desc = "Horizontal split", nowait = true, remap = false },
+  { "<leader>SH", "<cmd>split<cr>", desc = "Horizontal split", nowait = true, remap = false },
   { "<leader>T", group = "TreeSitter", nowait = true, remap = false },
   { "<leader>b", group = "Buffers", nowait = true, remap = false },
   { "<leader>d", group = "Diagnostics", nowait = true, remap = false },
