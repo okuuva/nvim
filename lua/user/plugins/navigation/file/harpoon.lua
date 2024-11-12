@@ -3,7 +3,7 @@ return {
   branch = "harpoon2",
   -- stylua: ignore
   keys = {
-    { "<leader>ha", function() require("harpoon"):list():append() end, desc = "Append", },
+    { "<leader>ha", function() require("harpoon"):list():add() end, desc = "Append", },
     { "<leader>hp", function() require("harpoon"):list():prepend() end, desc = "Prepend", },
     { "<leader>hl", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "List", },
     { "<C-h>", function() require("harpoon"):list():select(1) end, desc = "Harpoon 1", },
