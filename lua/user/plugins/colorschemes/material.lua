@@ -22,6 +22,7 @@ return {
         comments = {
           italic = true,
         },
+
         strings = {},
         keywords = {
           bold = true,
@@ -35,11 +36,13 @@ return {
 
       plugins = { -- Uncomment the plugins that you use to highlight them
         -- Available plugins:
+        -- "coc",
+        -- "colorful-winsep",
         "dap",
         -- "dashboard",
         -- "eyeliner",
-        -- "fidget"
-        -- "flash"
+        -- "fidget",
+        -- "flash",
         "gitsigns",
         -- "harpoon",
         -- "hop",
@@ -49,6 +52,7 @@ return {
         -- "mini",
         -- "neogit",
         -- "neotest",
+        -- "neo-tree",
         -- "neorg",
         "noice",
         "nvim-cmp",
