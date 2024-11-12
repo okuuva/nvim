@@ -38,18 +38,14 @@ local deferred_triggers = { "InsertLeave", "TextChanged" }
 
 return {
   "okuuva/auto-save.nvim",
+  version = "^1.0.0",
   event = vim.tbl_deep_extend("force", immediate_triggers, deferred_triggers),
   opts = {
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
-    execution_message = {
-      message = execution_message,
-      dim = 0.18, -- dim the color of `message`
-      cleaning_interval = 5000, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
-    },
     trigger_events = { -- See :h events
       immediate_save = immediate_triggers, -- vim events that trigger an immediate save
       defer_save = deferred_triggers, -- vim events that trigger a deferred save (saves after `debounce_delay`)
-      cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+      cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
     },
     -- function that determines whether to save the current buffer or not
     -- return true: if buffer is ok to be saved
