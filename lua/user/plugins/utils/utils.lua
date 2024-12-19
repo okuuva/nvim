@@ -62,8 +62,6 @@ return {
     "EtiamNullam/deferred-clipboard.nvim",
     event = "VeryLazy",
     opts = {
-      fallback = "unnamedplus", -- or your preferred setting for clipboard
-      lazy = true,
     },
   },
 }
