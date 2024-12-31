@@ -40,6 +40,7 @@ return {
         go = expandFormatters({ { "goimports", "gofmt" } }),
         javascript = expandFormatters({ { "prettierd", "prettier" } }),
         lua = { "stylua" },
+        nix = { "alejandra" },
         python = expandFormatters({ { "darker", "isort" }, "black" }),
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         ruby = { "rubocop" },
