@@ -19,6 +19,8 @@ MISE_SHIM_DIR = MISE_DATA_DIR .. "/shims"
 
 vim.env.PATH = MISE_SHIM_DIR .. ":" .. vim.env.PATH
 
+vim.env.CARGO_NET_GIT_FETCH_WITH_CLI = "true"
+
 local settings = {
   alpine_linux = check_alpine, -- check if we're running on Alpine Linux (meaning musl)
   do_filetype_lua = 1, -- use filetype plugin written in LUA
