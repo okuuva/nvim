@@ -11,6 +11,8 @@ local check_alpine = function()
   return false
 end
 
+vim.env.PATH = "/run/current-system/sw/bin" .. ":" .. vim.env.PATH
+
 XDG_DATA_HOME = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
 MISE_DATA_DIR = vim.env.MISE_DATA_DIR or (XDG_DATA_HOME .. "/mise")
 MISE_SHIM_DIR = MISE_DATA_DIR .. "/shims"
