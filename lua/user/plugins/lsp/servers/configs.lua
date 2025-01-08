@@ -4,6 +4,7 @@ local servers = {
   "fuzzy_ruby_ls",
   "jsonls",
   "lua_ls",
+  "nushell",
 }
 
 for _, server_name in ipairs(servers) do
