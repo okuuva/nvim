@@ -84,7 +84,6 @@ return {
     { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
     { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
     { "<leader>sn", "<cmd>Telescope notify<cr>", desc = "Notifications" },
-    { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
     { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
     { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
@@ -203,7 +202,6 @@ return {
     telescope.load_extension("persisted")
     telescope.load_extension("notify")
     telescope.load_extension("noice")
-    telescope.load_extension("projects")
     telescope.load_extension("yank_history")
     telescope.load_extension("git_worktree")
   end,
