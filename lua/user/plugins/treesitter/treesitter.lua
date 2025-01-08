@@ -13,6 +13,8 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
     "andymass/vim-matchup",
+    -- NOTE: additional parser
+    { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
   },
   config = function()
     ---@diagnostic disable-next-line: missing-fields
