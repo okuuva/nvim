@@ -5,6 +5,13 @@ return {
       markdown = { "vale" },
       bash = { "shellcheck" },
       sh = { "shellcheck" },
+      sql = { "sqlfluff" },
+    }
+    local sqlfluff = require("lint").linters.sqlfluff
+    sqlfluff.args = {
+      "lint",
+      "--format=json",
+      "--dialect=postgres",
     }
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
       callback = function()
