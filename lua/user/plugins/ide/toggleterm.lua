@@ -3,9 +3,6 @@ return {
   version = "^2.4.0",
   cmd = "ToggleTerm",
   event = "VeryLazy",
-  keys = {
-    { "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit" },
-  },
   init = function()
     function _G.set_terminal_keymaps()
       local opts = { noremap = true }
