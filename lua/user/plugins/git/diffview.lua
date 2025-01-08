@@ -32,13 +32,13 @@ return {
     -- stylua: ignore
     { "<leader>gd", "<cmd>DiffviewFileHistory %<cr>", desc = "Diff" },
     {
-      "<leader>gi",
+      "<leader>gh",
       function()
         vim.cmd(vim.api.nvim_win_get_cursor(0)[1] .. "DiffviewFileHistory<cr>")
       end,
       desc = "Line history",
     },
-    { "<leader>gi", "<cmd>'<,'>DiffviewFileHistory<cr>", mode = "v", desc = "Line history" },
+    { "<leader>gh", "<cmd>'<,'>DiffviewFileHistory<cr>", mode = "v", desc = "Line history" },
   },
   init = function()
     -- set fillchar to "╱"
