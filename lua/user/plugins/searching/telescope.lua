@@ -66,6 +66,12 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      -- This will not install any breaking changes.
+      -- For major updates, this must be adjusted manually.
+      version = "^1.0.0",
+    },
     "benfowler/telescope-luasnip.nvim",
   },
   keys = {
@@ -82,7 +88,7 @@ return {
     { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
     { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
-    { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
+    { "<leader>st", "<cmd>Telescope live_grep_args theme=ivy<cr>", desc = "Text" },
     { "<leader>sy", "<cmd>Telescope yank_history<cr>", desc = "Yank history" },
     -- stylua: ignore
     { "<leader>gm", function() changed_on_branch() end, desc = "Modified files" },
@@ -192,6 +198,7 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("live_grep_args")
     telescope.load_extension("luasnip")
     telescope.load_extension("persisted")
     telescope.load_extension("notify")
