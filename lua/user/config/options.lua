@@ -46,11 +46,12 @@ local options = {
   expandtab = true, -- convert tabs to spaces
   fileencoding = "utf-8", -- the encoding written to a file
   fillchars = {
-    vert = " ",
+    eob = " ",
     fold = " ",
     foldopen = "",
     foldsep = " ",
     foldclose = "",
+    vert = " ",
   },
   foldcolumn = "1", -- fold column width
   foldenable = true, -- no fold to be applied when open a file
