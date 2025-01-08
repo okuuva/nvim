@@ -2,29 +2,29 @@
 ---@param ... string
 ---@return string
 local function first(bufnr, ...)
-	local conform = require("conform")
-	for i = 1, select("#", ...) do
-		local formatter = select(i, ...)
-		if conform.get_formatter_info(formatter, bufnr).available then
-			return formatter
-		end
-	end
-	return select(1, ...)
+  local conform = require("conform")
+  for i = 1, select("#", ...) do
+    local formatter = select(i, ...)
+    if conform.get_formatter_info(formatter, bufnr).available then
+      return formatter
+    end
+  end
+  return select(1, ...)
 end
 
 local function expandFormatters(formatters)
-	return function(bufnr)
-		local result = {}
-		for i = 1, #formatters do
-			local formatter = formatters[i]
-			if type(formatter) == "table" then
-				result[i] = first(bufnr, unpack(formatter))
-			else
-				result[i] = formatter
-			end
-		end
-		return result
-	end
+  return function(bufnr)
+    local result = {}
+    for i = 1, #formatters do
+      local formatter = formatters[i]
+      if type(formatter) == "table" then
+        result[i] = first(bufnr, unpack(formatter))
+      else
+        result[i] = formatter
+      end
+    end
+    return result
+  end
 end
 
 return {
