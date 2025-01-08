@@ -11,7 +11,8 @@ local mappings = {
   { "<leader>b", group = "Buffers", nowait = true, remap = false },
   { "<leader>d", group = "Diagnostics", nowait = true, remap = false },
   { "<leader>g", group = "Git", nowait = true, remap = false },
-  { "<leader>gl", group = "GitLink", nowait = true, remap = false },
+  { "<leader>gL", group = "GitLink", nowait = true, remap = false },
+  { "<leader>gl", group = "Gitlab", nowait = true, remap = false },
   { "<leader>gt", group = "Toggle", nowait = true, remap = false },
   { "<leader>h", group = "Harpoon", nowait = true, remap = false },
   { "<leader>l", group = "LSP", nowait = true, remap = false },
@@ -26,15 +27,15 @@ local mappings = {
   {
     mode = { "x" },
     { "<leader>g", group = "Git" },
-    { "<leader>gl", group = "GitLink" },
+    { "<leader>gL", group = "GitLink" },
+    { "<leader>gl", group = "Gitlab" },
     { "<leader>o", group = "Obsidian" },
     { "<leader>p", group = "Pastebin" },
     { "<leader>s", ":<C-u>'<,'>sort<cr>", desc = "Sort" },
   },
-  { "gl", group = "Gitlab" },
-  { "gla", group = "Assignee" },
-  { "gll", group = "Labels" },
-  { "glr", group = "Reviewer" },
+  { "<leader>gla", group = "Assignee" },
+  { "<leader>gll", group = "Labels" },
+  { "<leader>glr", group = "Reviewer" },
 }
 
 return {

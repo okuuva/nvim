@@ -3,10 +3,10 @@ return {
   version = "^4.0.0",
   keys = {
     -- stylua: ignore
-    { "<leader>gly", "<cmd>GitLink<cr>", mode = { "n", "x" }, desc = "Copy git permalink to clipboard" },
-    { "<leader>glo", "<cmd>GitLink!<cr>", mode = { "n", "x" }, desc = "Open git permalink in browser" },
-    { "<leader>glb", "<cmd>GitLink blame<cr>", mode = { "n", "x" }, desc = "Copy git blame link to clipboard" },
-    { "<leader>glB", "<cmd>GitLink! blame<cr>", mode = { "n", "x" }, desc = "Open git blame link in browser" },
+    { "<leader>gLy", "<cmd>GitLink<cr>", mode = { "n", "x" }, desc = "Copy git permalink to clipboard" },
+    { "<leader>gLo", "<cmd>GitLink!<cr>", mode = { "n", "x" }, desc = "Open git permalink in browser" },
+    { "<leader>gLb", "<cmd>GitLink blame<cr>", mode = { "n", "x" }, desc = "Copy git blame link to clipboard" },
+    { "<leader>gLB", "<cmd>GitLink! blame<cr>", mode = { "n", "x" }, desc = "Open git blame link in browser" },
   },
   opts = function()
     return {
