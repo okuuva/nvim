@@ -1,5 +1,4 @@
 local linkables = {
-  ".direnv",
   ".gitlab.nvim",
 }
 
@@ -36,11 +35,6 @@ return {
 
       local repo_root_path = vim.fn.getcwd() .. "/../"
       local worktree_path = repo_root_path .. metadata.path
-      local envrc_path = repo_root_path .. ".envrc"
-      if vim.fn.filereadable(envrc_path) then
-        vim.notify("Copying .envrc to " .. worktree_path)
-        os.execute("cp " .. envrc_path .. " " .. worktree_path)
-      end
       for _, filename in ipairs(linkables) do
         local filepath = repo_root_path .. filename
         if vim.fn.filereadable(filepath) then
