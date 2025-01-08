@@ -1,6 +1,10 @@
 return {
-  "s1n7ax/nvim-window-picker",
-  version = "^2.0.0",
+  -- revert back to official repo and tag once PR is merged:
+  -- https://github.com/s1n7ax/nvim-window-picker/pull/91
+  -- "s1n7ax/nvim-window-picker",
+  -- version = "^2.0.0",
+  "9ary/nvim-window-picker",
+  branch = "big-letter-fixes",
   keys = {
     {
       "<leader>i",
@@ -26,6 +30,8 @@ return {
 
     show_prompt = false,
 
+    -- this can be axed once PR is merged:
+    -- https://github.com/s1n7ax/nvim-window-picker/pull/90
     filter_func = function(windows, rules)
       local function predicate(wid)
         cfg = vim.api.nvim_win_get_config(wid)
