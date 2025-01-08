@@ -1,6 +1,5 @@
 return {
-  "okuuva/nvim-lightbulb",
-  branch = "ignore-kinds",
+  "kosayoda/nvim-lightbulb",
   opts = {
     -- Priority of the lightbulb for all handlers except float.
     priority = 10,
@@ -125,9 +124,20 @@ return {
       -- Filetypes to ignore.
       -- Example: {"neo-tree", "lua"}
       ft = {},
-      -- Actions to ignore. To ignore code actions without a `kind` like refactor.rewrite, add "" to the table.
-      -- Example: {"source.fixAll", ""}
-      actions = { "source.fixAll", "source.organizeImports" },
+      -- Ignore code actions without a `kind` like refactor.rewrite, quickfix.
+      actions_without_kind = false,
     },
+
+    --- A general filter function for code actions.
+    --- The function is called for code actions *after* any `ignore` or `action_kinds`
+    --- options are applied.
+    --- The function should return true to keep the code action, false otherwise.
+    ---@type (fun(client_name:string, result:lsp.CodeAction|lsp.Command):boolean)|nil
+    filter = function(client_name, result)
+      if result == "source.fixAll" or result == "source.organizeImports" then
+        return false
+      end
+      return true
+    end,
   },
 }
