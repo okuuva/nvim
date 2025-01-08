@@ -84,15 +84,11 @@ return {
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
     { "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Text" },
     { "<leader>sy", "<cmd>Telescope yank_history<cr>", desc = "Yank history" },
-    -- git
-    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Switch branch" },
-    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
-    { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit (for current file)" },
     -- stylua: ignore
     { "<leader>gm", function() changed_on_branch() end, desc = "Modified files" },
     -- lsp
-    { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
-    { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
+    { "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
+    { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
   },
   config = function()
     local telescope = require("telescope")

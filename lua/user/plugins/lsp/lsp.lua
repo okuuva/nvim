@@ -7,9 +7,9 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     -- stylua: ignore
     keys = {
+      { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
       -- Code action gets triggered with <leader>la via actions-preview plugin
       { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
-      { "<leader>lh", vim.lsp.buf.hover, desc = "Hover" },
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
       { "<leader>ll", vim.lsp.codelens.run, desc = "CodeLens Action" },
       { "<leader>lo", "<cmd>LspLog<cr>", desc = "Log" },
@@ -124,7 +124,11 @@ return {
       vim.diagnostic.config(opts.diagnostics)
 
       local servers = opts.servers
-      local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        vim.lsp.protocol.make_client_capabilities(),
+        require("cmp_nvim_lsp").default_capabilities()
+      )
 
       -- nvim-ufo folding settings
       capabilities.textDocument.foldingRange = {
