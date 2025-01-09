@@ -24,6 +24,7 @@ local mappings = {
   { "<leader>s", group = "Search", nowait = true, remap = false },
   { "<leader>t", group = "Neotest", nowait = true, remap = false },
   { "<leader>w", "<cmd>w<cr>", desc = "Write", nowait = true, remap = false },
+  { "<leader>z", group = "Zen Mode", nowait = true, remap = false },
   {
     mode = { "x" },
     { "<leader>P", group = "Pastebin" },

@@ -54,6 +54,10 @@ local function create_lsp_progress_autocmd()
   })
 end
 
+local function toggle_narrow_zen()
+  Snacks.zen({ win = { style = "narrow_zen" } })
+end
+
 return {
   "folke/snacks.nvim",
   version = "^2.0.0",
@@ -74,6 +78,8 @@ return {
     { "<leader>nh", function() Snacks.notifier.show_history() end,   desc = "Notification History" },
     { "]]",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference", mode = { "n", "t" } },
     { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+    { "<leader>zm", function() Snacks.zen() end,                     desc = "Toggle Zen Mode" },
+    { "<leader>zn", toggle_narrow_zen,                               desc = "Toggle Zen Mode (Narrow)" },
   },
   ---@type snacks.Config
   opts = {
@@ -98,7 +104,7 @@ return {
       top_down = false,
     },
     notify = { enabled = true },
-    ---@field animate snacks.animate.Config
+    scope = { enabled = true },
     scroll = {
       animate = {
         duration = { step = 25, total = 250 },
@@ -107,11 +113,42 @@ return {
     },
     quickfile = { enabled = true },
     words = { enabled = true },
-    ---@type table<string, snacks.win.Config>
+    zen = {
+      -- see https://github.com/b0o/incline.nvim/discussions/77 for enabling incline for zen mode window
+      -- callback where you can add custom code when the Zen window opens
+      on_open = function()
+        local status_ok, incline = pcall(require, "incline")
+        if status_ok then
+          incline.disable()
+        end
+      end,
+      -- callback where you can add custom code when the Zen window closes
+      on_close = function()
+        local status_ok, incline = pcall(require, "incline")
+        if status_ok then
+          incline.enable()
+        end
+      end,
+    },
+
     styles = {
+      ---@diagnostic disable-next-line: missing-fields
       lazygit = {
         height = 0,
         width = 0,
+      },
+      ---@diagnostic disable-next-line: missing-fields
+      zen = {
+        -- FIXME: figure out how to use theme here instead of hardcoded value
+        backdrop = {
+          bg = "#212121",
+          transparent = false,
+        },
+      },
+      ---@diagnostic disable-next-line: missing-fields
+      narrow_zen = {
+        style = "zen",
+        width = 80,
       },
     },
   },
