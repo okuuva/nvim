@@ -41,6 +41,10 @@ local mappings = {
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
+  dependencies = {
+    "mini.icons",
+    "nvim-web-devicons",
+  },
   ---@class wk.Opts
   opts = {
     ---@type false | "classic" | "modern" | "helix"

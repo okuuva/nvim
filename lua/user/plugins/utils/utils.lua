@@ -51,6 +51,11 @@ return {
     lazy = true,
   },
   {
+    "echasnovski/mini.icons",
+    lazy = true,
+    version = "*",
+  },
+  {
     "nvim-lua/plenary.nvim",
     lazy = true,
   },
@@ -61,7 +66,6 @@ return {
   {
     "EtiamNullam/deferred-clipboard.nvim",
     event = "VeryLazy",
-    opts = {
-    },
+    opts = {},
   },
 }
