@@ -1,3 +1,13 @@
+local function BdeleteAndCloseTabIfNotLast()
+  Snacks.bufdelete({ force = true })
+
+  local tabpages = vim.api.nvim_list_tabpages()
+  -- close tab if it's not the last one
+  if #tabpages > 1 then
+    vim.cmd("tabclose")
+  end
+end
+
 local function create_lsp_progress_autocmd()
   ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
   local progress = vim.defaulttable()
@@ -56,6 +66,7 @@ return {
   init = create_lsp_progress_autocmd(),
   -- stylua: ignore
   keys = {
+    { "<leader>c",  BdeleteAndCloseTabIfNotLast,                     desc = "Close Buffer" },
     { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
     { "<leader>nd", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
     { "<leader>nh", function() Snacks.notifier.show_history() end,   desc = "Notification History" },

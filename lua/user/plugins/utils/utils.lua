@@ -1,14 +1,3 @@
-local function BdeleteAndCloseTabIfNotLast()
-  local bufdelete = require("bufdelete")
-  bufdelete.bufdelete(0, true)
-
-  local tabpages = vim.api.nvim_list_tabpages()
-  -- close tab if it's not the last one
-  if #tabpages > 1 then
-    vim.cmd("tabclose")
-  end
-end
-
 return {
   {
     "dstein64/vim-startuptime",
@@ -17,13 +6,6 @@ return {
   {
     "b0o/schemastore.nvim", -- json schemas for jsonls
     lazy = true,
-  },
-  {
-    "famiu/bufdelete.nvim",
-    cmd = { "Bdelete", "Bwipeout" },
-    keys = {
-      { "<leader>c", BdeleteAndCloseTabIfNotLast, desc = "Close Buffer" },
-    },
   },
   {
     "mcauley-penney/tidy.nvim",

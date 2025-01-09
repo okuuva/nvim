@@ -22,7 +22,7 @@ return {
       dashboard.button("r", "󰄉  Recently used files", ":Telescope oldfiles <CR>"),
       dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("e", "  Edit configuration", ":e ~/.config/nvim/init.lua <CR>"),
-      dashboard.button("c", "󰜺  Close dashboard", ":Bdelete <CR>"),
+      dashboard.button("c", "󰜺  Close dashboard", ":lua Snacks.bufdelete() <CR>"),
       dashboard.button("q", "󰅚  Quit Neovim", ":qa<CR>"),
     }
 
