@@ -66,6 +66,7 @@ return {
   opts = {
     bigfile = { enabled = true },
     indent = { enabled = true },
+    input = { enabled = true },
     ---@class snacks.lazygit.Config: snacks.terminal.Opts
     lazygit = {
       -- automatically configure lazygit to use the current colorscheme

@@ -60,6 +60,15 @@ return {
     lazy = true,
   },
   {
+    "stevearc/dressing.nvim",
+    lazy = true,
+    opts = {
+      input = {
+        enabled = false,
+      },
+    },
+  },
+  {
     "MunifTanjim/nui.nvim",
     lazy = true,
   },
