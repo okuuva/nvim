@@ -67,6 +67,7 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>c",  BdeleteAndCloseTabIfNotLast,                     desc = "Close Buffer" },
+    { "<leader>gB", function() Snacks.gitbrowse() end,               desc = "Git Browse", mode = { "n", "x" } },
     { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
     { "<leader>nd", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
     { "<leader>nh", function() Snacks.notifier.show_history() end,   desc = "Notification History" },
