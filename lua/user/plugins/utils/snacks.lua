@@ -68,6 +68,7 @@ return {
   keys = {
     { "<leader>c",  BdeleteAndCloseTabIfNotLast,                     desc = "Close Buffer" },
     { "<leader>gB", function() Snacks.gitbrowse() end,               desc = "Git Browse", mode = { "n", "x" } },
+    { "<leader>gb", function() Snacks.git.blame_line() end,          desc = "Git Blame Line" },
     { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
     { "<leader>nd", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
     { "<leader>nh", function() Snacks.notifier.show_history() end,   desc = "Notification History" },
