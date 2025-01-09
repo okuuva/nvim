@@ -57,7 +57,7 @@ return {
         "noice",
         "nvim-cmp",
         -- "nvim-navic",
-        "nvim-notify",
+        -- "nvim-notify",
         -- "nvim-tree",
         "nvim-web-devicons",
         -- "rainbow-delimiters",

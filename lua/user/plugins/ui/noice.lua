@@ -3,7 +3,6 @@ return {
   event = "VeryLazy",
   dependencies = {
     "nui.nvim",
-    "nvim-notify",
   },
   opts = {
     cmdline = {
@@ -16,6 +15,8 @@ return {
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
+      -- let snacks.notifier take care of it
+      progress = { enabled = false },
     },
     popupmenu = {
       enabled = true, -- enables the Noice popupmenu UI
