@@ -9,10 +9,13 @@ return {
   },
   -- stylua: ignore
   keys = {
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+    { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
+    { "]]",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference", mode = { "n", "t" } },
+    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
   },
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
     ---@class snacks.lazygit.Config: snacks.terminal.Opts
     lazygit = {
       -- automatically configure lazygit to use the current colorscheme
@@ -27,6 +30,8 @@ return {
         },
       },
     },
+    quickfile = { enabled = true },
+    words = { enabled = true },
     ---@type table<string, snacks.win.Config>
     styles = {
       lazygit = {
