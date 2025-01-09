@@ -81,6 +81,13 @@ return {
       top_down = false,
     },
     notify = { enabled = true },
+    ---@field animate snacks.animate.Config
+    scroll = {
+      animate = {
+        duration = { step = 25, total = 250 },
+        easing = "inOutQuad",
+      },
+    },
     quickfile = { enabled = true },
     words = { enabled = true },
     ---@type table<string, snacks.win.Config>
