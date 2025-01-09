@@ -5,13 +5,13 @@ return {
   -- stylua: ignore
   keys = {
     -- run
-    { "<leader>nd", function() require("neotest").run.run(vim.fn.expand('%:h')) end, desc = "Run in current dir" },
-    { "<leader>nn", function() require("neotest").run.run() end, desc = "Run nearest test" },
-    { "<leader>nf", function() require("neotest").run.run(vim.fn.expand('%')) end, desc = "Run current file" },
-    { "<leader>np", function() require("neotest").run.run(vim.fn.getcwd()) end, desc = "Run tests for the whole project" },
+    { "<leader>td", function() require("neotest").run.run(vim.fn.expand('%:h')) end, desc = "Run in current dir" },
+    { "<leader>tn", function() require("neotest").run.run() end, desc = "Run nearest test" },
+    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand('%')) end, desc = "Run current file" },
+    { "<leader>tp", function() require("neotest").run.run(vim.fn.getcwd()) end, desc = "Run tests for the whole project" },
     -- toggle
-    { "<leader>nto", function() require("neotest").output_panel.toggle() end, desc = "Output panel" },
-    { "<leader>nts", function() require("neotest").summary.toggle() end, desc = "Summary" },
+    { "<leader>tto", function() require("neotest").output_panel.toggle() end, desc = "Output panel" },
+    { "<leader>tts", function() require("neotest").summary.toggle() end, desc = "Summary" },
   },
   dependencies = {
     -- common dependencies

@@ -17,8 +17,8 @@ end
 return {
   "rktjmp/paperplanes.nvim",
   keys = {
-    { "<leader>pp", "<cmd>PP<cr>", desc = "Send buffer to pastebin" },
-    { "<leader>pp", post_selection, mode = "x", desc = "Send selection to pastebin" },
+    { "<leader>PP", "<cmd>PP<cr>", desc = "Send buffer to pastebin" },
+    { "<leader>PP", post_selection, mode = "x", desc = "Send selection to pastebin" },
   },
   cmd = "PP",
   opts = {

@@ -1,7 +1,7 @@
 return {
   'nguyenvukhang/nvim-toggler',
   keys = {
-    { "<leader>t", function() require("nvim-toggler").toggle() end, desc = "Toggle current word" },
+    { "<leader>i", function() require("nvim-toggler").toggle() end, desc = "Invert current word" },
   },
   opts = {
     remove_default_keybinds = true,
