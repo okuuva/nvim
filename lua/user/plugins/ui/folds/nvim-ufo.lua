@@ -1,6 +1,7 @@
 local provider_by_ft = {
   gitcommit = "",
   gitrebase = "",
+  snacks_dashboard = "",
 }
 
 return {

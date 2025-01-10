@@ -1,11 +1,10 @@
 local on_autoload_no_session = function()
-  -- need to pass true (on_vimenter) so that alpha clears the unnamed buffer vim creates at start
-  require("alpha").start(true)
+  Snacks.dashboard()
 end
 
 local should_autosave = function()
-  -- do not autosave if the alpha dashboard is the current filetype
-  if vim.bo.filetype == "alpha" then
+  -- do not autosave if the dashboard is the current filetype
+  if vim.bo.filetype == "snacks_dashboard" then
     return false
   end
   return true

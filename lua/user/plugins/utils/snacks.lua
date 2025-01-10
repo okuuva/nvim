@@ -70,6 +70,7 @@ return {
   init = create_lsp_progress_autocmd(),
   -- stylua: ignore
   keys = {
+    { "<leader>D",  function() Snacks.dashboard() end,               desc = "Dashboard" },
     { "<leader>c",  BdeleteAndCloseTabIfNotLast,                     desc = "Close Buffer" },
     { "<leader>gB", function() Snacks.gitbrowse() end,               desc = "Git Browse", mode = { "n", "x" } },
     { "<leader>gb", function() Snacks.git.blame_line() end,          desc = "Git Blame Line" },
@@ -84,6 +85,28 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    -- TODO: figure out how to hide cursor on dashboard
+    -- it was visible on alpha as well but would be cool to hide it
+    -- see:
+    -- - https://github.com/goolord/alpha-nvim/discussions/75
+    -- - https://github.com/goolord/alpha-nvim/issues/208
+    -- - https://github.com/neovim/neovim/issues/3688#issuecomment-574544618
+    dashboard = {
+      preset = {
+        -- stylua: ignore
+        keys = {
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+          { icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "e", desc = "Edit Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
+          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = "󰜺 ", key = "c", desc = "Close Dashboard", action = ":lua Snacks.bufdelete()" },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+      },
+    },
     indent = { enabled = true },
     input = { enabled = true },
     ---@class snacks.lazygit.Config: snacks.terminal.Opts
