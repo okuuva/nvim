@@ -14,10 +14,10 @@ return {
   event = "BufEnter",
   -- stylua: ignore
   keys = {
-    { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
-    { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+    { "zR", function() require("ufo").openAllFolds() end,         desc = "Open all folds" },
+    { "zM", function() require("ufo").closeAllFolds() end,        desc = "Close all folds" },
     { "zr", function() require("ufo").openFoldsExceptKinds() end, desc = "Fold less" },
-    { "zm", function() require("ufo").closeFoldsWith() end, desc = "Fold more" },
+    { "zm", function() require("ufo").closeFoldsWith() end,       desc = "Fold more" },
   },
   init = function()
     vim.o.foldcolumn = "1" -- '1' is best when using statuscol.nvim
@@ -55,6 +55,7 @@ return {
       table.insert(newVirtText, { suffix, "MoreMsg" })
       return newVirtText
     end,
+    ---@diagnostic disable-next-line: unused-local
     provider_selector = function(bufnr, filetype, buftype)
       return provider_by_ft[filetype] or { "lsp", "indent" }
     end,

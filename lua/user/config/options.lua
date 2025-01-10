@@ -55,8 +55,11 @@ local options = {
   },
   foldcolumn = "1", -- fold column width
   foldenable = true, -- no fold to be applied when open a file
-  foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-  foldmethod = "expr", -- folding, set to "expr" for treesitter based folding
+  foldexpr = "v:lua.vim.treesitter.foldexpr()", -- use treesitter for folding
+  foldlevel = 99, -- make sure no folds are closed when opening a file
+  foldlevelstart = 99, -- make sure no folds are closed when opening a file
+  foldmethod = "expr", -- folding, set to "expr" for lsp/treesitter based folding
+  foldtext = "", -- set to empty string to the line is displayed normally with highlighting and no line wrapping
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   hlsearch = true, -- highlight all matches on previous search pattern
   ignorecase = true, -- ignore case in search patterns
