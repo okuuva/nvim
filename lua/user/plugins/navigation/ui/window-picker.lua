@@ -1,10 +1,6 @@
 return {
-  -- revert back to official repo and tag once PR is merged:
-  -- https://github.com/s1n7ax/nvim-window-picker/pull/91
-  -- "s1n7ax/nvim-window-picker",
-  -- version = "^2.0.0",
-  "9ary/nvim-window-picker",
-  branch = "big-letter-fixes",
+  "s1n7ax/nvim-window-picker",
+  version = "^2.0.0",
   keys = {
     {
       "<leader>p",
@@ -29,22 +25,12 @@ return {
     selection_chars = "HTNSUEOA",
 
     show_prompt = false,
-
-    -- this can be axed once PR is merged:
-    -- https://github.com/s1n7ax/nvim-window-picker/pull/90
-    filter_func = function(windows, rules)
-      local function predicate(wid)
-        cfg = vim.api.nvim_win_get_config(wid)
-        if not cfg.focusable then
-          return false
-        end
-        return true
-      end
-      local filtered = vim.tbl_filter(predicate, windows)
-
-      local dfilter = require("window-picker.filters.default-window-filter"):new()
-      dfilter:set_config(rules)
-      return dfilter:filter_windows(filtered)
-    end,
+    -- TODO: axe custom filter_rules once PR gets merged
+    -- https://github.com/s1n7ax/nvim-window-picker/pull/97
+    filter_rules = {
+      bo = {
+        filetype = { "snacks_notif" },
+      },
+    },
   },
 }
