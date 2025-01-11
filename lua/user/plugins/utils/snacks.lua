@@ -139,7 +139,7 @@ return {
       },
     },
     statuscolumn = {
-      left = {},
+      left = { "sign" },
       folds = {
         open = true, -- show open fold icons
         git_hl = false, -- do use Git Signs hl for fold icons
