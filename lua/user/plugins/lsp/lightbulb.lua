@@ -1,3 +1,5 @@
+local lightbulb_icon = "" -- a few to choose from: 󰌵💡
+
 return {
   "kosayoda/nvim-lightbulb",
   opts = {
@@ -39,7 +41,7 @@ return {
       enabled = true,
       -- Text to show in the sign column.
       -- Must be between 1-2 characters.
-      text = "💡",
+      text = lightbulb_icon,
       -- Highlight group to highlight the sign column text.
       hl = "LightBulbSign",
     },
@@ -48,7 +50,7 @@ return {
     virtual_text = {
       enabled = true,
       -- Text to show in the virt_text.
-      text = "💡",
+      text = lightbulb_icon,
       -- Position of virtual text given to |nvim_buf_set_extmark|.
       -- Can be a number representing a fixed column (see `virt_text_pos`).
       -- Can be a string representing a position (see `virt_text_win_col`).
@@ -64,7 +66,7 @@ return {
     float = {
       enabled = false,
       -- Text to show in the floating window.
-      text = "💡",
+      text = lightbulb_icon,
       -- Highlight group to highlight the floating window.
       hl = "LightBulbFloatWin",
       -- Window options.
@@ -81,7 +83,7 @@ return {
     status_text = {
       enabled = false,
       -- Text to set if a lightbulb is available.
-      text = "💡",
+      text = lightbulb_icon,
       -- Text to set if a lightbulb is unavailable.
       text_unavailable = "",
     },

@@ -6,14 +6,14 @@ local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn", "hint" },
-  symbols = { error = " ", warn = " ", hint = " " },
+  symbols = { error = " ", warn = " ", hint = " " },
   update_in_insert = false,
   always_visible = false,
 }
 
 local diff = {
   "diff",
-  symbols = { added = "✚ ", modified = " ", removed = "✖ " }, -- changes diff symbols
+  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width,
 }
 
