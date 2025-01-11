@@ -59,8 +59,12 @@ local function toggle_narrow_zen()
 end
 
 return {
-  "folke/snacks.nvim",
-  version = "^2.0.0",
+  -- "folke/snacks.nvim",
+  -- version = "^2.0.0",
+  -- TODO: switch back to stable / main once PR gets merged
+  -- https://github.com/folke/snacks.nvim/pull/447
+  "okuuva/snacks.nvim",
+  branch = "use-foldcolumn-hlgroup",
   priority = 1000,
   lazy = false,
   dependencies = {
@@ -132,6 +136,13 @@ return {
       animate = {
         duration = { step = 25, total = 250 },
         easing = "inOutQuad",
+      },
+    },
+    statuscolumn = {
+      left = {},
+      folds = {
+        open = true, -- show open fold icons
+        git_hl = false, -- do use Git Signs hl for fold icons
       },
     },
     quickfile = { enabled = true },

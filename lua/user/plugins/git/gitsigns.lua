@@ -24,8 +24,7 @@ return {
       topdelete = { text = "󰐊" },
       changedelete = { text = "▎" },
     },
-    -- FIXME: signcolumn can't be turned off without statuscol panicing
-    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     -- TODO: check how internal and indent_heuristic works
     diff_opts = {

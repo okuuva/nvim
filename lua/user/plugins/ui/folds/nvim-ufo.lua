@@ -9,7 +9,7 @@ return {
   dependencies = {
     "kevinhwang91/promise-async",
     "nvim-origami",
-    "statuscol.nvim",
+    -- "statuscol.nvim",
   },
   event = "BufEnter",
   -- stylua: ignore
