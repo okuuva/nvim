@@ -40,3 +40,4 @@ luac.out
 *.hex
 
 lua/user/config/local
+.repro
