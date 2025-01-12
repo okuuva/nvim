@@ -25,12 +25,5 @@ return {
     selection_chars = "HTNSUEOA",
 
     show_prompt = false,
-    -- TODO: axe custom filter_rules once PR gets merged
-    -- https://github.com/s1n7ax/nvim-window-picker/pull/97
-    filter_rules = {
-      bo = {
-        filetype = { "snacks_notif" },
-      },
-    },
   },
 }
