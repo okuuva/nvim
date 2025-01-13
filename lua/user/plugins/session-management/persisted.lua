@@ -1,3 +1,5 @@
+---@module "snacks"
+
 local on_autoload_no_session = function()
   Snacks.dashboard()
 end

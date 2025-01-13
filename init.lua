@@ -1,3 +1,5 @@
+---@module "snacks"
+
 -- set up debugging shortcuts before anything else
 -- https://github.com/folke/snacks.nvim/blob/main/docs/debug.md
 

@@ -17,7 +17,7 @@ return {
     dependencies = {
       "b0o/schemastore.nvim", -- json schemas for jsonls
       "neoconf.nvim",
-      "neodev.nvim",
+      "lazydev.nvim",
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",

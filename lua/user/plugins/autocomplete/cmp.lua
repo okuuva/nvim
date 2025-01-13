@@ -83,6 +83,7 @@ return {
           end,
         }),
       },
+      ---@diagnostic disable-next-line: missing-fields
       formatting = {
         format = lspkind.cmp_format({
           -- defines how annotations are shown
@@ -97,6 +98,7 @@ return {
           },
           menu = {
             copilot = "[Copilot]",
+            lazydev = "[LazyDev]",
             nvim_lsp = "[LSP]",
             luasnip = "[Snippet]",
             codeium = "[Codeium]",
@@ -113,6 +115,7 @@ return {
           -- end,
         }),
       },
+      ---@diagnostic disable-next-line: missing-fields
       sorting = {
         comparators = {
           cmp.config.compare.offset,
@@ -126,6 +129,10 @@ return {
         },
       },
       sources = {
+        {
+          name = "lazydev",
+          group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+        },
         { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
