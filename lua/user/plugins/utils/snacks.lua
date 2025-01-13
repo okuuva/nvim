@@ -57,6 +57,7 @@ local function create_lsp_progress_autocmd()
 end
 
 local function toggle_narrow_zen()
+  ---@diagnostic disable-next-line: missing-fields
   Snacks.zen({ win = { style = "narrow_zen" } })
 end
 
@@ -138,6 +139,7 @@ return {
       animate = {
         duration = { step = 25, total = 250 },
         easing = "inOutQuad",
+        fps = 60,
       },
     },
     statuscolumn = {
@@ -178,6 +180,7 @@ return {
         height = 0,
         width = 0,
       },
+      ---@diagnostic disable-next-line: missing-fields
       zen = {
         -- FIXME: figure out how to use theme here instead of hardcoded value
         backdrop = {
