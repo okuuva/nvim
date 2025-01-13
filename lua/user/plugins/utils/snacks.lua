@@ -174,6 +174,10 @@ return {
         width = 0,
       },
       ---@diagnostic disable-next-line: missing-fields
+      notification_history = {
+        height = 0,
+        width = 0,
+      },
       zen = {
         -- FIXME: figure out how to use theme here instead of hardcoded value
         backdrop = {

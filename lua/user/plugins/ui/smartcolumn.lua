@@ -14,6 +14,7 @@ return {
       "mason",
       "neo-tree",
       "noice",
+      "snacks_notif_history",
       "text",
     },
     custom_colorcolumn = {
