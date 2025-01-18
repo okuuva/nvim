@@ -9,12 +9,8 @@ return {
     { "<leader>ga", function() require("gitsigns").stage_hunk() end, desc = "Add Hunk to Stage" },
     { "<leader>gu", function() require("gitsigns").undo_stage_hunk() end, desc = "Undo Last Stage Hunk" },
     -- toggles
-    { "<leader>gtb", function() require("gitsigns").toggle_current_line_blame() end, desc = "Current line blame" },
     { "<leader>gtd", function() require("gitsigns").toggle_deleted() end, desc = "Deleted lines" },
     { "<leader>gtw", function() require("gitsigns").toggle_word_diff() end, desc = "Word diff" },
-    { "<leader>gtl", function() require("gitsigns").toggle_linehl() end, desc = "Line highlight" },
-    { "<leader>gtn", function() require("gitsigns").toggle_numhl() end, desc = "Number highlight" },
-    -- { "<leader>gts", function() require("gitsigns").toggle_signs() end, desc = "Sign column" },
   },
   opts = {
     signs = {
