@@ -134,6 +134,7 @@ return {
       top_down = false,
     },
     notify = { enabled = true },
+    quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = {
       animate = {
@@ -149,7 +150,6 @@ return {
         git_hl = false, -- do use Git Signs hl for fold icons
       },
     },
-    quickfile = { enabled = true },
     words = { enabled = true },
     zen = {
       -- see https://github.com/b0o/incline.nvim/discussions/77 for enabling incline for zen mode window
