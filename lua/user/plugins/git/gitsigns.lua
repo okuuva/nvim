@@ -26,12 +26,6 @@ return {
     },
     signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
-    -- TODO: check how internal and indent_heuristic works
-    diff_opts = {
-      algorithm = "histogram",
-      internal = false,
-      indent_heuristic = false,
-    },
     current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
       delay = 0,

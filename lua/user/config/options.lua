@@ -43,6 +43,15 @@ local options = {
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
   cursorline = true, -- highlight the current line
+  diffopt = {
+    "filler", -- show filler lines to keep the text in sync with a window with added lines in the same position
+    "vertical", -- start diff in vertical mode by default
+    "closeoff", -- run :diffoff for the last window in the tab if a diff window was closed
+    "hiddenoff", -- do not use diff mode for a buffer when it becomes hidden
+    "internal", -- use the internal diff library
+    "indent-heuristic", -- use the indent heuristic for the internal diff library
+    "algorithm:histogram", -- like patience but faster
+  },
   expandtab = true, -- convert tabs to spaces
   fileencoding = "utf-8", -- the encoding written to a file
   fillchars = {
