@@ -1,5 +1,3 @@
----@module "snacks"
-
 local function BdeleteAndCloseTabIfNotLast()
   Snacks.bufdelete({ force = true })
 
