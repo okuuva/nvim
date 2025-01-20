@@ -165,9 +165,18 @@ return {
         width = 0,
       },
       ---@diagnostic disable-next-line: missing-fields
+      notification = {
+        wo = {
+          wrap = true,
+        },
+      },
+      ---@diagnostic disable-next-line: missing-fields
       notification_history = {
         height = 0,
         width = 0,
+        wo = {
+          wrap = true,
+        },
       },
       ---@diagnostic disable-next-line: missing-fields
       zen = {
