@@ -1,7 +1,7 @@
 return {
   "marko-cerovac/material.nvim",
   lazy = false,
-  priority = 1000,
+  priority = 1001,
   config = function()
     vim.g.material_style = "darker"
     vim.cmd("hi def link IlluminatedWordText Visual")
