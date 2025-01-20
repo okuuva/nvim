@@ -178,10 +178,13 @@ return {
       },
       ---@diagnostic disable-next-line: missing-fields
       zen = {
-        -- FIXME: figure out how to use theme here instead of hardcoded value
         backdrop = {
-          bg = "#212121",
           transparent = false,
+          ---@diagnostic disable-next-line: missing-fields
+          win = {
+            -- TODO: find out why the backdrop group is named SnacksBackdrop_<color code> by default
+            wo = { winhighlight = "Normal:SnacksBackdrop" },
+          },
         },
       },
       ---@diagnostic disable-next-line: missing-fields

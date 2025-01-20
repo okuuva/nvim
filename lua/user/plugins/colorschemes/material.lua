@@ -115,8 +115,7 @@ return {
         SnacksIndentScope = { fg = colors.editor.disabled },
         SnacksIndentChunk = { fg = colors.editor.disabled },
 
-        -- FIXME: why isn't this working?
-        SnacksBackdrop = { bg = colors.editor.bg },
+        SnacksBackdrop = { bg = colors.editor.bg_alt },
         ["@variable"] = { link = "Identifier" },
         ["@field"] = { link = "Identifier" },
         ["@table_constructor"] = { link = "Identifier" },
