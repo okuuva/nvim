@@ -48,7 +48,7 @@ return {
         -- "lspsaga",
         -- "mini",
         -- "neogit",
-        -- "neotest",
+        "neotest",
         -- "neo-tree",
         -- "neorg",
         "noice",
