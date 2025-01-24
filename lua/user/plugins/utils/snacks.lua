@@ -54,7 +54,8 @@ local function create_lsp_progress_autocmd()
   })
 end
 
-local function toggle_narrow_zen()
+--Toggle narrow zen mode for the open buffer
+_G.toggle_narrow_zen = function ()
   ---@diagnostic disable-next-line: missing-fields
   Snacks.zen({ win = { style = "narrow_zen" } })
 end

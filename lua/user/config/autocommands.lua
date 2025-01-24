@@ -60,3 +60,12 @@ api.nvim_create_autocmd("User", {
     end, 0)
   end,
 })
+
+api.nvim_create_autocmd("BufWinEnter", {
+  pattern = vim.fn.expand("~") .. "/zen",
+  callback = function()
+    vim.defer_fn(toggle_narrow_zen, 1) -- cursor misbehaves if this isn't delayed at least 1 ms
+    require("wrapping").soft_wrap_mode()
+    vim.api.nvim_command("startinsert")
+  end,
+})
