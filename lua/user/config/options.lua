@@ -11,7 +11,8 @@ local check_alpine = function()
   return false
 end
 
-vim.env.PATH = "/run/current-system/sw/bin" .. ":" .. vim.env.PATH
+NIX_BIN_DIR = "/run/current-system/sw/bin"
+vim.env.PATH = NIX_BIN_DIR .. ":" .. vim.env.PATH
 
 XDG_DATA_HOME = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
 MISE_DATA_DIR = vim.env.MISE_DATA_DIR or (XDG_DATA_HOME .. "/mise")
@@ -27,7 +28,7 @@ local settings = {
   loaded_netrw = 1, -- disable netrw
   loaded_netrwPlugin = 1, -- I mean it
   loaded_perl_provider = 0, -- do not load perl provider
-  python3_host_prog = vim.env.HOME .. "/.virtualenvs/pynvim/bin/python3",
+  python3_host_prog = NIX_BIN_DIR .. "/nvim-python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
   vimsyn_minlines = 16, -- limit syntax highlighting to speed up scrolling
 }
