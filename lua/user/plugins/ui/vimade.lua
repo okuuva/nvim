@@ -10,7 +10,7 @@ return {
     -- ncmode = 'buffers' will fade inactive buffers (so the same buffer in multiple windows look the samd)
     -- ncmode = 'windows' will fade inactive windows.
     -- ncmode = 'focus' will only fade after you activate the `:VimadeFocus` command.
-    ncmode = "windows",
+    ncmode = "buffers",
     fadelevel = 0.6, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
     tint = {
       bg = { rgb = { 0, 0, 0 }, intensity = 0.2 }, -- adds 20% black to background
