@@ -6,7 +6,7 @@ return {
     -- Recipe can be any of 'default', 'minimalist', 'duo', and 'ripple'
     -- Set animate = true to enable animations on any recipe.
     -- See the docs for other config options.
-    recipe = { "default", { animate = false } },
+    recipe = { "minimalist", { animate = true } },
     -- ncmode = 'buffers' will fade inactive buffers (so the same buffer in multiple windows look the samd)
     -- ncmode = 'windows' will fade inactive windows.
     -- ncmode = 'focus' will only fade after you activate the `:VimadeFocus` command.
