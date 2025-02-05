@@ -12,7 +12,7 @@ end
 
 return {
   "olimorris/persisted.nvim",
-  version = "^1.0.0",
+  version = "^2.0.0",
   lazy = false,
   init = function()
     -- use almost the same sessionoptions as the plugin author
