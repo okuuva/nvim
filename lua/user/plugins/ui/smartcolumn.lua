@@ -5,7 +5,6 @@ return {
     colorcolumn = "110",
     disabled_filetypes = {
       "Lazy",
-      "Trouble",
       "alpha",
       "checkhealth",
       "harpoon",
@@ -16,6 +15,7 @@ return {
       "noice",
       "snacks_notif_history",
       "text",
+      "trouble",
     },
     custom_colorcolumn = {
       python = "110",
