@@ -123,6 +123,9 @@ return {
 
       vim.diagnostic.config(opts.diagnostics)
 
+      -- enable inlay hints by default
+      vim.lsp.inlay_hint.enable()
+
       local servers = opts.servers
       local capabilities = vim.tbl_deep_extend(
         "force",
