@@ -1,6 +1,11 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  -- stylua: ignore
+  keys = {
+    -- regulars
+    { "<leader>gr", function() require("gitsigns").reset_hunk() end, desc = "Reset Hunk" },
+  },
   opts = {
     signs = {
       add = { text = "▎" },
