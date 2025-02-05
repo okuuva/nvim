@@ -1,6 +1,7 @@
 return {
   "luukvbaal/statuscol.nvim",
   event = "BufEnter",
+  cond = not USING_PAGE,
   opts = function()
     local builtin = require("statuscol.builtin")
     return {

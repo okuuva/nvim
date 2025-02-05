@@ -14,6 +14,11 @@ end
 --Override Neovim's vim.print with Snacks.debug.inspect
 vim.print = _G.dd
 
+-- This is a dirty hack but it works when using page so...
+-- https://github.com/olimorris/persisted.nvim/pull/76#issuecomment-2294914746
+-- https://github.com/I60R/page/issues/39#issuecomment-1447660752
+_G.USING_PAGE = vim.tbl_contains(vim.v.argv, "--listen")
+
 require("user.config")
 require("lazy").setup("user.plugins", {
   defaults = {

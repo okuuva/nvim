@@ -53,7 +53,7 @@ api.nvim_create_autocmd("User", {
   group = persisted_hooks,
   pattern = { "PersistedLoadPost", "PersistedTelescopeLoadPost" },
   callback = function(session)
-    message = "Loaded session " .. vim.g.persisted_loaded_session
+    local message = "Loaded session " .. vim.g.persisted_loaded_session
 
     vim.defer_fn(function()
       vim.notify(message, vim.log.levels.INFO, { title = "Session manager" })
@@ -67,5 +67,22 @@ api.nvim_create_autocmd("BufWinEnter", {
     vim.defer_fn(toggle_narrow_zen, 1) -- cursor misbehaves if this isn't delayed at least 1 ms
     require("wrapping").soft_wrap_mode()
     vim.api.nvim_command("startinsert")
+  end,
+})
+
+local page_hooks = api.nvim_create_augroup("PageHooks", {})
+
+api.nvim_create_autocmd("User", {
+  group = page_hooks,
+  pattern = { "PageOpen", "PageOpenFile" },
+  callback = function()
+    vim.opt.foldcolumn = "0"
+    vim.opt.signcolumn = "no"
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+    vim.opt.sidescrolloff = 0
+    vim.opt.scrolloff = 0
+    vim.opt.breakindent = false -- Disable break indent
+    vim.opt.showbreak = "" -- Make sure no special symbols are shown at line break
   end,
 })

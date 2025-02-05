@@ -55,7 +55,7 @@ local function create_lsp_progress_autocmd()
 end
 
 --Toggle narrow zen mode for the open buffer
-_G.toggle_narrow_zen = function ()
+_G.toggle_narrow_zen = function()
   ---@diagnostic disable-next-line: missing-fields
   Snacks.zen({ win = { style = "narrow_zen" } })
 end
@@ -94,6 +94,7 @@ return {
     -- - https://github.com/goolord/alpha-nvim/issues/208
     -- - https://github.com/neovim/neovim/issues/3688#issuecomment-574544618
     dashboard = {
+      enabled = not USING_PAGE,
       preset = {
         -- stylua: ignore
         keys = {
