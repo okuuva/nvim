@@ -8,7 +8,7 @@ function AI_Check_disabled_patters()
   --     return false
   --   end
   -- end
-  return true
+  return false
 end
 
 return {
