@@ -23,5 +23,8 @@ return {
     allowed_dirs = {
       "~/gits",
     }, -- table of dirs that the plugin will auto-save and auto-load from
+    ignored_dirs = {
+      { "~/gits", exact = true },
+    },
   },
 }
