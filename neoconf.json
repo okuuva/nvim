@@ -35,6 +35,10 @@
       "python.analysis.ignore": [
         "*"
       ]
+    },
+    "lua_ls": {
+      "Lua.hint.enable": true,
+      "Lua.hint.setType": true
     }
   }
 }
