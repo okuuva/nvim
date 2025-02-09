@@ -2,12 +2,17 @@ return {
   "gbprod/yanky.nvim",
   dependencies = { "kkharji/sqlite.lua" },
   keys = {
-    { "p", "<Plug>(YankyPutAfter)", desc = "Put After", mode = { "n", "x" } },
-    { "P", "<Plug>(YankyPutBefore)", desc = "Put Before", mode = { "n", "x" } },
-    { "gp", "<Plug>(YankyGPutAfter)", desc = "Put After", mode = { "n", "x" } },
-    { "gP", "<Plug>(YankyGPutBefore)", desc = "Put Before", mode = { "n", "x" } },
-    { "<c-k>", "<Plug>(YankyCycleForward)", desc = "Cycle Yanky Ring Forward" },
-    { "<c-j>", "<Plug>(YankyCycleBackward)", desc = "Cycle Yanky Ring Backward" },
+    { "y", "<Plug>(YankyYank)", desc = "Yank text", mode = { "n", "x" } },
+    { "p", "<Plug>(YankyPutAfter)", desc = "Put after cursor", mode = { "n", "x" } },
+    { "P", "<Plug>(YankyPutBefore)", desc = "Put before cursor", mode = { "n", "x" } },
+    { "gp", "<Plug>(YankyGPutAfter)", desc = "Put after selection", mode = { "n", "x" } },
+    { "gP", "<Plug>(YankyGPutBefore)", desc = "Put before selection", mode = { "n", "x" } },
+    { "]P", "<Plug>(YankyPutIndentAfter)", desc = "Put indented after cursor", mode = { "n", "x" } },
+    { "[P", "<Plug>(YankyPutIndentBefore)", desc = "Put indented before cursor", mode = { "n", "x" } },
+    { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+    { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+    { "<c-[>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
+    { "<c-]>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
   },
   opts = {
     ring = {
