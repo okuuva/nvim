@@ -70,6 +70,22 @@ api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
+api.nvim_create_autocmd("FileType", {
+  pattern = "snacks_dashboard",
+  callback = function()
+    require("incline").disable()
+  end,
+})
+
+api.nvim_create_autocmd("BufLeave", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "snacks_dashboard" then
+      require("incline").enable()
+    end
+  end,
+})
+
 local page_hooks = api.nvim_create_augroup("PageHooks", {})
 
 api.nvim_create_autocmd("User", {
