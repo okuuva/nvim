@@ -1,7 +1,3 @@
-local on_autoload_no_session = function()
-  Snacks.dashboard()
-end
-
 local should_autosave = function()
   -- do not autosave if the dashboard is the current filetype
   if vim.bo.filetype == "snacks_dashboard" or USING_PAGE then
@@ -24,7 +20,6 @@ return {
     follow_cwd = false, -- change session file name to match current working directory if it changes
     use_git_branch = true, -- create session files based on the branch of the git enabled repository
     autoload = not USING_PAGE, -- automatically load the session for the cwd on Neovim startup
-    on_autoload_no_session = on_autoload_no_session, -- function to run when `autoload = true` but there is no session to load
     allowed_dirs = {
       "~/gits",
     }, -- table of dirs that the plugin will auto-save and auto-load from
