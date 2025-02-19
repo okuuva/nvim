@@ -58,19 +58,17 @@ return {
     "mini.icons",
     "nvim-web-devicons",
   },
-  ---@class wk.Opts
+  ---@type wk.Opts
   opts = {
     ---@type false | "classic" | "modern" | "helix"
     preset = "classic",
     ---@type wk.Win.opts
+    ---@diagnostic disable-next-line: missing-fields
     win = {
-      ---@type window_border
       border = "rounded",
       title = true,
       title_pos = "center",
-      -- Additional vim.wo and vim.bo options
-      bo = {},
-      ---@type window_options
+      ---@diagnostic disable-next-line: missing-fields
       wo = {
         winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
       },
