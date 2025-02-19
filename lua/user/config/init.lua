@@ -1,5 +1,4 @@
 require("user.config.options")
-require("user.config.keymaps")
 require("user.config.autocommands")
 require("user.config.filetype")
 require("user.config.lazy")

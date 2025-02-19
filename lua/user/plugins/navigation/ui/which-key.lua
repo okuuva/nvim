@@ -1,5 +1,12 @@
+-- Unset the 'last search pattern' register by hitting return
+-- Set like this since which-key does not support empty mode (aka :map) but don't want to have
+-- a single generic key binding done somewhere else
+vim.api.nvim_set_keymap("", "<CR>", ":noh<CR>", { noremap = true, silent = true })
+
+---@module "which-key"
 ---@type wk.Spec
 local mappings = {
+  -- { "<CR>", "<cmd>noh<CR>", mode = "", noremap = true, silent = true },
   { "<leader>C", "<cmd>close<CR>", desc = "Close split", nowait = true, remap = false },
   { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy", nowait = true, remap = false },
   { "<leader>N", group = "Neoconf", nowait = true, remap = false },
@@ -33,6 +40,11 @@ local mappings = {
     { "<leader>gl", group = "Gitlab" },
     { "<leader>o", group = "Obsidian" },
     { "<leader>s", ":<C-u>'<,'>sort<cr>", desc = "Sort" },
+  },
+  {
+    mode = { "v" },
+    { "<", "<gv", desc = "Indent left and stay in indent mode", noremap = true, silent = true },
+    { ">", ">gv", desc = "Indent right and stay in indent mode", noremap = true, silent = true },
   },
   { "<leader>gla", group = "Assignee" },
   { "<leader>gll", group = "Labels" },
