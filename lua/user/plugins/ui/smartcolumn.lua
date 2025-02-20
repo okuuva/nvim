@@ -13,6 +13,7 @@ return {
       "mason",
       "neo-tree",
       "noice",
+      "snacks_dashboard",
       "snacks_notif_history",
       "text",
       "trouble",
