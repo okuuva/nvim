@@ -2,7 +2,7 @@ return {
   "aznhe21/actions-preview.nvim",
   keys = {
     -- stylua: ignore
-    { "<leader>la", function () require("actions-preview").code_actions() end, desc = "Code Action" },
+    { "gra", function () require("actions-preview").code_actions() end, mode = {"n", "x" }, desc = "Code Action" },
   },
   dependencies = { "telescope.nvim" },
   opts = {

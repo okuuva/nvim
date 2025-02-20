@@ -7,8 +7,9 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     -- stylua: ignore
     keys = {
+      { "gK", vim.lsp.buf.signature_help, desc = "Signature Help" },
       { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-      -- Code action gets triggered with <leader>la via actions-preview plugin
+      { "gO", vim.lsp.buf.document_symbol, desc = "List Document Symbols" },
       { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
       { "<leader>ll", vim.lsp.codelens.run, desc = "CodeLens Action" },

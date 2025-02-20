@@ -11,7 +11,7 @@ return {
     -- lsp
     { "gd", "<cmd>Trouble lsp_definitions focus=true<cr>", desc = "Goto Definition" },
     { "grr", "<cmd>Trouble lsp_references focus=true<cr>", desc = "Goto References" },
-    { "gI", "<cmd>Trouble lsp_implementations focus=true<cr>", desc = "Goto Implementation" },
+    { "gri", "<cmd>Trouble lsp_implementations focus=true<cr>", desc = "Goto Implementation" },
     { "gt", "<cmd>Trouble lsp_type_definitions focus=true<cr>", desc = "Goto Type Definition" },
   },
   opts = {},
