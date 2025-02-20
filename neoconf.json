@@ -17,6 +17,7 @@
       ]
     },
     "lua_ls": {
+      "Lua.hint.arrayIndex": "Disable",
       "Lua.hint.enable": true,
       "Lua.hint.setType": true
     }
