@@ -25,8 +25,6 @@ return {
     vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
     vim.o.foldlevelstart = 99 -- make sure no folds are closed when opening a file
     vim.o.foldenable = true
-    vim.o.foldmethod = "manual" -- set back to manual so that ufo works
-    vim.o.foldexpr = "0" -- this shouldn't matter since foldmethod is now manual instead of expr but doesn't hurt either
   end,
   opts = {
     fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
