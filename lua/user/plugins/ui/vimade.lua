@@ -31,5 +31,19 @@ return {
     -- want to disable this if you have a plugin that creates dynamic highlights in
     -- inactive windows. 99% of the time you shouldn't need to change this value.
     nohlcheck = true,
+    blocklist = {
+      buf_and_filetypes = {
+        buf_opts = {
+          buftype = {
+            "help",
+          },
+          filetype = {
+            "help",
+            "man",
+            "trouble",
+          },
+        },
+      },
+    },
   },
 }
