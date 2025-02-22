@@ -4,7 +4,7 @@ return {
   "epwalsh/obsidian.nvim",
   version = "^3.7.8",
   lazy = true,
-  event = { "BufReadPre " .. vim.fn.expand("~") .. "/obsidian/**.md" },
+  event = { "BufReadPre " .. vim.fn.expand("~") .. "**/Obsidian/**.md" },
   keys = {
     { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open in app" },
     { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
