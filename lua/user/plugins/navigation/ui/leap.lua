@@ -1,9 +1,8 @@
 return {
   "ggandor/leap.nvim",
   keys = {
-    { "s", "<Plug>(leap-forward)", mode = { "n", "x", "o" }, desc = "Leap forward" },
-    { "S", "<Plug>(leap-backward)", mode = { "n", "x", "o" }, desc = "Leap backward" },
-    { "gS", "<Plug>(leap-from-window)", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+    { "s", "<Plug>(leap)", mode = { "n", "x", "o" }, desc = "Leap" },
+    { "S", "<Plug>(leap-from-window)", mode = { "n", "x", "o" }, desc = "Leap from window" },
   },
   lazy = false,
   dependencies = { "tpope/vim-repeat" },
