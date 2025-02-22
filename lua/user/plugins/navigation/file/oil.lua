@@ -1,10 +1,23 @@
+---@type oil.OpenOpts
+local default_opts = {
+  preview = {
+    split = "belowright",
+  },
+}
+
 return {
   "stevearc/oil.nvim",
   dependencies = { "nvim-web-devicons" },
   cmd = { "Oil" },
   event = "VeryLazy",
   keys = {
-    { "-", "<CMD>Oil<CR>", { desc = "Open parent directory" } },
+    {
+      "-",
+      function()
+        require("oil").open_float(nil, default_opts)
+      end,
+      { desc = "Open parent directory" },
+    },
   },
   opts = {
     columns = {
