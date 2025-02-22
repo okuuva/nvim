@@ -64,11 +64,16 @@ return {
           end
         end, { "i", "s", "c" }),
 
+        -- safe enter select with luasnip support
         -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#safely-select-entries-with-cr
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
             if cmp.visible() and cmp.get_selected_entry() then
-              cmp.confirm({ select = false })
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm({ select = false })
+              end
             else
               fallback()
             end
@@ -76,7 +81,11 @@ return {
           s = cmp.mapping.confirm(),
           c = function(fallback)
             if cmp.visible() and cmp.get_selected_entry() then
-              cmp.confirm()
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm()
+              end
             else
               fallback()
             end
