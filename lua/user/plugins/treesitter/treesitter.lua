@@ -12,7 +12,13 @@ return {
     "nvim-treesitter/nvim-treesitter-refactor",
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
-    "andymass/vim-matchup",
+    {
+      "andymass/vim-matchup",
+      init = function()
+        vim.g.matchup_matchparen_offscreen = { method = "popup" }
+      end,
+      opts = {},
+    },
     -- NOTE: additional parser
     { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
   },
