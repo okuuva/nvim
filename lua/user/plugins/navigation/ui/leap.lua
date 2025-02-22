@@ -7,5 +7,7 @@ return {
   },
   lazy = false,
   dependencies = { "tpope/vim-repeat" },
-  opts = {},
+  opts = {
+    highlight_unlabeled_phase_one_targets = true,
+  },
 }
