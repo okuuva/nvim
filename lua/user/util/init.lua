@@ -206,4 +206,20 @@ function M.reload_buffers()
   vim.notify("Buffers reloaded")
 end
 
+local function ai_check_for_forbidden_patterns_in_path()
+  local success, forbidden_patters = pcall(require, "user.config.local.ai")
+  forbidden_patters = success and forbidden_patters or { "work" }
+  local path = M.get_root()
+  for _, pattern in ipairs(forbidden_patters) do
+    if path:find(pattern) then
+      return false
+    end
+  end
+  return true
+end
+
+function M.ai_helpers_allowed()
+  return ai_check_for_forbidden_patterns_in_path()
+end
+
 return M

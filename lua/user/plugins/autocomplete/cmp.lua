@@ -22,7 +22,7 @@ return {
       "zbirenbaum/copilot-cmp",
       dependencies = { "copilot.lua" },
       config = true,
-      cond = AI_Check_disabled_patters(),
+      cond = require("user.util").ai_helpers_allowed(),
     },
   },
   config = function()

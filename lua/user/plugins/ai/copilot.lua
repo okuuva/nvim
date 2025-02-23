@@ -1,21 +1,8 @@
-function AI_Check_disabled_patters()
-  -- local success, forbidden_patters = pcall(require, "user.config.local.ai")
-  -- forbidden_patters = success and forbidden_patters or {}
-  -- local Util = require("user.util")
-  -- local path = Util.get_root()
-  -- for _, pattern in ipairs(forbidden_patters) do
-  --   if path:find(pattern) then
-  --     return false
-  --   end
-  -- end
-  return false
-end
-
 return {
   "zbirenbaum/copilot.lua",
   event = "VeryLazy",
   cmd = "Copilot",
-  cond = AI_Check_disabled_patters(),
+  cond = require("user.util").ai_helpers_allowed(),
   opts = {
     panel = {
       enabled = false,
