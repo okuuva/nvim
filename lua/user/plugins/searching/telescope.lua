@@ -127,7 +127,6 @@ return {
             ["<C-k>"] = actions.move_selection_previous,
 
             ["<C-c>"] = actions.close,
-            ["<esc>"] = actions.close,
 
             ["<Down>"] = actions.move_selection_next,
             ["<Up>"] = actions.move_selection_previous,
