@@ -1,9 +1,12 @@
 return {
-  "jcdickinson/codeium.nvim",
+  "Exafunction/codeium.nvim",
   enabled = false,
   event = "VeryLazy",
   cmd = "Codeium",
-  dependencies = { "nvim-cmp" },
-  config = true,
   cond = not RUNNING_ON_ALPINE and require("user.util").ai_helpers_allowed(),
+  dependencies = {
+    "plenary.nvim",
+    "nvim-cmp",
+  },
+  opts = {},
 }
