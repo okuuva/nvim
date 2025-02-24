@@ -57,6 +57,8 @@ return {
         "regex",
         -- neoconf dependency
         "jsonc",
+        -- render-markdown dependencies
+        "latex",
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
