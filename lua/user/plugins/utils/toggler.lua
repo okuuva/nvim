@@ -1,9 +1,10 @@
 return {
-  'nguyenvukhang/nvim-toggler',
+  "nguyenvukhang/nvim-toggler",
+  -- stylua: ignore
   keys = {
-    { "<leader>i", function() require("nvim-toggler").toggle() end, desc = "Invert current word" },
+    { "<leader>f", function() require("nvim-toggler").toggle() end, desc = "Flip current word" },
   },
   opts = {
     remove_default_keybinds = true,
-  }
+  },
 }
