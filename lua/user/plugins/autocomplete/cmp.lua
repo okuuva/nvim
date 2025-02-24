@@ -20,6 +20,7 @@ return {
     "LuaSnip",
     {
       "zbirenbaum/copilot-cmp",
+      enabled = false,
       dependencies = { "copilot.lua" },
       config = true,
       cond = require("user.util").ai_helpers_allowed(),

@@ -1,5 +1,6 @@
 return {
   "zbirenbaum/copilot.lua",
+  enabled = false,
   event = "VeryLazy",
   cmd = "Copilot",
   cond = require("user.util").ai_helpers_allowed(),
