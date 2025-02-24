@@ -19,6 +19,16 @@ vim.print = _G.dd
 -- https://github.com/I60R/page/issues/39#issuecomment-1447660752
 _G.USING_PAGE = vim.tbl_contains(vim.v.argv, "--listen")
 
+local function check_alpine()
+  local os = vim.uv.os_uname().version
+  if os:find("Alpine") or os:find("alpine") then
+    return true
+  end
+  return false
+end
+
+_G.RUNNING_ON_ALPINE = check_alpine()
+
 require("user.config")
 require("lazy").setup("user.plugins", {
   defaults = {

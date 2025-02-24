@@ -3,13 +3,6 @@ if vim.fn.executable("nvr") == 1 then
   vim.env.GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'"
 end
 
-local check_alpine = function()
-  local os = vim.loop.os_uname().version
-  if os:find("Alpine") or os:find("alpine") then
-    return true
-  end
-  return false
-end
 
 NIX_BIN_DIR = "/run/current-system/sw/bin"
 vim.env.PATH = NIX_BIN_DIR .. ":" .. vim.env.PATH
@@ -23,12 +16,11 @@ vim.env.PATH = MISE_SHIM_DIR .. ":" .. vim.env.PATH
 vim.env.CARGO_NET_GIT_FETCH_WITH_CLI = "true"
 
 local settings = {
-  alpine_linux = check_alpine, -- check if we're running on Alpine Linux (meaning musl)
   do_filetype_lua = 1, -- use filetype plugin written in LUA
   loaded_netrw = 1, -- disable netrw
   loaded_netrwPlugin = 1, -- I mean it
   loaded_perl_provider = 0, -- do not load perl provider
-  mapleader = " ",  -- set <space> as <leader>
+  mapleader = " ", -- set <space> as <leader>
   maplocalleader = " ", -- set <space> as <localleader>
   python3_host_prog = NIX_BIN_DIR .. "/nvim-python3",
   vimsyn_maxlines = 256, -- limit syntax highlighting to speed up scrolling
