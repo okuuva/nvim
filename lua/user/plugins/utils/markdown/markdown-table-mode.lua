@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "Kicamon/markdown-table-mode.nvim",
-  ft = { "md", "markdown" },
+  ft = { "markdown" },
   opts = {},
 }

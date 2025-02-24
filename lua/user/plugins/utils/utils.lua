@@ -1,5 +1,6 @@
 return {
   { import = "user.plugins.utils.mini" },
+  { import = "user.plugins.utils.markdown" },
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
