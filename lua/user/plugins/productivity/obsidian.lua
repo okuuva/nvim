@@ -25,8 +25,10 @@ return {
     "plenary.nvim",
     "nvim-cmp",
     "telescope.nvim",
+    "render-markdown.nvim", -- use render-markdown for UI instead of builtin rendering
   },
   opts = {
+    ui = { enable = false },
     workspaces = {
       {
         name = "work",
