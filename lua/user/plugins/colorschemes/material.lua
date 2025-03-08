@@ -11,7 +11,7 @@ return {
         sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
         floating_windows = false, -- Enable contrast for floating windows
         cursor_line = true, -- Enable darker background for the cursor line
-        non_current_windows = true, -- Enable darker background for non-current windows
+        non_current_windows = false, -- Enable darker background for non-current windows
         filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
       },
 
@@ -106,8 +106,8 @@ return {
         --   reverse = false, -- reverse the fg and bg colors
         --   link = "SomeOtherGroup", -- link to some other highlight group
         -- },
-        VertSplit = { bg = colors.editor.bg_alt },
-        WinSeparator = { link = "VertSplit" },
+        -- VertSplit = { bg = colors.editor.bg_alt },
+        -- WinSeparator = { link = "VertSplit" },
         Folded = { fg = colors.editor.disabled, bg = colors.editor.bg, italic = true },
         TelescopeMatching = { link = "Search" },
         -- Snacks indent, replicate indent-blankline behavior
