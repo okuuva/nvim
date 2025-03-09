@@ -1,8 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "marko-cerovac/material.nvim",
-  lazy = false,
-  priority = 1001,
   opts = {
     contrast = {
       terminal = false, -- Enable contrast for the built-in terminal
@@ -122,9 +120,4 @@ return {
       }
     end,
   },
-  config = function(_, opts)
-    vim.g.material_style = "darker"
-    require("material").setup(opts)
-    vim.cmd("colorscheme material")
-  end,
 }
