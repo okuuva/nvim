@@ -112,6 +112,7 @@ return {
         },
       },
     },
+    image = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     ---@class snacks.lazygit.Config: snacks.terminal.Opts

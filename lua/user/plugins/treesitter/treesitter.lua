@@ -59,6 +59,17 @@ return {
         "jsonc",
         -- render-markdown dependencies
         "latex",
+        -- snacks.image dependencies
+        "css",
+        "html",
+        "javascript",
+        "latex",
+        "norg",
+        "scss",
+        "svelte",
+        "tsx",
+        "typst",
+        "vue",
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
