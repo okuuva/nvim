@@ -34,5 +34,8 @@ require("lazy").setup("user.plugins", {
   defaults = {
     lazy = true,
   },
+  install = {
+    missing = false,
+  },
   concurrency = 50,
 })
