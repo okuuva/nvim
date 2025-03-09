@@ -14,6 +14,7 @@ return {
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
       { "<leader>ll", vim.lsp.codelens.run, desc = "CodeLens Action" },
       { "<leader>lo", "<cmd>LspLog<cr>", desc = "Log" },
+      { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart" },
     },
     dependencies = {
       "b0o/schemastore.nvim", -- json schemas for jsonls
