@@ -79,6 +79,8 @@ return {
     { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
     { "<leader>nd", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
     { "<leader>nh", function() Snacks.notifier.show_history() end,   desc = "Notification History" },
+    { "<leader>.",  function() Snacks.scratch() end,                 desc = "Toggle Scratch Buffer" },
+    { "<leader>sb", function() Snacks.scratch.select() end,          desc = "Scratch Buffers" },
     { "]]",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference", mode = { "n", "t" } },
     { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     { "<leader>zm", function() Snacks.zen() end,                     desc = "Toggle Zen Mode" },
@@ -135,6 +137,7 @@ return {
     notify = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
+    scratch = { enabled = true },
     scroll = {
       animate = {
         duration = { step = 25, total = 250 },

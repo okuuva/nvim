@@ -76,7 +76,7 @@ return {
   },
   keys = {
     -- search
-    { "<leader>sb", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
+    { "<leader>sB", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
     -- stylua: ignore
     { "<leader>sf", function() project_files() end, desc = "Files" },
@@ -92,8 +92,8 @@ return {
     -- stylua: ignore
     { "<leader>gm", function() changed_on_branch() end, desc = "Modified files" },
     -- lsp
-    { "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
-    { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
+    { "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+    { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
   },
   config = function()
     local telescope = require("telescope")
