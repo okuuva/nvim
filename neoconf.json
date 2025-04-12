@@ -11,6 +11,8 @@
     "basedpyright": {
       "basedpyright.typeCheckingMode": "standard",
       "basedpyright.disableOrganizeImports": true,
+      "basedpyright.reportUnusedImport": false,
+      "basedpyright.analysis.diagnosticMode": "workspace",
       "python.pythonPath": "./.venv/bin/python",
       "python.analysis.ignore": [
         "*"
