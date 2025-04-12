@@ -1,5 +1,6 @@
 return {
   "ggandor/flit.nvim",
+  cond = false,
   dependencies = { "leap.nvim" },
   keys = function()
     ---@type LazyKeys[]
