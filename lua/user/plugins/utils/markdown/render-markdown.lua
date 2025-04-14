@@ -1,3 +1,5 @@
+local file_types = { "markdown", "Avante", "gitcommit" }
+
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = {
@@ -5,14 +7,14 @@ return {
     "mini.icons",
     "nvim-web-devicons",
   },
-  ft = { "markdown", "Avante" },
+  ft = file_types,
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {
     anti_conceal = {
       enabled = false, -- disable anti-conceal on the cursor line
     },
-    file_types = { "markdown", "Avante" },
+    file_types = file_types,
     win_options = {
       concealcursor = { rendered = "nc" }, -- _really_ disable anti-conceal on the cursor line
     },
