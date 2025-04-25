@@ -27,14 +27,6 @@ return {
       "conform.nvim",
       "nvim-lint",
       "actions-preview.nvim",
-      {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        -- stylua: ignore
-        keys = {
-          { "<leader>dv", function() require("lsp_lines").toggle() end, desc = "Toggle virtual line diagnostics", },
-        },
-        config = true,
-      }, -- virtual line diagnostics
     },
     ---@class PluginLspOpts
     opts = {
@@ -43,7 +35,7 @@ return {
         underline = true,
         virtual_text = false,
         virtual_lines = {
-          only_current_line = true,
+          current_line = true,
         },
         signs = {
           text = {
