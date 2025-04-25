@@ -40,11 +40,19 @@ return {
     opts = {
       -- options for vim.diagnostic.config()
       diagnostics = {
-        virtual_text = false,
-        signs = true,
-        update_in_insert = false,
         underline = true,
-        severity_sort = true,
+        virtual_text = false,
+        virtual_lines = {
+          only_current_line = true,
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = "",
+          },
+        },
         float = {
           focusable = false,
           style = "minimal",
@@ -53,9 +61,8 @@ return {
           header = "",
           prefix = "",
         },
-        virtual_lines = {
-          only_current_line = true,
-        },
+        update_in_insert = false,
+        severity_sort = true,
       },
       -- do not automatically format on save
       autoformat = false,
@@ -89,7 +96,7 @@ return {
                 cmd = { "fuzzy_ruby_ls" },
                 filetypes = { "ruby" },
                 root_dir = function(fname)
-                  return lspconfig.util.find_git_ancestor(fname)
+                  return vim.fs.dirname(vim.fn.find(".git", { path = fname, upward = true })[1])
                 end,
                 init_options = {
                   allocationType = "ram",
@@ -111,17 +118,6 @@ return {
         require("user.plugins.lsp.util.format").on_attach(client, buffer)
         -- require("user.plugins.lsp.util.keymaps").on_attach(client, buffer)
       end)
-
-      local diagnostic_signs = {
-        { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
-      }
-
-      for _, sign in ipairs(diagnostic_signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-      end
 
       vim.diagnostic.config(opts.diagnostics)
 
