@@ -22,6 +22,19 @@
       "Lua.hint.arrayIndex": "Disable",
       "Lua.hint.enable": true,
       "Lua.hint.setType": true
+    },
+    "jsonls": {
+      "json.validate.enable": true,
+      "json.schemas": [
+        {
+          "fileMatch": [
+            "*.hujson"
+          ],
+          "schema": {
+            "allowTrailingCommas": true
+          }
+        }
+      ]
     }
   }
 }
