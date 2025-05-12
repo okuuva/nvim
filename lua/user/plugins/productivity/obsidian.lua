@@ -8,8 +8,8 @@ return {
   keys = {
     { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open in app" },
     { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
+    { "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", desc = "Toggle checkbox" },
     { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find note" },
-    { "<leader>oF", "<cmd>ObsidianFollowLink<cr>", desc = "Follow link" },
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Backlinks to this note" },
     { "<leader>od", "<cmd>ObsidianToday<cr>", desc = "Daily note" },
     { "<leader>oy", "<cmd>ObsidianYesterday<cr>", desc = "Yesterday's note" },
@@ -56,6 +56,18 @@ return {
       alias_format = long_date,
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = "Daily template.md",
+    },
+    --
+    -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
+    -- way then set 'mappings = {}'.
+    mappings = {
+      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
     },
 
     -- Optional, for templates (see below).
