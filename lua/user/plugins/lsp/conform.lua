@@ -45,6 +45,7 @@ return {
         python = expandFormatters({ { "darker", "isort" }, "black" }),
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
+        toml = { "pyproject-fmt" },
         yaml = { "yq" },
       },
       format_after_save = {
