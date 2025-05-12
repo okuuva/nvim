@@ -38,7 +38,7 @@ return {
     -- Configuration for various handlers:
     -- 1. Sign column.
     sign = {
-      enabled = true,
+      enabled = false,
       -- Text to show in the sign column.
       -- Must be between 1-2 characters.
       text = lightbulb_icon,
