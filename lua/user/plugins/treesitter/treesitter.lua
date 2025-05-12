@@ -22,6 +22,15 @@ return {
     -- NOTE: additional parser
     { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
   },
+  -- registers mise files so that the injector can add syntaxt highlighting for embedded code blocks
+  -- see https://mise.jdx.dev/mise-cookbook/neovim.html#code-highlight-for-run-commands
+  init = function()
+    require("vim.treesitter.query").add_predicate("is-mise?", function(_, _, bufnr, _)
+      local filepath = vim.api.nvim_buf_get_name(tonumber(bufnr) or 0)
+      local filename = vim.fn.fnamemodify(filepath, ":t")
+      return string.match(filename, ".*mise.*%.toml$") ~= nil
+    end, { force = true, all = false })
+  end,
   config = function()
     require("nvim-treesitter.configs").setup({
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
