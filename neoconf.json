@@ -29,6 +29,9 @@
       "Lua.hint.arrayIndex": "Disable",
       "Lua.hint.enable": true,
       "Lua.hint.setType": true,
+      "Lua.diagnostics.disable": [
+        "missing-fields"
+      ]
     },
     "yamlls": {
       "yaml.customTags": [

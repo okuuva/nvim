@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 return {
   "nvim-neotest/neotest",
   -- version = "^4.1.3",

@@ -33,7 +33,6 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     -- 󰃐 󰆩 󰙅 󰛡  󰅲 some other good icons
-    ---@diagnostic disable-next-line: missing-fields
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -99,7 +98,6 @@ return {
           end
         end, { "i", "s", "c" }),
       },
-      ---@diagnostic disable-next-line: missing-fields
       formatting = {
         format = lspkind.cmp_format({
           -- defines how annotations are shown
@@ -131,7 +129,6 @@ return {
           -- end,
         }),
       },
-      ---@diagnostic disable-next-line: missing-fields
       sorting = {
         comparators = {
           cmp.config.compare.offset,

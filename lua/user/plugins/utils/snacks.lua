@@ -56,7 +56,6 @@ end
 
 --Toggle narrow zen mode for the open buffer
 _G.toggle_narrow_zen = function()
-  ---@diagnostic disable-next-line: missing-fields
   Snacks.zen({ win = { style = "narrow_zen" } })
 end
 
@@ -165,18 +164,15 @@ return {
     },
 
     styles = {
-      ---@diagnostic disable-next-line: missing-fields
       lazygit = {
         height = 0,
         width = 0,
       },
-      ---@diagnostic disable-next-line: missing-fields
       notification = {
         wo = {
           wrap = true,
         },
       },
-      ---@diagnostic disable-next-line: missing-fields
       notification_history = {
         height = 0,
         width = 0,
@@ -184,18 +180,15 @@ return {
           wrap = true,
         },
       },
-      ---@diagnostic disable-next-line: missing-fields
       zen = {
         backdrop = {
           transparent = false,
-          ---@diagnostic disable-next-line: missing-fields
           win = {
             -- TODO: find out why the backdrop group is named SnacksBackdrop_<color code> by default
             wo = { winhighlight = "Normal:SnacksBackdrop" },
           },
         },
       },
-      ---@diagnostic disable-next-line: missing-fields
       narrow_zen = {
         style = "zen",
         width = 80,

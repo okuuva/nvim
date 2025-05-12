@@ -63,12 +63,10 @@ return {
     ---@type false | "classic" | "modern" | "helix"
     preset = "classic",
     ---@type wk.Win.opts
-    ---@diagnostic disable-next-line: missing-fields
     win = {
       border = "rounded",
       title = true,
       title_pos = "center",
-      ---@diagnostic disable-next-line: missing-fields
       wo = {
         winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
       },
