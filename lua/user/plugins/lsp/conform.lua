@@ -45,6 +45,7 @@ return {
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         toml = { "pyproject-fmt" },
+        typescript = expandFormatters({ { "prettierd", "prettier" } }),
         yaml = { "yq" },
       },
       format_after_save = {
