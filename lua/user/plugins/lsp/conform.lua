@@ -39,7 +39,6 @@ return {
         fish = { "fish_indent" },
         go = expandFormatters({ { "goimports", "gofmt" } }),
         javascript = expandFormatters({ { "prettierd", "prettier" } }),
-        json = { "jq" },
         lua = { "stylua" },
         nix = { "alejandra" },
         python = expandFormatters({ { "darker", "isort" }, "black" }),
