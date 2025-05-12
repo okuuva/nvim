@@ -1,13 +1,5 @@
 {
   "lspconfig": {
-    "yamlls": {
-      "yaml.customTags": [
-        "!reference sequence"
-      ],
-      "yaml.schemas": {
-        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab/ci-config/*.yml"
-      }
-    },
     "basedpyright": {
       "basedpyright.typeCheckingMode": "standard",
       "basedpyright.disableOrganizeImports": true,
@@ -17,11 +9,6 @@
       "python.analysis.ignore": [
         "*"
       ]
-    },
-    "lua_ls": {
-      "Lua.hint.arrayIndex": "Disable",
-      "Lua.hint.enable": true,
-      "Lua.hint.setType": true
     },
     "jsonls": {
       "json.validate.enable": true,
@@ -35,6 +22,19 @@
           }
         }
       ]
+    },
+    "lua_ls": {
+      "Lua.hint.arrayIndex": "Disable",
+      "Lua.hint.enable": true,
+      "Lua.hint.setType": true,
+    },
+    "yamlls": {
+      "yaml.customTags": [
+        "!reference sequence"
+      ],
+      "yaml.schemas": {
+        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab/ci-config/*.yml"
+      }
     }
   }
 }
