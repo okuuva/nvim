@@ -3,7 +3,6 @@ if vim.fn.executable("nvr") == 1 then
   vim.env.GIT_EDITOR = "nvr --remote-tab-wait +'set bufhidden=delete'"
 end
 
-
 NIX_BIN_DIR = "/run/current-system/sw/bin"
 vim.env.PATH = NIX_BIN_DIR .. ":" .. vim.env.PATH
 
@@ -100,5 +99,4 @@ end
 
 vim.opt.shortmess:append("c")
 
-vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
