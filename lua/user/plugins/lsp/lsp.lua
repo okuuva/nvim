@@ -20,8 +20,7 @@ return {
       "b0o/schemastore.nvim", -- json schemas for jsonls
       "neoconf.nvim",
       "lazydev.nvim",
-      "mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "nvim-lightbulb",
       "conform.nvim",
