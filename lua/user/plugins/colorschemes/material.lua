@@ -113,10 +113,6 @@ return {
         SnacksIndentChunk = { fg = colors.editor.disabled },
 
         SnacksBackdrop = { bg = colors.editor.bg_alt },
-        ["@variable"] = { link = "Identifier" },
-        ["@field"] = { link = "Identifier" },
-        ["@table_constructor"] = { link = "Identifier" },
-        ["@identifier"] = { link = "Identifier" },
       }
     end,
   },
