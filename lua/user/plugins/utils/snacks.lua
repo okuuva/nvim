@@ -106,7 +106,7 @@ return {
           { icon = " ", key = "e", desc = "Edit Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
           { icon = " ", key = "w", desc = "List Git Worktrees", action = ":lua require('telescope').extensions.git_worktree.git_worktrees()" },
           { icon = " ", key = "W", desc = "Create Git Worktree", action = ":lua require('telescope').extensions.git_worktree.create_git_worktree()" },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = " ", key = "s", desc = "Restore Session", action = ":SessionSelect" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "󰜺 ", key = "c", desc = "Close Dashboard", action = ":lua Snacks.bufdelete()" },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
