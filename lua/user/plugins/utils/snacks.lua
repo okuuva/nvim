@@ -132,9 +132,9 @@ return {
       },
     },
     notifier = {
+      timeout = 6000,
       top_down = false,
     },
-    notify = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scratch = { enabled = true },
