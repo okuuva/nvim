@@ -1,6 +1,17 @@
 local should_autosave = function()
-  -- do not autosave if the dashboard is the current filetype
-  if vim.bo.filetype == "snacks_dashboard" or USING_PAGE then
+  -- Do not save if we're just paging something
+  if USING_PAGE then
+    return false
+  end
+
+  -- throwaway buffer is a buffer that's not associated with any file
+  -- doesn't matter if there's content or not, if it wasn't worth saving
+  -- to the disc then it's not worth having a session saved for it
+  local bufnr = vim.api.nvim_get_current_buf()
+  local throwaway_buffer = vim.api.nvim_buf_get_name(bufnr) == ""
+  local dashboard_open = vim.bo.filetype == "snacks_dashboard"
+  local in_bare_repo = vim.fn.system("git rev-parse --is-bare-repository") == "true\n"
+  if (throwaway_buffer or dashboard_open) and not in_bare_repo then
     return false
   end
   return true
@@ -18,7 +29,7 @@ return {
   opts = {
     should_save = should_autosave, -- function to determine if a session should be autosaved
     follow_cwd = false, -- change session file name to match current working directory if it changes
-    use_git_branch = true, -- create session files based on the branch of the git enabled repository
+    use_git_branch = false, -- create session files based on the branch of the git enabled repository
     autoload = not USING_PAGE, -- automatically load the session for the cwd on Neovim startup
     allowed_dirs = {
       "~/gits",
