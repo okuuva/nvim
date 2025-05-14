@@ -2,8 +2,12 @@ local linkables = {
   ".gitlab.nvim",
 }
 
+---@type LazyPluginSpec
 return {
-  "ThePrimeagen/git-worktree.nvim",
+  -- "polarmutex/git-worktree.nvim",
+  -- version = "^2.0.0",
+  "rbmarliere/git-worktree.nvim",
+  commit = "ae94f27",
   dependencies = {
     "plenary.nvim",
     "telescope.nvim",
@@ -12,36 +16,39 @@ return {
     {
       "<leader>gw",
       function()
-        require("telescope").extensions.git_worktree.git_worktrees()
+        require("telescope").extensions.git_worktree.git_worktree()
       end,
       desc = "List Worktrees",
     },
     {
       "<leader>gW",
       function()
-        require("telescope").extensions.git_worktree.create_git_worktree()
+        require("telescope").extensions.git_worktree.create_git_worktree({ prefix = "../" })
       end,
       desc = "Create Worktree",
     },
   },
   config = function()
-    local Worktree = require("git-worktree")
-    Worktree.setup()
+    ---@type GitWorktreeConfig
+    vim.g.git_worktree = {
+      change_directory_command = "cd",
+      update_on_change = true,
+      update_on_change_command = "e .",
+      clearjumps_on_change = true,
+      confirm_telescope_deletions = false,
+      autopush = true,
+    }
+    local Hooks = require("git-worktree.hooks")
+    local config = require("git-worktree.config")
+    local update_on_switch = Hooks.builtins.update_current_buffer_on_switch
 
-    Worktree.on_tree_change(function(op, metadata)
-      if op ~= Worktree.Operations.Create then
-        return
-      end
+    Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
+      vim.notify("Moved from " .. prev_path .. " to " .. path)
+      update_on_switch(path, prev_path)
+    end)
 
-      local repo_root_path = vim.fn.getcwd() .. "/../"
-      local worktree_path = repo_root_path .. metadata.path
-      for _, filename in ipairs(linkables) do
-        local filepath = repo_root_path .. filename
-        if vim.fn.filereadable(filepath) then
-          vim.notify("Linking " .. filename .. " to " .. worktree_path)
-          os.execute("ln -s " .. filepath .. " " .. worktree_path .. "/" .. filename)
-        end
-      end
+    Hooks.register(Hooks.type.DELETE, function()
+      vim.cmd(config.update_on_change_command)
     end)
   end,
 }
