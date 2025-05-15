@@ -78,6 +78,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "ae1f76a75c7ce36866e1d9342a8f6f5b9c2caf9b" },
   "oil.nvim": { "branch": "master", "commit": "add50252b5e9147c0a09d36480d418c7e2737472" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "b9def31568d20b16f7da9479a4174d165046fe8a" },
+  "otter.nvim": { "branch": "main", "commit": "fa436071c67233e6cd466268212feaf4ff4ed406" },
   "paperplanes.nvim": { "branch": "master", "commit": "bd52c54c36ad2e9ac563ae1c6a4f6ed1f5faacd2" },
   "persistent-breakpoints.nvim": { "branch": "main", "commit": "4b199b1dcfd136cac8b0fa9c8dbbdeb81463f7a9" },
   "persisted.nvim": { "branch": "main", "commit": "3da2a5e85ee4f06eff494e3dae591751ecf15d19" },
