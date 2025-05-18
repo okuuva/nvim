@@ -1,22 +1,93 @@
 local api = vim.api
 
 -- windows to close with "q"
-local file_type_group = api.nvim_create_augroup("_file_type", {})
+local quick_close_filetypes = api.nvim_create_augroup("_quick_close_file_type", {})
 
 api.nvim_create_autocmd("FileType", {
-  group = file_type_group,
+  group = quick_close_filetypes,
   pattern = { "help", "startuptime", "qf", "lspinfo" },
   command = [[nnoremap <buffer><silent> q :close<CR>]],
 })
 
 api.nvim_create_autocmd("FileType", {
-  group = file_type_group,
+  group = quick_close_filetypes,
   pattern = "man",
   command = [[nnoremap <buffer><silent> q :bdelete<CR>]],
 })
 
--- no point creating these if running a version that doesn't support
--- the necessary functionality
+local misc_filetype_autocommands = api.nvim_create_augroup("_misc_file_type", {})
+
+-- set formatoptions
+api.nvim_create_autocmd("FileType", {
+  group = misc_filetype_autocommands,
+  callback = function(_)
+    -- Default is supposed to be "tcqj", something (maybe LSP or builtin FileType autocommands) sets some other settings
+    -- depending on the file type
+
+    -- Auto-wrap text using 'textwidth'
+    -- vim.opt.formatoptions:remove("t") -- this misbehaves
+
+    -- Auto-wrap comments using 'textwidth', inserting the current comment leader automatically.
+    vim.opt.formatoptions:append("c")
+
+    -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+    vim.opt.formatoptions:append("r")
+
+    -- Automatically insert the current comment leader after hitting 'o' or
+    -- 'O' in Normal mode. In case comment is unwanted in a specific place
+    -- use CTRL-U to quickly delete it.
+    vim.opt.formatoptions:append("o")
+
+    -- When 'o' is included: do not insert the comment leader for a //
+    -- comment after a statement, only when // is at the start of the line.
+    vim.opt.formatoptions:append("/")
+
+    -- Allow formatting of comments with "gq".
+    -- Note that formatting will not change blank lines or lines containing
+    -- only the comment leader.  A new paragraph starts after such a line,
+    -- or when the comment leader changes.
+    vim.opt.formatoptions:append("q")
+
+    -- Trailing white space indicates a paragraph continues in the next line.
+    -- A line that ends in a non-white character ends a paragraph.
+    -- vim.opt.formatoptions:append("w")
+
+    -- Automatic formatting of paragraphs.  Every time text is inserted or
+    -- deleted the paragraph will be reformatted.  See |auto-format|.
+    -- When the 'c' flag is present this only happens for recognized
+    -- comments.
+    -- vim.opt.formatoptions:append("a")
+
+    -- When formatting text, recognize numbered lists.  This actually uses
+    -- the 'formatlistpat' option, thus any kind of list can be used.  The
+    -- indent of the text after the number is used for the next line.  The
+    -- default is to find a number, optionally followed by '.', ':', ')',
+    -- ']' or '}'.  Note that 'autoindent' must be set too.  Doesn't work
+    -- well together with "2".
+    vim.opt.formatoptions:append("n")
+
+    -- Vi-compatible auto-wrapping in insert mode: Only break a line at a
+    -- blank that you have entered during the current insert command.  (Note:
+    -- this is not 100% Vi compatible.  Vi has some "unexpected features" or
+    -- bugs in this area.  It uses the screen column instead of the line
+    -- column.)
+    -- vim.opt.formatoptions:append("v")
+
+    -- Long lines are not broken in insert mode: When a line was longer than
+    -- 'textwidth' when the insert command started, Vim does not
+    -- automatically format it.
+    vim.opt.formatoptions:remove("l")
+
+    -- Don't break a line after a one-letter word.  It's broken before it
+    -- instead (if possible).
+    vim.opt.formatoptions:append("1")
+
+    -- Where it makes sense, remove a comment leader when joining lines.
+    vim.opt.formatoptions:append("j")
+  end,
+})
+
+-- no point creating these if running a version that doesn't support the necessary functionality
 if vim.fn.has("nvim-0.11") == 1 then
   -- use builtin lsp.foldexpr if if nvim-ufo (https://github.com/kevinhwang91/nvim-ufo)
   -- isn't in use, and if both client and server support it

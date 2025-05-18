@@ -32,6 +32,7 @@ end
 
 local options = {
   backup = false, -- creates a backup file
+  breakindent = true, -- Every wrapped line will continue visually indented
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -66,14 +67,16 @@ local options = {
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   hlsearch = true, -- highlight all matches on previous search pattern
   ignorecase = true, -- ignore case in search patterns
+  linebreak = true, -- wrap long lines at a character in 'breakat' rather than at the last character that fits on the screen.
   mouse = "a", -- allow the mouse to be used in neovim
   number = true, -- set numbered lines
-  numberwidth = 4, -- set number column width to 2 {default 4}
+  numberwidth = 4, -- set number column width to 4 {default 4}
   pumheight = 10, -- pop up menu height
   relativenumber = true, -- set relative numbered lines
   scrolloff = 8, -- is one of my fav
   shell = "/usr/bin/env bash", -- Use bash since fish causes slowdowns
   shiftwidth = 4, -- the number of spaces inserted for each indentation
+  showbreak = "↪ ", -- string to indicate visual linebreak
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
   showtabline = 0, -- never show tabs
   sidescrolloff = 8,
