@@ -97,7 +97,7 @@ if vim.fn.has("nvim-0.11") == 1 then
       if
         package.loaded.ufo
         or not client
-        or not client.supports_method("textDocument/foldingRange")
+        or not client:supports_method("textDocument/foldingRange")
         or not client.server_capabilities
         or not client.server_capabilities.foldingRangeProvider
       then
