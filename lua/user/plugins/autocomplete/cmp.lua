@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   version = false, -- last release is way too old
+  cond = false,
   -- load cmp on InsertEnter
   event = "InsertEnter",
   -- these dependencies will only be loaded when cmp loads

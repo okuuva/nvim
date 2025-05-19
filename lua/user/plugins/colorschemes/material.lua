@@ -29,6 +29,7 @@ return {
 
     plugins = { -- Uncomment the plugins that you use to highlight them
       -- Available plugins:
+      "blink",
       -- "coc",
       -- "colorful-winsep",
       "dap",
@@ -48,7 +49,7 @@ return {
       -- "neorg",
       "neotest",
       "noice",
-      "nvim-cmp",
+      -- "nvim-cmp",
       -- "nvim-navic",
       -- "nvim-notify",
       -- "nvim-tree",

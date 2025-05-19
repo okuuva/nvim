@@ -23,7 +23,6 @@ return {
   },
   dependencies = {
     "plenary.nvim",
-    "nvim-cmp",
     "telescope.nvim",
     "render-markdown.nvim", -- use render-markdown for UI instead of builtin rendering
   },

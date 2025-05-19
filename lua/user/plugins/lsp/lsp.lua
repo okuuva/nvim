@@ -21,7 +21,7 @@ return {
       "neoconf.nvim",
       "lazydev.nvim",
       "mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
+      "blink.cmp",
       "nvim-lightbulb",
       "conform.nvim",
       "nvim-lint",
@@ -115,18 +115,17 @@ return {
       -- enable inlay hints by default
       vim.lsp.inlay_hint.enable()
 
-      local servers = opts.servers
-      local capabilities = vim.tbl_deep_extend(
-        "force",
-        vim.lsp.protocol.make_client_capabilities(),
-        require("cmp_nvim_lsp").default_capabilities()
-      )
-
       -- nvim-ufo folding settings
-      capabilities.textDocument.foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true,
+      local capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          },
+        },
       }
+      capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+      local servers = opts.servers
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
