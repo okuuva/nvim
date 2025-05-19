@@ -81,10 +81,9 @@ return {
     -- Custom colors must be a function that takes in the default colors table as
     -- a paramter, and then modifies them.
     -- To see the available colors, see lua/material/colors/init.lua
-    custom_colors = function(default_colors)
-      default_colors.git.added = "#5E9926"
-      default_colors.git.removed = "#bf6069"
-      -- default_colors.git.modified = default_colors.main.blue
+    custom_colors = function(colors)
+      colors.git.added = "#5E9926"
+      colors.git.removed = "#bf6069"
     end,
 
     -- Overwrite highlights with your own
