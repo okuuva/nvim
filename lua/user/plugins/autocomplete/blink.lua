@@ -46,6 +46,7 @@ return {
     "onsails/lspkind.nvim", -- fancy icons
     "lazydev.nvim",
     "LuaSnip",
+    "nvim-scissors", -- snippet editor
     -- legacy cmp sources and the compatibility plugin
     {
       "saghen/blink.compat",
