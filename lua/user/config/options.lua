@@ -92,6 +92,7 @@ local options = {
   termguicolors = true, -- set term gui colors (most terminals support this)
   termsync = false, -- fast scrolling is causing tearing on Ghostty
   undofile = true, -- enable persistent undo
+  winborder = "rounded", -- default border style for floating windows
   wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }
