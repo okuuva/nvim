@@ -67,6 +67,7 @@
   "nvim-luapad": { "branch": "master", "commit": "33a7237d4ca42b6692042adc15cf77f5231940cf" },
   "nvim-origami": { "branch": "main", "commit": "7e38cff819414471de8fbfbb48ccde06dcf966fb" },
   "nvim-osc52": { "branch": "main", "commit": "04cfaba1865ae5c53b6f887c3ca7304973824fb2" },
+  "nvim-scissors": { "branch": "main", "commit": "8123690127a599b7d5669b074d572e6239222c45" },
   "nvim-toggler": { "branch": "main", "commit": "467808600882fd6c9e33b9dbc4889b1b80cfd917" },
   "nvim-treesitter": { "branch": "master", "commit": "019e8cb7b39f40dc26745344e7fa9ea43fe60d1d" },
   "nvim-treesitter-context": { "branch": "master", "commit": "bece284c5322ddf6946fa4bdc383a2bc033269d7" },

@@ -1,0 +1,1 @@
+{"fixme + fm":{"body":"-- FIXME: ","prefix":["fixme","fix"]},"note":{"body":"-- NOTE: ","prefix":"note"},"todo":{"prefix":["todo","to"],"body":"-- TODO: "},"warn + warning":{"body":"-- WARNING: ","prefix":["warn","warning"]},"hack":{"body":"-- HACK: ","prefix":"hack"},"perf + optim":{"body":"-- OPTIMIZE: ","prefix":["perf","optim"]},"test":{"body":"-- TEST: ","prefix":"test"}}
