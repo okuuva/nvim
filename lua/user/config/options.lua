@@ -102,5 +102,4 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append("c")
-
-vim.cmd([[set iskeyword+=-]])
+vim.opt.iskeyword:append("-")
