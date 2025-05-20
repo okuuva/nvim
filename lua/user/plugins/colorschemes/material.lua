@@ -113,6 +113,10 @@ return {
         SnacksIndentScope = { fg = colors.editor.disabled },
         SnacksIndentChunk = { fg = colors.editor.disabled },
 
+        -- SnacksPicker, replicate Telescope where it makes sense
+        SnacksPickerMatch = { link = "Search" },
+        SnacksPickerDir = { link = "SnacksPickerTree" },
+
         SnacksBackdrop = { bg = colors.editor.bg_alt },
       }
     end,

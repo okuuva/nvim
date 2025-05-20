@@ -1,62 +1,3 @@
-local changed_on_branch = function()
-  local previewers = require("telescope.previewers")
-  local pickers = require("telescope.pickers")
-  local sorters = require("telescope.sorters")
-  local finders = require("telescope.finders")
-  pickers
-    .new({}, {
-      results_title = "Modified in current branch",
-      finder = finders.new_oneshot_job({
-        "git",
-        "diff",
-        "--name-only",
-        "--diff-filter=ACMR",
-        "origin...",
-      }, {}),
-      sorter = sorters.get_fuzzy_file(),
-      previewer = previewers.new_termopen_previewer({
-        get_command = function(entry)
-          return {
-            "git",
-            "diff",
-            "--diff-filter=ACMR",
-            "origin...",
-            "--",
-            entry.value,
-          }
-        end,
-      }),
-    })
-    :find()
-end
-
--- see https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory
--- We cache the results of "git rev-parse"
--- Process creation is expensive in Windows, so this reduces latency
-local is_inside_work_tree = {}
-
-local project_files = function()
-  local builtin = require("telescope.builtin")
-  -- define here if you want to define something
-  local opts = {
-    hidden = true,
-    show_untracked = true,
-  }
-
-  local cwd = vim.fn.getcwd()
-  if is_inside_work_tree[cwd] == nil then
-    vim.fn.system("git rev-parse --is-inside-work-tree")
-    ---@diagnostic disable-next-line: need-check-nil
-    is_inside_work_tree[cwd] = vim.v.shell_error == 0
-  end
-
-  if is_inside_work_tree[cwd] then
-    builtin.git_files(opts)
-  else
-    builtin.find_files(opts)
-  end
-end
-
 return {
   "nvim-telescope/telescope.nvim",
   version = "^0.1.1",
@@ -75,25 +16,7 @@ return {
     "benfowler/telescope-luasnip.nvim",
   },
   keys = {
-    -- search
-    { "<leader>sB", "<cmd>Telescope buffers<cr>", desc = "Open Buffers" },
-    { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    -- stylua: ignore
-    { "<leader>sf", function() project_files() end, desc = "Files" },
-    { "<leader>sh", "<cmd>Telescope help_tags theme=ivy<cr>", desc = "Help" },
-    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-    { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
-    { "<leader>sn", "<cmd>Telescope nerdy<cr>", desc = "Notifications" },
-    { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
-    { "<leader>ss", "<cmd>Telescope luasnip<cr>", desc = "Snippets" },
     { "<leader>sS", "<cmd>Telescope persisted theme=dropdown<cr>", desc = "Sessions" },
-    { "<leader>st", "<cmd>Telescope live_grep_args theme=ivy<cr>", desc = "Text" },
-    { "<leader>sy", "<cmd>Telescope yank_history<cr>", desc = "Yank history" },
-    -- stylua: ignore
-    { "<leader>gm", function() changed_on_branch() end, desc = "Modified files" },
-    -- lsp
-    { "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
-    { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
   },
   config = function()
     local telescope = require("telescope")
@@ -195,13 +118,6 @@ return {
       },
     })
 
-    telescope.load_extension("fzf")
-    telescope.load_extension("live_grep_args")
-    telescope.load_extension("luasnip")
     telescope.load_extension("persisted")
-    telescope.load_extension("noice")
-    telescope.load_extension("yank_history")
-    telescope.load_extension("git_worktree")
-    telescope.load_extension("nerdy")
   end,
 }

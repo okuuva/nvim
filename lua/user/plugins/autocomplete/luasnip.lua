@@ -48,7 +48,6 @@ return {
   -- build = "make install_jsregexp"
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "benfowler/telescope-luasnip.nvim", -- telescope plugin for luasnip
   },
   opts = {
     history = true,
