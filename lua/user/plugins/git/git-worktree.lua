@@ -12,22 +12,22 @@ return {
     "plenary.nvim",
     "telescope.nvim",
   },
-  keys = {
-    {
-      "<leader>gw",
-      function()
-        require("telescope").extensions.git_worktree.git_worktree()
-      end,
-      desc = "List Worktrees",
-    },
-    {
-      "<leader>gW",
-      function()
-        require("telescope").extensions.git_worktree.create_git_worktree({ prefix = "../" })
-      end,
-      desc = "Create Worktree",
-    },
-  },
+  -- keys = {
+  --   {
+  --     "<leader>gw",
+  --     function()
+  --       require("telescope").extensions.git_worktree.git_worktree()
+  --     end,
+  --     desc = "List Worktrees",
+  --   },
+  --   {
+  --     "<leader>gW",
+  --     function()
+  --       require("telescope").extensions.git_worktree.create_git_worktree({ prefix = "../" })
+  --     end,
+  --     desc = "Create Worktree",
+  --   },
+  -- },
   config = function()
     ---@type GitWorktreeConfig
     vim.g.git_worktree = {
