@@ -36,7 +36,8 @@ return {
       ["<C-t>"] = false,
       ["<C-s>"] = false,
       ["<C-l>"] = false,
-      ["<C-c>"] = false, -- <leader>c closes buffer, no need for a plugin specific mapping
+      ["<C-c>"] = false, -- <leader>c (and ESC in normal mode) closes buffer
+      ["<Esc>"] = { "actions.close", mode = "n" },
     },
   },
 }
