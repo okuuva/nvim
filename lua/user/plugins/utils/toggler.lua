@@ -2,7 +2,7 @@ return {
   "nguyenvukhang/nvim-toggler",
   -- stylua: ignore
   keys = {
-    { "<leader>f", function() require("nvim-toggler").toggle() end, desc = "Flip current word" },
+    { "gt", function() require("nvim-toggler").toggle() end, desc = "Toggle current word" },
   },
   opts = {
     remove_default_keybinds = true,
