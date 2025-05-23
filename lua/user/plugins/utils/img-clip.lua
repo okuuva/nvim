@@ -1,5 +1,3 @@
--- TODO: check telescope integration
--- https://github.com/HakonHarnes/img-clip.nvim?tab=readme-ov-file#telescopenvim
 -- TODO: check oil integration
 -- https://github.com/HakonHarnes/img-clip.nvim?tab=readme-ov-file#oilnvim
 

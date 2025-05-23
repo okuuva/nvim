@@ -25,9 +25,6 @@ return {
       select = {
         action = nil, -- nil to use default put action
       },
-      telescope = {
-        mappings = nil, -- nil to use default mappings
-      },
     },
     system_clipboard = {
       sync_with_ring = true,

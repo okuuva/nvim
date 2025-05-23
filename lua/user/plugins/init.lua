@@ -6,7 +6,6 @@ return {
   { import = "user.plugins.debuggers" },
   { import = "user.plugins.ai" },
   { import = "user.plugins.autocomplete" },
-  { import = "user.plugins.searching" },
   { import = "user.plugins.treesitter" },
   { import = "user.plugins.navigation" },
   { import = "user.plugins.ui" },
