@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "Juksuu/worktrees.nvim",
+  dir = "~/gits/neovim/worktrees.nvim.git/snacks-new-worktree-picker/",
   dependencies = {
     "plenary.nvim",
   },
@@ -8,10 +9,6 @@ return {
     "GitWorktreeCreate",
     "GitWorktreeCreateExisting",
     "GitWorktreeSwitch",
-  },
-  -- stylua: ignore
-  keys = {
-    { "<leader>gW", function() require("worktrees").new_worktree() end, desc = "Create Worktree" },
   },
   opts = {},
 }
