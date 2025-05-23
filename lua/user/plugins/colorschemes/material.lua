@@ -56,7 +56,7 @@ return {
       "nvim-web-devicons",
       -- "rainbow-delimiters",
       -- "sneak",
-      "telescope",
+      -- "telescope",
       "trouble",
       "which-key",
     },
@@ -107,7 +107,6 @@ return {
         -- WinSeparator = { link = "VertSplit" },
         BlinkCmpLabelDeprecated = { strikethrough = true },
         Folded = { fg = colors.editor.disabled, bg = colors.editor.bg, italic = true },
-        TelescopeMatching = { link = "Search" },
         -- Snacks indent, replicate indent-blankline behavior
         SnacksIndent = { fg = colors.editor.border },
         SnacksIndentScope = { fg = colors.editor.disabled },

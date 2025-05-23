@@ -119,7 +119,7 @@ local persisted_hooks = api.nvim_create_augroup("PersistedHooks", {})
 
 api.nvim_create_autocmd("User", {
   group = persisted_hooks,
-  pattern = { "PersistedLoadPost", "PersistedTelescopeLoadPost" },
+  pattern = { "PersistedLoadPost" },
   callback = function(session)
     local message = "Loaded session " .. vim.g.persisted_loaded_session
 

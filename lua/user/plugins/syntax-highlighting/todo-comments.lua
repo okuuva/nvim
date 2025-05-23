@@ -1,6 +1,6 @@
 return {
   "folke/todo-comments.nvim",
-  cmd = { "TodoTrouble", "TodoTelescope" },
+  cmd = { "TodoTrouble" },
   event = { "BufReadPost", "BufNewFile" },
   keys = {
     { "<leader>dT", "<cmd>TodoTrouble<cr>", desc = "TODO-list" },
