@@ -24,6 +24,8 @@ return {
     -- - https://github.com/goolord/alpha-nvim/discussions/75
     -- - https://github.com/goolord/alpha-nvim/issues/208
     -- - https://github.com/neovim/neovim/issues/3688#issuecomment-574544618
+
+    ---@type snacks.dashboard.Config
     dashboard = {
       enabled = not USING_PAGE,
       preset = {
@@ -34,8 +36,8 @@ return {
           { icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = " ", key = "e", desc = "Edit Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
-          { icon = " ", key = "w", desc = "List Git Worktrees", action = ":lua require('telescope').extensions.git_worktree.git_worktree()" },
-          { icon = " ", key = "W", desc = "Create Git Worktree", action = ":lua require('telescope').extensions.git_worktree.create_git_worktree({prefix = '../'})" },
+          { icon = " ", key = "w", desc = "List Git Worktrees", action = "<leader>gw" },
+          { icon = " ", key = "W", desc = "Create Git Worktree", action = "<leader>gW" },
           { icon = " ", key = "s", desc = "Restore Session", action = ":SessionSelect" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "󰜺 ", key = "c", desc = "Close Dashboard", action = ":lua Snacks.bufdelete()" },
