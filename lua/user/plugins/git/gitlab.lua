@@ -6,7 +6,6 @@ return {
     "nui.nvim",
     "plenary.nvim",
     "diffview.nvim",
-    "dressing.nvim", -- Recommended but not required. Better UI for pickers.
     "nvim-web-devicons", -- Recommended but not required. Icons in discussion tree.
   },
   build = function()
