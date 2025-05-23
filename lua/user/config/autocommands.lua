@@ -170,3 +170,19 @@ api.nvim_create_autocmd("User", {
     vim.opt.showbreak = "" -- Make sure no special symbols are shown at line break
   end,
 })
+
+local showbreak = "↪ " -- string to indicate visual linebreak
+
+api.nvim_create_autocmd("WinEnter", {
+  group = vim.api.nvim_create_augroup("SetShowbreakOnlyInActiveWindows", { clear = true }),
+  callback = function()
+    vim.opt_local.showbreak = showbreak
+  end,
+})
+
+api.nvim_create_autocmd("WinLeave", {
+  group = "SetShowbreakOnlyInActiveWindows",
+  callback = function()
+    vim.opt_local.showbreak = ""
+  end,
+})

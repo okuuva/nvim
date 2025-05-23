@@ -76,7 +76,6 @@ local options = {
   scrolloff = 8, -- is one of my fav
   shell = "/usr/bin/env bash", -- Use bash since fish causes slowdowns
   shiftwidth = 4, -- the number of spaces inserted for each indentation
-  showbreak = "↪ ", -- string to indicate visual linebreak
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
   showtabline = 0, -- never show tabs
   sidescrolloff = 8,
