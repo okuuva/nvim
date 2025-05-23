@@ -4,6 +4,5 @@ return {
   keys = {
     { "grn", ":IncRename ", desc = "Rename" },
   },
-  dependencies = { "dressing.nvim" },
   opts = {},
 }

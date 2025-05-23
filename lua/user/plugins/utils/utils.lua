@@ -1,3 +1,4 @@
+---@type table<LazyPluginSpec>
 return {
   { import = "user.plugins.utils.markdown" },
   { import = "user.plugins.utils.mini" },
@@ -43,15 +44,6 @@ return {
   {
     "nvim-lua/plenary.nvim",
     lazy = true,
-  },
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-    opts = {
-      input = {
-        enabled = false,
-      },
-    },
   },
   {
     "MunifTanjim/nui.nvim",
