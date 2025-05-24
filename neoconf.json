@@ -33,6 +33,14 @@
         "missing-fields"
       ]
     },
+    "ruff": {
+      "ruff.lint.select": [
+        "ALL"
+      ],
+      "ruff.lint.ignore": [
+        "D1" // missing docstrings
+      ]
+    },
     "yamlls": {
       "yaml.customTags": [
         "!reference sequence"
