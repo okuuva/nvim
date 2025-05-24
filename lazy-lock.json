@@ -9,7 +9,6 @@
   "cmp-env": { "branch": "main", "commit": "d27a9579e7846b0d30f247a3d6bc730819e702bb" },
   "cmp-fish": { "branch": "main", "commit": "3a23492e2aead05522a9887ec685d70e8c987323" },
   "cmp-nerdfont": { "branch": "main", "commit": "e97482344ebed29093015a18c155057adf5c842b" },
-  "codeium.nvim": { "branch": "main", "commit": "ebed4f7cc8a18184d8332d421ca10bed5f7d59a1" },
   "color-picker.nvim": { "branch": "master", "commit": "06cb5f853535dea529a523e9a0e8884cdf9eba4d" },
   "conform.nvim": { "branch": "master", "commit": "f643d1b51d1d3d14c8641a46ce44f6bce73c2697" },
   "copilot.lua": { "branch": "master", "commit": "30321e33b03cb924fdcd6a806a0dc6fa0b0eafb9" },
