@@ -9,7 +9,8 @@ return {
       enabled = not package.loaded.codecompanion,
     },
     suggestion = {
-      enabled = false,
+      -- use supermaven if enabled
+      enabled = not package.loaded["supermaven-nvim"],
     },
   },
 }
