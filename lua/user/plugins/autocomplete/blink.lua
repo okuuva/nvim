@@ -84,6 +84,8 @@ return {
           elseif cmp.snippet_active({ direction = 1 }) then
             -- jump to next tabstop if not on the last one
             return cmp.snippet_forward()
+          elseif cmp.is_ghost_text_visible() then
+            return cmp.select_and_accept()
           end
         end,
         "fallback",
@@ -133,6 +135,7 @@ return {
       },
       ghost_text = {
         enabled = true,
+        show_without_selection = true,
       },
       list = {
         selection = {
