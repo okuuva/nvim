@@ -50,6 +50,14 @@ return {
     lazy = true,
   },
   {
+    "onsails/lspkind.nvim",
+    opts = {
+      symbol_map = {
+        Supermaven = "",
+      },
+    },
+  },
+  {
     "EtiamNullam/deferred-clipboard.nvim",
     event = "VeryLazy",
     opts = {},

@@ -31,9 +31,10 @@ local source_priority = {
   obsidian = 65,
   obsidian_tags = 65,
   obsidian_new = 65,
+  supermaven = 60,
   lsp = 50,
-  snippets = 40,
-  path = 30,
+  path = 40,
+  snippets = 30,
   buffer = 20,
   fish = 15,
   nerdfont = 10,
@@ -46,7 +47,7 @@ return {
   event = "InsertEnter",
   dependencies = {
     "nvim-web-devicons",
-    "onsails/lspkind.nvim", -- fancy icons
+    "lspkind.nvim", -- fancy icons
     "lazydev.nvim",
     "LuaSnip",
     "nvim-scissors", -- snippet editor
@@ -58,6 +59,7 @@ return {
     "bydlw98/cmp-env",
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
+    { "supermaven-nvim", optional = true },
   },
   -- use a release tag to download pre-built binaries
   version = "1.*",
@@ -199,6 +201,7 @@ return {
         "buffer",
         "env",
         "nerdfont",
+        "supermaven",
       },
       per_filetype = {
         lua = { inherit_defaults = true, "lazydev" },
@@ -234,6 +237,22 @@ return {
           opts = {
             cmp_name = "nerdfont",
           },
+        },
+        supermaven = {
+          name = "Supermaven",
+          module = "blink.compat.source",
+          opts = {
+            cmp_name = "supermaven",
+          },
+          transform_items = function(_, items)
+            local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+            local kind_idx = #CompletionItemKind + 1
+            CompletionItemKind[kind_idx] = "Supermaven"
+            for _, item in ipairs(items) do
+              item.kind = kind_idx
+            end
+            return items
+          end,
         },
       },
     },
