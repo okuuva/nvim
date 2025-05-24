@@ -40,7 +40,7 @@ return {
       "gitsigns",
       "harpoon",
       -- "hop",
-      "illuminate",
+      -- "illuminate",
       -- "indent-blankline",
       -- "lspsaga",
       -- "mini",
@@ -115,6 +115,8 @@ return {
         -- SnacksPicker, replicate Telescope where it makes sense
         SnacksPickerMatch = { link = "Search" },
         SnacksPickerDir = { link = "SnacksPickerTree" },
+        -- Used by Snacks words
+        LspReferenceText = { italic = true, underline = true },
 
         SnacksBackdrop = { bg = colors.editor.bg_alt },
       }
