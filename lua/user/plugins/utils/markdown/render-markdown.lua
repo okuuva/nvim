@@ -1,4 +1,4 @@
-local file_types = { "markdown", "Avante", "gitcommit" }
+local file_types = { "markdown", "Avante", "gitcommit", "codecompanion" }
 
 return {
   "MeanderingProgrammer/render-markdown.nvim",

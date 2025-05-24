@@ -16,6 +16,7 @@ local mappings = {
   { "<leader>SH", "<cmd>split<cr>", desc = "Horizontal split", nowait = true, remap = false },
   { "<leader>SS", "<cmd>vsplit<cr>", desc = "Vertical split", nowait = true, remap = false },
   { "<leader>T", group = "TreeSitter", nowait = true, remap = false },
+  { "<leader>a", group = "AI", nowait = true, remap = false },
   { "<leader>b", group = "Buffers", nowait = true, remap = false },
   { "<leader>d", group = "Diagnostics", nowait = true, remap = false },
   { "<leader>g", group = "Git", nowait = true, remap = false },
@@ -35,6 +36,7 @@ local mappings = {
   {
     mode = { "x" },
     { "<leader>P", group = "Pastebin" },
+    { "<leader>a", group = "AI" },
     { "<leader>g", group = "Git" },
     { "<leader>gL", group = "GitLink" },
     { "<leader>gl", group = "Gitlab" },

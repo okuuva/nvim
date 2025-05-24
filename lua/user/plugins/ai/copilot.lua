@@ -5,7 +5,8 @@ return {
   cond = require("user.util").ai_helpers_allowed(),
   opts = {
     panel = {
-      enabled = false,
+      -- use codecompanion if available
+      enabled = not package.loaded.codecompanion,
     },
     suggestion = {
       enabled = false,
