@@ -185,20 +185,55 @@ function M.reload_buffers()
   vim.notify("Buffers reloaded")
 end
 
-local function ai_check_for_forbidden_patterns_in_path()
-  local success, forbidden_patters = pcall(require, "user.config.local.ai")
-  forbidden_patters = success and forbidden_patters or { "work" }
-  local path = M.get_root()
-  for _, pattern in ipairs(forbidden_patters) do
-    if path:find(pattern) then
-      return false
+---@param pattern string
+---@param tbl table<any, string>
+---@return boolean
+function M.pattern_in_string_table(pattern, tbl)
+  for _, str in ipairs(tbl) do
+    if str:find(pattern) then
+      return true
     end
   end
-  return true
+  return false
 end
 
-function M.ai_helpers_allowed()
-  return ai_check_for_forbidden_patterns_in_path()
+---@param str string
+---@param tbl table<any, string>
+---@return boolean
+function M.string_in_pattern_table(str, tbl)
+  for _, pattern in ipairs(tbl) do
+    if str:find(pattern) then
+      return true
+    end
+  end
+  return false
+end
+
+local function ai_is_path_blacklisted()
+  local success, local_ai_config = pcall(require, "user.config.local.ai")
+  local path_blacklist = success and local_ai_config.path_blacklist or { "/work/", "/notes/" }
+  local path = M.get_root()
+  return M.string_in_pattern_table(path, path_blacklist)
+end
+
+local _plugin_blacklist = {}
+
+---@param plugin string | nil Check if passed plugin is allowed to load AI helpers
+---@return boolean
+local function ai_is_plugin_blacklisted(plugin)
+  if plugin == nil then
+    return false
+  end
+
+  local success, local_ai_config = pcall(require, "user.config.local.ai")
+  local plugin_blacklist = success and local_ai_config.plugin_blacklist or _plugin_blacklist
+  return not M.string_in_pattern_table(plugin, plugin_blacklist)
+end
+
+---@param plugin? string Check if passed plugin is allowed to load AI helpers
+---@return boolean
+function M.ai_helpers_allowed(plugin)
+  return not ai_is_plugin_blacklisted(plugin) and not ai_is_path_blacklisted()
 end
 
 return M
