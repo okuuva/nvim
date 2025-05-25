@@ -28,12 +28,13 @@
     "lua_ls": {
       // see https://luals.github.io/wiki/settings/
       "Lua.completion.autoRequire": false,
+      "Lua.diagnostics.disable": [
+        "missing-fields"
+      ],
       "Lua.hint.arrayIndex": "Disable",
       "Lua.hint.enable": true,
       "Lua.hint.setType": true,
-      "Lua.diagnostics.disable": [
-        "missing-fields"
-      ]
+      "Lua.runtime.version": "LuaJIT"
     },
     "ruff": {
       "ruff.lint.select": [
