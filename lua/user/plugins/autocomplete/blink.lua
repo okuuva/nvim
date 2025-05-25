@@ -208,18 +208,26 @@ return {
           score_offset = 100,
         },
         env = {
-          -- IMPORTANT: use the same name as you would for nvim-cmp
-          name = "env",
+          name = "ENV",
           module = "blink.compat.source",
           score_offset = -10,
+          opts = {
+            cmp_name = "env",
+          },
         },
         fish = {
-          name = "fish",
+          name = "Fish",
           module = "blink.compat.source",
+          opts = {
+            cmp_name = "fish",
+          },
         },
         nerdfont = {
-          name = "nerdfont",
+          name = "NerdFont",
           module = "blink.compat.source",
+          opts = {
+            cmp_name = "nerdfont",
+          },
         },
       },
     },
