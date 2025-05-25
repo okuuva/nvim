@@ -1,5 +1,7 @@
+---@type LazyPluginSpec
 return {
   "lewis6991/gitsigns.nvim",
+  version = "v1.*",
   event = { "BufReadPre", "BufNewFile" },
   -- stylua: ignore
   keys = {
