@@ -4,15 +4,15 @@
 ---@type LazyPluginSpec
 return {
   "worktrees.nvim",
+  -- stylua: ignore
+  keys = {
+    ---@diagnostic disable-next-line: undefined-field
+    { "<leader>gw", function() Snacks.picker.worktrees() end, desc = "List Worktrees" },
+    ---@diagnostic disable-next-line: undefined-field
+    { "<leader>gW", function() Snacks.picker.worktrees_new() end, desc = "New Worktree" },
+  },
   specs = {
     "snacks.nvim",
-    -- stylua: ignore
-    keys = {
-      ---@diagnostic disable-next-line: undefined-field
-      { "<leader>gw", function() Snacks.picker.worktrees() end, desc = "List Worktrees" },
-      ---@diagnostic disable-next-line: undefined-field
-      { "<leader>gW", function() Snacks.picker.worktrees_new() end, desc = "New Worktree" },
-    },
     ---@return snacks.Config
     opts = function(_, opts)
       return vim.tbl_deep_extend("force", opts or {}, {

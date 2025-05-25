@@ -2,13 +2,10 @@
 ---@type LazyPluginSpec
 return {
   "yanky.nvim",
-  specs = {
-    "snacks.nvim",
-    -- stylua: ignore
-    keys = {
-      ---@diagnostic disable-next-line: undefined-field
-      { "<leader>sy", function() Snacks.picker.yanky() end, desc = "Yank history" },
-    },
+  -- stylua: ignore
+  keys = {
+    ---@diagnostic disable-next-line: undefined-field
+    { "<leader>sy", function() Snacks.picker.yanky() end, desc = "Yank history" },
   },
   optional = true,
 }

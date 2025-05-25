@@ -3,13 +3,13 @@
 ---@type LazyPluginSpec
 return {
   "LuaSnip",
+  -- stylua: ignore
+  keys = {
+    ---@diagnostic disable-next-line: undefined-field
+    { "<leader>ss", function() Snacks.picker.snippets() end, desc = "Snippets" },
+  },
   specs = {
     "snacks.nvim",
-    -- stylua: ignore
-    keys = {
-      ---@diagnostic disable-next-line: undefined-field
-      { "<leader>ss", function() Snacks.picker.snippets() end, desc = "Snippets" },
-    },
     ---@return snacks.Config
     opts = function(_, opts)
       return vim.tbl_deep_extend("force", opts or {}, {
