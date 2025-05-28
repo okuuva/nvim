@@ -78,6 +78,13 @@ return {
     -- Optional, if you keep notes in a specific subdirectory of your vault.
     notes_subdir = "notes",
 
+    picker = {
+      name = "snacks.pick",
+      note_mappings = {
+        new = "<C-n>",
+      },
+    },
+
     preferred_link_style = "markdown",
 
     -- Optional, for templates (see below).
