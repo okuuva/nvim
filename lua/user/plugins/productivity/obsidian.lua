@@ -26,25 +26,6 @@ return {
     "render-markdown.nvim", -- use render-markdown for UI instead of builtin rendering
   },
   opts = {
-    ui = { enable = false },
-    workspaces = {
-      {
-        name = "work",
-        path = "~/Obsidian/Work",
-      },
-      {
-        name = "personal",
-        path = "~/Obsidian/Personal",
-      },
-    },
-
-    -- Optional, if you keep notes in a specific subdirectory of your vault.
-    notes_subdir = "notes",
-
-    -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
-    -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
-    log_level = vim.log.levels.INFO,
-
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
       folder = "notes/dailies",
@@ -55,7 +36,11 @@ return {
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = "Daily template.md",
     },
-    --
+
+    -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
+    -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
+    log_level = vim.log.levels.INFO,
+
     -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
     -- way then set 'mappings = {}'.
     mappings = {
@@ -68,18 +53,7 @@ return {
       },
     },
 
-    -- Optional, for templates (see below).
-    templates = {
-      subdir = "templates",
-      substitutions = {
-        long_date = function()
-          return os.date(long_date)
-        end,
-      },
-    },
-
     new_notes_location = "notes_subdir",
-    preferred_link_style = "markdown",
 
     -- Optional, customize how note IDs are generated given an optional title.
     ---@param title string|?
@@ -100,5 +74,34 @@ return {
       end
       return tostring(os.time()) .. "-" .. suffix
     end,
+
+    -- Optional, if you keep notes in a specific subdirectory of your vault.
+    notes_subdir = "notes",
+
+    preferred_link_style = "markdown",
+
+    -- Optional, for templates (see below).
+    templates = {
+      subdir = "templates",
+      substitutions = {
+        long_date = function()
+          return os.date(long_date)
+        end,
+      },
+    },
+
+    -- Use render-markdown for UI
+    ui = { enable = false },
+
+    workspaces = {
+      {
+        name = "work",
+        path = "~/Obsidian/Work",
+      },
+      {
+        name = "personal",
+        path = "~/Obsidian/Personal",
+      },
+    },
   },
 }
