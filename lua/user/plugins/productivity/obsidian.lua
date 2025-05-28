@@ -1,7 +1,7 @@
 local long_date = "%A %B %-d, %Y"
 
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "^3.7.8",
   lazy = true,
   event = { "BufReadPre " .. vim.fn.expand("~") .. "**/Obsidian/**.md" },
