@@ -28,6 +28,9 @@ end
 -- higher number == more important
 local source_priority = {
   lazydev = 100,
+  obsidian = 65,
+  obsidian_tags = 65,
+  obsidian_new = 65,
   lsp = 50,
   snippets = 40,
   path = 30,

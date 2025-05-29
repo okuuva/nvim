@@ -1,5 +1,7 @@
+---@module "blink"
 local long_date = "%A %B %-d, %Y"
 
+---@type LazyPluginSpec
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "^3.7.8",
@@ -24,8 +26,14 @@ return {
   dependencies = {
     "plenary.nvim",
     "render-markdown.nvim", -- use render-markdown for UI instead of builtin rendering
+    { "saghen/blink.cmp", optional = true },
   },
   opts = {
+    completion = {
+      nvim_cmp = false,
+      blink = true,
+    },
+
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
       folder = "notes/dailies",
