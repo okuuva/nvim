@@ -3,12 +3,10 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   keys = {
-    { "<leader>Tl", "<cmd>TSInstallInfo<cr>", desc = "List installed parsers" },
-    { "<leader>Tp", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle Playground" },
-    { "<leader>Th", "<cmd>TSHighlightCapturesUnderCursor<cr>", desc = "Show highlight capture groups under cursor" },
+    { "<leader>TI", "<cmd>Inspect<cr>", desc = "Inspect current node" },
+    { "<leader>TT", "<cmd>InspectTree<cr>", desc = "Toggle Tree browser" },
   },
   dependencies = {
-    "nvim-treesitter/playground",
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
     {
@@ -105,24 +103,6 @@ return {
         },
       },
       matchup = { enable = true },
-      playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false, -- Whether the query persists across vim sessions
-        keybindings = {
-          toggle_query_editor = "o",
-          toggle_hl_groups = "i",
-          toggle_injected_languages = "t",
-          toggle_anonymous_nodes = "a",
-          toggle_language_display = "I",
-          focus_language = "f",
-          unfocus_language = "F",
-          update = "R",
-          goto_node = "<cr>",
-          show_help = "?",
-        },
-      },
       -- textobjects = {
       -- select = {
       --   enable = true,
