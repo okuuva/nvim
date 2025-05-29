@@ -177,8 +177,8 @@ return {
       sorts = {
         "exact",
         function(a, b)
-          local a_priority = source_priority[a.source_id]
-          local b_priority = source_priority[b.source_id]
+          local a_priority = source_priority[a.source_id] or 35
+          local b_priority = source_priority[b.source_id] or 35
           if a_priority ~= b_priority then
             return a_priority > b_priority
           end
