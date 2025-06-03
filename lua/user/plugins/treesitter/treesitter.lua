@@ -1,8 +1,9 @@
 ---@type LazyPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
+  -- branch = "main",
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" },
+  lazy = false,
   keys = {
     { "<leader>TI", "<cmd>Inspect<cr>", desc = "Inspect current node" },
     { "<leader>TT", "<cmd>InspectTree<cr>", desc = "Toggle Tree browser" },
