@@ -7,6 +7,13 @@ return {
     "plenary.nvim",
     "diffview.nvim",
     "nvim-web-devicons", -- Recommended but not required. Icons in discussion tree.
+    {
+      "topaxi/pipeline.nvim",
+      keys = {
+        { "<leader>glp", "<cmd>Pipeline<cr>", desc = "Pipelines" },
+      },
+      optional = true,
+    },
   },
   build = function()
     require("gitlab.server").build(true)
@@ -32,7 +39,7 @@ return {
     { "<leader>glld", function() require("gitlab").delete_label() end, desc = "Delete" },
     { "<leader>glra", function() require("gitlab").add_reviewer() end, desc = "Add" },
     { "<leader>glrd", function() require("gitlab").delete_reviewer() end, desc = "Delete" },
-    { "<leader>glp", function() require("gitlab").pipeline() end, desc = "Pipelines" },
+    -- { "<leader>glp", function() require("gitlab").pipeline() end, desc = "Pipelines" },
     { "<leader>glo", function() require("gitlab").open_in_browser() end, desc = "Open in browser" },
     { "<leader>glM", function() require("gitlab").merge() end, desc = "Merge" },
     { "<leader>glu", function() require("gitlab").copy_mr_url() end, desc = "Copy MR url" },
