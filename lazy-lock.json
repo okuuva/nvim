@@ -75,6 +75,7 @@
   "persistent-breakpoints.nvim": { "branch": "main", "commit": "d1656221836207787b8a7969cc2dc72668c4742a" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
+  "qmk.nvim": { "branch": "main", "commit": "348ab2cd4f319f7c9881ca8b1bc0241e9b4d6619" },
   "rainbow_csv": { "branch": "master", "commit": "3dbbfd7d17536aebfb80f571255548495574c32b" },
   "registers.nvim": { "branch": "main", "commit": "c217f8f369e0886776cda6c94eab839b30a8940d" },
   "render-markdown.nvim": { "branch": "main", "commit": "df64d5d5432e13026a79384ec4e2bab185fd4eb5" },
