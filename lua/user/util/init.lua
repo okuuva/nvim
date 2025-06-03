@@ -216,7 +216,7 @@ local function ai_is_path_blacklisted()
   return M.string_in_pattern_table(path, path_blacklist)
 end
 
-local _plugin_blacklist = {}
+local _plugin_blacklist = { "supermaven-nvim" }
 
 ---@param plugin string | nil Check if passed plugin is allowed to load AI helpers
 ---@return boolean
