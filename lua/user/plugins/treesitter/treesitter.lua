@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
@@ -9,6 +10,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
+    "RRethy/nvim-treesitter-endwise",
     {
       "andymass/vim-matchup",
       init = function()
