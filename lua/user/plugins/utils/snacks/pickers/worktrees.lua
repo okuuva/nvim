@@ -23,16 +23,19 @@ return {
               layout = { preset = "select", preview = false },
               ---@type snacks.picker.finder
               finder = function(opts, filter)
-                local worktrees_list, number_of_worktrees = require("worktrees.git").get_worktrees()
-                if not worktrees_list or number_of_worktrees == 0 then
-                  worktrees_list = {}
+                local worktrees = require("worktrees.git").get_worktrees()
+                if not worktrees then
+                  worktrees = {}
                 end
                 local current = require("worktrees.git").get_worktree_root() or ""
+
+                ---@type Worktree[]
+                local worktree_list = vim.tbl_values(worktrees)
 
                 ---@async
                 ---@param cb async fun(item: snacks.picker.finder.Item)
                 return function(cb)
-                  for i, worktree in ipairs(worktrees_list) do
+                  for i, worktree in ipairs(worktree_list) do
                     local item = {
                       idx = i,
                       file = worktree.path,
