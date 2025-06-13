@@ -58,6 +58,10 @@ local function tabs()
   return ""
 end
 
+local function pwd()
+  return "  " .. vim.fs.basename(vim.fn.getcwd())
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "noice.nvim" },
@@ -74,7 +78,7 @@ return {
     },
     sections = {
       lualine_a = { "mode" },
-      lualine_b = { branch, diff, diagnostics },
+      lualine_b = { pwd, branch, diff, diagnostics },
       lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = { "encoding", "fileformat", "filetype" },
