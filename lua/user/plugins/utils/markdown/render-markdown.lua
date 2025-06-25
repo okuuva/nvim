@@ -12,8 +12,5 @@ return {
   ---@type render.md.UserConfig
   opts = {
     file_types = file_types,
-    win_options = {
-      concealcursor = { rendered = "nc" }, -- _really_ disable anti-conceal on the cursor line
-    },
   },
 }
