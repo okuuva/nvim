@@ -14,11 +14,13 @@ return {
   },
   dependencies = {
     -- common dependencies
-    "plenary.nvim",
-    "nvim-treesitter",
-    "FixCursorHold.nvim",
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter",
     -- adapters
     "nvim-neotest/neotest-go",
+    "nvim-neotest/neotest-plenary",
   },
   init = function()
     -- see https://github.com/nvim-neotest/neotest-go/blob/f2580cad67ef0181403cf65858ab638ffd3ede9f/README.md?plain=1#L16-42
@@ -38,6 +40,7 @@ return {
     neotest.setup({
       adapters = {
         require("neotest-go"),
+        require("neotest-plenary"),
       },
       open = {
         open_on_run = false,
