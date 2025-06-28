@@ -19,8 +19,6 @@ return {
       end,
       opts = {},
     },
-    -- NOTE: additional parser
-    { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
   },
   -- registers mise files so that the injector can add syntaxt highlighting for embedded code blocks
   -- see https://mise.jdx.dev/mise-cookbook/neovim.html#code-highlight-for-run-commands
