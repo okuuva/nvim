@@ -1,7 +1,8 @@
 ---@type LazyPluginSpec
 return {
   "okuuva/work-time-calculator.nvim",
-  dir = "~/gits/neovim/work-time-calculator.nvim.git/dev",
+  branch = "dev",
+  -- dir = "~/gits/neovim/work-time-calculator.nvim.git/dev",
   dependencies = {
     "obsidian.nvim",
     "markdown-table-mode.nvim",
