@@ -82,7 +82,7 @@ return {
       lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = { "encoding", "fileformat", "filetype" },
-      lualine_z = { location },
+      lualine_z = { "location", "progress" },
     },
     inactive_sections = {
       lualine_a = {},
@@ -90,7 +90,7 @@ return {
       lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = {},
-      lualine_z = { location },
+      lualine_z = { "location", "progress" },
     },
     extensions = {
       "fzf",
