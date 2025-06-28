@@ -15,6 +15,22 @@ local eol_jumper_opts = {
   },
 }
 
+local function regular_binding()
+  local bufnr = vim.api.nvim_get_current_buf()
+  if vim.bo[bufnr].filetype ~= "mcphub" then
+    require("flash").jump(eol_jumper_opts)
+  end
+end
+
+local function treesitter_binding()
+  local bufnr = vim.api.nvim_get_current_buf()
+  if vim.bo[bufnr].filetype == "mcphub" then
+    require("flash").jump(eol_jumper_opts)
+  else
+    require("flash").treesitter()
+  end
+end
+
 ---@type LazyPluginSpec
 return {
   "folke/flash.nvim",
@@ -24,8 +40,8 @@ return {
   opts = {},
   -- stylua: ignore
   keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump(eol_jumper_opts) end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "s", mode = { "n", "x", "o" }, regular_binding, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, treesitter_binding, desc = "Flash Treesitter" },
     { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
