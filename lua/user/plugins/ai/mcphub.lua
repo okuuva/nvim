@@ -9,6 +9,8 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
-  opts = {},
+  build = "bundled_build.lua", -- Bundles `mcp-hub` binary along with the neovim plugin
+  opts = {
+    use_bundled_binary = true,
+  },
 }
