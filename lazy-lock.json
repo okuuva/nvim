@@ -105,6 +105,7 @@
   "vim-kitty": { "branch": "main", "commit": "309b8451cff8ad77a24ee332b5d9db4162f1655d" },
   "vim-matchup": { "branch": "master", "commit": "56c714495ec7f40cf2c7e92fb124067c7951e650" },
   "vim-plist": { "branch": "master", "commit": "aa781a387c70a9ea30cbce8da988e19693f5aaec" },
+  "vim-rzip": { "branch": "master", "commit": "f65400fed27b27c7cff7ef8d428c4e5ff749bf28" },
   "vim-sanegx": { "branch": "master", "commit": "e97c10401d781199ba1aecd07790d0771314f3f5" },
   "vim-startuptime": { "branch": "master", "commit": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6" },
   "vimade": { "branch": "master", "commit": "f63ca5cb9cf811b2c526694e820b87fe2238deb6" },
