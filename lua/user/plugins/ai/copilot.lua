@@ -12,5 +12,12 @@ return {
       -- use supermaven if enabled
       enabled = not package.loaded["supermaven-nvim"],
     },
+    server_opts_overrides = {
+      settings = {
+        telemetry = {
+          telemetryLevel = "off",
+        },
+      },
+    },
   },
 }
