@@ -29,6 +29,14 @@ return {
     { "saghen/blink.cmp", optional = true },
   },
   opts = {
+    callbacks = {
+      -- Runs anytime the workspace is set/changed.
+      ---@param client obsidian.Client
+      ---@param workspace obsidian.Workspace
+      post_set_workspace = function(client, workspace)
+        client:command("quick_switch", {})
+      end,
+    },
     completion = {
       nvim_cmp = false,
       blink = true,
