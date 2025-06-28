@@ -16,7 +16,6 @@ return {
     opts = {
       provide_undefined_editorconfig_behavior = true,
     },
-    event = "BufWritePre",
   },
   {
     "felipec/vim-sanegx",
