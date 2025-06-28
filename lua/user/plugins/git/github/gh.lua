@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "ldelossa/gh.nvim",
+  cond = false,
   dependencies = {
     {
       "ldelossa/litee.nvim",
@@ -15,6 +16,9 @@ return {
       },
       optional = true,
     },
+  },
+  keys = {
+    { "<leader>gh" },
   },
   opts = {},
 }
