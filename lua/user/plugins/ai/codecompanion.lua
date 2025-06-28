@@ -2,7 +2,7 @@
 return {
   "olimorris/codecompanion.nvim",
   cond = require("user.util").ai_helpers_allowed(),
-  version = "v15.*",
+  version = "v17.*",
   keys = {
     { "<leader>aa", ":CodeCompanionActions<cr>", desc = "Action Panel" },
     { "<leader>ac", ":CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
