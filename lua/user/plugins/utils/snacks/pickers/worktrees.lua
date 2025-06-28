@@ -39,7 +39,7 @@ return {
                     local item = {
                       idx = i,
                       file = worktree.path,
-                      text = worktree.name,
+                      text = vim.fs.basename(worktree.path),
                       path = worktree.path,
                       branch = worktree.branch,
                       current = vim.fs.normalize(current) == vim.fs.normalize(worktree.path),
