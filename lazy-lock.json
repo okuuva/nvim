@@ -82,7 +82,7 @@
   "pipeline.nvim": { "branch": "main", "commit": "2cdb45b68d6b8277a81c3bb1d42d41e175393d68" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
-  "qmk.nvim": { "branch": "main", "commit": "348ab2cd4f319f7c9881ca8b1bc0241e9b4d6619" },
+  "qmk.nvim": { "branch": "main", "commit": "3c804c1480991e4837514900b22b9358cfd64fa1" },
   "rainbow_csv": { "branch": "master", "commit": "3dbbfd7d17536aebfb80f571255548495574c32b" },
   "registers.nvim": { "branch": "main", "commit": "c217f8f369e0886776cda6c94eab839b30a8940d" },
   "render-markdown.nvim": { "branch": "main", "commit": "dd620561843d5a62c917fffe77f2923c965d12c7" },
