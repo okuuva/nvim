@@ -27,11 +27,41 @@ local function expandFormatters(formatters)
   end
 end
 
+---@type LazyPluginSpec
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
+    local util = require("conform.util")
+    ---@type conform.setupOpts
     local opts = {
+      formatters = {
+        hujson = {
+          meta = {
+            url = "https://github.com/biomejs/biome",
+            description = "A toolchain for web projects, aimed to provide functionalities to maintain them.",
+          },
+          command = util.from_node_modules("biome"),
+          stdin = true,
+          -- HACK: trick biome to treat hujson files as jsonc with --stdin-file-path
+          -- since content is read from stdin it doesn't actually read the file passed with the flag but biome uses the
+          -- file extension to detect the file type. hujson isn't supported while jsonc is, and the cli flags override
+          -- any potential jsonc specific settings to follow hujson best practices
+          args = {
+            "format",
+            "--json-formatter-indent-style=tab",
+            "--json-formatter-indent-width=4",
+            "--json-formatter-expand=always",
+            "--json-formatter-trailing-commas=all",
+            "--stdin-file-path",
+            "hujson.jsonc",
+          },
+          cwd = util.root_file({
+            "biome.json",
+            "biome.jsonc",
+          }),
+        },
+      },
       formatters_by_ft = {
         -- Conform will run multiple formatters sequentially
         -- Use a sub-list to run only the first available formatter
@@ -39,6 +69,7 @@ return {
         fish = { "fish_indent" },
         go = expandFormatters({ { "goimports", "gofmt" } }),
         javascript = expandFormatters({ { "prettierd", "prettier" } }),
+        hujson = { "hujson" },
         lua = { "stylua" },
         nix = { "alejandra" },
         python = expandFormatters({ { "darker", "isort" }, "black" }),
@@ -57,10 +88,10 @@ return {
     }
     require("conform").setup(opts)
     require("conform.formatters.black").condition = function()
-      return not require("conform.util").root_file({ ".darker" })
+      return not util.root_file({ ".darker" })
     end
     require("conform.formatters.darker").condition = function()
-      return require("conform.util").root_file({ ".darker" })
+      return util.root_file({ ".darker" })
     end
   end,
 }
