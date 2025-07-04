@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "s1n7ax/nvim-window-picker",
   version = "^2.0.0",
@@ -25,5 +26,11 @@ return {
     selection_chars = "HTNSUEOA",
 
     show_prompt = false,
+
+    filter_rules = {
+      bo = {
+        buftype = {},
+      },
+    },
   },
 }
