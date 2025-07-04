@@ -50,7 +50,6 @@ return {
         "go",
         "jq",
         "json",
-        "org",
         "python",
         "rst",
         "sql",
