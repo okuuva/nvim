@@ -18,8 +18,6 @@ end
 
 return {
   "b0o/incline.nvim",
-  -- "okuuva/incline.nvim",
-  -- branch = "allow-dynamic-margins",
   opts = {
     highlight = {
       groups = {
@@ -37,20 +35,12 @@ return {
       padding = 0,
       margin = {
         horizontal = 0,
-        -- FIXME: it ain't workin
-        -- doesn't render at all
-        --
-        -- vertical = function()
-        --   local current_line, _ = unpack(vim.api.nvim_win_get_cursor(0))
-        --   local margin = 1
-        --   if current_line == 1 then
-        --     margin = 2
-        --   end
-        --   return { top = margin, bottom = margin }
-        -- end,
       },
     },
     render = render,
+    hide = {
+      cursorline = "focused_win",
+    },
   },
   event = "VeryLazy",
 }
