@@ -37,7 +37,13 @@ return {
   version = "^2.1.0",
   event = "VeryLazy",
   ---@type Flash.Config
-  opts = {},
+  opts = {
+    -- use enthium layout as a base
+    -- home row, bottom row, top row
+    -- home locations first, preferring inside rolls
+    -- avoid qzxj since I find them hardest to reach
+    labels = "cieasnthrbvkfpgmyouwdlqzxj",
+  },
   -- stylua: ignore
   keys = {
     { "s", mode = { "n", "x", "o" }, regular_binding, desc = "Flash" },
