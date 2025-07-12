@@ -37,11 +37,23 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>ä", toggle_terminal, desc = "Toggle Terminal" },
+    { "<C-a>", toggle_terminal, desc = "Toggle Terminal" },
   },
   ---@type snacks.Config
   opts = {
     terminal = {
       shell = "fish",
+    },
+    styles = {
+      terminal = {
+        keys = {
+          toggle = {
+            "<C-a>",
+            toggle_terminal,
+            mode = "t",
+          },
+        },
+      },
     },
   },
 }
