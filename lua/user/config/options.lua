@@ -102,3 +102,4 @@ end
 
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
+vim.opt.whichwrap:append("<>[]")
