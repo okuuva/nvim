@@ -107,8 +107,8 @@ return {
         auto_show_delay_ms = 50,
       },
       ghost_text = {
-        enabled = true,
-        show_without_selection = true,
+        enabled = false,
+        show_without_selection = false,
       },
       list = {
         selection = {
