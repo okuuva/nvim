@@ -81,38 +81,7 @@ return {
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
-      preset = "default",
-      ["<CR>"] = {
-        function(cmp)
-          if cmp.get_selected_item() ~= nil then
-            return cmp.accept()
-          elseif cmp.snippet_active({ direction = 1 }) then
-            -- jump to next tabstop if not on the last one
-            return cmp.snippet_forward()
-          end
-        end,
-        "fallback",
-      },
-      ["<Tab>"] = {
-        function(cmp)
-          if cmp.is_menu_visible() then
-            return cmp.select_next()
-          elseif cmp.snippet_active() then
-            return cmp.snippet_forward()
-          end
-        end,
-        "fallback",
-      },
-      ["<S-Tab>"] = {
-        function(cmp)
-          if cmp.is_menu_visible() then
-            return cmp.select_prev()
-          elseif cmp.snippet_active() then
-            return cmp.snippet_backward()
-          end
-        end,
-        "fallback",
-      },
+      preset = "enter",
     },
     cmdline = {
       completion = {
