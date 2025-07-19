@@ -81,7 +81,26 @@ return {
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
-      preset = "enter",
+      preset = "none",
+      ["<CR>"] = { "accept", "fallback" },
+      ["<Esc>"] = { "cancel", "fallback" },
+      ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+      ["<C-n>"] = {
+        function(cmp)
+          if not cmp.is_menu_visible() then
+            return cmp.show_and_insert()
+          end
+        end,
+        "select_next",
+      },
+      ["<C-p>"] = {
+        function(cmp)
+          if not cmp.is_menu_visible() then
+            return cmp.show()
+          end
+        end,
+        "select_prev",
+      },
     },
     cmdline = {
       keymap = { preset = "inherit" },
