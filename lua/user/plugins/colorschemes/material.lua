@@ -129,6 +129,9 @@ return {
         BlinkCmpLabelDeprecated = { strikethrough = true },
         BlinkCmpKindSupermaven = { fg = "#0055FF" },
         Folded = { fg = colors.editor.disabled, bg = colors.editor.bg, italic = true },
+
+        CodeiumSuggestion = { link = "NonText" },
+
         -- Snacks indent, replicate indent-blankline behavior
         SnacksIndent = { fg = colors.editor.border },
         SnacksIndentScope = { fg = colors.editor.disabled },

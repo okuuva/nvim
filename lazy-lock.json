@@ -112,6 +112,7 @@
   "vim-startuptime": { "branch": "master", "commit": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6" },
   "vimade": { "branch": "master", "commit": "7a7252406918c60992c01fd9d8ad08152815ba67" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "windsurf.nvim": { "branch": "main", "commit": "821b570b526dbb05b57aa4ded578b709a704a38a" },
   "work-time-calculator.nvim": { "branch": "dev", "commit": "6158de13a799fd3cfca80627951d0742893b26a6" },
   "worktrees.nvim": { "branch": "main", "commit": "b6c0a1ded6fce6bf99b02011043b05f2a3a2737a" },
   "wrapping.nvim": { "branch": "master", "commit": "f26fdeabd17cf1bf5197badbdadc2e2f08b6ab0f" },
