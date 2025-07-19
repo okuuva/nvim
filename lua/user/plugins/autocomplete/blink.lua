@@ -84,6 +84,7 @@ return {
       preset = "enter",
     },
     cmdline = {
+      keymap = { preset = "inherit" },
       completion = {
         list = {
           selection = {
