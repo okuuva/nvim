@@ -31,7 +31,6 @@ local source_priority = {
   obsidian = 65,
   obsidian_tags = 65,
   obsidian_new = 65,
-  supermaven = 60,
   lsp = 50,
   path = 40,
   snippets = 30,
@@ -83,7 +82,6 @@ return {
     keymap = {
       preset = "none",
       ["<CR>"] = { "accept", "fallback" },
-      ["<Esc>"] = { "cancel", "fallback" },
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
       ["<C-n>"] = {
         function(cmp)
@@ -100,6 +98,30 @@ return {
           end
         end,
         "select_prev",
+      },
+      ["<Tab>"] = {
+        function(cmp)
+          local ok, suggestion = pcall(require, "supermaven-nvim.completion_preview")
+          if cmp.snippet_active() then
+            return cmp.snippet_forward()
+          elseif ok and suggestion.has_suggestion() then
+            vim.schedule(suggestion.on_accept_suggestion)
+            return true
+          end
+        end,
+        "fallback",
+      },
+      ["<Esc>"] = {
+        "cancel",
+        function()
+          local ok, suggestion = pcall(require, "supermaven-nvim.completion_preview")
+          if ok and not suggestion.disable_inline_completion then
+            suggestion.disable_inline_completion = true
+            suggestion.on_dispose_inlay()
+            return true
+          end
+        end,
+        "fallback",
       },
     },
     cmdline = {
@@ -189,7 +211,6 @@ return {
         "buffer",
         "env",
         "nerdfont",
-        "supermaven",
       },
       per_filetype = {
         lua = { inherit_defaults = true, "lazydev" },
@@ -225,22 +246,6 @@ return {
           opts = {
             cmp_name = "nerdfont",
           },
-        },
-        supermaven = {
-          name = "Supermaven",
-          module = "blink.compat.source",
-          opts = {
-            cmp_name = "supermaven",
-          },
-          transform_items = function(_, items)
-            local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-            local kind_idx = #CompletionItemKind + 1
-            CompletionItemKind[kind_idx] = "Supermaven"
-            for _, item in ipairs(items) do
-              item.kind = kind_idx
-            end
-            return items
-          end,
         },
       },
     },
