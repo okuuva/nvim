@@ -14,7 +14,26 @@ return {
   version = "^2.0.0",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
+    {
+      "folke/which-key.nvim",
+      optional = true,
+    },
   },
+  -- stylua: ignore
+  keys = {
+    { "<leader>loa", "<cmd>OtterActivate<cr>", desc = "Activate Otter" },
+    { "<leader>lod", "<cmd>OtterDeactivate<cr>", desc = "Deactivate Otter" },
+  },
+  init = function()
+    local ok, wk = pcall(require, "which-key")
+    if not ok then
+      return
+    end
+    wk.add({
+      { "<leader>l", group = "LSP" },
+      { "<leader>lo", group = "Otter" },
+    })
+  end,
   opts = {
     buffers = {
       write_to_disk = false,

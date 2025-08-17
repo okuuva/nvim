@@ -15,7 +15,7 @@ return {
     { "<leader>lf", function() _LSP_FORMAT() end, desc = "Format" },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
     { "<leader>ll", vim.lsp.codelens.run, desc = "CodeLens Action" },
-    { "<leader>lo", "<cmd>LspLog<cr>", desc = "Log" },
+    { "<leader>lO", "<cmd>LspLog<cr>", desc = "Log" },
     { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart" },
   },
   dependencies = {
@@ -32,6 +32,7 @@ return {
   ---@class PluginLspOpts
   opts = {
     -- options for vim.diagnostic.config()
+    ---@class vim.diagnostic.Opts
     diagnostics = {
       underline = true,
       virtual_text = false,
