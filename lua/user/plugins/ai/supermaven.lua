@@ -79,7 +79,7 @@ return {
     { "<leader>ast", toggle_inline_completion, desc = "Toggle Supermaven" },
   },
   opts = {
-    disable_inline_completion = true, -- disables inline completion for use with cmp
+    disable_inline_completion = false,
     disable_keymaps = true, -- disables built in keymaps for more manual control
   },
   init = function()
