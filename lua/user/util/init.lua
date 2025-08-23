@@ -236,4 +236,29 @@ function M.ai_helpers_allowed(plugin)
   return not ai_is_plugin_blacklisted(plugin) and not ai_is_path_blacklisted()
 end
 
+--- Turn Graphite Share Stack output into a markdown list
+function M.clean_graphite_share_links()
+  local line = vim.api.nvim_get_current_line()
+  local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
+
+  -- Remove the opening and closing blockquote tags
+  line = line:gsub("<blockquote>", ""):gsub("</blockquote>", "")
+
+  -- Split by <br /> tags
+  local entries = vim.split(line, "<br />", { plain = true })
+
+  local result = {}
+  -- Process entries in reverse order
+  for i = #entries, 1, -1 do
+    local entry = entries[i]
+    local url, text, code = entry:match('✅ <a href="([^"]+)">([^<]+)</a> <code>([^<]+)</code>')
+    if url and text and code then
+      table.insert(result, string.format("- [%s](<%s>) `%s`", text, url, code))
+    end
+  end
+
+  -- Delete the current line and insert the formatted results
+  vim.api.nvim_buf_set_lines(0, line_num, line_num + 1, false, result)
+end
+
 return M
