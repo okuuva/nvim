@@ -81,6 +81,10 @@ return {
   opts = {
     disable_inline_completion = false,
     disable_keymaps = true, -- disables built in keymaps for more manual control
+    ignore_filetypes = {
+      "markdown",
+      "gitcommit",
+    },
   },
   init = function()
     local ok, wk = pcall(require, "which-key")
