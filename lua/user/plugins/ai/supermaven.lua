@@ -56,6 +56,13 @@ end
 return {
   "supermaven-inc/supermaven-nvim",
   cond = require("user.util").ai_helpers_allowed("supermaven-nvim"),
+  event = "VeryLazy",
+  dependencies = {
+    {
+      "folke/which-key.nvim",
+      optional = true,
+    },
+  },
   keys = {
     {
       "<C-space>",
@@ -66,11 +73,24 @@ return {
       remap = true,
       mode = "i",
     },
+    { "<leader>ass", "<cmd>SupermavenStart<cr>", desc = "Start Supermaven" },
+    { "<leader>asS", "<cmd>SupermavenStop<cr>", desc = "Stop Supermaven" },
+    { "<leader>asr", "<cmd>SupermavenRestart<cr>", desc = "Restart Supermaven" },
+    { "<leader>ast", toggle_inline_completion, desc = "Toggle Supermaven" },
   },
   opts = {
     disable_inline_completion = true, -- disables inline completion for use with cmp
     disable_keymaps = true, -- disables built in keymaps for more manual control
   },
+  init = function()
+    local ok, wk = pcall(require, "which-key")
+    if not ok then
+      return
+    end
+    wk.add({
+      { "<leader>as", group = "Supermaven" },
+    })
+  end,
   config = function(_, opts)
     require("supermaven-nvim").setup(opts)
 
