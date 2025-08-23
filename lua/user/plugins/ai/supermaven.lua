@@ -3,12 +3,14 @@ local pending_oneshot = false
 
 --- Enable / Disable / One-shots inline completion
 ---
---- @param oneshot boolean Optional oneshot parameter.
+--- @param oneshot? boolean Optional oneshot parameter.
 local function toggle_inline_completion(oneshot)
   local suggestion = require("supermaven-nvim.completion_preview")
   local binary = require("supermaven-nvim.binary.binary_handler")
   local preview = require("supermaven-nvim.completion_preview")
   local message = "Inline AI autocompletion "
+
+  local log_level = oneshot and vim.log.levels.DEBUG or vim.log.levels.INFO
 
   -- If inline completion is already on, we don't one-shot
   if oneshot and not suggestion.disable_inline_completion then
@@ -17,7 +19,7 @@ local function toggle_inline_completion(oneshot)
 
   if suggestion.disable_inline_completion then
     suggestion.disable_inline_completion = false
-    vim.notify(message .. "ENABLED", vim.log.levels.DEBUG, { title = "SuperMaven" })
+    vim.notify(message .. "ENABLED", log_level, { title = "SuperMaven" })
 
     local buffer = vim.api.nvim_get_current_buf()
     local file_name = vim.api.nvim_buf_get_name(buffer)
@@ -30,7 +32,7 @@ local function toggle_inline_completion(oneshot)
     end
   else
     suggestion.disable_inline_completion = true
-    vim.notify(message .. "DISABLED", vim.log.levels.DEBUG, { title = "SuperMaven" })
+    vim.notify(message .. "DISABLED", log_level, { title = "SuperMaven" })
 
     preview:dispose_inlay()
 
