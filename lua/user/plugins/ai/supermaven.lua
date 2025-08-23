@@ -87,11 +87,7 @@ return {
     },
   },
   init = function()
-    local ok, wk = pcall(require, "which-key")
-    if not ok then
-      return
-    end
-    wk.add({
+    require("user.util").wk_add({
       { "<leader>as", group = "Supermaven" },
     })
   end,

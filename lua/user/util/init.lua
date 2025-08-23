@@ -261,6 +261,14 @@ function M.clean_graphite_share_links()
 
   -- Delete the current line and insert the formatted results
   vim.api.nvim_buf_set_lines(0, line_num, line_num + 1, false, result)
+--- Utility to register multiple which-key groups safely
+--- @param mappings wk.Spec
+function M.wk_add(mappings)
+  local ok, wk = pcall(require, "which-key")
+  if not ok then
+    return
+  end
+  wk.add(mappings)
 end
 
 return M

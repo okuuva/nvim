@@ -25,11 +25,7 @@ return {
     { "<leader>lod", "<cmd>OtterDeactivate<cr>", desc = "Deactivate Otter" },
   },
   init = function()
-    local ok, wk = pcall(require, "which-key")
-    if not ok then
-      return
-    end
-    wk.add({
+    require("user.util").wk_add({
       { "<leader>l", group = "LSP" },
       { "<leader>lo", group = "Otter" },
     })
