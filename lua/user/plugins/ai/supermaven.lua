@@ -53,7 +53,7 @@ end
 ---@type LazyPluginSpec
 return {
   "supermaven-inc/supermaven-nvim",
-  cond = not require("user.util").ai_helpers_allowed("supermaven-nvim"),
+  cond = require("user.util").ai_helpers_allowed("supermaven-nvim"),
   keys = {
     {
       "<C-space>",

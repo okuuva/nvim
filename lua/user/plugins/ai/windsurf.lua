@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "Exafunction/windsurf.nvim",
-  cond = require("user.util").ai_helpers_allowed("windsurf.nvim"),
+  cond = require("user.util").ai_helpers_allowed("Exafunction/windsurf.nvim"),
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

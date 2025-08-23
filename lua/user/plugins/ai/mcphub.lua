@@ -2,7 +2,7 @@
 return {
   "ravitemer/mcphub.nvim",
   version = "v5.*",
-  cond = require("user.util").ai_helpers_allowed(),
+  cond = require("user.util").ai_helpers_allowed("ravitemer/mcphub.nvim"),
   keys = {
     { "<leader>am", "<cmd>MCPHub<cr>", desc = "Open MCPHub" },
   },

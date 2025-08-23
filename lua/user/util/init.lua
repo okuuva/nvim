@@ -209,9 +209,11 @@ function M.string_in_pattern_table(str, tbl)
   return false
 end
 
+local _path_blacklist = { "/work/", "/notes/" }
+
 local function ai_is_path_blacklisted()
   local success, local_ai_config = pcall(require, "user.config.local.ai")
-  local path_blacklist = success and local_ai_config.path_blacklist or { "/work/", "/notes/" }
+  local path_blacklist = success and local_ai_config.path_blacklist or _path_blacklist
   local path = M.get_root()
   return M.string_in_pattern_table(path, path_blacklist)
 end
@@ -227,7 +229,7 @@ local function ai_is_plugin_blacklisted(plugin)
 
   local success, local_ai_config = pcall(require, "user.config.local.ai")
   local plugin_blacklist = success and local_ai_config.plugin_blacklist or _plugin_blacklist
-  return not M.string_in_pattern_table(plugin, plugin_blacklist)
+  return M.string_in_pattern_table(plugin, plugin_blacklist)
 end
 
 ---@param plugin? string Check if passed plugin is allowed to load AI helpers

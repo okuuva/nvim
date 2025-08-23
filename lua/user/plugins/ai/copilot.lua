@@ -2,7 +2,7 @@ return {
   "zbirenbaum/copilot.lua",
   event = "InsertEnter",
   cmd = "Copilot",
-  cond = require("user.util").ai_helpers_allowed(),
+  cond = require("user.util").ai_helpers_allowed("zbirenbaum/copilot.lua"),
   opts = {
     panel = {
       -- use codecompanion if available

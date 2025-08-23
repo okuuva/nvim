@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "olimorris/codecompanion.nvim",
-  cond = require("user.util").ai_helpers_allowed(),
+  cond = require("user.util").ai_helpers_allowed("olimorris/codecompanion.nvim"),
   version = "v17.*",
   keys = {
     { "<leader>aa", ":CodeCompanionActions<cr>", desc = "Action Panel" },
