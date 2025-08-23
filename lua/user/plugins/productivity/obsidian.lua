@@ -8,20 +8,20 @@ return {
   lazy = true,
   event = { "BufReadPre " .. vim.fn.expand("~") .. "**/Obsidian/**.md" },
   keys = {
-    { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open in app" },
-    { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
-    { "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", desc = "Toggle checkbox" },
-    { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find note" },
-    { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Backlinks to this note" },
-    { "<leader>od", "<cmd>ObsidianToday<cr>", desc = "Daily note" },
-    { "<leader>oy", "<cmd>ObsidianYesterday<cr>", desc = "Yesterday's note" },
-    { "<leader>ot", "<cmd>ObsidianTomorrow<cr>", desc = "Tomorrow's note" },
-    { "<leader>oT", "<cmd>ObsidianTemplate<cr>", desc = "Insert template" },
-    { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Search notes" },
-    { "<leader>ow", "<cmd>ObsidianWorkspace<cr>", desc = "Show workspace" },
-    { "<leader>ol", "<cmd>ObsidianLink<cr>", desc = "Link to an existing note", mode = "x" },
-    { "<leader>oL", "<cmd>ObsidianLinkNew<cr>", desc = "Link to a new note", mode = "x" },
-    { "<leader>so", "<cmd>ObsidianSearch<cr>", desc = "Obsidian notes" },
+    { "<leader>oo", "<cmd>Obsidian open<cr>", desc = "Open in app" },
+    { "<leader>on", "<cmd>Obsidian new<cr>", desc = "New note" },
+    { "<leader>oc", "<cmd>Obsidian toggle_checkbox<cr>", desc = "Toggle checkbox" },
+    { "<leader>of", "<cmd>Obsidian quick_switch<cr>", desc = "Find note" },
+    { "<leader>ob", "<cmd>Obsidian backlinks<cr>", desc = "Backlinks to this note" },
+    { "<leader>od", "<cmd>Obsidian today<cr>", desc = "Daily note" },
+    { "<leader>oy", "<cmd>Obsidian yesterday<cr>", desc = "Yesterday's note" },
+    { "<leader>ot", "<cmd>Obsidian tomorrow<cr>", desc = "Tomorrow's note" },
+    { "<leader>oT", "<cmd>Obsidian template<cr>", desc = "Insert template" },
+    { "<leader>os", "<cmd>Obsidian search<cr>", desc = "Search notes" },
+    { "<leader>ow", "<cmd>Obsidian workspace<cr>", desc = "Show workspace" },
+    { "<leader>ol", "<cmd>Obsidian link<cr>", desc = "Link to an existing note", mode = "x" },
+    { "<leader>oL", "<cmd>Obsidian link_new<cr>", desc = "Link to a new note", mode = "x" },
+    { "<leader>so", "<cmd>Obsidian search<cr>", desc = "Obsidian notes" },
   },
   dependencies = {
     "plenary.nvim",
@@ -29,14 +29,7 @@ return {
     { "saghen/blink.cmp", optional = true },
   },
   opts = {
-    callbacks = {
-      -- Runs anytime the workspace is set/changed.
-      ---@param client obsidian.Client
-      ---@param workspace obsidian.Workspace
-      post_set_workspace = function(client, workspace)
-        client:command("quick_switch", {})
-      end,
-    },
+    legacy_commands = false,
     completion = {
       nvim_cmp = false,
       blink = true,
@@ -56,18 +49,6 @@ return {
     -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
     -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
     log_level = vim.log.levels.INFO,
-
-    -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
-    -- way then set 'mappings = {}'.
-    mappings = {
-      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-    },
 
     new_notes_location = "notes_subdir",
 
