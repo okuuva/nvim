@@ -238,11 +238,9 @@ function M.ai_helpers_allowed(plugin)
   return not ai_is_plugin_blacklisted(plugin) and not ai_is_path_blacklisted()
 end
 
---- Turn Graphite Share Stack output into a markdown list
-function M.clean_graphite_share_links()
-  local line = vim.api.nvim_get_current_line()
-  local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
-
+---@param line string
+---@return table<string>
+function M.graphite_string_to_markdown_list(line)
   -- Remove the opening and closing blockquote tags
   line = line:gsub("<blockquote>", ""):gsub("</blockquote>", "")
 
@@ -253,14 +251,31 @@ function M.clean_graphite_share_links()
   -- Process entries in reverse order
   for i = #entries, 1, -1 do
     local entry = entries[i]
-    local url, text, code = entry:match('✅ <a href="([^"]+)">([^<]+)</a> <code>([^<]+)</code>')
+    -- Match any leading emoji or text before the <a ...> part
+    local url, text, code = entry:match('.- <a href="([^"]+)">([^<]+)</a> <code>([^<]+)</code>')
     if url and text and code then
       table.insert(result, string.format("- [%s](<%s>) `%s`", text, url, code))
     end
   end
 
+  return result
+end
+
+--- Turn Graphite Share Stack output into a markdown list
+function M.process_graphite_share_stack_string()
+  local line = vim.api.nvim_get_current_line()
+  local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
+
+  local result = M.graphite_string_to_markdown_list(line)
+
   -- Delete the current line and insert the formatted results
   vim.api.nvim_buf_set_lines(0, line_num, line_num + 1, false, result)
+
+  -- Also put the formatted results to the clipboard
+  vim.fn.setreg("+", table.concat(result, "\n"))
+  vim.notify("Copied to clipboard")
+end
+
 --- Utility to register multiple which-key groups safely
 --- @param mappings wk.Spec
 function M.wk_add(mappings)
