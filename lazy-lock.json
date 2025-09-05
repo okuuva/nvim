@@ -118,5 +118,6 @@
   "work-time-calculator.nvim": { "branch": "dev", "commit": "6158de13a799fd3cfca80627951d0742893b26a6" },
   "worktrees.nvim": { "branch": "main", "commit": "b6c0a1ded6fce6bf99b02011043b05f2a3a2737a" },
   "wrapping.nvim": { "branch": "master", "commit": "f26fdeabd17cf1bf5197badbdadc2e2f08b6ab0f" },
+  "yaml.nvim": { "branch": "main", "commit": "c6c7bac834c3f48e1afdb78a7a1d23996a2f89d9" },
   "yanky.nvim": { "branch": "main", "commit": "04775cc6e10ef038c397c407bc17f00a2f52b378" }
 }
