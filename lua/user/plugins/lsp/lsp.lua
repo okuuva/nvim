@@ -28,6 +28,7 @@ return {
     "conform.nvim",
     "nvim-lint",
     "actions-preview.nvim",
+    "imroc/kubeschema.nvim",
   },
   ---@class PluginLspOpts
   opts = {

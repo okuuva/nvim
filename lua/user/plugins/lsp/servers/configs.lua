@@ -6,6 +6,7 @@ local legacy_servers = {
   "lua_ls",
   "nixd",
   "nushell",
+  "yamlls",
 }
 
 local servers = {

@@ -45,12 +45,10 @@
       ]
     },
     "yamlls": {
-      "yaml.customTags": [
-        "!reference sequence"
-      ],
-      "yaml.schemas": {
-        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab/ci-config/*.yml"
-      }
+      "yaml.completion": true,
+      "yaml.validate": true,
+      "yaml.format.enable": true,
+      "yaml.hover": true
     }
   }
 }
