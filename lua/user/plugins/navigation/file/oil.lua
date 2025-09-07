@@ -5,6 +5,7 @@ local default_opts = {
   },
 }
 
+---@type LazyPluginSpec
 return {
   "stevearc/oil.nvim",
   dependencies = { "nvim-web-devicons" },
@@ -39,6 +40,11 @@ return {
       ["<C-c>"] = false, -- esc, q, and <leader>c are enough already
       ["<Esc>"] = { "actions.close", mode = "n" },
       ["q"] = { "actions.close", mode = "n" },
+      ["<PageUp>"] = "actions.preview_scroll_up",
+      ["<PageDown>"] = "actions.preview_scroll_down",
+    },
+    preview_win = {
+      preview_method = "scratch",
     },
   },
 }
