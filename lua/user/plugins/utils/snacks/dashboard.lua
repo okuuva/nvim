@@ -27,7 +27,7 @@ return {
 
     ---@type snacks.dashboard.Config
     dashboard = {
-      enabled = not USING_PAGE,
+      enabled = false,
       preset = {
         -- stylua: ignore
         keys = {
