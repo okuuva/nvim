@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+---@type LazyPluginSpec
 return {
   "tadaa/vimade",
   -- default opts (you can partially set these or configure them however you like)
@@ -48,6 +49,16 @@ return {
     -- inactive windows. 99% of the time you shouldn't need to change this value.
     nohlcheck = true,
     blocklist = {
+      ft_patterns = function(win, current)
+        local patterns = {
+          "^neotest",
+        }
+        local ft = vim.api.nvim_get_option_value("filetype", { buf = win.bufnr })
+        if ft and util.string_in_pattern_table(ft, patterns) then
+          return true
+        end
+        return false
+      end,
       buf_and_filetypes = {
         buf_opts = {
           buftype = {
