@@ -93,6 +93,7 @@
   "requirements.txt.vim": { "branch": "master", "commit": "d55452136a162ac31b15876ab98c00bd1b6c312f" },
   "schemastore.nvim": { "branch": "main", "commit": "45fd6c22f30487586c771072dc8c5230931e4c7b" },
   "smartcolumn.nvim": { "branch": "main", "commit": "92f3773af80d674f1eb61e112dca79e2fa449fd1" },
+  "shebang.nvim": { "branch": "main", "commit": "c065ef11997e7d6c12492f8a5fda636092082570" },
   "snacks.nvim": { "branch": "main", "commit": "5eac729fa290248acfe10916d92a5ed5e5c0f9ed" },
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "statuscol.nvim": { "branch": "main", "commit": "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc" },
