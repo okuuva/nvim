@@ -85,6 +85,9 @@ return {
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
       ["<C-n>"] = {
         function(cmp)
+          if vim.bo.filetype == "scissors-snippet" then
+            return require("blink.cmp")["fallback"]()
+          end
           if not cmp.is_menu_visible() then
             return cmp.show_and_insert()
           end
