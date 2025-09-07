@@ -16,5 +16,8 @@ return {
   },
   opts = {
     focus = true,
+    preview = {
+      border = "none",
+    },
   },
 }
