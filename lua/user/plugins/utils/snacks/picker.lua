@@ -89,12 +89,16 @@ return {
             ["<C-t>i"] = { "toggle_ignored", mode = { "i", "n" } },
             ["<C-t>m"] = { "toggle_maximize", mode = { "i", "n" } },
             ["<C-t>p"] = { "toggle_preview", mode = { "i", "n" } },
+            ["<PageUp>"] = { "preview_scroll_up", mode = { "i", "n" } },
+            ["<PageDown>"] = { "preview_scroll_down", mode = { "i", "n" } },
           },
         },
         list = {
           keys = {
             ["p"] = "put",
             ["y"] = "yank",
+            ["<PageUp>"] = "preview_scroll_up",
+            ["<PageDown>"] = "preview_scroll_down",
           },
         },
       },
