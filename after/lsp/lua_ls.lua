@@ -1,5 +1,14 @@
 ---@type vim.lsp.Config
 return {
+  on_attach = function(client, bufnr)
+    local ft = vim.bo[bufnr].filetype
+    if ft == "rockspec" then
+      vim.schedule(function()
+        vim.lsp.buf_detach_client(bufnr, client.id)
+      end)
+      return
+    end
+  end,
   ---@module "codesettings"
   ---@type lsp.lua_ls
   settings = {
