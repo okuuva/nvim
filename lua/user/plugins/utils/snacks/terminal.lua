@@ -38,6 +38,11 @@ return {
   opts = {
     terminal = {
       shell = "fish",
+      win = {
+        wo = {
+          winbar = "",
+        },
+      },
     },
     styles = {
       terminal = {
