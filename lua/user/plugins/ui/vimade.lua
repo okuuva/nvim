@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 return {
   "tadaa/vimade",
   -- default opts (you can partially set these or configure them however you like)
-  event = "VeryLazy",
+  event = "UIEnter",
   opts = {
     -- Recipe can be any of 'default', 'minimalist', 'duo', and 'ripple'
     -- Set animate = true to enable animations on any recipe.
