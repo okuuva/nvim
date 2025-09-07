@@ -26,7 +26,8 @@ return {
     require("vim.treesitter.query").add_predicate("is-mise?", function(_, _, bufnr, _)
       local filepath = vim.api.nvim_buf_get_name(tonumber(bufnr) or 0)
       local filename = vim.fn.fnamemodify(filepath, ":t")
-      return string.match(filename, ".*mise.*%.toml$") ~= nil
+      local first_line = vim.api.nvim_buf_get_lines(tonumber(bufnr) or 0, 0, 1, false)[1] or ""
+      return string.match(filename, ".*mise.*%.toml$") ~= nil or string.match(first_line, "mise") ~= nil
     end, { force = true, all = false })
     -- add the jjdescription parser
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
