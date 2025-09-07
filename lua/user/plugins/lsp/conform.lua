@@ -82,7 +82,7 @@ return {
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         typescript = prettier,
-        yaml = { "yq" },
+        yaml = { "yamlfmt" },
       },
       format_after_save = {
         lsp_fallback = true,
