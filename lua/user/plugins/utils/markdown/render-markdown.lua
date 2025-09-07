@@ -1,4 +1,11 @@
-local file_types = { "markdown", "Avante", "gitcommit", "codecompanion" }
+local file_types = {
+  "Avante",
+  "codecompanion",
+  "gitcommit",
+  "jjdescription",
+  "markdown",
+  "octo",
+}
 
 return {
   "MeanderingProgrammer/render-markdown.nvim",
@@ -12,5 +19,18 @@ return {
   ---@type render.md.UserConfig
   opts = {
     file_types = file_types,
+    injections = {
+      -- identical to the gitcommit injection
+      -- except that gitcommit uses (message) instead of (text)
+      jjdescription = {
+        enabled = true,
+        query = [[
+            ((text) @injection.content
+                (#set! injection.combined)
+                (#set! injection.include-children)
+                (#set! injection.language "markdown"))
+        ]],
+      },
+    },
   },
 }

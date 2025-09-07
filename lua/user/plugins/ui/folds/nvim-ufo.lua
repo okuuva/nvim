@@ -1,6 +1,7 @@
 local provider_by_ft = {
   gitcommit = "",
   gitrebase = "",
+  jjdescription = "",
   snacks_dashboard = "",
   python = { "treesitter", "indent" },
 }

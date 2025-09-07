@@ -28,6 +28,17 @@ return {
       local filename = vim.fn.fnamemodify(filepath, ":t")
       return string.match(filename, ".*mise.*%.toml$") ~= nil
     end, { force = true, all = false })
+    -- add the jjdescription parser
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+    parser_config.jjdescription = {
+      install_info = {
+        url = "https://github.com/kareigu/tree-sitter-jjdescription",
+        files = { "src/parser.c" },
+        branch = "dev",
+        generate_requires_npm = false, -- Try setting this to false
+        requires_generate_from_grammar = false, -- Try setting this to false
+      },
+    }
   end,
   config = function()
     require("nvim-treesitter.configs").setup({

@@ -22,6 +22,7 @@ return {
       python = "110",
       lua = "120",
       gitcommit = "72",
+      jjdescription = "72",
     },
     scope = "window", -- file (default), window, line
   },

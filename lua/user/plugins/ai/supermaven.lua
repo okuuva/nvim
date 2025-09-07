@@ -84,6 +84,7 @@ return {
     ignore_filetypes = {
       "markdown",
       "gitcommit",
+      "jjdescription",
     },
   },
   init = function()
