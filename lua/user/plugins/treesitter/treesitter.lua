@@ -9,7 +9,10 @@ return {
     { "<leader>TT", "<cmd>InspectTree<cr>", desc = "Toggle Tree browser" },
   },
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      branch = "main",
+    },
     "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
     {
