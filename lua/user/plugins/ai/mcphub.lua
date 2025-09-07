@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "ravitemer/mcphub.nvim",
-  version = "v5.*",
+  version = "v6.*",
   cond = require("user.util").ai_helpers_allowed("ravitemer/mcphub.nvim"),
   keys = {
     { "<leader>am", "<cmd>MCPHub<cr>", desc = "Open MCPHub" },
