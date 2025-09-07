@@ -1,4 +1,22 @@
 {
+  "cin": {
+    "body": [
+      "${1:back}:      ${0:}${CURRENT_HOUR}:${CURRENT_MINUTE}"
+    ],
+    "prefix": "cin"
+  },
+  "clk": {
+    "body": [
+      "${1:}:      ${0:}${CURRENT_HOUR}:${CURRENT_MINUTE}"
+    ],
+    "prefix": "clk"
+  },
+  "cout": {
+    "body": [
+      "${1:break}:      ${0:}${CURRENT_HOUR}:${CURRENT_MINUTE}"
+    ],
+    "prefix": "cout"
+  },
   "done + do": {
     "body": "- [x] ${1:DONE}",
     "prefix": [
