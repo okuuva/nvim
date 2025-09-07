@@ -40,6 +40,19 @@ return {
       shell = "fish",
     },
     styles = {
+      terminal = {
+        keys = {
+          ["<C-q>"] = "hide",
+          term_normal_alt = {
+            "<C-q>",
+            function(self)
+              vim.cmd("stopinsert")
+            end,
+            mode = "t",
+            desc = "<C-q> to normal mode",
+          },
+        },
+      },
       terminal_fullscreen = {
         style = "terminal",
         height = 0,
