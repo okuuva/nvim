@@ -40,7 +40,7 @@ return {
     { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
     { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
-    { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
+    { "<leader>sL", function() Snacks.picker.loclist() end, desc = "Location List" },
     { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
     { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
     { "<leader>sn", function() Snacks.picker.notifications() end, desc = "Notification History" },
@@ -50,12 +50,12 @@ return {
     { "<leader>sr", function() Snacks.picker.resume() end, desc = "Resume" },
     { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
     -- LSP
-    { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
-    { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
-    { "grr", function() Snacks.picker.lsp_references() end, desc = "References" },
-    { "gri", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-    { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
-    { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+    { "<leader>ld", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+    { "<leader>lD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+    { "<leader>lr", function() Snacks.picker.lsp_references() end, desc = "References" },
+    { "<leader>li", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+    { "<leader>ls", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+    { "<leader>lS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
   },
   ---@type snacks.Config
   opts = {
