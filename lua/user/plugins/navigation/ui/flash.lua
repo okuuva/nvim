@@ -40,9 +40,9 @@ return {
   opts = {
     -- use enthium layout as a base
     -- home row, bottom row, top row
-    -- home locations first, preferring inside rolls
-    -- avoid qzxj since I find them hardest to reach
-    labels = "cieasnthrbvkfpgmyouwdlqzxj",
+    -- home locations first, preferring index finger
+    -- avoid qvxj since I find them hardest to reach
+    labels = "hateniscrkmgpzfbloduwyvqxj"
   },
   -- stylua: ignore
   keys = {
