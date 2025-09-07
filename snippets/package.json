@@ -5,6 +5,14 @@
     "snippets": [
       {
         "language": [
+          "sh",
+          "bash",
+          "zsh"
+        ],
+        "path": "./sh.json"
+      },
+      {
+        "language": [
           "lua"
         ],
         "path": "./lua.json"

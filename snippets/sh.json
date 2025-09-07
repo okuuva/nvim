@@ -1,0 +1,159 @@
+{
+  "misealias + misea": {
+    "body": "# [MISE] alias=\"${1:}\"",
+    "prefix": [
+      "misealias",
+      "misea"
+    ]
+  },
+  "miseall + miselong": {
+    "body": [
+      "# [MISE] description=\"${1:}\"",
+      "# [MISE] alias=\"${2:}\"",
+      "# [MISE] confirm=\"${3:}\"",
+      "# [MISE] depends=[\"${4:}\"]",
+      "# [MISE] depends_post=[\"${5:}\"]",
+      "# [MISE] dir=\"${6:}\"",
+      "# [MISE] env={\"${7:}\"",
+      "# [MISE] hide=${8:false}",
+      "# [MISE] quiet=${9:false}",
+      "# [MISE] raw=${10:false}",
+      "# [MISE] silent=${11:false}",
+      "# [MISE] sources=[\"${12:}\"]",
+      "# [MISE] outputs=[\"${13:}\"]",
+      "# [MISE] tools={\"${14:}\"",
+      "# [MISE] wait_for=[\"${15:}\"]",
+      "# see https://mise.jdx.dev/tasks/file-tasks.html#example-file-task-with-arguments",
+      "# [USAGE] ${0:}"
+    ],
+    "prefix": [
+      "miseall",
+      "miselong"
+    ]
+  },
+  "miseconfirm + misec": {
+    "body": "# [MISE] confirm=\"${1:Are you sure?}\"",
+    "prefix": [
+      "miseconfirm",
+      "misec"
+    ]
+  },
+  "misedepends + misede": {
+    "body": "# [MISE] depends=[\"${1:}\"]",
+    "prefix": [
+      "misedepends",
+      "misede"
+    ]
+  },
+  "misedepends_post + misedp": {
+    "body": "# [MISE] depends_post=[\"${1:}\"]",
+    "prefix": [
+      "misedepends_post",
+      "misepost",
+      "misedp"
+    ]
+  },
+  "misedescription + mised": {
+    "body": "# [MISE] description=\"${1:}\"",
+    "prefix": [
+      "misedescription",
+      "mised"
+    ]
+  },
+  "misedir": {
+    "body": "# [MISE] dir=\"${1:}\"",
+    "prefix": [
+      "misedir"
+    ]
+  },
+  "miseenv + misee": {
+    "body": "# [MISE] env={\"${1:}\": \"${2:}\"}",
+    "prefix": [
+      "miseenv",
+      "misee"
+    ]
+  },
+  "misehide + miseh": {
+    "body": "# [MISE] hide=${1:true}",
+    "prefix": [
+      "misehide",
+      "miseh"
+    ]
+  },
+  "miseoutputs + miseo": {
+    "body": "# [MISE] outputs=[\"${1:}\"]",
+    "prefix": [
+      "miseoutputs",
+      "miseo"
+    ]
+  },
+  "misequiet + miseq": {
+    "body": "# [MISE] quiet=${1:true}",
+    "prefix": [
+      "misequiet",
+      "miseq"
+    ]
+  },
+  "miseraw + miser": {
+    "body": "# [MISE] raw=${1:true}",
+    "prefix": [
+      "miseraw",
+      "miser"
+    ]
+  },
+  "miseshort": {
+    "body": [
+      "# [MISE] description=\"${1:}\"",
+      "# [MISE] hide=${2:false}",
+      "# [MISE] quiet=${3:false}",
+      "# [MISE] silent=${4:false}",
+      "# see https://mise.jdx.dev/tasks/file-tasks.html#example-file-task-with-arguments",
+      "# [USAGE] ${0:}"
+    ],
+    "prefix": "miseshort"
+  },
+  "misesilent + misesi": {
+    "body": "# [MISE] silent=${1:true}",
+    "prefix": [
+      "misesilent",
+      "misesi"
+    ]
+  },
+  "misesources + miseso": {
+    "body": "# [MISE] sources=[\"${1:}\"]",
+    "prefix": [
+      "misesources",
+      "miseso"
+    ]
+  },
+  "misetools + miset": {
+    "body": "# [MISE] tools={\"${1:}\": \"${2:}\"}",
+    "prefix": [
+      "misetools",
+      "miset"
+    ]
+  },
+  "miseusage + miseu + usage + usa": {
+    "body": "# [USAGE] ${1:}",
+    "prefix": [
+      "miseusage",
+      "miseu",
+      "usage",
+      "usa"
+    ]
+  },
+  "misewait_for + misew": {
+    "body": "# [MISE] wait_for=[\"${1:}\"]",
+    "prefix": [
+      "misewait_for",
+      "misew"
+    ]
+  },
+  "shellcheckdisable + scd": {
+    "body": "# shellcheck disable=${1:SC2154}",
+    "prefix": [
+      "shellcheckdisable",
+      "scd"
+    ]
+  }
+}
