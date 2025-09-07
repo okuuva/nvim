@@ -12,5 +12,8 @@ return {
     show_icons = true,
     leader_key = "<BS>", -- Recommended to be a single key
     buffer_leader_key = "m", -- Per Buffer Mappings
+    mappings = {
+      toggle = "0",
+    },
   },
 }
