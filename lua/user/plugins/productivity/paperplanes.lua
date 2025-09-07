@@ -1,10 +1,12 @@
+local register = "+"
+
 local function post_selection()
   require("paperplanes").post_selection(function(url, err)
     if url == nil then
       vim.notify(("paperplanes got no url back from provider: %s"):format(err), vim.log.levels.ERROR)
       return
     end
-    local reg = require("user.util").opts("paperplanes.nvim").register or nil
+    local reg = register
     local msg_prefix = ""
     if reg ~= nil then
       vim.fn.setreg(reg, url)
@@ -22,7 +24,7 @@ return {
   },
   cmd = "PP",
   opts = {
-    register = "+",
+    register = register,
     provider = "dpaste.org",
     provider_options = {},
     notifier = vim.notify,
