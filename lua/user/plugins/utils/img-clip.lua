@@ -9,6 +9,7 @@ end
 ---@type LazyPluginSpec
 return {
   "HakonHarnes/img-clip.nvim",
+  event = "VeryLazy",
   keys = {
     { "<leader>i", "<cmd>PasteImage<cr>", desc = "Paste image" },
   },
