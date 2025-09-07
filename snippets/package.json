@@ -20,6 +20,12 @@
           "go"
         ],
         "path": "./go.json"
+      },
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./allFiletypes.json"
       }
     ]
   }
