@@ -1,5 +1,6 @@
 local only_on_wide_enough_displays = function()
-  return vim.fn.winwidth(0) > 120
+  -- only check the width if status line is drawn on multiple windows
+  return vim.o.laststatus < 3 and vim.fn.winwidth(0) > 120 or true
 end
 
 local diagnostics = {
