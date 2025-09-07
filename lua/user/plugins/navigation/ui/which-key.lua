@@ -46,6 +46,11 @@ local mappings = {
   { "<leader>gla", group = "Assignee" },
   { "<leader>gll", group = "Labels" },
   { "<leader>glr", group = "Reviewer" },
+  {
+    mode = { "n", "v", "i", "t" },
+    { "<C-w>d", "<cmd>close<cr>", desc = "Close window" },
+    { "<C-w><C-d>", "<cmd>close<cr>", desc = "Close window" },
+  },
 }
 
 return {
