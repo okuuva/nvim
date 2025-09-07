@@ -81,7 +81,9 @@ return {
         python = expandFormatters({ { "darker", "isort" }, "black" }),
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
+        svg = { "xmlformatter" },
         typescript = prettier,
+        xml = { "xmlformatter" },
         yaml = { "yamlfmt" },
       },
       format_after_save = {
