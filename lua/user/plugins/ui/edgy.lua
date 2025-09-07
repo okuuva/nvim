@@ -6,7 +6,12 @@ return {
     vim.opt.laststatus = 3
     vim.opt.splitkeep = "screen"
   end,
+  ---@module "edgy"
+  ---@type Edgy.Config
   opts = {
+    animate = {
+      enabled = false,
+    },
     bottom = {
       -- lazyterm at the bottom with a height of 40% of the screen
       {
@@ -19,24 +24,15 @@ return {
       },
       "Trouble",
       { ft = "qf", title = "QuickFix" },
+    },
+    right = {
       {
         ft = "help",
-        size = { height = 20 },
+        size = { width = 0.4 },
         -- only show help buffers
         filter = function(buf)
           return vim.bo[buf].buftype == "help"
         end,
-      },
-    },
-    right = {
-      {
-        title = function()
-          local buf_name = vim.api.nvim_buf_get_name(0) or "[No Name]"
-          return vim.fn.fnamemodify(buf_name, ":t")
-        end,
-        ft = "Outline",
-        pinned = true,
-        open = "SymbolsOutlineOpen",
       },
     },
   },
