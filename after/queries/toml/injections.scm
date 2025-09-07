@@ -1,5 +1,9 @@
 ; extends
 
+; ============================================================================
+; run field - bash injection
+; ============================================================================
+
 (pair
   (bare_key) @key (#eq? @key "run")
   (string) @injection.content @injection.language
@@ -39,4 +43,28 @@
   (#not-match? @injection.content "^['\"]{3}") ; not multiline
   (#offset! @injection.content 0 1 0 -1) ; rm quotes
   (#set! injection.language "bash") ; default to bash
+)
+
+; ============================================================================
+; usage field - KDL injection
+; ============================================================================
+
+(pair
+  (bare_key) @key (#eq? @key "usage")
+  (string) @injection.content
+
+  (#is-mise?)
+  (#match? @injection.content "^['\"]{3}\n*.*") ; multiline
+  (#offset! @injection.content 0 3 0 -3) ; rm quotes
+  (#set! injection.language "kdl") ; inject KDL
+)
+
+(pair
+  (bare_key) @key (#eq? @key "usage")
+  (string) @injection.content
+
+  (#is-mise?)
+  (#not-match? @injection.content "^['\"]{3}") ; not multiline
+  (#offset! @injection.content 0 1 0 -1) ; rm quotes
+  (#set! injection.language "kdl") ; inject KDL
 )
