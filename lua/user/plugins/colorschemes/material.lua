@@ -120,6 +120,8 @@ return {
         LspReferenceText = { italic = true, underline = true },
 
         SnacksBackdrop = { bg = colors.editor.bg_alt },
+
+        TreesitterContext = { link = "Normal" },
       }
     end,
   },
