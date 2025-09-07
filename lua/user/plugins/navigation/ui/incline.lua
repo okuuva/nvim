@@ -1,3 +1,18 @@
+local disabled_filetypes = {
+  "snacks_dashboard",
+  "oil",
+}
+
+vim.api.nvim_create_autocmd("WinEnter", {
+  callback = function(args)
+    if vim.list_contains(disabled_filetypes, vim.bo[args.buf].filetype) then
+      require("incline").disable()
+    else
+      require("incline").enable()
+    end
+  end,
+})
+
 local render = function(props)
   local helpers = require("incline.helpers")
   local devicons = require("nvim-web-devicons")
