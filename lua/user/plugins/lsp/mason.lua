@@ -69,7 +69,13 @@ return {
       "mason-org/mason.nvim",
       "neovim/nvim-lspconfig",
     },
-    opts = {},
+    opts = {
+      automatic_enable = {
+        exclude = {
+          "ts_ls", -- use typescript-tools instead
+        },
+      },
+    },
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
