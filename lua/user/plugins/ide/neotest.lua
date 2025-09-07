@@ -45,9 +45,6 @@ return {
         require("neotest-go"),
         require("neotest-plenary"),
       },
-      open = {
-        open_on_run = false,
-      },
       quickfix = {
         enabled = true,
         open = true,
