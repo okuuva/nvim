@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "folke/trouble.nvim",
   cmd = { "TroubleToggle", "Trouble" },
@@ -13,5 +14,7 @@ return {
     -- { "grr", "<cmd>Trouble lsp_references focus=true<cr>", desc = "Goto References" },
     -- { "gri", "<cmd>Trouble lsp_implementations focus=true<cr>", desc = "Goto Implementation" },
   },
-  opts = {},
+  opts = {
+    focus = true,
+  },
 }
