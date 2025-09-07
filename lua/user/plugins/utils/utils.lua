@@ -50,11 +50,6 @@ return {
   },
   {
     "onsails/lspkind.nvim",
-    opts = {
-      symbol_map = {
-        Supermaven = "",
-      },
-    },
   },
   {
     "EtiamNullam/deferred-clipboard.nvim",

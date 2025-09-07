@@ -58,7 +58,6 @@ return {
     "bydlw98/cmp-env",
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
-    { "supermaven-nvim", optional = true },
   },
   -- use a release tag to download pre-built binaries
   version = "1.*",
@@ -103,27 +102,11 @@ return {
         "select_prev",
       },
       ["<Tab>"] = {
-        function(cmp)
-          local ok, suggestion = pcall(require, "supermaven-nvim.completion_preview")
-          if cmp.snippet_active() then
-            return cmp.snippet_forward()
-          elseif ok and suggestion.has_suggestion() then
-            vim.schedule(suggestion.on_accept_suggestion)
-            return true
-          end
-        end,
+        "snippet_forward",
         "fallback",
       },
       ["<Esc>"] = {
         "cancel",
-        function()
-          local ok, suggestion = pcall(require, "supermaven-nvim.completion_preview")
-          if ok and not suggestion.disable_inline_completion then
-            suggestion.disable_inline_completion = true
-            suggestion.on_dispose_inlay()
-            return true
-          end
-        end,
         "fallback",
       },
     },

@@ -126,9 +126,9 @@ return {
         -- },
         -- VertSplit = { bg = colors.editor.bg_alt },
         -- WinSeparator = { link = "VertSplit" },
-        BlinkCmpLabelDeprecated = { strikethrough = true },
-        BlinkCmpKindSupermaven = { fg = "#0055FF" },
         Folded = { fg = colors.editor.disabled, bg = colors.editor.bg, italic = true },
+
+        BlinkCmpLabelDeprecated = { strikethrough = true },
 
         CodeiumSuggestion = { link = "NonText" },
 
