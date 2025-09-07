@@ -81,6 +81,16 @@ return {
         end,
       },
       win = {
+        input = {
+          keys = {
+            ["<C-t>"] = false,
+            ["<C-t>f"] = { "toggle_follow", mode = { "i", "n" } },
+            ["<C-t>h"] = { "toggle_hidden", mode = { "i", "n" } },
+            ["<C-t>i"] = { "toggle_ignored", mode = { "i", "n" } },
+            ["<C-t>m"] = { "toggle_maximize", mode = { "i", "n" } },
+            ["<C-t>p"] = { "toggle_preview", mode = { "i", "n" } },
+          },
+        },
         list = {
           keys = {
             ["p"] = "put",
