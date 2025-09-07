@@ -110,6 +110,10 @@ return {
             return cmp.snippet_forward()
           end
         end,
+        function() -- sidekick next edit suggestion
+          local ok, sidekick = pcall(require, "sidekick")
+          return ok and sidekick.nes_jump_or_apply() or false
+        end,
         "fallback",
       },
       ["<Esc>"] = {
