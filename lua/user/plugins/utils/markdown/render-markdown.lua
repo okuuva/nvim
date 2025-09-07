@@ -1,6 +1,4 @@
 local file_types = {
-  "Avante",
-  "codecompanion",
   "gitcommit",
   "jjdescription",
   "markdown",
