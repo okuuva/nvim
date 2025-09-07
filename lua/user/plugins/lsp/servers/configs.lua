@@ -11,6 +11,7 @@ local legacy_servers = {
 
 local servers = {
   -- "tombi", -- in some ways better than taplo but a bit buggy, so continuing with taplo for now
+  "copilot_ls",
 }
 
 for _, server_name in ipairs(legacy_servers) do

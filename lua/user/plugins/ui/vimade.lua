@@ -1,3 +1,19 @@
+local util = require("user.util")
+
+local disabled_filetypes = {
+  "^sidekick",
+}
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    if util.string_in_pattern_table(vim.bo.filetype, disabled_filetypes) then
+      vim.cmd("silent! VimadeDisable")
+    else
+      vim.cmd("silent! VimadeEnable")
+    end
+  end,
+})
+
 return {
   "tadaa/vimade",
   -- default opts (you can partially set these or configure them however you like)
