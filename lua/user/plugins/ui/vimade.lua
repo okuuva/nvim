@@ -38,8 +38,6 @@ return {
             "help",
           },
           filetype = {
-            "octo",
-            "octo_panel",
             "help",
             "man",
             "trouble",
