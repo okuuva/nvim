@@ -2,7 +2,7 @@ return {
   "m4xshen/smartcolumn.nvim",
   event = "BufEnter",
   opts = {
-    colorcolumn = "110",
+    colorcolumn = "100",
     disabled_filetypes = {
       "lazy",
       "alpha",
@@ -19,11 +19,10 @@ return {
       "trouble",
     },
     custom_colorcolumn = {
-      python = "110",
-      lua = "120",
       gitcommit = "72",
       jjdescription = "72",
     },
     scope = "window", -- file (default), window, line
+    editorconfig = true,
   },
 }
