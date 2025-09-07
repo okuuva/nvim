@@ -27,11 +27,24 @@ return {
   -- stylua: ignore
   keys = {
     { "<C-a>", toggle_terminal, desc = "Toggle Terminal", mode = { "i", "n", "t" } },
+    { "<leader>jj",
+      function()
+        toggle_terminal("jjui", { win = { style = "terminal_fullscreen" } })
+      end,
+      desc = "Jujutsu"
+    },
   },
   ---@type snacks.Config
   opts = {
     terminal = {
       shell = "fish",
+    },
+    styles = {
+      terminal_fullscreen = {
+        style = "terminal",
+        height = 0,
+        width = 0,
+      },
     },
   },
 }
