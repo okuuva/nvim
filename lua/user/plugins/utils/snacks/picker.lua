@@ -1,3 +1,7 @@
+local grep_opts = {
+  hidden = true,
+  follow = true,
+}
 ---@type LazyPluginSpec
 return {
   "snacks.nvim",
@@ -5,7 +9,7 @@ return {
   keys = {
     -- see: https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#general
     -- Top Pickers & Explorer
-    { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>/", function() Snacks.picker.grep(grep_opts) end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     -- find
@@ -25,8 +29,8 @@ return {
     { "<leader>sgf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
     -- Grep
     { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
-    { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-    { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "<leader>sB", function() Snacks.picker.grep_buffers(grep_opts) end, desc = "Grep Open Buffers" },
+    { "<leader>sw", function() Snacks.picker.grep_word(grep_opts) end, desc = "Visual selection or word", mode = { "n", "x" } },
     -- search
     { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
     { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
