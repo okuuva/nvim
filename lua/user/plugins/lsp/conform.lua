@@ -27,6 +27,7 @@ local function expandFormatters(formatters)
   end
 end
 
+local prettier = expandFormatters({ { "prettierd", "prettier" } })
 ---@type LazyPluginSpec
 return {
   "stevearc/conform.nvim",
@@ -68,23 +69,22 @@ return {
         bash = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         fish = { "fish_indent" },
         go = expandFormatters({ { "goimports", "gofmt" } }),
-        javascript = expandFormatters({ { "prettierd", "prettier" } }),
         hujson = { "hujson" },
+        javascript = prettier,
         lua = { "stylua" },
         nix = { "alejandra" },
         python = expandFormatters({ { "darker", "isort" }, "black" }),
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         toml = { "pyproject-fmt" },
-        typescript = expandFormatters({ { "prettierd", "prettier" } }),
+        typescript = prettier,
         yaml = { "yq" },
       },
       format_after_save = {
         lsp_fallback = true,
       },
-      -- swap between these when debugging
-      log_level = vim.log.levels.ERROR,
-      -- log_level = vim.log.levels.TRACE,
+      -- uncomment this when debugging
+      log_level = vim.log.levels.TRACE,
     }
     require("conform").setup(opts)
     require("conform.formatters.black").condition = function()
