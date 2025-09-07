@@ -1,5 +1,5 @@
 local hide_in_width = function()
-  return vim.fn.winwidth(0) > 80
+  return vim.fn.winwidth(0) > 120
 end
 
 local diagnostics = {
@@ -17,10 +17,14 @@ local diff = {
   cond = hide_in_width,
 }
 
-local branch = {
-  "branch",
-  icons_enabled = true,
-  icon = "",
+local encoding = {
+  "encoding",
+  cond = hide_in_width,
+}
+
+local fileformat = {
+  "fileformat",
+  cond = hide_in_width,
 }
 
 local filename = {
@@ -42,12 +46,24 @@ local filename = {
   },
 }
 
-local location = {
-  "location",
-  fmt = function(string, _)
-    return string .. " "
-  end,
+local filetype = {
+  "filetype",
+  cond = hide_in_width,
 }
+
+local mode = {
+  "mode",
+  cond = hide_in_width,
+}
+
+local progress = {
+  "progress",
+  cond = hide_in_width,
+}
+
+local function pwd()
+  return "  " .. vim.fs.basename(vim.fn.getcwd())
+end
 
 local function tabs()
   local tab_number = vim.api.nvim_tabpage_get_number(0)
@@ -56,10 +72,6 @@ local function tabs()
     return "Tab " .. tab_number .. " / " .. tab_count
   end
   return ""
-end
-
-local function pwd()
-  return "  " .. vim.fs.basename(vim.fn.getcwd())
 end
 
 return {
@@ -77,12 +89,12 @@ return {
       globalstatus = false,
     },
     sections = {
-      lualine_a = { "mode" },
-      lualine_b = { pwd, branch, diff, diagnostics },
+      lualine_a = { mode },
+      lualine_b = { pwd, diff, diagnostics },
       lualine_c = { filename, tabs },
       lualine_x = {},
-      lualine_y = { "encoding", "fileformat", "filetype" },
-      lualine_z = { "location", "progress" },
+      lualine_y = { encoding, fileformat, filetype },
+      lualine_z = { "location", progress },
     },
     inactive_sections = {
       lualine_a = {},
@@ -90,7 +102,7 @@ return {
       lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = {},
-      lualine_z = { "location", "progress" },
+      lualine_z = { "location", progress },
     },
     extensions = {
       "fzf",
