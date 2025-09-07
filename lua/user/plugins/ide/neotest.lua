@@ -34,6 +34,9 @@ return {
         end,
       },
     }, neotest_ns)
+    require("user.util").wk_add({
+      { "<leader>tt", group = "Toggle" },
+    })
   end,
   config = function()
     local neotest = require("neotest")
