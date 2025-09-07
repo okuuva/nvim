@@ -89,7 +89,7 @@ return {
             return require("blink.cmp")["fallback"]()
           end
           if not cmp.is_menu_visible() then
-            return cmp.show_and_insert()
+            return cmp.show()
           end
         end,
         "select_next",
