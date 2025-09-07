@@ -130,8 +130,6 @@ return {
 
         BlinkCmpLabelDeprecated = { strikethrough = true },
 
-        CodeiumSuggestion = { link = "NonText" },
-
         -- Snacks indent, replicate indent-blankline behavior
         SnacksIndent = { fg = colors.editor.border },
         SnacksIndentScope = { fg = colors.editor.disabled },
