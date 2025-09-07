@@ -70,7 +70,7 @@ return {
         -- Use a sub-list to run only the first available formatter
         bash = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
         fish = { "fish_indent" },
-        go = expandFormatters({ { "goimports", "gofmt" } }),
+        go = expandFormatters({ { "golines", "goimports", "gofmt" } }),
         hujson = { "hujson" },
         javascript = prettier,
         json = json,
