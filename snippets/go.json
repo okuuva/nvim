@@ -1,1 +1,29 @@
-{"perr + perror":{"prefix":["perr","perror"],"body":["if err != nil {","\tctx.Log.Error(fmt.Sprintf(\"${1:}: %v\", err), nil)","\treturn ${2:nil, err}","}"]},"to + todo":{"prefix":["to","todo"],"body":"// TODO: ${1:}"},"err":{"prefix":"err","body":["if err != nil {","\treturn err","}"]}}
+{
+  "perr + perror": {
+    "prefix": [
+      "perr",
+      "perror"
+    ],
+    "body": [
+      "if err != nil {",
+      "\tctx.Log.Error(fmt.Sprintf(\"${1:}: %v\", err), nil)",
+      "\treturn ${2:nil, err}",
+      "}"
+    ]
+  },
+  "to + todo": {
+    "prefix": [
+      "to",
+      "todo"
+    ],
+    "body": "// TODO: ${1:}"
+  },
+  "err": {
+    "prefix": "err",
+    "body": [
+      "if err != nil {",
+      "\treturn err",
+      "}"
+    ]
+  }
+}

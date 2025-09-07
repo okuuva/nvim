@@ -1,1 +1,16 @@
-{"done + do":{"body":"- [x] ${1:DONE}","prefix":["done","do"]},"todo + to":{"body":"- [ ] ${1:TODO}","prefix":["todo","to"]}}
+{
+  "done + do": {
+    "body": "- [x] ${1:DONE}",
+    "prefix": [
+      "done",
+      "do"
+    ]
+  },
+  "todo + to": {
+    "body": "- [ ] ${1:TODO}",
+    "prefix": [
+      "todo",
+      "to"
+    ]
+  }
+}

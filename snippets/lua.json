@@ -1,1 +1,101 @@
-{"test":{"body":"-- TEST: ","prefix":"test"},"fixme + fm":{"body":"-- FIXME: ","prefix":["fixme","fix"]},"todo":{"body":"-- TODO: ","prefix":["todo","to"]},"lazykeys + keys":{"body":["  -- stylua: ignore","  keys = {","","  },"],"prefix":["lazykeys","keys"]},"warn + warning":{"body":"-- WARNING: ","prefix":["warn","warning"]},"hack":{"body":"-- HACK: ","prefix":"hack"},"perf + optim":{"body":"-- OPTIMIZE: ","prefix":["perf","optim"]},"snacksspec":{"body":["---@type LazyPluginSpec","return {","  \"snacks.nvim\",","  -- stylua: ignore","  keys = {","  ","  },","  ---@type snacks.Config","  opts = {","    ","  },","}"],"prefix":"snacksspec"},"pluginspectype + pspectype":{"prefix":["pluginspec","lazypluginspec"],"body":"---@type LazyPluginSpec"},"ignore + stylua + styluaignore":{"body":"-- stylua: ignore","prefix":["ignore","stylua","styluaignore"]},"newpluginspec + pluginspec":{"body":["---@type LazyPluginSpec","return {","  \"$1\",","  version = \"${2:*}\",","  -- stylua: ignore","  keys = {","  ","  },","  opts = {},","}"],"prefix":"newpluginspec"},"note":{"body":"-- NOTE: ","prefix":"note"}}
+{
+  "fixme + fm": {
+    "body": "-- FIXME: ",
+    "prefix": [
+      "fixme",
+      "fix"
+    ]
+  },
+  "hack": {
+    "body": "-- HACK: ",
+    "prefix": "hack"
+  },
+  "ignore + stylua + styluaignore": {
+    "body": "-- stylua: ignore",
+    "prefix": [
+      "ignore",
+      "stylua",
+      "styluaignore"
+    ]
+  },
+  "lazykeys + keys": {
+    "body": [
+      "  -- stylua: ignore",
+      "  keys = {",
+      "",
+      "  },"
+    ],
+    "prefix": [
+      "lazykeys",
+      "keys"
+    ]
+  },
+  "newpluginspec + pluginspec": {
+    "body": [
+      "---@type LazyPluginSpec",
+      "return {",
+      "  \"$1\",",
+      "  version = \"${2:*}\",",
+      "  -- stylua: ignore",
+      "  keys = {",
+      "  ",
+      "  },",
+      "  opts = {},",
+      "}"
+    ],
+    "prefix": "newpluginspec"
+  },
+  "note": {
+    "body": "-- NOTE: ",
+    "prefix": "note"
+  },
+  "perf + optim": {
+    "body": "-- OPTIMIZE: ",
+    "prefix": [
+      "perf",
+      "optim"
+    ]
+  },
+  "pluginspectype + pspectype": {
+    "body": "---@type LazyPluginSpec",
+    "prefix": [
+      "pluginspec",
+      "lazypluginspec"
+    ]
+  },
+  "snacksspec": {
+    "body": [
+      "---@type LazyPluginSpec",
+      "return {",
+      "  \"snacks.nvim\",",
+      "  -- stylua: ignore",
+      "  keys = {",
+      "  ",
+      "  },",
+      "  ---@type snacks.Config",
+      "  opts = {",
+      "    ",
+      "  },",
+      "}"
+    ],
+    "prefix": "snacksspec"
+  },
+  "test": {
+    "body": "-- TEST: ",
+    "prefix": "test"
+  },
+  "todo": {
+    "body": "-- TODO: ",
+    "prefix": [
+      "todo",
+      "to"
+    ]
+  },
+  "warn + warning": {
+    "body": "-- WARNING: ",
+    "prefix": [
+      "warn",
+      "warning"
+    ]
+  }
+}
