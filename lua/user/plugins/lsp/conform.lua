@@ -28,6 +28,8 @@ local function expandFormatters(formatters)
 end
 
 local prettier = expandFormatters({ { "prettierd", "prettier" } })
+local json = expandFormatters({ { "biome", "prettierd", "prettier" } })
+
 ---@type LazyPluginSpec
 return {
   "stevearc/conform.nvim",
@@ -71,6 +73,9 @@ return {
         go = expandFormatters({ { "goimports", "gofmt" } }),
         hujson = { "hujson" },
         javascript = prettier,
+        json = json,
+        json5 = json,
+        jsonc = json,
         lua = { "stylua" },
         nix = { "alejandra" },
         python = expandFormatters({ { "darker", "isort" }, "black" }),
