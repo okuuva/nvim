@@ -102,11 +102,24 @@ return {
         "select_prev",
       },
       ["<Tab>"] = {
-        "snippet_forward",
+        function(cmp)
+          if vim.b._augment_suggestion and vim.b._augment_suggestion.lines then
+            vim.schedule(vim.fn["augment#Accept"])
+            return true
+          elseif cmp.snippet_active() then
+            return cmp.snippet_forward()
+          end
+        end,
         "fallback",
       },
       ["<Esc>"] = {
         "cancel",
+        function()
+          if vim.b._augment_suggestion and vim.b._augment_suggestion.lines then
+            -- a hack to clear the suggestion. augment doesn't expose a public API for it but this does the trick
+            vim.fn["augment#OnInsertLeavePre"]()
+          end
+        end,
         "fallback",
       },
     },
