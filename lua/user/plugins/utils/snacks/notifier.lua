@@ -11,6 +11,7 @@ return {
     notifier = {
       timeout = 6000,
       top_down = false,
+      level = vim.log.levels.INFO,
     },
     styles = {
       notification = {
