@@ -81,7 +81,6 @@ return {
         python = expandFormatters({ { "darker", "isort" }, "black" }),
         ruby = { "rubocop" },
         sh = expandFormatters({ "shfmt", { "shellharden", "shellcheck" } }),
-        toml = { "pyproject-fmt" },
         typescript = prettier,
         yaml = { "yq" },
       },
