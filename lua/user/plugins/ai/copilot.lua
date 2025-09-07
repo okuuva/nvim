@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "zbirenbaum/copilot.lua",
   event = "InsertEnter",
@@ -5,8 +6,7 @@ return {
   cond = require("user.util").ai_helpers_allowed("zbirenbaum/copilot.lua"),
   opts = {
     panel = {
-      -- use codecompanion if available
-      enabled = not package.loaded.codecompanion,
+      enabled = false,
     },
     suggestion = {
       enabled = false,
