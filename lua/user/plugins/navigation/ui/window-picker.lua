@@ -1,16 +1,15 @@
+local function pick_window()
+  local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
+  vim.api.nvim_set_current_win(picked_window_id)
+end
+
 ---@type LazyPluginSpec
 return {
   "s1n7ax/nvim-window-picker",
   version = "^2.0.0",
   keys = {
-    {
-      "<leader>p",
-      function()
-        local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
-        vim.api.nvim_set_current_win(picked_window_id)
-      end,
-      desc = "Pick a window",
-    },
+    { "<c-w>w", pick_window, desc = "Pick a window", noremap = true, silent = true, mode = { "n", "v", "i", "t" } },
+    { "<c-w><c-w>", pick_window, desc = "Pick a window", noremap = true, silent = true, mode = { "n", "v", "i", "t" } },
   },
   opts = {
     -- type of hints you want to get
@@ -23,7 +22,7 @@ return {
 
     -- when you go to window selection mode, status bar will show one of
     -- following letters on them so you can use that letter to select the window
-    selection_chars = "HTNSUEOA",
+    selection_chars = "HATENISC",
 
     show_prompt = false,
 

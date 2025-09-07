@@ -7,14 +7,10 @@ vim.api.nvim_set_keymap("", "<CR>", ":noh<CR>", { noremap = true, silent = true 
 ---@type wk.Spec
 local mappings = {
   { "<leader>gc", require("user.util").process_graphite_share_stack_string, desc = "Clean Graphite share links" },
-  { "<leader>C", "<cmd>close<CR>", desc = "Close split", nowait = true, remap = false },
   { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy", nowait = true, remap = false },
   { "<leader>N", group = "Neoconf", nowait = true, remap = false },
   { "<leader>P", group = "Pastebin", nowait = true, remap = false },
   { "<leader>R", group = "IronRepl", nowait = true, remap = false },
-  { "<leader>S", group = "Split", nowait = true, remap = false },
-  { "<leader>SH", "<cmd>split<cr>", desc = "Horizontal split", nowait = true, remap = false },
-  { "<leader>SS", "<cmd>vsplit<cr>", desc = "Vertical split", nowait = true, remap = false },
   { "<leader>T", group = "TreeSitter", nowait = true, remap = false },
   { "<leader>a", group = "AI", nowait = true, remap = false },
   { "<leader>b", group = "Buffers", nowait = true, remap = false },
@@ -41,7 +37,7 @@ local mappings = {
     { "<leader>gL", group = "GitLink" },
     { "<leader>gl", group = "Gitlab" },
     { "<leader>o", group = "Obsidian" },
-    { "<leader>s", ":<C-u>'<,'>sort<cr>", desc = "Sort" },
+    { "<leader>ss", ":<C-u>'<,'>sort<cr>", desc = "Sort" },
   },
   {
     mode = { "v" },
