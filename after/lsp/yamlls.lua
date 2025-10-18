@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
   capabilities = {
     workspace = {
@@ -22,4 +23,16 @@ return {
       schemas = require("schemastore").yaml.schemas({}),
     })
   end,
+  ---@module "codesettings"
+  ---@type lsp.yamlls
+  settings = {
+    yaml = {
+      completion = true,
+      format = {
+        enable = false,
+      },
+      hover = true,
+      validate = true,
+    },
+  },
 }
