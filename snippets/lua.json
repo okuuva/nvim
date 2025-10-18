@@ -30,6 +30,22 @@
       "keys"
     ]
   },
+  "newlspconfig + lspconf": {
+    "body": [
+      "---@type vim.lsp.Config",
+      "return {",
+      "  ---@module \"codesettings\"",
+      "  ---@type lsp.${1:server-name}",
+      "  settings = {",
+      "    ${0:}",
+      "  },",
+      "}"
+    ],
+    "prefix": [
+      "newlspconfig",
+      "lspconf"
+    ]
+  },
   "newpluginspec + pluginspec": {
     "body": [
       "---@type LazyPluginSpec",
