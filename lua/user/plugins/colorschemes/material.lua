@@ -31,7 +31,7 @@ return {
       -- Available plugins:
       "blink",
       -- "coc",
-      -- "colorful-winsep",
+      "colorful-winsep",
       "dap",
       -- "dashboard",
       -- "eyeliner",
@@ -103,8 +103,7 @@ return {
         --   reverse = false, -- reverse the fg and bg colors
         --   link = "SomeOtherGroup", -- link to some other highlight group
         -- },
-        -- VertSplit = { bg = colors.editor.bg_alt },
-        -- WinSeparator = { link = "VertSplit" },
+        WinSeparator = { link = "Normal" },
         Folded = { fg = colors.editor.disabled, bg = colors.editor.bg, italic = true },
 
         BlinkCmpLabelDeprecated = { strikethrough = true },
