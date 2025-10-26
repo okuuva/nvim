@@ -32,6 +32,24 @@ local mappings = {
     mode = { "x" },
     { "<leader>P", group = "Pastebin" },
     { "<leader>a", group = "AI" },
+    { "<leader>b", group = "Base64" },
+    { "<leader>bd", require("user.util.visual").base64_decode, desc = "Decode" },
+    { "<leader>be", require("user.util.visual").base64_encode, desc = "Encode" },
+    { "<leader>bt", require("user.util.visual").base64_toggle, desc = "Toggle" },
+    {
+      "<leader>bb",
+      function()
+        -- first exit visual mode so that '< and '> are set correctly
+        vim.cmd("normal ")
+        -- then for the whole selection,
+        -- [f]ind the first colon,
+        -- jump to next [w]ord,
+        -- [v]isually select to [$]eol,
+        -- execute leader bt
+        vim.cmd([['<,'>normal f:wv$ bt]])
+      end,
+      desc = "Toggle all yaml values in selection",
+    },
     { "<leader>g", group = "Git" },
     { "<leader>gL", group = "GitLink" },
     { "<leader>gl", group = "Gitlab" },
