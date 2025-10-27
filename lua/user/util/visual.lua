@@ -1,16 +1,16 @@
 local M = {}
 
----@class VisualSelectionLocation
+---@class SelectionPos
 ---@field row number 1-based
 ---@field col number 1-based
 
----@class VisualSelection
+---@class Selection
 ---@field mode "v" | "V" | "\22" | ""
----@field start VisualSelectionLocation
----@field end_ VisualSelectionLocation
+---@field start SelectionPos
+---@field end_ SelectionPos
 ---@field text string
 
----@param sel VisualSelection
+---@param sel Selection
 ---@param replacement string
 local function replace_selection(sel, replacement)
   vim.api.nvim_buf_set_text(
@@ -23,13 +23,13 @@ local function replace_selection(sel, replacement)
   )
 end
 
----@param sel VisualSelection
+---@param sel Selection
 local function reset_cursor(sel)
   vim.api.nvim_win_set_cursor(0, { sel.start.row, sel.start.col - 1 })
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 end
 
----@return VisualSelection
+---@return Selection
 function M.get_visual_selection()
   -- Force visual mode info and visual marks `<` and `>` to refresh
   -- ESC then gv preserves current visual region and ensures marks and mode are updated
@@ -53,7 +53,7 @@ function M.get_visual_selection()
   }
 end
 
----@return VisualSelection
+---@return Selection
 function M.get_current_word()
   -- Temporarily add '=' to iskeyword to capture base64 padding
   local original_iskeyword = vim.bo.iskeyword
@@ -73,7 +73,7 @@ function M.get_current_word()
   }
 end
 
----@return VisualSelection
+---@return Selection
 function M.get_word_or_selection()
   local mode = vim.api.nvim_get_mode().mode
   if mode == "v" or mode == "V" or mode == "\22" then
