@@ -5,7 +5,7 @@ local M = {}
 ---@field col number 1-based
 
 ---@class VisualSelection
----@field mode "v" | "V" | "\22"
+---@field mode "v" | "V" | "\22" | ""
 ---@field start VisualSelectionLocation
 ---@field end_ VisualSelectionLocation
 ---@field text string
@@ -53,15 +53,46 @@ function M.get_visual_selection()
   }
 end
 
---- Modify visual selection with a function
+---@return VisualSelection
+function M.get_current_word()
+  -- Temporarily add '=' to iskeyword to capture base64 padding
+  local original_iskeyword = vim.bo.iskeyword
+  vim.bo.iskeyword = vim.bo.iskeyword .. ",="
+
+  local word = vim.fn.expand("<cword>")
+  local pos = vim.fn.searchpos("\\<" .. vim.fn.escape(word, "\\"), "bcnW")
+
+  -- Restore original iskeyword
+  vim.bo.iskeyword = original_iskeyword
+
+  return {
+    mode = "",
+    start = { row = pos[1], col = pos[2] },
+    end_ = { row = pos[1], col = pos[2] + #word - 1 },
+    text = word,
+  }
+end
+
+---@return VisualSelection
+function M.get_word_or_selection()
+  local mode = vim.api.nvim_get_mode().mode
+  if mode == "v" or mode == "V" or mode == "\22" then
+    return M.get_visual_selection()
+  end
+  return M.get_current_word()
+end
+
+--- Modify visual selection or current word with a function
 --- @param modifier fun(text:string):string function to modify the selection
 function M.modify(modifier)
-  local sel = M.get_visual_selection()
+  local sel = M.get_word_or_selection()
   local modified = modifier(sel.text)
   if modified ~= "" then
     replace_selection(sel, modified)
   end
-  reset_cursor(sel)
+  if sel.mode ~= "" then
+    reset_cursor(sel)
+  end
 end
 
 local function is_ascii(s)
@@ -94,17 +125,17 @@ local function base64_decode(text)
   return ""
 end
 
---- Base64 encode visual selection
+--- Base64 encode selection
 function M.base64_encode()
   M.modify(base64_encode)
 end
 
---- Base64 decode visual selection
+--- Base64 decode selection
 function M.base64_decode()
   M.modify(base64_decode)
 end
 
---- Base64 decode or encode visual selection
+--- Base64 decode or encode selection
 function M.base64_toggle()
   M.modify(function(text)
     local decoded = base64_decode(text)
