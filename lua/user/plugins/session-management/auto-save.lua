@@ -2,6 +2,8 @@ local excluded_filetypes = {
   "gitcommit", -- commits should definitely be saved explicitly
   "jjdescription", -- commits should definitely be saved explicitly
   "oil", -- auto-saving a buffer that potentially edits filesystem is a very bad idea
+  "dbee", -- auto-saving a buffer that potentially edits a database is a very, VERY bad idea
+  "sql", -- see above
 }
 local excluded_filenames = {
   "auto-save.lua",
