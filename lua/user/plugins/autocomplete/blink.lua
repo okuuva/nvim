@@ -32,6 +32,7 @@ local source_priority = {
   obsidian_tags = 65,
   obsidian_new = 65,
   lsp = 50,
+  dbee = 45,
   path = 40,
   snippets = 30,
   buffer = 20,
@@ -58,6 +59,14 @@ return {
     "bydlw98/cmp-env",
     { "mtoohey31/cmp-fish", ft = "fish" },
     "chrisgrieser/cmp-nerdfont",
+    {
+      "MattiasMTS/cmp-dbee",
+      dependencies = {
+        { "kndndrj/nvim-dbee" },
+      },
+      ft = "sql", -- optional but good to have
+      -- opts = {}, -- needed
+    },
   },
   -- use a release tag to download pre-built binaries
   version = "1.*",
@@ -160,7 +169,7 @@ return {
         },
       },
       menu = {
-        auto_show = false,
+        auto_show = true,
         draw = {
           columns = {
             { "label", "label_description", gap = 1 },
@@ -218,6 +227,7 @@ return {
       per_filetype = {
         lua = { inherit_defaults = true, "lazydev" },
         fish = { inherit_defaults = true, "fish" },
+        sql = { inherit_defaults = true, "dbee" },
       },
       providers = {
         -- always show buffer suggestions
@@ -248,6 +258,13 @@ return {
           module = "blink.compat.source",
           opts = {
             cmp_name = "nerdfont",
+          },
+        },
+        dbee = {
+          name = "Dbee",
+          module = "blink.compat.source",
+          opts = {
+            cmp_name = "dbee",
           },
         },
       },

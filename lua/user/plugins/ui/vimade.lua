@@ -54,6 +54,7 @@ return {
             "help",
           },
           filetype = {
+            "dbee",
             "help",
             "man",
             "trouble",

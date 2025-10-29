@@ -4,11 +4,12 @@ return {
   opts = {
     colorcolumn = "100",
     disabled_filetypes = {
-      "lazy",
       "alpha",
       "checkhealth",
+      "dbee",
       "harpoon",
       "help",
+      "lazy",
       "markdown",
       "mason",
       "neo-tree",
