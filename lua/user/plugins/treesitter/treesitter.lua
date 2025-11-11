@@ -62,6 +62,7 @@ return {
         "go",
         "jq",
         "json",
+        "kdl",
         "python",
         "rst",
         "sql",
