@@ -1,6 +1,31 @@
 ; extends
 
 ; ============================================================================
+; #MISE comments - TOML injection
+; ============================================================================
+; This injection captures comment lines starting with "#MISE " or "# [MISE]"
+; or "#[MISE]" and treats them as TOML code blocks for syntax highlighting.
+;
+; #MISE format
+; The (#offset!) directive skips the "#MISE " prefix (6 characters) from the source
+((comment) @injection.content
+  (#lua-match? @injection.content "^#MISE ")
+  (#offset! @injection.content 0 6 0 0)
+  (#set! injection.language "toml"))
+
+; #[MISE] format
+((comment) @injection.content
+  (#lua-match? @injection.content "^#%[MISE%] ")
+  (#offset! @injection.content 0 8 0 0)
+  (#set! injection.language "toml"))
+
+; # [MISE] format
+((comment) @injection.content
+  (#lua-match? @injection.content "^# %[MISE%] ")
+  (#offset! @injection.content 0 9 0 0)
+  (#set! injection.language "toml"))
+
+; ============================================================================
 ; #USAGE comments - KDL injection
 ; ============================================================================
 ; This injection captures consecutive comment lines starting with "#USAGE " or
