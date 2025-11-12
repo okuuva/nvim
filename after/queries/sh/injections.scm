@@ -35,3 +35,37 @@
   (#offset! @injection.content 0 9 0 0)
   (#set! injection.language "kdl"))
 
+; ============================================================================
+; #MISE comments - TOML injection
+; ============================================================================
+; This injection captures consecutive comment lines starting with "#MISE "
+; or "# [MISE]" or "#[MISE]" and treats them as a single TOML code block for syntax highlighting.
+;
+; Example:
+;   #MISE [tools]
+;   #MISE node = "20"
+;   #MISE python = "3.11"
+;
+; The above will be highlighted as TOML syntax.
+
+; Match #MISE comments - each line is treated as a separate TOML fragment
+; The (#offset!) directive skips the "#MISE " prefix (6 characters) from the source
+((comment) @injection.content
+  (#lua-match? @injection.content "^#MISE ")
+  (#offset! @injection.content 0 6 0 0)
+  (#set! injection.language "toml"))
+
+; Also support # [MISE] format
+; The (#offset!) directive skips the "# [MISE] " prefix (9 characters)
+((comment) @injection.content
+  (#lua-match? @injection.content "^# %[MISE%] ")
+  (#offset! @injection.content 0 9 0 0)
+  (#set! injection.language "toml"))
+
+; Also support #[MISE] format (no space)
+; The (#offset!) directive skips the "#[MISE] " prefix (8 characters)
+((comment) @injection.content
+  (#lua-match? @injection.content "^#%[MISE%] ")
+  (#offset! @injection.content 0 8 0 0)
+  (#set! injection.language "toml"))
+
