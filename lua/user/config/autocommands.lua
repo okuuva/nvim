@@ -115,6 +115,13 @@ vim.api.nvim_create_autocmd("LspDetach", {
   end,
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    -- Only clear the LSP string highlight group to preserve injection highlights
+    vim.api.nvim_set_hl(0, "@lsp.type.string", {})
+  end,
+})
+
 local persisted_hooks = api.nvim_create_augroup("PersistedHooks", {})
 
 api.nvim_create_autocmd("User", {
