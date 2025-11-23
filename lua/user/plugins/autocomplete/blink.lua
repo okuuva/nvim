@@ -126,7 +126,14 @@ return {
         "fallback",
       },
       ["<Esc>"] = {
-        "cancel",
+        function(cmp)
+          if cmp.cancel() then
+            vim.schedule(function()
+              vim.cmd("stopinsert")
+            end)
+            return true
+          end
+        end,
         function()
           if vim.b._augment_suggestion and vim.b._augment_suggestion.lines then
             -- a hack to clear the suggestion. augment doesn't expose a public API for it but this does the trick
