@@ -111,17 +111,12 @@ return {
         "select_prev",
       },
       ["<Tab>"] = {
-        function(cmp)
-          if vim.b._augment_suggestion and vim.b._augment_suggestion.lines then
-            vim.schedule(vim.fn["augment#Accept"])
-            return true
-          elseif cmp.snippet_active() then
-            return cmp.snippet_forward()
-          end
-        end,
+        "snippet_forward",
         function() -- sidekick next edit suggestion
-          local ok, sidekick = pcall(require, "sidekick")
-          return ok and sidekick.nes_jump_or_apply() or false
+          return require("sidekick").nes_jump_or_apply()
+        end,
+        function() -- if you are using Neovim's native inline completions
+          return vim.lsp.inline_completion.get()
         end,
         "fallback",
       },
@@ -132,12 +127,6 @@ return {
               vim.cmd("stopinsert")
             end)
             return true
-          end
-        end,
-        function()
-          if vim.b._augment_suggestion and vim.b._augment_suggestion.lines then
-            -- a hack to clear the suggestion. augment doesn't expose a public API for it but this does the trick
-            vim.fn["augment#OnInsertLeavePre"]()
           end
         end,
         "fallback",

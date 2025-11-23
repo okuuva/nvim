@@ -32,7 +32,7 @@ return {
   end,
   opts = {
     nes = {
-      enabled = false,
+      enabled = true,
     },
     cli = {
       mux = {
