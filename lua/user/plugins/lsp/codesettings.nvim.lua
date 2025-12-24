@@ -11,11 +11,12 @@ vim.lsp.config("*", {
 ---@type LazyPluginSpec
 return {
   "mrjones2014/codesettings.nvim",
-  -- TODO: switch back to upstream once the jsonls fix is merged
-  -- see https://github.com/mrjones2014/codesettings.nvim/pull/34
-  dir = "~/gits/neovim/codesettings.nvim",
-  cond = true,
-  ft = { "json", "jsonc" },
+  ft = { "json", "jsonc", "lua" },
   event = "BufReadPre",
-  opts = {},
+  opts = {
+    ---Enable live reloading of settings when config files change; for servers that support it,
+    ---this is done via the `workspace/didChangeConfiguration` notification, otherwise the
+    ---server is restarted
+    live_reload = true,
+  },
 }
