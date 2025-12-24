@@ -286,4 +286,53 @@ function M.wk_add(mappings)
   wk.add(mappings)
 end
 
+M.markdown_filetypes = {
+  "codesettings-output",
+  "markdown",
+  "octo",
+}
+
+M.vcs_filetypes = {
+  "gitcommit",
+  "gitrebase",
+  "hgcommit",
+  "jjdescription",
+  "svn",
+}
+
+--- Extend the given list with all the given lists
+--- Instead of modifying the given list, creates and returns a new list
+--- @param list any[]
+--- @param ... any[]
+--- @return any[]
+local function list_extend(list, ...)
+  local ret = {}
+  vim.list_extend(ret, list)
+  for _, l in ipairs({ ... }) do
+    vim.list_extend(ret, l)
+  end
+  return ret
+end
+
+--- Extend the given list with all the filetypes that should be treated as markdown
+--- @param filetypes string[]
+--- @return string[]
+function M.include_markdown_filetypes(filetypes)
+  return list_extend(M.markdown_filetypes, filetypes)
+end
+
+--- Extend the given list with all the filetypes that should be treated as vcs
+--- @param filetypes string[]
+--- @return string[]
+function M.include_vcs_filetypes(filetypes)
+  return list_extend(M.vcs_filetypes, filetypes)
+end
+
+--- Extend the given list with all the filetypes that should be treated as markdown
+--- @param filetypes string[]
+--- @return string[]
+function M.include_md_and_vcs_filetypes(filetypes)
+  return list_extend(M.markdown_filetypes, M.vcs_filetypes, filetypes)
+end
+
 return M

@@ -3,14 +3,13 @@ return {
   event = "BufEnter",
   opts = {
     colorcolumn = "100",
-    disabled_filetypes = {
+    disabled_filetypes = require("user.util").include_markdown_filetypes({
       "alpha",
       "checkhealth",
       "dbee",
       "harpoon",
       "help",
       "lazy",
-      "markdown",
       "mason",
       "neo-tree",
       "noice",
@@ -18,7 +17,7 @@ return {
       "snacks_notif_history",
       "text",
       "trouble",
-    },
+    }),
     custom_colorcolumn = {
       gitcommit = "72",
       jjdescription = "72",

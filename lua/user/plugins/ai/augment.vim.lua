@@ -23,12 +23,6 @@ local function enable_augment(manual)
   vim.g.augment_disable_completions = false
 end
 
-local disabled_filetypes = {
-  "markdown",
-  "gitcommit",
-  "jjdescription",
-}
-
 vim.api.nvim_create_autocmd("User", {
   pattern = "DirChangedPre",
   callback = function(args)
@@ -50,6 +44,8 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "BlinkCmpMenuClose",
   callback = enable_augment,
 })
+
+local disabled_filetypes = require("user.util").include_md_and_vcs_filetypes({})
 
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()

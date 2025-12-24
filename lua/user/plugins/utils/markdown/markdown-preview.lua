@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "0x00-ketsu/markdown-preview.nvim",
   cmd = {
@@ -6,7 +7,7 @@ return {
     "MPClose",
     "MPRefresh",
   },
-  ft = { "md", "markdown", "mkd", "mkdn", "mdwn", "mdown", "mdtxt", "mdtext", "rmd", "wiki" },
+  ft = require("user.util").include_markdown_filetypes({ "wiki" }),
     -- stylua: ignore
     keys = {
       { "<leader>mt", "<cmd>MPToggle<cr>", desc = "Toggle" },

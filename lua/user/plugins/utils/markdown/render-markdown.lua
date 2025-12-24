@@ -1,10 +1,6 @@
-local file_types = {
-  "gitcommit",
-  "jjdescription",
-  "markdown",
-  "octo",
-}
+local file_types = require("user.util").include_md_and_vcs_filetypes({})
 
+---@type LazyPluginSpec
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = {
