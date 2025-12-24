@@ -65,6 +65,7 @@ return {
     -- adapters
     "nvim-neotest/neotest-go",
     "nvim-neotest/neotest-plenary",
+    "MisanthropicBit/neotest-busted",
   },
   init = function()
     -- see https://github.com/nvim-neotest/neotest-go/blob/f2580cad67ef0181403cf65858ab638ffd3ede9f/README.md?plain=1#L16-42
@@ -88,6 +89,7 @@ return {
       adapters = {
         require("neotest-go"),
         require("neotest-plenary"),
+        require("neotest-busted"),
       },
       quickfix = {
         enabled = true,
