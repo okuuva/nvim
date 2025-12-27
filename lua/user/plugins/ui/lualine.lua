@@ -1,4 +1,4 @@
-local hide_in_width = function()
+local only_on_wide_enough_displays = function()
   return vim.fn.winwidth(0) > 120
 end
 
@@ -14,17 +14,17 @@ local diagnostics = {
 local diff = {
   "diff",
   symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local encoding = {
   "encoding",
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local fileformat = {
   "fileformat",
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local filename = {
@@ -48,17 +48,17 @@ local filename = {
 
 local filetype = {
   "filetype",
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local mode = {
   "mode",
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local progress = {
   "progress",
-  cond = hide_in_width,
+  cond = only_on_wide_enough_displays,
 }
 
 local function pwd()
