@@ -27,8 +27,18 @@ local function expandFormatters(formatters)
   end
 end
 
+---@param bufnr integer
+local json = function(bufnr)
+  -- format nvim-scissors snippets with jq as that is what scissors itself uses internally
+  local directory = vim.fs.basename(vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
+  if directory == "snippets" then
+    return { "jq" }
+  end
+
+  return expandFormatters({ { "biome", "prettierd", "prettier" } })(bufnr)
+end
+
 local prettier = expandFormatters({ { "prettierd", "prettier" } })
-local json = expandFormatters({ { "biome", "prettierd", "prettier" } })
 
 ---@type LazyPluginSpec
 return {
