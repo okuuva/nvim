@@ -49,7 +49,7 @@ return {
     "nvim-web-devicons",
     "lspkind.nvim", -- fancy icons
     "lazydev.nvim",
-    "LuaSnip",
+    "nvim-mini/mini.snippets",
     "nvim-scissors", -- snippet editor
     -- legacy cmp sources and the compatibility plugin
     {
@@ -221,7 +221,7 @@ return {
     signature = {
       enabled = false,
     },
-    snippets = { preset = "luasnip" },
+    snippets = { preset = "mini_snippets" },
     sources = {
       default = {
         "lsp",
