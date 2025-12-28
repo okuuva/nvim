@@ -3,7 +3,7 @@ return {
   "otavioschwanck/arrow.nvim",
   dependencies = {
     { "nvim-tree/nvim-web-devicons" },
-    { "echasnovski/mini.icons" },
+    { "nvim-mini/mini.icons" },
   },
   keys = {
     { "<BS>", "<cmd>Arrow<cr>", desc = "Arrow" },

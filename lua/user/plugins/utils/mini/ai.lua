@@ -1,6 +1,6 @@
 -- blatantly copied from https://www.lazyvim.org/plugins/coding#miniai
 return {
-  "echasnovski/mini.ai",
+  "nvim-mini/mini.ai",
   version = false,
   event = "VeryLazy",
   depenpedcies = {

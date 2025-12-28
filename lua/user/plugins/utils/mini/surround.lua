@@ -1,6 +1,6 @@
 -- blatantly copied from https://www.lazyvim.org/extras/coding/mini-surround#minisurround
 return {
-  "echasnovski/mini.surround",
+  "nvim-mini/mini.surround",
   keys = function(self, keys)
     local opts = self.opts
     local mappings = {
