@@ -10,6 +10,7 @@ return {
         -- Diagnostics etc
         {
           sign = {
+            name = { ".*" },
             text = { ".*" },
             maxwidth = 1,
           },
