@@ -1,7 +1,12 @@
+---@type LazyPluginSpec
 return {
   "jbyuki/one-small-step-for-vimkind", -- lua
   dependencies = { "nvim-dap" },
   lazy = true,
+  -- stylua: ignore
+  keys = {
+    { "<leader>DN", function() require("osv").launch({port = 57319}) end, desc = "Launch Neovim debug server" },
+  },
   config = function()
     local dap = require("dap")
     dap.configurations.lua = {
@@ -9,18 +14,7 @@ return {
         type = "nlua",
         request = "attach",
         name = "Attach to running Neovim instance",
-        host = function()
-          local value = vim.fn.input("Host [127.0.0.1]: ")
-          if value ~= "" then
-            return value
-          end
-          return "127.0.0.1"
-        end,
-        port = function()
-          local val = tonumber(vim.fn.input("Port: "))
-          assert(val, "Please provide a port number")
-          return val
-        end,
+        port = 57319,
       },
     }
 
