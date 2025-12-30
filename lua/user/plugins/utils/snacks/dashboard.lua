@@ -14,7 +14,6 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>c",  BdeleteAndCloseTabIfNotLast,       desc = "Close Buffer" },
-    { "<leader>D",  function() Snacks.dashboard() end, desc = "Dashboard" },
   },
   ---@type snacks.Config
   opts = {

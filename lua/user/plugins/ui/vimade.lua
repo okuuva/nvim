@@ -52,6 +52,7 @@ return {
       ft_patterns = function(win, current)
         local patterns = {
           "^neotest",
+          "^dapui",
         }
         local ft = vim.api.nvim_get_option_value("filetype", { buf = win.bufnr })
         if ft and util.string_in_pattern_table(ft, patterns) then

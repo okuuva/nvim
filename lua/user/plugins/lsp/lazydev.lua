@@ -5,6 +5,7 @@ return {
   cond = true,
   opts = {
     library = {
+      "nvim-dap-ui",
       { path = "${3rd}/busted/library", words = { "describe%(" } },
       { path = "${3rd}/luassert/library", words = { "assert%." } },
       { path = "${3rd}/luv/library", words = { "vim%.uv" } },
