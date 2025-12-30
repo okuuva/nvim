@@ -13,6 +13,16 @@
       },
       {
         "language": [
+          "sh",
+          "bash",
+          "zsh",
+          "javascript",
+          "python"
+        ],
+        "path": "./mise.json"
+      },
+      {
+        "language": [
           "lua"
         ],
         "path": "./lua.json"

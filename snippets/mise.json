@@ -1,0 +1,152 @@
+{
+  "misealias + misea": {
+    "body": "$LINE_COMMENT [MISE] alias=\"${1:}\"",
+    "prefix": [
+      "misealias",
+      "misea"
+    ]
+  },
+  "miseall + miselong": {
+    "body": [
+      "$LINE_COMMENT [MISE] description=\"${1:}\"",
+      "$LINE_COMMENT [MISE] alias=\"${2:}\"",
+      "$LINE_COMMENT [MISE] confirm=\"${3:}\"",
+      "$LINE_COMMENT [MISE] depends=[\"${4:}\"]",
+      "$LINE_COMMENT [MISE] depends_post=[\"${5:}\"]",
+      "$LINE_COMMENT [MISE] dir=\"${6:}\"",
+      "$LINE_COMMENT [MISE] env={\"${7:}\"",
+      "$LINE_COMMENT [MISE] hide=${8:false}",
+      "$LINE_COMMENT [MISE] quiet=${9:false}",
+      "$LINE_COMMENT [MISE] raw=${10:false}",
+      "$LINE_COMMENT [MISE] silent=${11:false}",
+      "$LINE_COMMENT [MISE] sources=[\"${12:}\"]",
+      "$LINE_COMMENT [MISE] outputs=[\"${13:}\"]",
+      "$LINE_COMMENT [MISE] tools={\"${14:}\"",
+      "$LINE_COMMENT [MISE] wait_for=[\"${15:}\"]",
+      "$LINE_COMMENT see https://mise.jdx.dev/tasks/file-tasks.html#example-file-task-with-arguments",
+      "$LINE_COMMENT [USAGE] ${0:}"
+    ],
+    "prefix": [
+      "miseall",
+      "miselong"
+    ]
+  },
+  "miseconfirm + misec": {
+    "body": "$LINE_COMMENT [MISE] confirm=\"${1:Are you sure?}\"",
+    "prefix": [
+      "miseconfirm",
+      "misec"
+    ]
+  },
+  "misedepends + misede": {
+    "body": "$LINE_COMMENT [MISE] depends=[\"${1:}\"]",
+    "prefix": [
+      "misedepends",
+      "misede"
+    ]
+  },
+  "misedepends_post + misedp": {
+    "body": "$LINE_COMMENT [MISE] depends_post=[\"${1:}\"]",
+    "prefix": [
+      "misedepends_post",
+      "misepost",
+      "misedp"
+    ]
+  },
+  "misedescription + mised": {
+    "body": "$LINE_COMMENT [MISE] description=\"${1:}\"",
+    "prefix": [
+      "misedescription",
+      "mised"
+    ]
+  },
+  "misedir": {
+    "body": "$LINE_COMMENT [MISE] dir=\"${1:}\"",
+    "prefix": [
+      "misedir"
+    ]
+  },
+  "miseenv + misee": {
+    "body": "$LINE_COMMENT [MISE] env={\"${1:}\": \"${2:}\"}",
+    "prefix": [
+      "miseenv",
+      "misee"
+    ]
+  },
+  "misehide + miseh": {
+    "body": "$LINE_COMMENT [MISE] hide=${1:true}",
+    "prefix": [
+      "misehide",
+      "miseh"
+    ]
+  },
+  "miseoutputs + miseo": {
+    "body": "$LINE_COMMENT [MISE] outputs=[\"${1:}\"]",
+    "prefix": [
+      "miseoutputs",
+      "miseo"
+    ]
+  },
+  "misequiet + miseq": {
+    "body": "$LINE_COMMENT [MISE] quiet=${1:true}",
+    "prefix": [
+      "misequiet",
+      "miseq"
+    ]
+  },
+  "miseraw + miser": {
+    "body": "$LINE_COMMENT [MISE] raw=${1:true}",
+    "prefix": [
+      "miseraw",
+      "miser"
+    ]
+  },
+  "miseshort": {
+    "body": [
+      "$LINE_COMMENT [MISE] description=\"${1:}\"",
+      "$LINE_COMMENT [MISE] hide=${2:false}",
+      "$LINE_COMMENT [MISE] quiet=${3:false}",
+      "$LINE_COMMENT [MISE] silent=${4:false}",
+      "$LINE_COMMENT see https://mise.jdx.dev/tasks/file-tasks.html#example-file-task-with-arguments",
+      "$LINE_COMMENT [USAGE] ${0:}"
+    ],
+    "prefix": "miseshort"
+  },
+  "misesilent + misesi": {
+    "body": "$LINE_COMMENT [MISE] silent=${1:true}",
+    "prefix": [
+      "misesilent",
+      "misesi"
+    ]
+  },
+  "misesources + miseso": {
+    "body": "$LINE_COMMENT [MISE] sources=[\"${1:}\"]",
+    "prefix": [
+      "misesources",
+      "miseso"
+    ]
+  },
+  "misetools + miset": {
+    "body": "$LINE_COMMENT [MISE] tools={\"${1:}\": \"${2:}\"}",
+    "prefix": [
+      "misetools",
+      "miset"
+    ]
+  },
+  "miseusage + miseu + usage + usa": {
+    "body": "$LINE_COMMENT [USAGE] ${1:}",
+    "prefix": [
+      "miseusage",
+      "miseu",
+      "usage",
+      "usa"
+    ]
+  },
+  "misewait_for + misew": {
+    "body": "$LINE_COMMENT [MISE] wait_for=[\"${1:}\"]",
+    "prefix": [
+      "misewait_for",
+      "misew"
+    ]
+  }
+}

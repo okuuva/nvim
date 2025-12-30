@@ -1,4 +1,6 @@
-local function generate_lang_pattern_array(language)
+---@param language string
+---@return string[]
+local function _generate_array(language)
   return {
     language .. "/**/*.json",
     language .. "/**/*.lua",
@@ -7,10 +9,24 @@ local function generate_lang_pattern_array(language)
   }
 end
 
+---@vararg string
+---@return string[]
+local function generate_language_pattern_array(...)
+  local lang_patterns = {}
+  for _, language in ipairs({ ... }) do
+    vim.list_extend(lang_patterns, _generate_array(language))
+  end
+  return lang_patterns
+end
+
 local lang_patterns = {
-  shell = generate_lang_pattern_array("sh"),
-  vcs = generate_lang_pattern_array("gitcommit"),
+  javascript = generate_language_pattern_array("javascript", "mise"),
+  python = generate_language_pattern_array("python", "mise"),
+  shell = generate_language_pattern_array("sh", "mise"),
+  vcs = generate_language_pattern_array("gitcommit"),
 }
+
+-- TODO: figure out how to dynamically strip the comment prefix from the mise snippet body text
 
 ---@type LazyPluginSpec
 return {
