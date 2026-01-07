@@ -38,7 +38,8 @@ return {
   opts = function(_, opts)
     local gen_loader = require("mini.snippets").gen_loader
     opts.snippets = {
-      gen_loader.from_file(vim.fn.stdpath("config") .. "/snippets/allFiletypes.json"),
+      gen_loader.from_runtime("allFiletypes.json"),
+      gen_loader.from_runtime("global.json"),
       gen_loader.from_lang({
         lang_patterns = {
           sh = lang_patterns.shell,
