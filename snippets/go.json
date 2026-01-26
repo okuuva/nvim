@@ -11,13 +11,6 @@
       "}"
     ]
   },
-  "to + todo": {
-    "prefix": [
-      "to",
-      "todo"
-    ],
-    "body": "// TODO: ${1:}"
-  },
   "err": {
     "prefix": "err",
     "body": [

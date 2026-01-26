@@ -10,5 +10,45 @@
       "bash",
       "shebang"
     ]
+  },
+  "fixme": {
+    "body": "$LINE_COMMENT FIXME: ",
+    "prefix": [
+      "fixme",
+      "fix"
+    ]
+  },
+  "hack": {
+    "body": "$LINE_COMMENT HACK: ",
+    "prefix": "hack"
+  },
+  "note": {
+    "body": "$LINE_COMMENT NOTE: ",
+    "prefix": "note"
+  },
+  "perf": {
+    "body": "$LINE_COMMENT OPTIMIZE: ",
+    "prefix": [
+      "optim",
+      "perf"
+    ]
+  },
+  "test": {
+    "body": "$LINE_COMMENT TEST: ",
+    "prefix": "test"
+  },
+  "todo": {
+    "body": "$LINE_COMMENT TODO: ",
+    "prefix": [
+      "to",
+      "todo"
+    ]
+  },
+  "warn": {
+    "body": "$LINE_COMMENT WARNING: ",
+    "prefix": [
+      "warn",
+      "warning"
+    ]
   }
 }
