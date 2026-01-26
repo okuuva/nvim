@@ -11,8 +11,8 @@ return {
     { "[P", "<Plug>(YankyPutIndentBefore)", desc = "Put indented before cursor", mode = { "n", "x" } },
     { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
     { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
-    { "<c-[>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
-    { "<c-]>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
+    { "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
+    { "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
   },
   opts = {
     ring = {
