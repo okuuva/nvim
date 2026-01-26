@@ -1,0 +1,17 @@
+{
+  "escenv": {
+    "body": [
+      "values:",
+      "  environmentVariables:",
+      "    ${1:NAME}: ${2:value}"
+    ],
+    "prefix": "escenv"
+  },
+  "escsecret": {
+    "body": [
+      "",
+      "  fn::secret: ${1:salakala}"
+    ],
+    "prefix": "escsecret"
+  }
+}
