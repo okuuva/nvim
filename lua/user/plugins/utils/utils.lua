@@ -51,9 +51,5 @@ return {
   {
     "onsails/lspkind.nvim",
   },
-  {
-    "EtiamNullam/deferred-clipboard.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+
 }
