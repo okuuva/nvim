@@ -1,3 +1,44 @@
+--- Sync tmux's paste buffer with the terminal's clipboard.
+--- This is needed because tmux intercepts OSC52 clipboard queries and
+--- responds with its own internal buffer instead of forwarding to the terminal.
+local function sync_tmux_clipboard()
+  local in_tmux = vim.env.TMUX ~= nil
+  if in_tmux then
+    vim.fn.system({ "tmux", "refresh-client", "-l" })
+    -- Small delay to allow tmux to receive the clipboard response
+    vim.uv.sleep(10)
+  end
+end
+
+-- Clipboard configuration:
+-- Use OSC52 for clipboard sync everywhere (works through tmux/SSH).
+-- When running inside tmux, we need to call `tmux refresh-client -l`
+-- before reading to sync tmux's buffer with the terminal's clipboard
+-- (otherwise tmux returns stale data from its internal paste buffer).
+local function get_osc52_clipboard()
+  local osc52 = require("vim.ui.clipboard.osc52")
+
+  return {
+    name = "OSC 52",
+    copy = {
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
+    },
+    paste = {
+      ["+"] = function()
+        sync_tmux_clipboard()
+        return osc52.paste("+")()
+      end,
+      ["*"] = function()
+        sync_tmux_clipboard()
+        return osc52.paste("*")()
+      end,
+    },
+  }
+end
+
+vim.g.clipboard = get_osc52_clipboard()
+
 return {
   "gbprod/yanky.nvim",
   dependencies = { "kkharji/sqlite.lua" },
