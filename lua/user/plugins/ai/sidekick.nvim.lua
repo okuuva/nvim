@@ -49,9 +49,10 @@ return {
         keys = {
           prompt = { "<c-.>", "prompt", mode = "t", desc = "insert prompt or context" },
         },
+        layout = "bottom",
         split = {
           width = 100,
-          height = 20,
+          height = 30,
         },
       },
     },
