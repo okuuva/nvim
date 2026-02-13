@@ -36,5 +36,16 @@ return {
       inc_rename = true, -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true, -- add a border to hover docs and signature help
     },
+    routes = {
+      -- Ensure :verbose output is visible
+      {
+        filter = {
+          event = "msg_show",
+          kind = "verbose",
+        },
+        view = "cmdline_output",
+        opts = { enter = true },
+      },
+    },
   },
 }
