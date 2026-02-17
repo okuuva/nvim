@@ -31,4 +31,10 @@ function M.matches(pattern)
   return M.name():match(pattern) ~= nil
 end
 
+--- Check if the current host matches any of the spike hostnames (case-insensitive)
+--- @return boolean
+function M.is_spike()
+  return M.matches("spike")
+end
+
 return M

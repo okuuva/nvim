@@ -4,6 +4,9 @@ return {
   -- branch = "main",
   build = ":TSUpdate",
   lazy = false,
+  cond = function()
+    return not require("user.util.host").is_spike()
+  end,
   keys = {
     { "<leader>TI", "<cmd>Inspect<cr>", desc = "Inspect current node" },
     { "<leader>TT", "<cmd>InspectTree<cr>", desc = "Toggle Tree browser" },

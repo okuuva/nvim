@@ -84,8 +84,11 @@ return {
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
     },
-    opts = {
-      ensure_installed = ensure_installed,
-    },
+    opts = function()
+      return {
+        -- Disable automatic tool installation on spike hosts
+        ensure_installed = require("user.util.host").is_spike() and {} or ensure_installed,
+      }
+    end,
   },
 }
