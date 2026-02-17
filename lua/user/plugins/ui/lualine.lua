@@ -66,6 +66,15 @@ local function pwd()
   return "  " .. vim.fs.basename(vim.fn.getcwd())
 end
 
+local function session()
+  local dir = pwd()
+  local zmx = ""
+  if vim.env.ZMX_SESSION ~= nil then
+    zmx = " " .. vim.env.ZMX_SESSION .. "  "
+  end
+  return zmx .. dir
+end
+
 local function tabs()
   local tab_number = vim.api.nvim_tabpage_get_number(0)
   local tab_count = #vim.api.nvim_list_tabpages()
@@ -91,7 +100,7 @@ return {
     },
     sections = {
       lualine_a = { mode },
-      lualine_b = { pwd, diff, diagnostics },
+      lualine_b = { session, diff, diagnostics },
       lualine_c = { filename, tabs },
       lualine_x = {},
       lualine_y = { encoding, fileformat, filetype },
