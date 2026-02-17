@@ -40,7 +40,7 @@ return {
         enabled = true,
       },
       tools = {
-        augie = {
+        auggie = {
           cmd = { "auggie", "--workspace-root", "." },
           url = "https://docs.augmentcode.com/cli/setup-auggie/install-auggie-cli",
         },
