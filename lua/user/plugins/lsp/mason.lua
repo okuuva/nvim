@@ -5,7 +5,6 @@ local ensure_installed = {
   "basedpyright",
   "bash-language-server",
   "biome",
-  "copilot-language-server",
   "docker-compose-language-service",
   "dockerfile-language-server",
   "fish-lsp",
@@ -72,6 +71,7 @@ return {
     opts = {
       automatic_enable = {
         exclude = {
+          "copilot_ls",
           "ts_ls", -- use typescript-tools instead
         },
       },
