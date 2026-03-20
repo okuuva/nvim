@@ -44,6 +44,9 @@ return {
           cmd = { "auggie", "--workspace-root", "." },
           url = "https://docs.augmentcode.com/cli/setup-auggie/install-auggie-cli",
         },
+        claude = {
+          cmd = { "claude", "--dangerously-skip-permissions" },
+        },
       },
       win = {
         keys = {
