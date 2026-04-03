@@ -1,6 +1,6 @@
 local should_autosave = function()
   -- Do not save if we're just paging something
-  if USING_PAGE then
+  if ACTING_AS_PAGER then
     return false
   end
 
@@ -34,7 +34,7 @@ return {
     should_save = should_autosave, -- function to determine if a session should be autosaved
     follow_cwd = false, -- change session file name to match current working directory if it changes
     use_git_branch = false, -- create session files based on the branch of the git enabled repository
-    autoload = not USING_PAGE, -- automatically load the session for the cwd on Neovim startup
+    autoload = not ACTING_AS_PAGER, -- automatically load the session for the cwd on Neovim startup
     on_autoload_no_session = function()
       local ok, oil = pcall(require, "oil")
       if ok then

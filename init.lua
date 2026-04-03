@@ -18,6 +18,8 @@ vim.print = _G.dd
 -- https://github.com/olimorris/persisted.nvim/pull/76#issuecomment-2294914746
 -- https://github.com/I60R/page/issues/39#issuecomment-1447660752
 _G.USING_PAGE = vim.tbl_contains(vim.v.argv, "--listen")
+_G.KITTY_SCROLLBACK = vim.g.kitty_scrollback == 1
+_G.ACTING_AS_PAGER = USING_PAGE or KITTY_SCROLLBACK
 
 local function check_alpine()
   local os = vim.uv.os_uname().version
