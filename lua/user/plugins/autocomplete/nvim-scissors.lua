@@ -5,7 +5,5 @@ return {
     "ScissorsAddNewSnippet",
     "ScissorsEditSnippet",
   },
-  opts = {
-    jsonFormatter = "jq",
-  },
+  opts = {},
 }

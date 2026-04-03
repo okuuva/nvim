@@ -67,7 +67,7 @@
   "nvim-luapad": { "branch": "master", "commit": "50985a251922039c3d00d41905e5183c2cab3b13" },
   "nvim-nio": { "branch": "master", "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662" },
   "nvim-origami": { "branch": "main", "commit": "6965856d2282d015a9679184cdd91f6f01a26dad" },
-  "nvim-scissors": { "branch": "main", "commit": "045b4b3b7b911888671a5bc45a935952f17692dc" },
+  "nvim-scissors": { "branch": "main", "commit": "9d22ecef2d019a72748f23cec9db32c7f7b222d2" },
   "nvim-toggler": { "branch": "main", "commit": "467808600882fd6c9e33b9dbc4889b1b80cfd917" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
   "nvim-treesitter-context": { "branch": "master", "commit": "b0c45cefe2c8f7b55fc46f34e563bc428ef99636" },
