@@ -18,7 +18,6 @@ local mappings = {
   { "<leader>g", group = "Git", nowait = true, remap = false },
   { "<leader>gL", group = "GitLink", nowait = true, remap = false },
   { "<leader>gt", group = "Toggle", nowait = true, remap = false },
-  { "<leader>h", group = "Harpoon", nowait = true, remap = false },
   { "<leader>l", group = "LSP", nowait = true, remap = false },
   { "<leader>m", group = "Markdown Preview", nowait = true, remap = false },
   { "<leader>n", group = "Notifications", nowait = true, remap = false },

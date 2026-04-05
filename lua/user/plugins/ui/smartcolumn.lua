@@ -7,7 +7,6 @@ return {
       "alpha",
       "checkhealth",
       "dbee",
-      "harpoon",
       "help",
       "lazy",
       "mason",

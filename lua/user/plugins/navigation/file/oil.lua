@@ -31,13 +31,6 @@ return {
       show_hidden = true,
     },
     keymaps = {
-      -- htns jkl;
-      -- disable keymaps that conflict with harpoon by setting them to false
-      ["<C-h>"] = false,
-      ["<C-t>"] = false,
-      ["<C-s>"] = false,
-      ["<C-l>"] = false,
-      ["<C-c>"] = false, -- esc, q, and <leader>c are enough already
       ["<Esc>"] = { "actions.close", mode = "n" },
       ["q"] = { "actions.close", mode = "n" },
       ["<PageUp>"] = "actions.preview_scroll_up",

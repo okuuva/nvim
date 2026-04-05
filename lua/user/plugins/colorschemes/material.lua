@@ -38,7 +38,7 @@ return {
       -- "fidget",
       "flash",
       "gitsigns",
-      "harpoon",
+      -- "harpoon",
       -- "hop",
       -- "illuminate",
       -- "indent-blankline",
