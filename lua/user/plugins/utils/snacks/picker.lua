@@ -64,6 +64,12 @@ return {
   ---@type snacks.Config
   opts = {
     picker = {
+      on_show = function(self)
+        local pos = self.layout and self.layout.root and self.layout.root.opts.position
+        if pos == "bottom" then
+          require("edgy").close("bottom")
+        end
+      end,
       matcher = {
         frecency = true,
       },
