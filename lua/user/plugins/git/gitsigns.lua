@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
   "lewis6991/gitsigns.nvim",
-  version = "v1.*",
+  version = "v2.*",
   event = { "BufReadPre", "BufNewFile" },
   -- stylua: ignore
   keys = {
-    -- regulars
-    { "<leader>gr", function() require("gitsigns").reset_hunk() end, desc = "Reset Hunk" },
+    { "<leader>gq", function() require("gitsigns").setqflist("all") end, desc = "Show hunks in quickfix" },
+    { "<leader>gtb", function() require("gitsigns").blame() end, desc = "Blame panel" },
   },
   opts = {
     signs = {
@@ -15,7 +15,17 @@ return {
       delete = { text = "󰐊" },
       topdelete = { text = "󰐊" },
       changedelete = { text = "▎" },
+      untracked = { text = "┆" },
     },
+    signs_staged = {
+      add = { text = "▎" },
+      change = { text = "▎" },
+      delete = { text = "󰐊" },
+      topdelete = { text = "󰐊" },
+      changedelete = { text = "▎" },
+      untracked = { text = "┆" },
+    },
+    signs_staged_enable = true, -- also affects numhl
     signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
