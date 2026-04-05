@@ -5,12 +5,17 @@ local quick_close_filetypes = api.nvim_create_augroup("_quick_close_file_type", 
 
 api.nvim_create_autocmd("FileType", {
   group = quick_close_filetypes,
-  pattern = { "help", "startuptime", "qf", "lspinfo" },
+  pattern = { "startuptime", "qf", "lspinfo" },
   command = [[nnoremap <buffer><silent> q :close<CR>]],
 })
 
 api.nvim_create_autocmd("FileType", {
   group = quick_close_filetypes,
+  pattern = "help",
+  callback = function(ev)
+    vim.keymap.set("n", "q", "<cmd>hide<CR>", { buffer = ev.buf, silent = true })
+  end,
+})
 
 api.nvim_create_autocmd("BufWinLeave", {
   group = quick_close_filetypes,
@@ -20,6 +25,9 @@ api.nvim_create_autocmd("BufWinLeave", {
     end
   end,
 })
+
+api.nvim_create_autocmd("FileType", {
+  group = quick_close_filetypes,
   pattern = "man",
   command = [[nnoremap <buffer><silent> q :bdelete<CR>]],
 })
