@@ -11,6 +11,15 @@ api.nvim_create_autocmd("FileType", {
 
 api.nvim_create_autocmd("FileType", {
   group = quick_close_filetypes,
+
+api.nvim_create_autocmd("BufWinLeave", {
+  group = quick_close_filetypes,
+  callback = function(ev)
+    if vim.bo[ev.buf].buftype == "help" then
+      require("user.util.help_panel").save_last(ev.buf)
+    end
+  end,
+})
   pattern = "man",
   command = [[nnoremap <buffer><silent> q :bdelete<CR>]],
 })
