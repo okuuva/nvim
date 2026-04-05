@@ -30,7 +30,7 @@ return {
   },
   keys = {
     -- stylua: ignore
-    { "<leader>gd", "<cmd>DiffviewFileHistory %<cr>", desc = "Diff" },
+    { "<leader>gD", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview" },
     {
       "<leader>gH",
       function()

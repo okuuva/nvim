@@ -5,6 +5,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   -- stylua: ignore
   keys = {
+    { "<leader>gd", function() require("gitsigns").diffthis() end, desc = "Vimdiff" },
     { "<leader>gq", function() require("gitsigns").setqflist("all") end, desc = "Show hunks in quickfix" },
     { "<leader>gtb", function() require("gitsigns").blame() end, desc = "Blame panel" },
   },
