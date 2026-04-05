@@ -9,9 +9,9 @@ return {
     { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
     { "gO", vim.lsp.buf.document_symbol, desc = "List Document Symbols" },
     { "grl", vim.lsp.codelens.run, desc = "CodeLens Action" },
-    { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
-    { "<leader>ll", "<cmd>LspLog<cr>", desc = "Log" },
-    { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart" },
+    { "<leader>li", "<cmd>checkhealth lsp<cr>", desc = "Info" },
+    { "<leader>ll", function() vim.cmd.tabnew(vim.lsp.log.get_filename()) end, desc = "Log" },
+    { "<leader>lr", "<cmd>lsp restart *<cr>", desc = "Restart" },
   },
   config = function()
     -- enable inlay hints by default
