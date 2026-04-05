@@ -143,4 +143,67 @@ function M.base64_toggle()
   end)
 end
 
+local function relpath()
+  return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":~:.")
+end
+
+local function notify_copied(result)
+  vim.fn.setreg("+", result)
+  Snacks.notify(result, { title = "Copied path" })
+end
+
+--- Copy file path to clipboard
+function M.copy_path()
+  notify_copied(relpath())
+end
+
+--- Copy file path with line and column to clipboard
+--- In visual mode, copies the position range
+---@return string
+local function path_location()
+  local path = relpath()
+
+  local visual_mode = vim.api.nvim_get_mode().mode:match("[vV\22]")
+  if not visual_mode then
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    col = col + 1 -- make it inclusive
+    return path .. ":" .. line .. ":" .. col
+  end
+
+  local from_line = vim.fn.line("v")
+  local from_col = vim.fn.col("v")
+  local to_line = vim.fn.line(".")
+  local to_col = vim.fn.col(".")
+
+  local on_same_line = from_line == to_line
+  local line_is_reversed = from_line > to_line
+  local col_is_reversed = on_same_line and from_col > to_col
+  local selection_is_reversed = line_is_reversed or col_is_reversed
+
+  if selection_is_reversed then
+    from_line, to_line = to_line, from_line
+    from_col, to_col = to_col, from_col
+  end
+
+  path = path .. ":" .. from_line .. ":" .. from_col
+
+  local on_same_col = from_col == to_col
+  local is_range = not (on_same_line and on_same_col)
+  if is_range then
+    path = path .. "-" .. to_line .. ":" .. to_col
+  end
+
+  return path
+end
+
+--- Copy file path:line to clipboard
+function M.copy_path_line()
+  notify_copied(path_location():gsub(":%d+%-", "-"):gsub(":%d+$", ""))
+end
+
+--- Copy file path:line:col to clipboard
+function M.copy_path_location()
+  notify_copied(path_location())
+end
+
 return M
