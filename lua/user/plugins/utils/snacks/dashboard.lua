@@ -13,7 +13,7 @@ return {
   "snacks.nvim",
   -- stylua: ignore
   keys = {
-    { "<leader>c",  BdeleteAndCloseTabIfNotLast,       desc = "Close Buffer" },
+    { "<leader>C",  BdeleteAndCloseTabIfNotLast,       desc = "Close Buffer" },
   },
   ---@type snacks.Config
   opts = {

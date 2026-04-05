@@ -40,6 +40,9 @@ local mappings = {
   },
   {
     mode = { "n", "x" },
+    { "<leader>cl", require("user.util.visual").copy_path_line, desc = "Copy file path:line" },
+    { "<leader>cL", require("user.util.visual").copy_path_location, desc = "Copy file path:line:col" },
+    { "<leader>cp", require("user.util.visual").copy_path, desc = "Copy file path" },
     { "<leader>b", group = "Base64" },
     { "<leader>bd", require("user.util.visual").base64_decode, desc = "Decode" },
     { "<leader>be", require("user.util.visual").base64_encode, desc = "Encode" },
