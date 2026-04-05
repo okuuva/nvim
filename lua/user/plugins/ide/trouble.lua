@@ -25,6 +25,7 @@ return {
     modes = {
       symbols = {
         win = {
+          position = "right",
           size = 60,
         },
       },
