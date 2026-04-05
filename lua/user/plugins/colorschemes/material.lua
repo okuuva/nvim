@@ -43,7 +43,7 @@ return {
       -- "illuminate",
       -- "indent-blankline",
       -- "lspsaga",
-      -- "mini",
+      "mini",
       -- "neogit",
       -- "neo-tree",
       -- "neorg",

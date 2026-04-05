@@ -43,6 +43,7 @@
   "mcphub.nvim": { "branch": "main", "commit": "163b3ad0caa3987e04e5b1d89bb89d230686d17b" },
   "md-list.nvim": { "branch": "main", "commit": "d59f5306c74af3cfe961c5a443eff6d3d836fd86" },
   "mini.ai": { "branch": "main", "commit": "43eb2074843950a3a25aae56a5f41362ec043bfa" },
+  "mini.diff": { "branch": "main", "commit": "fbb93ea1728e7c9d0944df8bd022a68402bd2e7e" },
   "mini.icons": { "branch": "main", "commit": "ff2e4f1d29f659cc2bad0f9256f2f6195c6b2428" },
   "mini.snippets": { "branch": "main", "commit": "b4065ca6b33e4df2897672d3bb760cfc93f4390a" },
   "mini.surround": { "branch": "main", "commit": "2715e04bea3ec9244f15b421dc5b18c0fe326210" },
