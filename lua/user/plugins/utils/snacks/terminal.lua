@@ -29,7 +29,7 @@ return {
     { "<C-a>", toggle_terminal, desc = "Toggle Terminal", mode = { "i", "n", "t" } },
     { "<leader>jj",
       function()
-        toggle_terminal("jjui || lazygit", { win = { style = "terminal_fullscreen" } })
+        toggle_terminal("[ -d .jj ] && jjui || lazygit", { win = { style = "terminal_fullscreen" } })
       end,
       desc = "Jujutsu"
     },
