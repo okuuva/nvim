@@ -9,6 +9,11 @@ vim.filetype.add({
     rockspec = "rockspec",
     xxhc = "yaml",
   },
+  filename = {
+    ["kitty.conf"] = "kitty",
+  },
+  pattern = {
+    [".*/kitty/.*%.conf"] = "kitty",
+  },
 })
-
 vim.treesitter.language.register("jsonc", "hujson")
