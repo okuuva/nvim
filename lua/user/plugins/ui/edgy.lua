@@ -138,6 +138,7 @@ return {
         {
           ft = "trouble",
           title = "Trouble",
+          size = { height = 0.4 },
           filter = function(_, win)
             local info = vim.w[win].trouble
             return not info or info.mode ~= "symbols"
