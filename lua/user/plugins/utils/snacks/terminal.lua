@@ -29,7 +29,11 @@ return {
     { "<C-a>", toggle_terminal, desc = "Toggle Terminal", mode = { "i", "n", "t" } },
     { "<leader>jj",
       function()
-        toggle_terminal("[ -d .jj ] && jjui || lazygit", { win = { style = "terminal_fullscreen" } })
+        if vim.fn.isdirectory(".jj") == 1 then
+          toggle_terminal("jjui", { win = { style = "terminal_fullscreen" } })
+        else
+          Snacks.lazygit()
+        end
       end,
       desc = "Jujutsu"
     },
