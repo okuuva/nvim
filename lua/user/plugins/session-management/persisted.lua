@@ -30,6 +30,14 @@ return {
 
     -- Hide intro message
     vim.o.shortmess = vim.o.shortmess .. "I"
+
+    -- If we're in a worktree of a bare repo, cd to the bare repo root so
+    -- that persisted.nvim uses a single session for the whole bare repo.
+    -- The session records curdir, so the last-active worktree is restored.
+    local bare_root = git.bare_repo_root()
+    if bare_root then
+      vim.api.nvim_set_current_dir(bare_root)
+    end
   end,
   opts = {
     should_save = should_autosave, -- function to determine if a session should be autosaved
