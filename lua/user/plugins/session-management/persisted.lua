@@ -18,6 +18,7 @@ local should_autosave = function()
   return true
 end
 
+---@type LazyPluginSpec
 return {
   "olimorris/persisted.nvim",
   version = "^2.0.0",
@@ -38,6 +39,17 @@ return {
     if bare_root then
       vim.api.nvim_set_current_dir(bare_root)
     end
+
+    -- :restart (neovim 0.12+) calls :qall internally, which fires
+    -- VimLeavePre and may overwrite the session after splits are gone.
+    -- Save explicitly before restart, then stop persisted so the
+    -- VimLeavePre handler doesn't clobber the good save.
+    vim.keymap.set("ca", "restart", function()
+      if vim.fn.getcmdline() == "restart" then
+        return 'lua require("persisted").save({ force = true }); require("persisted").stop() <bar> restart lua vim.g.persisted_defer_load = true'
+      end
+      return "restart"
+    end, { expr = true })
   end,
   opts = {
     should_save = should_autosave, -- function to determine if a session should be autosaved
