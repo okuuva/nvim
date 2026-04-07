@@ -116,7 +116,7 @@
   "vimade": { "branch": "master", "commit": "9b2eacd9c97c0bb547f6f3a27e8b5b7a70ad4d03" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "work-time-calculator.nvim": { "branch": "dev", "commit": "59461a2ff91659a3862beea8289af61f2291f986" },
-  "worktrees.nvim": { "branch": "main", "commit": "87072627075bf5fbd4f7c82ad34d84ecbe0546e9" },
+  "worktrees.nvim": { "branch": "main", "commit": "bd3bb6db01aee69775b8d237dcb50d66d96d2d68" },
   "wrapping.nvim": { "branch": "master", "commit": "ef6daf9fcceac8e7a99a155bf7b153488aefdd61" },
   "yaml.nvim": { "branch": "main", "commit": "43ddedd0f3b060b4475e19e762b1796fce1b23be" },
   "yanky.nvim": { "branch": "main", "commit": "784188e0a7363e762e53140f39124d786aec0832" }
