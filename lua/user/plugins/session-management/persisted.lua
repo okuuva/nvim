@@ -1,3 +1,5 @@
+local git = require("user.util.git")
+
 local should_autosave = function()
   -- Do not save if we're just paging something
   if ACTING_AS_PAGER then
@@ -10,8 +12,7 @@ local should_autosave = function()
   local bufnr = vim.api.nvim_get_current_buf()
   local throwaway_buffer = vim.api.nvim_buf_get_name(bufnr) == ""
   local oil_open = vim.bo.filetype == "oil"
-  local in_bare_repo = vim.fn.system("git rev-parse --is-bare-repository") == "true\n"
-  if (throwaway_buffer or oil_open) and not in_bare_repo then
+  if (throwaway_buffer or oil_open) and not git.in_bare_repo() then
     return false
   end
   return true
