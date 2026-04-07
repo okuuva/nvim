@@ -12,8 +12,7 @@ return {
     "whiteinge/diffconflicts",
     cmd = { "DiffConflicts" },
     keys = {
-      { "<leader>gR", resolve_conflicts, desc = "Resolve conflicts" },
-      -- { "<leader>jc" },
+      { "<leader>gc", resolve_conflicts, desc = "Conflict resolution" },
     },
   },
   {

@@ -6,7 +6,6 @@ vim.api.nvim_set_keymap("", "<CR>", ":noh<CR>", { noremap = true, silent = true 
 ---@module "which-key"
 ---@type wk.Spec
 local mappings = {
-  { "<leader>gc", require("user.util").process_graphite_share_stack_string, desc = "Clean Graphite share links" },
   { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy", nowait = true, remap = false },
   { "<leader>N", group = "Neoconf", nowait = true, remap = false },
   { "<leader>P", group = "Pastebin", nowait = true, remap = false },
