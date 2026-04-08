@@ -10,7 +10,7 @@ XDG_DATA_HOME = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
 MISE_DATA_DIR = vim.env.MISE_DATA_DIR or (XDG_DATA_HOME .. "/mise")
 MISE_SHIM_DIR = MISE_DATA_DIR .. "/shims"
 
-vim.env.PATH = MISE_SHIM_DIR .. ":" .. vim.env.PATH
+vim.env.PATH = vim.env.HOME .. "/.local/bin:" .. MISE_SHIM_DIR .. ":" .. vim.env.PATH
 
 vim.env.CARGO_NET_GIT_FETCH_WITH_CLI = "true"
 
