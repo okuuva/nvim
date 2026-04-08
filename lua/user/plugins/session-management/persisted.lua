@@ -32,12 +32,29 @@ return {
     -- Hide intro message
     vim.o.shortmess = vim.o.shortmess .. "I"
 
-    -- If we're in a worktree of a bare repo, cd to the bare repo root so
-    -- that persisted.nvim uses a single session for the whole bare repo.
-    -- The session records curdir, so the last-active worktree is restored.
-    local bare_root = git.bare_repo_root()
-    if bare_root then
-      vim.api.nvim_set_current_dir(bare_root)
+    -- When launching from a bare repo root, load the most recently used
+    -- worktree session instead of the (likely empty) bare root session.
+    -- Worktrees each get their own session naturally via persisted's cwd naming.
+    if git.in_bare_repo() and not git.bare_repo_root() then
+      local uv = vim.uv or vim.loop
+      local save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/")
+      local cwd_safe = vim.fn.getcwd():gsub("[\\/:]+", "%%")
+      local best, best_mtime
+
+      for _, path in ipairs(vim.fn.glob(save_dir .. cwd_safe .. "%*.vim", true, true)) do
+        local stat = uv.fs_stat(path)
+        if stat and (not best_mtime or stat.mtime.sec > best_mtime) then
+          best, best_mtime = path, stat.mtime.sec
+        end
+      end
+
+      if best then
+        -- Extract worktree dir from session filename and cd there so
+        -- persisted autoload picks up the right session
+        local name = best:sub(#save_dir + 1, -5) -- strip dir prefix and .vim
+        local dir = name:gsub("%%", "/")
+        vim.api.nvim_set_current_dir(dir)
+      end
     end
 
     -- :restart (neovim 0.12+) calls :qall internally, which fires

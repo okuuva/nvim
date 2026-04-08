@@ -10,6 +10,9 @@ end
 vim.api.nvim_create_autocmd("DirChanged", {
   pattern = "*",
   callback = function()
+    if not rawget(_G, "Snacks") or not Snacks.terminal then
+      return
+    end
     for _, term in ipairs(Snacks.terminal.list()) do
       if term ~= nil then
         vim.fn.chansend(vim.bo[term.buf].channel, {
