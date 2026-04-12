@@ -13,6 +13,12 @@ return {
   cmd = { "Dbee" },
   -- using config here because many of the dbee settings use require("dbee").blah
   config = function()
-    require("dbee").setup({})
+    require("dbee").setup({
+      sources = {
+        require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS"),
+        require("dbee.sources").FileSource:new(vim.fn.stdpath("state") .. "/dbee/persistence.json"),
+        require("dbee.sources").FileSource:new(vim.fn.getcwd() .. "/.dbee.json"),
+      },
+    })
   end,
 }
