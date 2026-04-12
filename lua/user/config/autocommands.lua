@@ -194,3 +194,62 @@ api.nvim_create_autocmd("WinLeave", {
     vim.opt_local.showbreak = ""
   end,
 })
+
+local active_profile_log = nil
+local profile_start_time = nil
+
+local function start_profiling(path)
+  active_profile_log = path
+  profile_start_time = vim.uv.hrtime()
+  require("jit.p").start("10,i1,s,m0", path)
+end
+
+local function stop_profiling()
+  require("jit.p").stop()
+  if not active_profile_log then
+    vim.notify("No active profiling session", vim.log.levels.WARN)
+    return
+  end
+  local elapsed_ms = (vim.uv.hrtime() - profile_start_time) / 1e6
+  local path = active_profile_log
+  active_profile_log = nil
+  profile_start_time = nil
+  -- annotate percentages with absolute times
+  local lines = vim.fn.readfile(path)
+  local annotated = { ("-- total: %.0fms"):format(elapsed_ms) }
+  for _, line in ipairs(lines) do
+    local pct = line:match("^%s*(%d+)%%")
+    if pct then
+      local ms = elapsed_ms * tonumber(pct) / 100
+      table.insert(annotated, line .. ("  (%.0fms)"):format(ms))
+    else
+      table.insert(annotated, line)
+    end
+  end
+  vim.fn.writefile(annotated, path)
+  vim.cmd("edit " .. vim.fn.fnameescape(path))
+  vim.notify(("Profiling stopped — %.0fms total → %s"):format(elapsed_ms, path), vim.log.levels.INFO)
+end
+
+api.nvim_create_user_command("ProfileStart", function(opts)
+  local path = opts.args ~= "" and opts.args or (vim.fn.stdpath("cache") .. "/profile.log")
+  start_profiling(path)
+  vim.notify("Lua profiling started → :ProfileStop to finish and open log", vim.log.levels.INFO)
+end, { nargs = "?", complete = "file", desc = "Start LuaJIT profiler [path]" })
+
+api.nvim_create_user_command("ProfileStop", function()
+  stop_profiling()
+end, { desc = "Stop LuaJIT profiler and open log" })
+
+api.nvim_create_user_command("ProfileRun", function(opts)
+  local args = vim.split(opts.args, "%s+", { trimempty = true })
+  local seconds = tonumber(args[1]) or 10
+  local path = args[2] or (vim.fn.stdpath("cache") .. "/profile.log")
+  start_profiling(path)
+  vim.notify(("Profiling for %ds → :ProfileStop to end early"):format(seconds), vim.log.levels.INFO)
+  vim.defer_fn(function()
+    if active_profile_log then
+      stop_profiling()
+    end
+  end, seconds * 1000)
+end, { nargs = "*", complete = "file", desc = "Start LuaJIT profiler, auto-stop after [N] seconds [path]" })
