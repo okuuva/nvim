@@ -72,13 +72,6 @@ function M:start()
     self.cmux_workspace_id = ws
     self.started = true
 
-    local tool_cmd = table.concat(self.tool.cmd, " ")
-    M._socket_request_sync("surface.send_text", {
-      surface_id = result.surface_ref,
-      workspace_id = ws,
-      text = tool_cmd .. "\n",
-    })
-
     M._sessions[result.surface_ref] = {
       id = "cmux:" .. result.surface_ref,
       cwd = self.cwd,
@@ -88,9 +81,53 @@ function M:start()
       started = true,
     }
 
+    -- Defer exec so send() can provide an initial CLI prompt arg.
+    -- Uses a repeating timer that skips ticks during _socket_request_sync
+    -- (vim.wait processes timers, which would fire _launch prematurely).
+    self._pending_exec = true
+    self._exec_timer = assert(vim.uv.new_timer())
+    self._exec_timer:start(50, 50, vim.schedule_wrap(function()
+      if not self._pending_exec then
+        self:_stop_exec_timer()
+        return
+      end
+      if M._in_sync then
+        return -- retry next tick; vim.wait() is processing the event loop
+      end
+      self:_launch()
+    end))
+
     self:focus_surface()
     Util.info(("Started **%s** in a new %s"):format(self.tool.name, label))
   end
+end
+
+function M:_stop_exec_timer()
+  if self._exec_timer and not self._exec_timer:is_closing() then
+    self._exec_timer:stop()
+    self._exec_timer:close()
+  end
+  self._exec_timer = nil
+end
+
+--- Launch the tool.
+function M:_launch()
+  if not self._pending_exec then
+    return
+  end
+  self._pending_exec = nil
+  self:_stop_exec_timer()
+  self:_exec_cmd()
+end
+
+--- Launch the tool via exec (replaces shell, surface closes on exit).
+function M:_exec_cmd()
+  local shell_cmd = "exec " .. table.concat(vim.tbl_map(vim.fn.shellescape, self.tool.cmd), " ")
+  M._socket_request_sync("surface.send_text", {
+    surface_id = self.cmux_surface_id,
+    workspace_id = self.cmux_workspace_id,
+    text = shell_cmd .. "\n",
+  })
 end
 
 -- Cached set of live surface refs per workspace, refreshed once per event loop cycle.
@@ -140,8 +177,67 @@ function M:send(text)
   -- Strip trailing newline — cmux treats \n as enter, but
   -- sidekick appends \n to all send() calls. Submit is handled separately.
   text = text:gsub("\n+$", "")
+
+  -- Tool not launched yet — launch it, then send text once ready
+  if self._pending_exec then
+    self:_launch()
+    self:_send_when_ready(text)
+    return
+  end
+
   M._socket_request("surface.send_text", vim.tbl_extend("force", self:_surface_params(), { text = text }))
   self:focus_surface()
+end
+
+--- Poll surface output until stable, then send text.
+--- Stable = output has 3+ lines and hasn't changed for 500ms.
+---@param text string
+function M:_send_when_ready(text)
+  local last_output = ""
+  local stable_since = nil ---@type integer?
+  local start_time = vim.uv.hrtime()
+  local timer = assert(vim.uv.new_timer())
+
+  timer:start(200, 200, vim.schedule_wrap(function()
+    if M._in_sync then
+      return -- skip tick; vim.wait is processing the event loop
+    end
+
+    local elapsed = (vim.uv.hrtime() - start_time) / 1e6
+    if elapsed > 15000 then
+      -- Timeout — send anyway and hope for the best
+      timer:stop()
+      timer:close()
+      M._socket_request("surface.send_text", vim.tbl_extend("force", self:_surface_params(), { text = text }))
+      self:focus_surface()
+      return
+    end
+
+    local output = self:dump() or ""
+    local lines = vim.split(output, "\n", { trimempty = true })
+
+    if #lines < 3 then
+      stable_since = nil
+      last_output = output
+      return
+    end
+
+    if output ~= last_output then
+      last_output = output
+      stable_since = vim.uv.hrtime()
+      return
+    end
+
+    if stable_since then
+      local stable_ms = (vim.uv.hrtime() - stable_since) / 1e6
+      if stable_ms >= 500 then
+        timer:stop()
+        timer:close()
+        M._socket_request("surface.send_text", vim.tbl_extend("force", self:_surface_params(), { text = text }))
+        self:focus_surface()
+      end
+    end
+  end))
 end
 
 function M:submit()
@@ -227,7 +323,10 @@ function M._socket_request_sync(method, params)
   end
   local msg = vim.json.encode({ id = "sk", method = method, params = params }) .. "\n"
   vim.fn.chansend(channel, msg)
-  -- Wait until we have a complete JSON response (ends with newline)
+  -- Wait until we have a complete JSON response (ends with newline).
+  -- Guard against re-entrancy: vim.wait processes the event loop,
+  -- which can fire deferred timers (_exec_timer) prematurely.
+  M._in_sync = true
   vim.wait(2000, function()
     if #chunks == 0 then
       return false
@@ -235,6 +334,7 @@ function M._socket_request_sync(method, params)
     local last = chunks[#chunks]
     return last:sub(-1) == "\n" or last:sub(-1) == "}"
   end, 5)
+  M._in_sync = false
   vim.fn.chanclose(channel)
 
   local response = table.concat(chunks, "")
