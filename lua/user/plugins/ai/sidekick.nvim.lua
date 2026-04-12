@@ -20,14 +20,21 @@ return {
       { "<leader>a", group = "AI" },
     })
   end,
+  config = function(_, opts)
+    require("sidekick").setup(opts)
+    if vim.fn.executable("cmux") == 1 then
+      require("user.sidekick.cmux").register()
+    end
+  end,
   opts = {
     nes = {
       enabled = false,
     },
     cli = {
       mux = {
-        backend = "tmux",
-        enabled = true,
+        backend = "cmux",
+        enabled = vim.env.CMUX_SURFACE_ID ~= nil,
+        create = "window",
       },
       tools = {
         auggie = {
