@@ -73,6 +73,23 @@ return {
       matcher = {
         frecency = true,
       },
+      ---@type table<string, snacks.picker.Config>
+      kinds = {
+        sidekick_cli = {
+          layout = { preset = "default" },
+          preview = function(ctx)
+            local state = ctx.item.item
+            if state and state.session and state.session.dump then
+              local content = state.session:dump()
+              if content then
+                ctx.preview:set_lines(vim.split(content, "\n"))
+                return true
+              end
+            end
+            ctx.preview:reset()
+          end,
+        },
+      },
       sources = {
         grep = {
           layout = {
