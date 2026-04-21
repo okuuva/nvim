@@ -14,6 +14,7 @@ vim.filetype.add({
   },
   pattern = {
     [".*/kitty/.*%.conf"] = "kitty",
+    [".*/cmux/settings.json"] = "jsonc",
   },
 })
 vim.treesitter.language.register("jsonc", "hujson")
