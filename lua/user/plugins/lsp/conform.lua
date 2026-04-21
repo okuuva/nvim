@@ -35,6 +35,13 @@ local json = function(bufnr)
     return { "jq" }
   end
 
+  -- biome detects json vs jsonc from file extension, not neovim filetype. when the buffer ft is
+  -- jsonc but the file is named *.json (e.g. cmux/settings.json), route through biome_jsonc which
+  -- overrides --stdin-file-path to force jsonc parsing
+  if vim.bo[bufnr].filetype == "jsonc" then
+    return expandFormatters({ { "biome_jsonc", "prettierd", "prettier" } })(bufnr)
+  end
+
   return expandFormatters({ { "biome", "prettierd", "prettier" } })(bufnr)
 end
 
@@ -49,6 +56,16 @@ return {
     ---@type conform.setupOpts
     local opts = {
       formatters = {
+        biome_jsonc = {
+          meta = {
+            url = "https://github.com/biomejs/biome",
+            description = "Biome, forced to parse stdin as jsonc regardless of real file extension.",
+          },
+          command = util.from_node_modules("biome"),
+          stdin = true,
+          args = { "format", "--stdin-file-path", "stdin.jsonc" },
+          cwd = util.root_file({ "biome.json", "biome.jsonc" }),
+        },
         hujson = {
           meta = {
             url = "https://github.com/biomejs/biome",
