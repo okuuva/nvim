@@ -31,6 +31,87 @@ local function treesitter_binding()
   end
 end
 
+local function set_render_markdown_win_options(bufnr, config, state)
+  for _, win in ipairs(vim.fn.win_findbuf(bufnr)) do
+    if vim.api.nvim_win_is_valid(win) then
+      for name, value in pairs(config.win_options) do
+        vim.api.nvim_set_option_value(name, value[state], { win = win })
+      end
+    end
+  end
+end
+
+local function pause_render_markdown()
+  local render_markdown = package.loaded["render-markdown"]
+  if not render_markdown or not render_markdown.get() then
+    return nil
+  end
+
+  local manager_ok, manager = pcall(require, "render-markdown.core.manager")
+  local state_ok, state = pcall(require, "render-markdown.state")
+  if not manager_ok or not state_ok then
+    return nil
+  end
+
+  local ui_ok, ui = pcall(require, "render-markdown.core.ui")
+  if not ui_ok then
+    return nil
+  end
+
+  local buffers = {}
+  local seen = {}
+
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    local bufnr = vim.api.nvim_win_get_buf(win)
+    if not seen[bufnr] and manager.attached(bufnr) then
+      seen[bufnr] = true
+      local config = state.get(bufnr)
+      if config.enabled then
+        buffers[bufnr] = config
+        config.enabled = false
+        for _, extmark in ipairs(ui.get(bufnr):get()) do
+          extmark:hide(ui.ns, bufnr)
+        end
+        set_render_markdown_win_options(bufnr, config, "default")
+      end
+    end
+  end
+
+  return next(buffers) and buffers or nil
+end
+
+local function resume_render_markdown(buffers)
+  if not buffers then
+    return
+  end
+
+  local ui_ok, ui = pcall(require, "render-markdown.core.ui")
+  if not ui_ok then
+    return
+  end
+
+  for bufnr, config in pairs(buffers) do
+    if vim.api.nvim_buf_is_valid(bufnr) then
+      config.enabled = true
+      for _, win in ipairs(vim.fn.win_findbuf(bufnr)) do
+        ui.update(bufnr, win, "FlashResume", false)
+      end
+    end
+  end
+end
+
+local function with_render_markdown_disabled(fn)
+  return function()
+    local paused = pause_render_markdown()
+    local ok, err = xpcall(fn, debug.traceback)
+    resume_render_markdown(paused)
+
+    if not ok then
+      error(err, 0)
+    end
+  end
+end
+
 ---@type LazyPluginSpec
 return {
   "folke/flash.nvim",
@@ -42,14 +123,14 @@ return {
     -- home row, bottom row, top row
     -- home locations first, preferring index finger
     -- avoid qvxj since I find them hardest to reach
-    labels = "hateniscrkmgpzfbloduwyvqxj"
+    labels = "hateniscrkmgpzfbloduwyvqxj",
   },
   -- stylua: ignore
   keys = {
-    { "s", mode = { "n", "x", "o" }, regular_binding, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, treesitter_binding, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "s", mode = { "n", "x", "o" }, with_render_markdown_disabled(regular_binding), desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, with_render_markdown_disabled(treesitter_binding), desc = "Flash Treesitter" },
+    { "r", mode = "o", with_render_markdown_disabled(function() require("flash").remote() end), desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, with_render_markdown_disabled(function() require("flash").treesitter_search() end), desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
 }
