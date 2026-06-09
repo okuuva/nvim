@@ -22,8 +22,10 @@ end
 local lang_patterns = {
   javascript = generate_language_pattern_array("javascript", "mise"),
   python = generate_language_pattern_array("python", "mise"),
-  shell = generate_language_pattern_array("sh", "mise"),
-  vcs = generate_language_pattern_array("gitcommit"),
+  sh = generate_language_pattern_array("sh", "mise"),
+  bash = generate_language_pattern_array("sh", "mise"),
+  zsh = generate_language_pattern_array("sh", "mise"),
+  jjdescription = generate_language_pattern_array("gitcommit"),
 }
 
 -- TODO: figure out how to dynamically strip the comment prefix from the mise snippet body text
@@ -41,12 +43,7 @@ return {
       gen_loader.from_runtime("allFiletypes.json"),
       gen_loader.from_runtime("global.json"),
       gen_loader.from_lang({
-        lang_patterns = {
-          sh = lang_patterns.shell,
-          bash = lang_patterns.shell,
-          zsh = lang_patterns.shell,
-          jjdescription = lang_patterns.vcs,
-        },
+        lang_patterns = lang_patterns,
       }),
     }
   end,

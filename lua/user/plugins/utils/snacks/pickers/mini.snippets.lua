@@ -55,7 +55,7 @@ return {
                 for _, snip in pairs(snippets) do
                   local name = Snacks.picker.util.align(snip.prefix, align_1 + 1)
                   table.insert(items, {
-                    text = name .. snip.body,
+                    text = table.concat({ name, snip.desc or "", snip.body }, " "),
                     name = name,
                     description = snip.desc,
                     prefix = snip.prefix,
